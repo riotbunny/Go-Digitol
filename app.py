@@ -2,14 +2,16 @@ import os
 import json
 import re
 from datetime import datetime, timezone
-from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
+from flask import Flask, render_template, request, jsonify, redirect, url_for, flash, send_from_directory
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 app = Flask(
     __name__,
-    template_folder=os.path.join(BASE_DIR, 'templates'),
-    static_folder=os.path.join(BASE_DIR, 'static'),
+    template_folder=TEMPLATES_DIR,
+    static_folder=STATIC_DIR,
     static_url_path='/static'
 )
 app.secret_key = os.environ.get('SECRET_KEY', 'digitol-cro-secret-key-2026')
@@ -86,6 +88,11 @@ def validate_lead_payload(data):
             errors.append("Please enter a valid phone number.")
             
     return errors
+
+@app.route('/static/<path:filename>')
+def custom_static(filename):
+    """Explicit fallback to guarantee static assets load in serverless environments."""
+    return send_from_directory(STATIC_DIR, filename)
 
 @app.route('/')
 def home():
