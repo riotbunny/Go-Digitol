@@ -1,5 +1,5 @@
 /**
- * DIGITOL AGENCY - BREADCRUMB MULTI-STEP LEAD FUNNEL
+ * DIGITOL AGENCY - BREADCRUMB MULTI-STEP DISCOVERY & LEAD FUNNEL
  * High-Converting Progressive Lead Qualification Engine
  */
 
@@ -56,11 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
       payload[key] = value;
     });
 
-    const leadFirstName = (payload.name || '').trim().split(' ')[0] || 'Partner';
+    const leadFullName = (payload.name || '').trim();
+    const leadFirstName = leadFullName.split(' ')[0] || 'Partner';
+    const companyName = (payload.company || '').trim() || 'Your Business';
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>⚡ Securing Your Strategy Slot...</span>';
+      submitBtn.innerHTML = '<span>⚡ Reserving Your Strategy Slot...</span>';
     }
 
     // Save locally to localStorage as instant client-side backup
@@ -75,6 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.warn('LocalStorage save skipped:', err);
     }
 
+    const redirectTarget = `/thank-you?name=${encodeURIComponent(leadFirstName)}&company=${encodeURIComponent(companyName)}`;
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -88,13 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.ok) {
         const data = await response.json();
         if (window.showToast) {
-          window.showToast('Strategy Audit reserved! Redirecting...', 'success');
+          window.showToast('Growth Audit reserved! Redirecting to confirmation...', 'success');
         }
         setTimeout(() => {
-          window.location.href = data.redirect_url || `/thank-you?name=${encodeURIComponent(leadFirstName)}`;
-        }, 500);
+          window.location.href = data.redirect_url || redirectTarget;
+        }, 400);
       } else {
-        // Fallback for static servers or validation errors
         let data = {};
         try { data = await response.json(); } catch (_) {}
         if (data.errors && data.errors.length) {
@@ -103,22 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span>Claim Your Free AI & VA Audit →</span>';
+            submitBtn.innerHTML = '<span>Claim Your Free Growth Audit →</span>';
           }
         } else {
-          // Static host without /api endpoint -> complete gracefully
-          window.location.href = `/thank-you?name=${encodeURIComponent(leadFirstName)}`;
+          // Static host without /api endpoint -> complete gracefully to thank-you page
+          window.location.href = redirectTarget;
         }
       }
     } catch (err) {
-      console.warn('Network API dispatch fallback:', err);
-      // Graceful redirection even in offline/static environments
+      console.warn('Network dispatch fallback to success page:', err);
       if (window.showToast) {
         window.showToast('Audit reserved successfully! Redirecting...', 'success');
       }
       setTimeout(() => {
-        window.location.href = `/thank-you?name=${encodeURIComponent(leadFirstName)}`;
-      }, 500);
+        window.location.href = redirectTarget;
+      }, 400);
     }
   });
 
@@ -139,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
           radio.checked = true;
         }
 
-        // Auto-advance for frictionless micro-commitments
+        // Auto-advance for frictionless discovery flow
         if (currentStep < totalSteps) {
           setTimeout(() => {
             goToStep(currentStep + 1);
@@ -169,11 +171,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateProgressUI() {
     const percent = Math.round((currentStep / totalSteps) * 100);
 
+    const stepLabels = [
+      'Step 1 of 4: Business Discovery',
+      'Step 2 of 4: Growth Goals',
+      'Step 3 of 4: Monthly Volume',
+      'Step 4 of 4: Contact & Details'
+    ];
+
     if (progressBar) {
       progressBar.style.width = `${percent}%`;
     }
     if (progressStepText) {
-      progressStepText.textContent = `Step ${currentStep} of ${totalSteps}`;
+      progressStepText.textContent = stepLabels[currentStep - 1] || `Step ${currentStep} of ${totalSteps}`;
     }
     if (progressPercent) {
       progressPercent.textContent = `${percent}% Complete`;
@@ -204,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const selectedRadio = currentPane.querySelector('input[type="radio"]:checked');
       if (!selectedRadio) {
         if (window.showToast) {
-          window.showToast('Please select an option to continue.', 'error');
+          window.showToast('Please select an option to proceed.', 'error');
         }
         return false;
       }
@@ -213,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (step === 4) {
       const nameInput = form.querySelector('input[name="name"]');
+      const companyInput = form.querySelector('input[name="company"]');
       const emailInput = form.querySelector('input[name="email"]');
       const phoneInput = form.querySelector('input[name="phone"]');
 
@@ -221,6 +231,14 @@ document.addEventListener('DOMContentLoaded', () => {
           window.showToast('Please enter your full name.', 'error');
         }
         nameInput.focus();
+        return false;
+      }
+
+      if (!companyInput || !companyInput.value.trim() || companyInput.value.trim().length < 2) {
+        if (window.showToast) {
+          window.showToast('Please enter your business / company name.', 'error');
+        }
+        companyInput.focus();
         return false;
       }
 
@@ -242,6 +260,12 @@ document.addEventListener('DOMContentLoaded', () => {
           phoneInput.focus();
           return false;
         }
+      } else {
+        if (window.showToast) {
+          window.showToast('Please enter your direct phone number.', 'error');
+        }
+        if (phoneInput) phoneInput.focus();
+        return false;
       }
 
       return true;

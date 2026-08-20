@@ -88,20 +88,25 @@ class TestDigitolApp(unittest.TestCase):
         self.assertIn('breadcrumb-funnel', html)
         self.assertIn('What industry is your business in?', html)
         self.assertIn('Where should we send your Growth Blueprint?', html)
+        self.assertIn('lead-name', html)
+        self.assertIn('lead-company', html)
 
-    def test_thank_you_page(self):
-        """Verify thank you page with personalized name."""
-        response = self.client.get('/thank-you?name=Elena')
+    def test_thank_you_and_success_pages(self):
+        """Verify thank you and success pages with personalized name and company."""
+        response = self.client.get('/thank-you?name=Elena&company=Solis%20Services')
         self.assertEqual(response.status_code, 200)
         html = response.get_data(as_text=True)
         self.assertIn("You're All Set", html)
         self.assertIn("Elena", html)
-        self.assertIn('What Happens Next', html)
+
+        resp_success = self.client.get('/success?name=Marcus')
+        self.assertEqual(resp_success.status_code, 200)
 
     def test_api_contact_validation_failure(self):
         """Verify invalid payload returns 400 with error descriptions."""
         payload = {
             "name": "",
+            "company": "",
             "email": "invalid-email",
             "phone": "123"
         }
@@ -109,19 +114,19 @@ class TestDigitolApp(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
         data = response.get_json()
         self.assertEqual(data['status'], 'error')
-        self.assertTrue(len(data['errors']) >= 2)
+        self.assertTrue(len(data['errors']) >= 3)
 
     def test_api_contact_success(self):
         """Verify valid payload saves lead and returns success."""
         payload = {
             "industry": "Home Services & Contractors",
-            "primary_goal": "Dedicated Virtual Assistant Staffing",
+            "primary_goal": "Database Reactivation (Dormant Leads)",
             "lead_volume": "201-1000 leads/mo",
             "name": "David Miller",
             "company": "Miller Roofing LLC",
             "email": "david@millerroofing.com",
             "phone": "555-234-5678",
-            "notes": "Testing VA placement request"
+            "notes": "Testing discovery request"
         }
         response = self.client.post('/api/contact', json=payload)
         self.assertEqual(response.status_code, 200)

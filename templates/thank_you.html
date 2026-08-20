@@ -5,37 +5,37 @@
   <div class="container container-narrow" style="text-align: center;">
     
     <!-- Success Icon Badge -->
-    <div style="width: 72px; height: 72px; background: rgba(16, 185, 129, 0.15); color: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.25rem; margin: 0 auto 1.5rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);">
+    <div style="width: 76px; height: 76px; background: rgba(16, 185, 129, 0.15); color: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1.5rem; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.25);">
       ✓
     </div>
 
     <div class="eyebrow" style="background: rgba(16, 185, 129, 0.1); color: #059669; border-color: rgba(16, 185, 129, 0.3);">
-      Application Received & Verified
+      Discovery Request Received & Verified
     </div>
 
-    <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1rem;" id="thankyou-heading">
+    <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 0.75rem;" id="thankyou-heading">
       You're All Set, <span id="lead-name-display">{{ lead_name or 'Partner' }}</span>!
     </h1>
 
-    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem;">
-      Our team is preparing your custom revenue analysis, automation roadmap, and Virtual Assistant staffing recommendations. A calendar confirmation invite has been dispatched to your email.
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem;" id="company-confirmation-subtext">
+      Our team is preparing a custom revenue analysis and growth blueprint for <strong id="company-name-display" style="color: var(--navy-900);">your business</strong>. A confirmation invite has been dispatched to your email.
     </p>
 
     <!-- Interactive Strategy Call Time Slot Selector -->
     <div style="background: var(--bg-card); border: 2px solid var(--cta-primary); border-radius: var(--radius-lg); padding: 2rem 2.5rem; text-align: left; box-shadow: var(--shadow-xl); margin-bottom: 2.5rem; position: relative;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
         <h3 style="font-size: 1.15rem; color: var(--navy-900);">
-          📅 Lock in Your Preferred 30-Min Strategy Time
+          📅 Lock in Your Preferred 30-Min Strategy Call
         </h3>
         <span style="font-size: 0.75rem; background: rgba(255,87,34,0.1); color: var(--cta-primary); font-weight: 800; padding: 0.2rem 0.6rem; border-radius: var(--radius-full);">
           ⚡ Live Booking Desk
         </span>
       </div>
       <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-        Select an available slot below to fast-track your AI blueprint review:
+        Select an available slot below to lock in your live 1-on-1 discovery review:
       </p>
 
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;" id="time-slots-grid">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem;" id="time-slots-grid">
         <button type="button" class="scenario-chip slot-btn active" data-time="Tomorrow at 10:00 AM EST" style="padding: 0.75rem; font-size: 0.85rem; justify-content: center;">
           <span>Tomorrow, 10:00 AM</span>
         </button>
@@ -60,7 +60,7 @@
     <!-- Next Steps Card -->
     <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.5rem; text-align: left; box-shadow: var(--shadow-lg); margin-bottom: 3rem;">
       <h3 style="font-size: 1.25rem; color: var(--navy-900); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem;">
-        What Happens Next (The Next 24 Hours):
+        What Happens in the Next 24 Hours:
       </h3>
 
       <div style="display: flex; flex-direction: column; gap: 1.5rem;">
@@ -69,9 +69,9 @@
             1
           </div>
           <div>
-            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">CRM & Operational Data Analysis</h4>
+            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">CRM & Market Discovery Analysis</h4>
             <p style="font-size: 0.875rem; color: var(--text-muted);">
-              We calculate your exact missed call volume, CRM dormancy index, and high-intent acquisition opportunities.
+              We review your industry benchmarks, calculate potential revenue leakage, and map your highest-impact opportunities.
             </p>
           </div>
         </div>
@@ -81,9 +81,9 @@
             2
           </div>
           <div>
-            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">Dedicated VA Profile & Automation Architecture</h4>
+            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">Custom Growth & Automation Blueprint</h4>
             <p style="font-size: 0.875rem; color: var(--text-muted);">
-              We outline the ideal Virtual Assistant skillset (dispatch, customer support, lead follow-up) paired with custom 24/7 AI chat funnels.
+              We structure the exact system configurations (database reactivation, dedicated staff, or ad funnels) suited for your volume.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@
           <div>
             <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">Live 30-Minute Growth Strategy Session</h4>
             <p style="font-size: 0.875rem; color: var(--text-muted);">
-              We walk through your blueprint step-by-step, review sample VA profiles, and present our transparent onboarding roadmap.
+              We walk through the blueprint together, answer any technical questions, and present transparent implementation timelines.
             </p>
           </div>
         </div>
@@ -126,12 +126,19 @@
 {% block scripts %}
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Parse lead name dynamically from URL
+  // Parse dynamic URL parameters
   const urlParams = new URLSearchParams(window.location.search);
   const nameParam = urlParams.get('name');
+  const companyParam = urlParams.get('company');
+
   if (nameParam) {
     const displayEl = document.getElementById('lead-name-display');
     if (displayEl) displayEl.textContent = decodeURIComponent(nameParam);
+  }
+
+  if (companyParam) {
+    const companyEl = document.getElementById('company-name-display');
+    if (companyEl) companyEl.textContent = decodeURIComponent(companyParam);
   }
 
   // Interactive Time Slot Selector
@@ -156,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmBtn.addEventListener('click', () => {
       if (window.triggerHaptic) window.triggerHaptic(25);
       confirmBtn.disabled = true;
-      confirmBtn.innerHTML = '<span>✓ Slot Confirmed! Calendar Invite Sent</span>';
+      confirmBtn.innerHTML = '<span>✓ Slot Confirmed! Calendar Invite Dispatched</span>';
       if (window.showToast) {
         window.showToast(`Strategy slot confirmed for ${chosenSlot}! Check your inbox.`, 'success');
       }

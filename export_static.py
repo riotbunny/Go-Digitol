@@ -29,6 +29,7 @@ ROUTES_TO_EXPORT = [
     ('/about', 'about.html', 'about'),
     ('/contact', 'contact.html', 'contact'),
     ('/thank-you', 'thank-you.html', 'thank-you'),
+    ('/success', 'success.html', 'success'),
 ]
 
 def export_site():

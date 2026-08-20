@@ -69,20 +69,28 @@ def validate_lead_payload(data):
     errors = []
     
     name = (data.get('name') or '').strip()
+    company = (data.get('company') or '').strip()
     email = (data.get('email') or '').strip()
     phone = (data.get('phone') or '').strip()
     
     if not name:
         errors.append("Full Name is required.")
     elif len(name) < 2:
-        errors.append("Please provide a valid name.")
+        errors.append("Please provide a valid full name.")
+
+    if not company:
+        errors.append("Business / Company Name is required.")
+    elif len(company) < 2:
+        errors.append("Please provide a valid company name.")
         
     if not email:
-        errors.append("Email address is required.")
+        errors.append("Work Email address is required.")
     elif not re.match(r"^[^@]+@[^@]+\.[^@]+$", email):
-        errors.append("Please provide a valid email address.")
+        errors.append("Please provide a valid work email address.")
         
-    if phone:
+    if not phone:
+        errors.append("Direct Phone Number is required.")
+    else:
         digits = re.sub(r'\D', '', phone)
         if len(digits) < 7:
             errors.append("Please enter a valid phone number.")
@@ -135,6 +143,7 @@ def contact():
     """Breadcrumb Multi-Step Lead Capture Funnel."""
     return render_template('contact.html', page_title="Get Your Free AI Growth Audit | Digitol Agency")
 
+@app.route('/success')
 @app.route('/thank-you')
 def thank_you():
     """High-Converting Post-Submission Strategy Confirmation."""
