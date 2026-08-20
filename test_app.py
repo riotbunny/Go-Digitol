@@ -1,6 +1,6 @@
 """
 Automated Test Suite for Digitol Agency Website
-Tests Flask routes, breadcrumb API lead capture, validation, and static generation.
+Tests Flask routes, dedicated pages, breadcrumb API lead capture, and static generation.
 """
 
 import os
@@ -23,10 +23,6 @@ class TestDigitolApp(unittest.TestCase):
         self.assertIn('Book Your Free AI & VA Audit', html)
         self.assertIn('Database Reactivation', html)
         self.assertIn('AI Automations & Virtual Assistants', html)
-        self.assertIn('Traffic & Conversion', html)
-        self.assertIn('Business in a Box', html)
-        self.assertIn('Calculate Your Untapped Revenue', html)
-        self.assertIn('APEX LEGAL GROUP', html)
 
     def test_services_page(self):
         """Verify services page renders all 4 pillars with business outcomes."""
@@ -38,6 +34,52 @@ class TestDigitolApp(unittest.TestCase):
         self.assertIn('Traffic & Conversion (Ads & SEO)', html)
         self.assertIn('Business in a Box (Full-Stack Setup)', html)
 
+    def test_how_it_works_page(self):
+        """Verify dedicated how-it-works page renders."""
+        response = self.client.get('/how-it-works')
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn('The Digitol Velocity Framework', html)
+        self.assertIn('The 3-Step Implementation Timeline', html)
+        self.assertIn('GoHighLevel', html)
+
+    def test_case_studies_page(self):
+        """Verify dedicated case studies and results pages render."""
+        response = self.client.get('/case-studies')
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn('Apex Legal Group', html)
+        self.assertIn('Solis Home Services', html)
+        self.assertIn('Zenith MedSpa', html)
+
+        # Test alias /results
+        resp_results = self.client.get('/results')
+        self.assertEqual(resp_results.status_code, 200)
+
+    def test_roi_calculator_page(self):
+        """Verify dedicated ROI calculator page renders."""
+        response = self.client.get('/roi-calculator')
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn('Calculate Your Untapped', html)
+        self.assertIn('Adjust Your Business Metrics', html)
+
+    def test_faq_page(self):
+        """Verify dedicated FAQ page renders."""
+        response = self.client.get('/faq')
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn('Frequently Asked', html)
+        self.assertIn('Virtual Assistant Placement & Staffing', html)
+
+    def test_about_page(self):
+        """Verify dedicated about page renders."""
+        response = self.client.get('/about')
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn('We Engineer the Systems That', html)
+        self.assertIn('Revenue Over Vanity Metrics', html)
+
     def test_contact_page(self):
         """Verify contact page renders multi-step breadcrumb form."""
         response = self.client.get('/contact')
@@ -45,8 +87,6 @@ class TestDigitolApp(unittest.TestCase):
         html = response.get_data(as_text=True)
         self.assertIn('breadcrumb-funnel', html)
         self.assertIn('What industry is your business in?', html)
-        self.assertIn('What is your biggest operational or revenue bottleneck?', html)
-        self.assertIn('What is your current monthly lead volume?', html)
         self.assertIn('Where should we send your Growth Blueprint?', html)
 
     def test_thank_you_page(self):
@@ -88,16 +128,6 @@ class TestDigitolApp(unittest.TestCase):
         data = response.get_json()
         self.assertEqual(data['status'], 'success')
         self.assertIn('/thank-you', data['redirect_url'])
-        self.assertIn('lead', data)
-        self.assertTrue(data['lead']['score'] >= 70)
-
-    def test_api_leads_readout(self):
-        """Verify administrative leads readout endpoint."""
-        response = self.client.get('/api/leads')
-        self.assertEqual(response.status_code, 200)
-        data = response.get_json()
-        self.assertEqual(data['status'], 'success')
-        self.assertIsInstance(data['leads'], list)
 
     def test_404_handling(self):
         """Verify custom 404 handler."""

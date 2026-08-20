@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- How It Works Hero -->
+<section class="section-padding-sm" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%); border-bottom: 1px solid var(--border-light);">
+  <div class="container" style="text-align: center; max-width: 860px;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>
+      <span>The Digitol Velocity Framework</span>
+    </div>
+    <h1 style="font-size: clamp(2.25rem, 4vw, 3.25rem); margin-bottom: 1.25rem;">
+      How We Build & Scale Your <span style="background: linear-gradient(135deg, var(--navy-900) 20%, var(--cta-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Predictable Revenue Engine</span>
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+      From deep CRM audit to dedicated Virtual Assistant onboarding and live 24/7 AI lead capture in 7–14 days. Here is our exact step-by-step implementation blueprint.
+    </p>
+    <a href="{{ url_for('contact') }}" class="btn btn-cta btn-cta-lg">
+      <span>Get Your Custom Implementation Plan →</span>
+    </a>
+  </div>
+</section>
+
+<!-- Timeline Deep Dive -->
+<section class="section-padding" style="background: #ffffff; border-bottom: 1px solid var(--border-light);">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow eyebrow-navy">14-Day Rapid Deployment</div>
+      <h2 class="section-title">The 3-Step Implementation Timeline</h2>
+      <p class="section-desc">
+        We handle 100% of the technical setup, prompt engineering, CRM configuration, and staff training so your calendar fills with zero operational friction.
+      </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 3rem; max-width: 900px; margin: 0 auto;">
+      
+      <!-- Phase 1 -->
+      <div style="display: grid; grid-template-columns: 80px 1fr; gap: 2rem; align-items: flex-start;">
+        <div style="width: 72px; height: 72px; border-radius: 18px; background: var(--navy-900); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 900; box-shadow: var(--shadow-md);">
+          01
+        </div>
+        <div style="background: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.25rem; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--cta-primary); letter-spacing: 0.05em;">Days 1 – 3 • Discovery & Architecture</span>
+            <span style="font-size: 0.75rem; background: rgba(16,185,129,0.15); color: #059669; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); font-weight: 700;">Phase 1</span>
+          </div>
+          <h3 style="font-size: 1.45rem; color: var(--navy-900); margin-bottom: 0.75rem;">Revenue Leakage Audit & Blueprint Mapping</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">
+            We perform a forensic review of your historical CRM data, inbound phone logs, and lead follow-up response times. We map the exact revenue lost to unanswered inquiries and identify high-converting reactivation cohorts.
+          </p>
+          <ul class="service-outcomes-list" style="margin-bottom: 0;">
+            <li><span class="bullet-check">✓</span> Comprehensive CRM database health & spam scrubbing</li>
+            <li><span class="bullet-check">✓</span> Calculation of your Missed Opportunity Index & recovery targets</li>
+            <li><span class="bullet-check">✓</span> Custom Virtual Assistant role scorecard & qualification scripts</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div style="display: grid; grid-template-columns: 80px 1fr; gap: 2rem; align-items: flex-start;">
+        <div style="width: 72px; height: 72px; border-radius: 18px; background: var(--cta-primary); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 900; box-shadow: var(--shadow-cta);">
+          02
+        </div>
+        <div style="background: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.25rem; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--cta-primary); letter-spacing: 0.05em;">Days 4 – 9 • Build & Staff Matching</span>
+            <span style="font-size: 0.75rem; background: rgba(255,87,34,0.15); color: var(--cta-primary); padding: 0.2rem 0.6rem; border-radius: var(--radius-full); font-weight: 700;">Phase 2</span>
+          </div>
+          <h3 style="font-size: 1.45rem; color: var(--navy-900); margin-bottom: 0.75rem;">AI System Build & Dedicated VA Onboarding</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">
+            Our engineers configure your 2-way AI conversational funnels, custom landing pages, and CRM dispatch workflows. Simultaneously, we interview, vet, and match a dedicated, English-fluent Virtual Assistant trained on your specific dispatch software.
+          </p>
+          <ul class="service-outcomes-list" style="margin-bottom: 0;">
+            <li><span class="bullet-check">✓</span> 24/7 AI chat widget and SMS trigger workflows deployed</li>
+            <li><span class="bullet-check">✓</span> Dedicated Virtual Assistant matched, tested, and integrated into your phone lines</li>
+            <li><span class="bullet-check">✓</span> End-to-end sandbox testing of lead qualification and appointment calendar syncing</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div style="display: grid; grid-template-columns: 80px 1fr; gap: 2rem; align-items: flex-start;">
+        <div style="width: 72px; height: 72px; border-radius: 18px; background: #10b981; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 900; box-shadow: var(--shadow-md);">
+          03
+        </div>
+        <div style="background: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.25rem; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: #10b981; letter-spacing: 0.05em;">Days 10 – 14+ • Go-Live & Scaling</span>
+            <span style="font-size: 0.75rem; background: rgba(16,185,129,0.15); color: #059669; padding: 0.2rem 0.6rem; border-radius: var(--radius-full); font-weight: 700;">Phase 3</span>
+          </div>
+          <h3 style="font-size: 1.45rem; color: var(--navy-900); margin-bottom: 0.75rem;">Campaign Launch, Appointment Flow & Continuous CRO</h3>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6;">
+            We activate the database reactivation sequence, start high-intent Google Search & Meta ad campaigns, and your dedicated VA begins answering calls and locking in consultations on your calendar.
+          </p>
+          <ul class="service-outcomes-list" style="margin-bottom: 0;">
+            <li><span class="bullet-check">✓</span> Live appointment notifications streamed directly to your team</li>
+            <li><span class="bullet-check">✓</span> Weekly performance audits and conversation script refinement</li>
+            <li><span class="bullet-check">✓</span> Daily VA oversight and dedicated account manager check-ins</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Integrations Section -->
+<section class="section-padding" style="border-bottom: 1px solid var(--border-light);">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow eyebrow-navy">Seamless Ecosystem</div>
+      <h2 class="section-title">Integrates Directly With Your Existing Tech Stack</h2>
+      <p class="section-desc">
+        No need to replace the tools your team already uses. We plug directly into your current CRM, dispatch software, and calendar systems.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+      <div style="background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.75rem; text-align: center;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+        <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">GoHighLevel</h4>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Snapshots, pipelines, SMS & multi-step funnels</p>
+      </div>
+      <div style="background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.75rem; text-align: center;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🟧</div>
+        <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">HubSpot CRM</h4>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Deals, contacts, email sequences & custom properties</p>
+      </div>
+      <div style="background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.75rem; text-align: center;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔧</div>
+        <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">ServiceTitan / Jobber</h4>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Field service dispatch, job booking & technician scheduling</p>
+      </div>
+      <div style="background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1.75rem; text-align: center;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚖️</div>
+        <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">Clio / PracticePanther</h4>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Legal client intake, consultation booking & matter creation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section-padding">
+  <div class="container">
+    <div class="cta-banner">
+      <div class="cta-banner-content">
+        <h2>Ready to Implement Your 14-Day Growth Engine?</h2>
+        <p>
+          Book a free 30-minute Strategy Audit to receive a customized automation blueprint and Virtual Assistant staffing plan for your business.
+        </p>
+        <a href="{{ url_for('contact') }}" class="btn btn-cta btn-cta-lg">
+          <span>Claim Your Free AI & VA Audit →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

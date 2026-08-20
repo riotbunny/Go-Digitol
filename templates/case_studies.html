@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Case Studies Hero -->
+<section class="section-padding-sm" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%); border-bottom: 1px solid var(--border-light);">
+  <div class="container" style="text-align: center; max-width: 860px;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>
+      <span>Verified Client Success</span>
+    </div>
+    <h1 style="font-size: clamp(2.25rem, 4vw, 3.25rem); margin-bottom: 1.25rem;">
+      Real Clients. Real Pipeline Growth. <span style="background: linear-gradient(135deg, var(--navy-900) 20%, var(--cta-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Measurable ROI.</span>
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+      Explore how service businesses, healthcare practices, and law firms scale revenue and eliminate operational bottlenecks with Digitol AI automations and dedicated Virtual Assistants.
+    </p>
+    <a href="{{ url_for('contact') }}" class="btn btn-cta btn-cta-lg">
+      <span>Get a Strategy Plan for Your Business →</span>
+    </a>
+  </div>
+</section>
+
+<!-- Outcome Metrics Strip -->
+<section class="proof-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-number">$14.2M<span class="stat-accent">+</span></div>
+        <div class="stat-label">Client Revenue Generated</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">48,500<span class="stat-accent">+</span></div>
+        <div class="stat-label">Qualified Appointments Booked</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">3.8x</div>
+        <div class="stat-label">Average Return on Ad Spend</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">4.9/5</div>
+        <div class="stat-label">Verified Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Case Studies In-Depth Grid -->
+<section class="section-padding" style="background: #ffffff; border-bottom: 1px solid var(--border-light);">
+  <div class="container">
+    <div style="display: flex; flex-direction: column; gap: 3.5rem; max-width: 960px; margin: 0 auto;">
+      
+      <!-- Case Study 1: Apex Legal Group -->
+      <article style="background: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-md);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--cta-primary); letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">
+              Legal Practice • Database Reactivation
+            </span>
+            <h2 style="font-size: 1.85rem; color: var(--navy-900);">Apex Legal Group</h2>
+          </div>
+          <span style="background: var(--success-light); color: #065f46; border: 1px solid #a7f3d0; padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 800;">
+            +$184,000 in 30 Days
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.75rem;">
+          <div>
+            <h4 style="font-size: 0.95rem; color: var(--navy-900); margin-bottom: 0.5rem;">The Challenge:</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">
+              Apex had over 1,400 past inquiries sitting untouched in Clio and ActiveCampaign for 18+ months with zero follow-up due to a busy litigation schedule.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 0.95rem; color: var(--navy-900); margin-bottom: 0.5rem;">The Digitol Solution:</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">
+              Deployed a 2-way conversational AI SMS sequence that asked a low-friction question regarding their open legal matters and guided responses into calendar bookings.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: #ffffff; border-radius: var(--radius-md); padding: 1.25rem 1.5rem; border-left: 4px solid var(--cta-primary); margin-bottom: 1.5rem;">
+          <p style="font-size: 0.95rem; font-style: italic; color: var(--navy-900); margin-bottom: 0.5rem;">
+            "Within 72 hours of launching the reactivation engine, we booked 38 high-ticket consultations and closed over $184k in retained cases with zero ad spend."
+          </p>
+          <div style="font-size: 0.825rem; font-weight: 700; color: var(--text-muted);">— Marcus Sterling, Managing Partner</div>
+        </div>
+
+        <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; font-weight: 700; color: var(--navy-800); flex-wrap: wrap;">
+          <span>✓ 1,400 Leads Processed</span>
+          <span>✓ 38 Retained Consults Booked</span>
+          <span>✓ Zero Ad Budget Spent</span>
+        </div>
+      </article>
+
+      <!-- Case Study 2: Solis Home Services -->
+      <article style="background: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-md);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--cta-primary); letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">
+              Roofing & Solar • Dedicated VA Placement & Google Ads
+            </span>
+            <h2 style="font-size: 1.85rem; color: var(--navy-900);">Solis Home Services</h2>
+          </div>
+          <span style="background: var(--success-light); color: #065f46; border: 1px solid #a7f3d0; padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 800;">
+            0 Missed Calls • 4.2x ROAS
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.75rem;">
+          <div>
+            <h4 style="font-size: 0.95rem; color: var(--navy-900); margin-bottom: 0.5rem;">The Challenge:</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">
+              Solis was losing an estimated 35-40% of inbound weekend and evening emergency calls to competitors while paying high local overhead for dispatch.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 0.95rem; color: var(--navy-900); margin-bottom: 0.5rem;">The Digitol Solution:</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">
+              Digitol matched and trained a dedicated, English-fluent Virtual Assistant for live phone dispatch and paired it with 24/7 AI emergency chat and high-intent Google Search Ads.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: #ffffff; border-radius: var(--radius-md); padding: 1.25rem 1.5rem; border-left: 4px solid var(--cta-primary); margin-bottom: 1.5rem;">
+          <p style="font-size: 0.95rem; font-style: italic; color: var(--navy-900); margin-bottom: 0.5rem;">
+            "We used to lose thousands every weekend. Our dedicated VA answers every call in under two rings, schedules the estimator in ServiceTitan, and sends SMS arrival updates. It completely transformed our operations."
+          </p>
+          <div style="font-size: 0.825rem; font-weight: 700; color: var(--text-muted);">— Elena Rodriguez, Managing Director</div>
+        </div>
+
+        <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; font-weight: 700; color: var(--navy-800); flex-wrap: wrap;">
+          <span>✓ 100% Phone Call Answer Rate</span>
+          <span>✓ $4,000/mo Overhead Savings</span>
+          <span>✓ +$42,000/mo Added Pipeline</span>
+        </div>
+      </article>
+
+      <!-- Case Study 3: Zenith MedSpa -->
+      <article style="background: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 3rem; box-shadow: var(--shadow-md);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: var(--cta-primary); letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem;">
+              Healthcare & Aesthetics • Business in a Box
+            </span>
+            <h2 style="font-size: 1.85rem; color: var(--navy-900);">Zenith MedSpa</h2>
+          </div>
+          <span style="background: var(--success-light); color: #065f46; border: 1px solid #a7f3d0; padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 800;">
+            +340% Consultations
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.75rem;">
+          <div>
+            <h4 style="font-size: 0.95rem; color: var(--navy-900); margin-bottom: 0.5rem;">The Challenge:</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">
+              A slow website, disconnected booking software, and inconsistent patient inquiry follow-up resulted in under 10 consults per month.
+            </p>
+          </div>
+          <div>
+            <h4 style="font-size: 0.95rem; color: var(--navy-900); margin-bottom: 0.5rem;">The Digitol Solution:</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">
+              Complete Business in a Box turn-key deployment: custom high-converting website, automated SMS & email reminders to prevent no-shows, and a dedicated patient intake coordinator.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: #ffffff; border-radius: var(--radius-md); padding: 1.25rem 1.5rem; border-left: 4px solid var(--cta-primary); margin-bottom: 1.5rem;">
+          <p style="font-size: 0.95rem; font-style: italic; color: var(--navy-900); margin-bottom: 0.5rem;">
+            "We went from struggling to fill appointment slots to averaging 45+ consistent consultations every month. Our show-up rate jumped to 92% thanks to automated SMS nurture."
+          </p>
+          <div style="font-size: 0.825rem; font-weight: 700; color: var(--text-muted);">— Dr. Daniel Kim, Medical Director</div>
+        </div>
+
+        <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; font-weight: 700; color: var(--navy-800); flex-wrap: wrap;">
+          <span>✓ 45+ Consultations / Month</span>
+          <span>✓ 92% Patient Show-Up Rate</span>
+          <span>✓ 14-Day Delivery</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section-padding">
+  <div class="container">
+    <div class="cta-banner">
+      <div class="cta-banner-content">
+        <h2>Want Results Like These for Your Business?</h2>
+        <p>
+          Schedule your free 30-minute AI & VA Strategy Audit. We'll show you the exact numbers and custom blueprint for your industry.
+        </p>
+        <a href="{{ url_for('contact') }}" class="btn btn-cta btn-cta-lg">
+          <span>Book Your Free Growth Audit →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

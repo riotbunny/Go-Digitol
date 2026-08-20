@@ -104,6 +104,32 @@ def services():
     """Detailed Core Services Breakdown."""
     return render_template('services.html', page_title="Our AI & Growth Services | Digitol Agency")
 
+@app.route('/how-it-works')
+def how_it_works():
+    """Detailed 3-Step Implementation Framework."""
+    return render_template('how_it_works.html', page_title="How It Works | Digitol Agency")
+
+@app.route('/case-studies')
+@app.route('/results')
+def case_studies():
+    """Verified Client Case Studies & Proof."""
+    return render_template('case_studies.html', page_title="Case Studies & Results | Digitol Agency")
+
+@app.route('/roi-calculator')
+def roi_calculator():
+    """Interactive Revenue ROI Modeling Workstation."""
+    return render_template('roi_calculator.html', page_title="AI & Staffing ROI Calculator | Digitol Agency")
+
+@app.route('/faq')
+def faq():
+    """Comprehensive Knowledge Base & FAQ Center."""
+    return render_template('faq.html', page_title="Frequently Asked Questions | Digitol Agency")
+
+@app.route('/about')
+def about():
+    """About Digitol Agency, Mission & Values."""
+    return render_template('about.html', page_title="About Us | Digitol Agency")
+
 @app.route('/contact')
 def contact():
     """Breadcrumb Multi-Step Lead Capture Funnel."""

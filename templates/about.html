@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- About Hero -->
+<section class="section-padding-sm" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%); border-bottom: 1px solid var(--border-light);">
+  <div class="container" style="text-align: center; max-width: 860px;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>
+      <span>Our Mission & Infrastructure</span>
+    </div>
+    <h1 style="font-size: clamp(2.25rem, 4vw, 3.25rem); margin-bottom: 1.25rem;">
+      We Engineer the Systems That <span style="background: linear-gradient(135deg, var(--navy-900) 20%, var(--cta-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Scale Businesses Predictably</span>
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+      Digitol was founded with a singular purpose: eliminate revenue leakage and operational bottlenecks by pairing intelligent 24/7 AI automations with dedicated, elite Virtual Assistants.
+    </p>
+    <a href="{{ url_for('contact') }}" class="btn btn-cta btn-cta-lg">
+      <span>Partner with Digitol →</span>
+    </a>
+  </div>
+</section>
+
+<!-- Values & Pillars -->
+<section class="section-padding" style="background: #ffffff; border-bottom: 1px solid var(--border-light);">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow eyebrow-navy">Our Core Principles</div>
+      <h2 class="section-title">The Foundation of Every System We Build</h2>
+      <p class="section-desc">
+        We hold ourselves to strict standards of excellence, execution speed, and verifiable financial ROI for our partners.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+      <div style="background: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.25rem;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--navy-900);">Revenue Over Vanity Metrics</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          We don't celebrate meaningless impressions or website clicks. Every workflow we deploy is measured by booked appointments, qualified consultations, and revenue generated.
+        </p>
+      </div>
+
+      <div style="background: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.25rem;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">👥</div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--navy-900);">Top 1% Vetted Talent</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          We believe automation is only as strong as the human touch behind it. We place English-fluent, highly trained Virtual Assistants who take pride in representing your brand.
+        </p>
+      </div>
+
+      <div style="background: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.25rem;">
+        <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--navy-900);">Speed to Lead Obsession</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          In the modern digital landscape, speed wins. Our systems guarantee sub-2-second automated qualification and immediate phone coverage during business hours.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Info -->
+<section class="section-padding" style="border-bottom: 1px solid var(--border-light);">
+  <div class="container container-narrow" style="text-align: center;">
+    <h2 style="font-size: 1.85rem; color: var(--navy-900); margin-bottom: 1rem;">Headquartered in Austin, TX • Global Talent Network</h2>
+    <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+      Digitol serves clients across North America, Europe, and Australia, delivering 99.9% system uptime, SOC2-compliant data practices, and dedicated growth desks.
+    </p>
+    <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+      <a href="{{ url_for('contact') }}" class="btn btn-cta">
+        <span>Book Your Free AI & VA Audit →</span>
+      </a>
+      <a href="{{ url_for('services') }}" class="btn btn-secondary">
+        <span>Explore Our Services</span>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

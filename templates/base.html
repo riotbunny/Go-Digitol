@@ -65,10 +65,11 @@
         <ul class="nav-menu">
           <li><a href="{{ url_for('home') }}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
           <li><a href="{{ url_for('services') }}" class="nav-link {% if request.path == '/services' %}active{% endif %}">Services</a></li>
-          <li><a href="{{ url_for('home') }}#how-it-works" class="nav-link">How It Works</a></li>
-          <li><a href="{{ url_for('home') }}#roi-calculator" class="nav-link">ROI Calculator</a></li>
-          <li><a href="{{ url_for('home') }}#case-studies" class="nav-link">Results</a></li>
-          <li><a href="{{ url_for('home') }}#faq" class="nav-link">FAQ</a></li>
+          <li><a href="{{ url_for('how_it_works') }}" class="nav-link {% if request.path == '/how-it-works' %}active{% endif %}">How It Works</a></li>
+          <li><a href="{{ url_for('roi_calculator') }}" class="nav-link {% if request.path == '/roi-calculator' %}active{% endif %}">ROI Calculator</a></li>
+          <li><a href="{{ url_for('case_studies') }}" class="nav-link {% if request.path in ['/case-studies', '/results'] %}active{% endif %}">Results</a></li>
+          <li><a href="{{ url_for('faq') }}" class="nav-link {% if request.path == '/faq' %}active{% endif %}">FAQ</a></li>
+          <li><a href="{{ url_for('about') }}" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a></li>
         </ul>
       </nav>
 
@@ -130,16 +131,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ url_for('home') }}#ai-sandbox" class="drawer-link">
-            <span class="drawer-icon">🤖</span>
-            <div class="drawer-link-text">
-              <span class="drawer-title">Live AI & VA Demo</span>
-              <span class="drawer-desc">Interactive Simulation Sandbox</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="{{ url_for('home') }}#how-it-works" class="drawer-link">
+          <a href="{{ url_for('how_it_works') }}" class="drawer-link {% if request.path == '/how-it-works' %}active{% endif %}">
             <span class="drawer-icon">📈</span>
             <div class="drawer-link-text">
               <span class="drawer-title">How It Works</span>
@@ -148,7 +140,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ url_for('home') }}#roi-calculator" class="drawer-link">
+          <a href="{{ url_for('roi_calculator') }}" class="drawer-link {% if request.path == '/roi-calculator' %}active{% endif %}">
             <span class="drawer-icon">🧮</span>
             <div class="drawer-link-text">
               <span class="drawer-title">Revenue ROI Calculator</span>
@@ -157,7 +149,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ url_for('home') }}#case-studies" class="drawer-link">
+          <a href="{{ url_for('case_studies') }}" class="drawer-link {% if request.path in ['/case-studies', '/results'] %}active{% endif %}">
             <span class="drawer-icon">⭐</span>
             <div class="drawer-link-text">
               <span class="drawer-title">Case Studies & Results</span>
@@ -166,11 +158,20 @@
           </a>
         </li>
         <li>
-          <a href="{{ url_for('home') }}#faq" class="drawer-link">
+          <a href="{{ url_for('faq') }}" class="drawer-link {% if request.path == '/faq' %}active{% endif %}">
             <span class="drawer-icon">❓</span>
             <div class="drawer-link-text">
               <span class="drawer-title">FAQ</span>
               <span class="drawer-desc">Frequently Asked Questions</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('about') }}" class="drawer-link {% if request.path == '/about' %}active{% endif %}">
+            <span class="drawer-icon">🏢</span>
+            <div class="drawer-link-text">
+              <span class="drawer-title">About Us</span>
+              <span class="drawer-desc">Agency Story, Mission & Values</span>
             </div>
           </a>
         </li>
@@ -268,10 +269,11 @@
         <div>
           <h4 class="footer-col-title">Company & Trust</h4>
           <ul class="footer-links">
-            <li><a href="{{ url_for('home') }}#case-studies">Client Case Studies</a></li>
-            <li><a href="{{ url_for('home') }}#roi-calculator">Revenue ROI Calculator</a></li>
-            <li><a href="{{ url_for('home') }}#how-it-works">Our 3-Step Velocity Model</a></li>
-            <li><a href="{{ url_for('home') }}#faq">Frequently Asked Questions</a></li>
+            <li><a href="{{ url_for('case_studies') }}">Client Case Studies</a></li>
+            <li><a href="{{ url_for('roi_calculator') }}">Revenue ROI Calculator</a></li>
+            <li><a href="{{ url_for('how_it_works') }}">Our 3-Step Velocity Model</a></li>
+            <li><a href="{{ url_for('faq') }}">Frequently Asked Questions</a></li>
+            <li><a href="{{ url_for('about') }}">About Digitol</a></li>
             <li><a href="{{ url_for('contact') }}">Agency Partner Portal</a></li>
           </ul>
         </div>

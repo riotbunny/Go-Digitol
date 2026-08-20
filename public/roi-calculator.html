@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Audit Booked! Next Steps | Digitol Agency</title>
+  <title>AI &amp; Staffing ROI Calculator | Digitol Agency</title>
   <meta name="description" content="Digitol transforms dormant leads into booked appointments with 24/7 AI chat automations, dedicated Virtual Assistant staffing, smart SMS reactivation, and high-ROI ad funnels.">
   <meta name="keywords" content="AI automation agency, database reactivation, virtual assistant placement, VA staffing, digital marketing, lead generation, CRO, 24/7 AI chat">
   <meta name="theme-color" content="#0f172a">
@@ -66,7 +66,7 @@
           <li><a href="/" class="nav-link ">Home</a></li>
           <li><a href="/services" class="nav-link ">Services</a></li>
           <li><a href="/how-it-works" class="nav-link ">How It Works</a></li>
-          <li><a href="/roi-calculator" class="nav-link ">ROI Calculator</a></li>
+          <li><a href="/roi-calculator" class="nav-link active">ROI Calculator</a></li>
           <li><a href="/results" class="nav-link ">Results</a></li>
           <li><a href="/faq" class="nav-link ">FAQ</a></li>
           <li><a href="/about" class="nav-link ">About</a></li>
@@ -140,7 +140,7 @@
           </a>
         </li>
         <li>
-          <a href="/roi-calculator" class="drawer-link ">
+          <a href="/roi-calculator" class="drawer-link active">
             <span class="drawer-icon">🧮</span>
             <div class="drawer-link-text">
               <span class="drawer-title">Revenue ROI Calculator</span>
@@ -210,124 +210,95 @@
   <!-- Main Dynamic Content -->
   <main id="main-content">
     
-<section class="section-padding" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);">
-  <div class="container container-narrow" style="text-align: center;">
-    
-    <!-- Success Icon Badge -->
-    <div style="width: 72px; height: 72px; background: rgba(16, 185, 129, 0.15); color: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.25rem; margin: 0 auto 1.5rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);">
-      ✓
+<!-- ROI Calculator Hero -->
+<section class="section-padding-sm" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%); border-bottom: 1px solid var(--border-light);">
+  <div class="container" style="text-align: center; max-width: 860px;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>
+      <span>Interactive Revenue Modeling</span>
     </div>
-
-    <div class="eyebrow" style="background: rgba(16, 185, 129, 0.1); color: #059669; border-color: rgba(16, 185, 129, 0.3);">
-      Application Received & Verified
-    </div>
-
-    <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1rem;" id="thankyou-heading">
-      You're All Set, <span id="lead-name-display">Valued Partner</span>!
+    <h1 style="font-size: clamp(2.25rem, 4vw, 3.25rem); margin-bottom: 1.25rem;">
+      Calculate Your Untapped <span style="background: linear-gradient(135deg, var(--navy-900) 20%, var(--cta-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pipeline Revenue</span>
     </h1>
-
-    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem;">
-      Our team is preparing your custom revenue analysis, automation roadmap, and Virtual Assistant staffing recommendations. A calendar confirmation invite has been dispatched to your email.
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+      Find out exactly how much revenue your business is leaving on the table due to missed phone calls, slow response times, and unworked CRM leads.
     </p>
+  </div>
+</section>
 
-    <!-- Interactive Strategy Call Time Slot Selector -->
-    <div style="background: var(--bg-card); border: 2px solid var(--cta-primary); border-radius: var(--radius-lg); padding: 2rem 2.5rem; text-align: left; box-shadow: var(--shadow-xl); margin-bottom: 2.5rem; position: relative;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem;">
-        <h3 style="font-size: 1.15rem; color: var(--navy-900);">
-          📅 Lock in Your Preferred 30-Min Strategy Time
-        </h3>
-        <span style="font-size: 0.75rem; background: rgba(255,87,34,0.1); color: var(--cta-primary); font-weight: 800; padding: 0.2rem 0.6rem; border-radius: var(--radius-full);">
-          ⚡ Live Booking Desk
-        </span>
-      </div>
-      <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-        Select an available slot below to fast-track your AI blueprint review:
-      </p>
+<!-- Full Interactive Calculator Workstation -->
+<section class="section-padding" style="background: #ffffff; border-bottom: 1px solid var(--border-light);">
+  <div class="container">
+    <div class="calculator-card" style="max-width: 1040px; margin: 0 auto;">
+      
+      <!-- Left Inputs -->
+      <div class="calculator-left">
+        <h3 style="font-size: 1.65rem;">Adjust Your Business Metrics:</h3>
+        <p style="margin-bottom: 1.75rem;">
+          Drag the sliders below to match your monthly lead volume and client value.
+        </p>
 
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;" id="time-slots-grid">
-        <button type="button" class="scenario-chip slot-btn active" data-time="Tomorrow at 10:00 AM EST" style="padding: 0.75rem; font-size: 0.85rem; justify-content: center;">
-          <span>Tomorrow, 10:00 AM</span>
-        </button>
-        <button type="button" class="scenario-chip slot-btn" data-time="Tomorrow at 2:30 PM EST" style="padding: 0.75rem; font-size: 0.85rem; justify-content: center;">
-          <span>Tomorrow, 2:30 PM</span>
-        </button>
-        <button type="button" class="scenario-chip slot-btn" data-time="Friday at 11:30 AM EST" style="padding: 0.75rem; font-size: 0.85rem; justify-content: center;">
-          <span>Friday, 11:30 AM</span>
-        </button>
-      </div>
-
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <span id="selected-slot-text" style="font-size: 0.85rem; font-weight: 700; color: var(--navy-900);">
-          Selected: <strong style="color: var(--cta-primary);">Tomorrow at 10:00 AM EST</strong>
-        </span>
-        <button type="button" class="btn btn-cta" id="btn-confirm-slot" style="padding: 0.65rem 1.25rem; font-size: 0.875rem;">
-          <span>Confirm Slot & Add to Calendar ✓</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Next Steps Card -->
-    <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.5rem; text-align: left; box-shadow: var(--shadow-lg); margin-bottom: 3rem;">
-      <h3 style="font-size: 1.25rem; color: var(--navy-900); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem;">
-        What Happens Next (The Next 24 Hours):
-      </h3>
-
-      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--navy-900); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0;">
-            1
+        <!-- Slider 1 -->
+        <div class="calc-control-group">
+          <div class="calc-label-row">
+            <span>Monthly Inbound Inquiries & Leads</span>
+            <span id="calc-leads-val" style="color: var(--cta-primary);">300 leads/mo</span>
           </div>
-          <div>
-            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">CRM & Operational Data Analysis</h4>
-            <p style="font-size: 0.875rem; color: var(--text-muted);">
-              We calculate your exact missed call volume, CRM dormancy index, and high-intent acquisition opportunities.
-            </p>
-          </div>
+          <input type="range" min="20" max="2000" step="10" value="300" class="calc-range-slider" id="calc-leads" aria-label="Monthly Leads">
         </div>
 
-        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--navy-900); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0;">
-            2
+        <!-- Slider 2 -->
+        <div class="calc-control-group">
+          <div class="calc-label-row">
+            <span>Average Customer Lifetime Value ($)</span>
+            <span id="calc-value-val" style="color: var(--cta-primary);">$3,000</span>
           </div>
-          <div>
-            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">Dedicated VA Profile & Automation Architecture</h4>
-            <p style="font-size: 0.875rem; color: var(--text-muted);">
-              We outline the ideal Virtual Assistant skillset (dispatch, customer support, lead follow-up) paired with custom 24/7 AI chat funnels.
-            </p>
-          </div>
+          <input type="range" min="250" max="15000" step="250" value="3000" class="calc-range-slider" id="calc-value" aria-label="Customer Value">
         </div>
 
-        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--cta-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0;">
-            3
+        <!-- Slider 3: Missed Lead Rate -->
+        <div class="calc-control-group">
+          <div class="calc-label-row">
+            <span>Estimated Missed/Delayed Follow-up Rate</span>
+            <span id="calc-missed-val" style="color: var(--cta-primary);">35%</span>
           </div>
-          <div>
-            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">Live 30-Minute Growth Strategy Session</h4>
-            <p style="font-size: 0.875rem; color: var(--text-muted);">
-              We walk through your blueprint step-by-step, review sample VA profiles, and present our transparent onboarding roadmap.
-            </p>
-          </div>
+          <input type="range" min="10" max="60" step="5" value="35" class="calc-range-slider" id="calc-missed" aria-label="Missed Rate">
         </div>
       </div>
-    </div>
 
-    <!-- Need Immediate Assistance -->
-    <div style="background: var(--navy-900); color: #ffffff; border-radius: var(--radius-lg); padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; text-align: left;">
-      <div>
-        <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.25rem;">Need Priority Immediate Onboarding?</h4>
-        <p style="color: #94a3b8; font-size: 0.85rem;">Call our senior partner desk directly for immediate routing.</p>
+      <!-- Right Output Summary -->
+      <div class="calculator-right">
+        <div class="calc-result-label">Recoverable Pipeline Revenue</div>
+        <div class="calc-result-number" id="calc-result-revenue">+$50,400/mo</div>
+        <div class="calc-result-subtext" id="calc-annual-impact">
+          Estimated Annual Gain: +$604,800
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem; text-align: left; font-size: 0.825rem; color: #cbd5e1;">
+          <div style="font-weight: 800; color: #ffffff; margin-bottom: 0.25rem;">Recommended Digitol Setup:</div>
+          <div>• 1 Dedicated Vetted Virtual Assistant (Phones & Dispatch)</div>
+          <div>• 24/7 AI Chat & 2-Way SMS Reactivation Engine</div>
+        </div>
+
+        <a href="/contact" class="btn btn-cta" style="width: 100%;">
+          <span>Unlock This Revenue With Digitol →</span>
+        </a>
       </div>
-      <a href="tel:+18004923444" class="btn btn-cta">
-        <span>Call (800) 492-DIGI</span>
-      </a>
-    </div>
 
-    <div style="margin-top: 2rem;">
-      <a href="/" class="card-link">
-        <span>← Return to Home Page</span>
-      </a>
     </div>
+  </div>
+</section>
 
+<!-- Objection Breakdown -->
+<section class="section-padding">
+  <div class="container container-narrow" style="text-align: center;">
+    <h2 style="font-size: 1.85rem; margin-bottom: 1rem;">Why Speed & Dedicated Coverage Win</h2>
+    <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+      Harvard Business Review found that businesses that respond to inbound inquiries within 5 minutes are <strong>21x more likely to enter the sales cycle</strong> compared to those waiting 30 minutes.
+    </p>
+    <a href="/contact" class="btn btn-secondary">
+      <span>Schedule Your Strategy Audit →</span>
+    </a>
   </div>
 </section>
 
@@ -428,42 +399,57 @@
   
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Parse lead name dynamically from URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const nameParam = urlParams.get('name');
-  if (nameParam) {
-    const displayEl = document.getElementById('lead-name-display');
-    if (displayEl) displayEl.textContent = decodeURIComponent(nameParam);
+  const leadsSlider = document.getElementById('calc-leads');
+  const valueSlider = document.getElementById('calc-value');
+  const missedSlider = document.getElementById('calc-missed');
+  
+  const leadsVal = document.getElementById('calc-leads-val');
+  const valueVal = document.getElementById('calc-value-val');
+  const missedVal = document.getElementById('calc-missed-val');
+  
+  const revenueDisplay = document.getElementById('calc-result-revenue');
+  const annualDisplay = document.getElementById('calc-annual-impact');
+
+  function formatCurrency(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(amount);
   }
 
-  // Interactive Time Slot Selector
-  const slotBtns = document.querySelectorAll('.slot-btn');
-  const selectedText = document.getElementById('selected-slot-text');
-  const confirmBtn = document.getElementById('btn-confirm-slot');
-  let chosenSlot = 'Tomorrow at 10:00 AM EST';
+  function update() {
+    if (!leadsSlider || !valueSlider || !revenueDisplay) return;
 
-  slotBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (window.triggerHaptic) window.triggerHaptic(15);
-      slotBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      chosenSlot = btn.getAttribute('data-time');
-      if (selectedText) {
-        selectedText.innerHTML = `Selected: <strong style="color: var(--cta-primary);">${chosenSlot}</strong>`;
-      }
-    });
+    const leads = parseInt(leadsSlider.value, 10);
+    const value = parseInt(valueSlider.value, 10);
+    const missedPct = (missedSlider ? parseInt(missedSlider.value, 10) : 35) / 100;
+
+    if (leadsVal) leadsVal.textContent = `${leads.toLocaleString()} leads/mo`;
+    if (valueVal) valueVal.textContent = formatCurrency(value);
+    if (missedVal && missedSlider) missedVal.textContent = `${missedSlider.value}%`;
+
+    const leakedLeads = leads * missedPct;
+    const recoveredLeads = leakedLeads * 0.16; // 16% conversion recovery
+    const monthlyRev = Math.round(recoveredLeads * value);
+    const annualRev = monthlyRev * 12;
+
+    revenueDisplay.textContent = `+${formatCurrency(monthlyRev)}/mo`;
+    if (annualDisplay) {
+      annualDisplay.textContent = `Estimated Annual Gain: +${formatCurrency(annualRev)}`;
+    }
+  }
+
+  [leadsSlider, valueSlider, missedSlider].forEach(slider => {
+    if (slider) {
+      slider.addEventListener('input', () => {
+        if (window.triggerHaptic) window.triggerHaptic(5);
+        update();
+      });
+    }
   });
 
-  if (confirmBtn) {
-    confirmBtn.addEventListener('click', () => {
-      if (window.triggerHaptic) window.triggerHaptic(25);
-      confirmBtn.disabled = true;
-      confirmBtn.innerHTML = '<span>✓ Slot Confirmed! Calendar Invite Sent</span>';
-      if (window.showToast) {
-        window.showToast(`Strategy slot confirmed for ${chosenSlot}! Check your inbox.`, 'success');
-      }
-    });
-  }
+  update();
 });
 </script>
 

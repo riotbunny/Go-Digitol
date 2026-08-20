@@ -1,5 +1,5 @@
 """
-DIGITOL AGENCY - STATIC EXPORTER FOR FIREBASE HOSTING
+DIGITOL AGENCY - STATIC EXPORTER FOR FIREBASE HOSTING & CDN
 Renders all Flask routes and Jinja2 templates into static HTML files in /public
 allowing zero-server, high-speed CDN deployment on Firebase Hosting.
 """
@@ -21,12 +21,18 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 ROUTES_TO_EXPORT = [
     ('/', 'index.html'),
     ('/services', 'services.html'),
+    ('/how-it-works', 'how-it-works.html'),
+    ('/case-studies', 'case-studies.html'),
+    ('/results', 'results.html'),
+    ('/roi-calculator', 'roi-calculator.html'),
+    ('/faq', 'faq.html'),
+    ('/about', 'about.html'),
     ('/contact', 'contact.html'),
     ('/thank-you', 'thank-you.html'),
 ]
 
 def export_site():
-    print("[EXPORT] Starting Digitol Static Site Generation for Firebase Hosting...")
+    print("[EXPORT] Starting Digitol Static Site Generation for Firebase Hosting & Vercel...")
     
     # 1. Ensure clean public directory
     if os.path.exists(PUBLIC_DIR):

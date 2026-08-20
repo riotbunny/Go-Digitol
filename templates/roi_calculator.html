@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- ROI Calculator Hero -->
+<section class="section-padding-sm" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%); border-bottom: 1px solid var(--border-light);">
+  <div class="container" style="text-align: center; max-width: 860px;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>
+      <span>Interactive Revenue Modeling</span>
+    </div>
+    <h1 style="font-size: clamp(2.25rem, 4vw, 3.25rem); margin-bottom: 1.25rem;">
+      Calculate Your Untapped <span style="background: linear-gradient(135deg, var(--navy-900) 20%, var(--cta-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pipeline Revenue</span>
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+      Find out exactly how much revenue your business is leaving on the table due to missed phone calls, slow response times, and unworked CRM leads.
+    </p>
+  </div>
+</section>
+
+<!-- Full Interactive Calculator Workstation -->
+<section class="section-padding" style="background: #ffffff; border-bottom: 1px solid var(--border-light);">
+  <div class="container">
+    <div class="calculator-card" style="max-width: 1040px; margin: 0 auto;">
+      
+      <!-- Left Inputs -->
+      <div class="calculator-left">
+        <h3 style="font-size: 1.65rem;">Adjust Your Business Metrics:</h3>
+        <p style="margin-bottom: 1.75rem;">
+          Drag the sliders below to match your monthly lead volume and client value.
+        </p>
+
+        <!-- Slider 1 -->
+        <div class="calc-control-group">
+          <div class="calc-label-row">
+            <span>Monthly Inbound Inquiries & Leads</span>
+            <span id="calc-leads-val" style="color: var(--cta-primary);">300 leads/mo</span>
+          </div>
+          <input type="range" min="20" max="2000" step="10" value="300" class="calc-range-slider" id="calc-leads" aria-label="Monthly Leads">
+        </div>
+
+        <!-- Slider 2 -->
+        <div class="calc-control-group">
+          <div class="calc-label-row">
+            <span>Average Customer Lifetime Value ($)</span>
+            <span id="calc-value-val" style="color: var(--cta-primary);">$3,000</span>
+          </div>
+          <input type="range" min="250" max="15000" step="250" value="3000" class="calc-range-slider" id="calc-value" aria-label="Customer Value">
+        </div>
+
+        <!-- Slider 3: Missed Lead Rate -->
+        <div class="calc-control-group">
+          <div class="calc-label-row">
+            <span>Estimated Missed/Delayed Follow-up Rate</span>
+            <span id="calc-missed-val" style="color: var(--cta-primary);">35%</span>
+          </div>
+          <input type="range" min="10" max="60" step="5" value="35" class="calc-range-slider" id="calc-missed" aria-label="Missed Rate">
+        </div>
+      </div>
+
+      <!-- Right Output Summary -->
+      <div class="calculator-right">
+        <div class="calc-result-label">Recoverable Pipeline Revenue</div>
+        <div class="calc-result-number" id="calc-result-revenue">+$50,400/mo</div>
+        <div class="calc-result-subtext" id="calc-annual-impact">
+          Estimated Annual Gain: +$604,800
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.5rem; text-align: left; font-size: 0.825rem; color: #cbd5e1;">
+          <div style="font-weight: 800; color: #ffffff; margin-bottom: 0.25rem;">Recommended Digitol Setup:</div>
+          <div>• 1 Dedicated Vetted Virtual Assistant (Phones & Dispatch)</div>
+          <div>• 24/7 AI Chat & 2-Way SMS Reactivation Engine</div>
+        </div>
+
+        <a href="{{ url_for('contact') }}" class="btn btn-cta" style="width: 100%;">
+          <span>Unlock This Revenue With Digitol →</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Objection Breakdown -->
+<section class="section-padding">
+  <div class="container container-narrow" style="text-align: center;">
+    <h2 style="font-size: 1.85rem; margin-bottom: 1rem;">Why Speed & Dedicated Coverage Win</h2>
+    <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+      Harvard Business Review found that businesses that respond to inbound inquiries within 5 minutes are <strong>21x more likely to enter the sales cycle</strong> compared to those waiting 30 minutes.
+    </p>
+    <a href="{{ url_for('contact') }}" class="btn btn-secondary">
+      <span>Schedule Your Strategy Audit →</span>
+    </a>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const leadsSlider = document.getElementById('calc-leads');
+  const valueSlider = document.getElementById('calc-value');
+  const missedSlider = document.getElementById('calc-missed');
+  
+  const leadsVal = document.getElementById('calc-leads-val');
+  const valueVal = document.getElementById('calc-value-val');
+  const missedVal = document.getElementById('calc-missed-val');
+  
+  const revenueDisplay = document.getElementById('calc-result-revenue');
+  const annualDisplay = document.getElementById('calc-annual-impact');
+
+  function formatCurrency(amount) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(amount);
+  }
+
+  function update() {
+    if (!leadsSlider || !valueSlider || !revenueDisplay) return;
+
+    const leads = parseInt(leadsSlider.value, 10);
+    const value = parseInt(valueSlider.value, 10);
+    const missedPct = (missedSlider ? parseInt(missedSlider.value, 10) : 35) / 100;
+
+    if (leadsVal) leadsVal.textContent = `${leads.toLocaleString()} leads/mo`;
+    if (valueVal) valueVal.textContent = formatCurrency(value);
+    if (missedVal && missedSlider) missedVal.textContent = `${missedSlider.value}%`;
+
+    const leakedLeads = leads * missedPct;
+    const recoveredLeads = leakedLeads * 0.16; // 16% conversion recovery
+    const monthlyRev = Math.round(recoveredLeads * value);
+    const annualRev = monthlyRev * 12;
+
+    revenueDisplay.textContent = `+${formatCurrency(monthlyRev)}/mo`;
+    if (annualDisplay) {
+      annualDisplay.textContent = `Estimated Annual Gain: +${formatCurrency(annualRev)}`;
+    }
+  }
+
+  [leadsSlider, valueSlider, missedSlider].forEach(slider => {
+    if (slider) {
+      slider.addEventListener('input', () => {
+        if (window.triggerHaptic) window.triggerHaptic(5);
+        update();
+      });
+    }
+  });
+
+  update();
+});
+</script>
+{% endblock %}

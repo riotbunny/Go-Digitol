@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- FAQ Hero -->
+<section class="section-padding-sm" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%); border-bottom: 1px solid var(--border-light);">
+  <div class="container" style="text-align: center; max-width: 860px;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>
+      <span>Knowledge Base & Objections</span>
+    </div>
+    <h1 style="font-size: clamp(2.25rem, 4vw, 3.25rem); margin-bottom: 1.25rem;">
+      Frequently Asked <span style="background: linear-gradient(135deg, var(--navy-900) 20%, var(--cta-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Questions</span>
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+      Everything you need to know about our Virtual Assistant placement, AI automations, database reactivation, and pricing models.
+    </p>
+    <a href="{{ url_for('contact') }}" class="btn btn-cta">
+      <span>Ask a Question on Your Strategy Call →</span>
+    </a>
+  </div>
+</section>
+
+<!-- Categorized FAQ Section -->
+<section class="section-padding" style="background: #ffffff; border-bottom: 1px solid var(--border-light);">
+  <div class="container">
+    
+    <!-- Category 1: Virtual Assistants -->
+    <div style="max-width: 840px; margin: 0 auto 3.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem;">
+        <span style="font-size: 1.5rem;">👥</span>
+        <h2 style="font-size: 1.5rem; color: var(--navy-900);">Virtual Assistant Placement & Staffing</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>How are Digitol Virtual Assistants vetted and trained?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We accept fewer than 1% of applicants through a rigorous 4-stage vetting process: English fluency evaluation, IQ & problem-solving testing, background security checks, and technical tests on modern CRM software. Once accepted, they undergo customized training on your business workflows, phone scripts, and dispatch systems.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What tasks can our dedicated Virtual Assistant handle?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Your VA can handle inbound and outbound phone calls, scheduling and dispatching estimators/technicians, email inbox management, CRM pipeline updates, following up on open quotes, client onboarding intake, and general administrative operations.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What are the cost savings compared to an in-house hire?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Hiring a full-time local employee typically costs $4,000–$6,500/month plus payroll taxes, healthcare benefits, desk space, and recruiting fees. With Digitol, you get a dedicated, full-time Virtual Assistant with zero employment taxes, zero benefits overhead, and fully managed oversight at up to 70% lower total cost.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 2: Database Reactivation -->
+    <div style="max-width: 840px; margin: 0 auto 3.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem;">
+        <span style="font-size: 1.5rem;">⚡</span>
+        <h2 style="font-size: 1.5rem; color: var(--navy-900);">Database Reactivation & AI SMS</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does Database Reactivation produce revenue with zero ad spend?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We reconnect with past inquiries, unconverted quotes, or inactive customers already inside your CRM. Our 2-way conversational AI re-engages them with natural, non-intrusive SMS messages, handles objections, and links them straight into booking appointments on your calendar.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Are SMS reactivation campaigns compliant with TCPA and carrier rules?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes! We register all client brands with official A2P 10DLC carrier protocols, scrub lists against national registries, include automatic opt-out keywords (STOP, UNSUBSCRIBE), and adhere strictly to all TCPA and telemarketing guidelines.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category 3: Setup & Onboarding -->
+    <div style="max-width: 840px; margin: 0 auto;">
+      <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem;">
+        <span style="font-size: 1.5rem;">⚙️</span>
+        <h2 style="font-size: 1.5rem; color: var(--navy-900);">Implementation & Technical Setup</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How fast can we launch and start taking booked calls?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Database reactivation can launch in as little as 5 to 7 days. Full dedicated Virtual Assistant placement, custom AI chat widgets, and high-intent Google Ads campaigns are fully operational within 10 to 14 business days.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do we have to switch our CRM software?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              No. We integrate seamlessly with GoHighLevel, HubSpot, Salesforce, ServiceTitan, Jobber, Clio, and standard Zapier/Webhook APIs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="section-padding">
+  <div class="container">
+    <div class="cta-banner">
+      <div class="cta-banner-content">
+        <h2>Still Have Questions?</h2>
+        <p>
+          Speak directly with our senior agency strategists. We'll answer every technical detail and build your tailored growth roadmap.
+        </p>
+        <a href="{{ url_for('contact') }}" class="btn btn-cta btn-cta-lg">
+          <span>Book Your Free 30-Min Strategy Call →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
