@@ -1,11 +1,11 @@
 /* ==========================================================================
-   BREADCRUMB LEAD CAPTURE FUNNEL STYLING (CRO OPTIMIZED)
-   Multi-step micro-commitments to maximize conversion rate
+   BREADCRUMB LEAD CAPTURE & DISCOVERY FUNNEL STYLING (CRO OPTIMIZED)
+   Multi-step micro-commitments with mobile-first responsive safeguards
    ========================================================================== */
 
 .contact-layout {
   display: grid;
-  grid-template-columns: 1.35fr 0.85fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
   gap: 3rem;
   align-items: flex-start;
 }
@@ -18,6 +18,8 @@
   box-shadow: var(--shadow-xl);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Progress Header */
@@ -30,6 +32,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .progress-step-text {
@@ -63,7 +67,7 @@
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Step Container & Transitions */
+/* Step Container & Animations */
 .step-pane {
   display: none;
   animation: fadeInStep 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -76,7 +80,7 @@
 @keyframes fadeInStep {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -85,27 +89,26 @@
 }
 
 .step-heading {
-  font-size: 1.65rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
   margin-bottom: 0.5rem;
   color: var(--navy-900);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .step-subheading {
   font-size: 0.95rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 /* Interactive Option Selection Cards */
 .options-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-bottom: 2.25rem;
-}
-
-.options-grid.options-grid-3 {
-  grid-template-columns: repeat(2, 1fr);
 }
 
 .option-card {
@@ -117,8 +120,11 @@
   border: 2px solid var(--border-light);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   user-select: none;
+  touch-action: manipulation;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .option-card:hover {
@@ -143,20 +149,22 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--navy-900);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
+  padding-right: 1.5rem;
 }
 
 .option-icon {
   font-size: 1.25rem;
+  flex-shrink: 0;
 }
 
 .option-desc {
   font-size: 0.8rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .option-indicator {
@@ -168,6 +176,7 @@
   border-radius: 50%;
   border: 2px solid var(--border-subtle);
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .option-card.selected .option-indicator {
@@ -176,10 +185,10 @@
   box-shadow: inset 0 0 0 3px #ffffff;
 }
 
-/* Form Inputs for Final Step */
+/* Form Inputs for Step 4 */
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
   margin-bottom: 2rem;
 }
@@ -209,10 +218,11 @@
   border: 1.5px solid var(--border-light);
   background: #ffffff;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 16px; /* Prevents auto-zoom on mobile iOS */
   color: var(--navy-900);
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   outline: none;
+  box-sizing: border-box;
 }
 
 .form-input:focus,
@@ -227,7 +237,7 @@
   color: #94a3b8;
 }
 
-/* Nav Buttons */
+/* Form Navigation */
 .form-navigation {
   display: flex;
   align-items: center;
@@ -235,6 +245,7 @@
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-light);
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .btn-back {
@@ -249,7 +260,7 @@
   gap: 0.4rem;
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius-sm);
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .btn-back:hover {
@@ -258,9 +269,7 @@
 }
 
 .btn-back.hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
+  display: none !important;
 }
 
 /* Trust Sidebar */
@@ -314,6 +323,7 @@
 .trust-bullet-text h4 {
   font-size: 0.9rem;
   margin-bottom: 0.15rem;
+  color: var(--navy-900);
 }
 
 .trust-bullet-text p {
@@ -348,7 +358,7 @@
   color: #94a3b8;
 }
 
-/* Responsive */
+/* Responsive Breakpoints */
 @media (max-width: 992px) {
   .contact-layout {
     grid-template-columns: 1fr;
@@ -367,5 +377,13 @@
   }
   .form-group-full {
     grid-column: span 1;
+  }
+  .form-navigation {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  .form-navigation div,
+  .form-navigation .btn-cta {
+    width: 100%;
   }
 }
