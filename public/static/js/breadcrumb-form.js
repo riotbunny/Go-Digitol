@@ -18,12 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('btn-next-step');
   const submitBtn = document.getElementById('btn-submit-funnel');
 
-  // Initialize option selection card clicks
   setupOptionCards();
 
-  // Navigation handlers
   if (backBtn) {
     backBtn.addEventListener('click', () => {
+      if (window.triggerHaptic) window.triggerHaptic(10);
       if (currentStep > 1) {
         goToStep(currentStep - 1);
       }
@@ -32,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
+      if (window.triggerHaptic) window.triggerHaptic(15);
       if (validateCurrentStep(currentStep)) {
         if (currentStep < totalSteps) {
           goToStep(currentStep + 1);
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Final Form Submission
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -48,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Prepare payload
+    if (window.triggerHaptic) window.triggerHaptic(25);
+
     const formData = new FormData(form);
     const payload = {};
     formData.forEach((value, key) => {
@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json();
 
       if (response.ok && data.status === 'success') {
-        // Successful booking
         if (window.showToast) {
           window.showToast('Strategy Audit reserved! Redirecting...', 'success');
         }
@@ -92,8 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } catch (err) {
       console.error('Submission error:', err);
-      // Graceful fallback: submit standard form
-      form.removeEventListener('submit', arguments.callee);
       form.submit();
     }
   });
@@ -101,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function setupOptionCards() {
     form.querySelectorAll('.option-card').forEach(card => {
       card.addEventListener('click', () => {
+        if (window.triggerHaptic) window.triggerHaptic(15);
+
         const radio = card.querySelector('input[type="radio"]');
         const parentGroup = card.closest('.options-grid');
 
@@ -113,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
           radio.checked = true;
         }
 
-        // Low friction auto-advance for micro-commitment steps
+        // Auto-advance for frictionless micro-commitments
         if (currentStep < totalSteps) {
           setTimeout(() => {
             goToStep(currentStep + 1);
@@ -134,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
     currentStep = stepNumber;
     updateProgressUI();
 
-    // Scroll smoothly to form top on mobile
     const cardRect = form.getBoundingClientRect();
     if (cardRect.top < 0) {
       form.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -154,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
       progressPercent.textContent = `${percent}% Complete`;
     }
 
-    // Toggle Back button
     if (backBtn) {
       if (currentStep === 1) {
         backBtn.classList.add('hidden');
@@ -163,7 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Toggle Next vs Submit button
     if (currentStep === totalSteps) {
       if (nextBtn) nextBtn.style.display = 'none';
       if (submitBtn) submitBtn.style.display = 'inline-flex';
@@ -227,6 +223,5 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   }
 
-  // Initialize UI
   updateProgressUI();
 });
