@@ -4,10 +4,23 @@ import re
 from datetime import datetime, timezone
 from flask import Flask, render_template, request, jsonify, redirect, url_for, flash
 
-app = Flask(__name__)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+app = Flask(
+    __name__,
+    template_folder=os.path.join(BASE_DIR, 'templates'),
+    static_folder=os.path.join(BASE_DIR, 'static'),
+    static_url_path='/static'
+)
 app.secret_key = os.environ.get('SECRET_KEY', 'digitol-cro-secret-key-2026')
 
-LEADS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'leads.json')
+# In serverless environments (e.g. Vercel), use /tmp for write operations
+if os.environ.get('VERCEL') == '1' or not os.access(BASE_DIR, os.W_OK):
+    LEADS_DIR = '/tmp'
+else:
+    LEADS_DIR = os.path.join(BASE_DIR, 'data')
+
+LEADS_FILE = os.path.join(LEADS_DIR, 'leads.json')
 
 def get_stored_leads():
     """Retrieve existing leads from the simulated JSON database."""
@@ -68,7 +81,6 @@ def validate_lead_payload(data):
         errors.append("Please provide a valid email address.")
         
     if phone:
-        # Strip common punctuation to check digits
         digits = re.sub(r'\D', '', phone)
         if len(digits) < 7:
             errors.append("Please enter a valid phone number.")
