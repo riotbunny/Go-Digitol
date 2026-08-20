@@ -21,15 +21,17 @@ class TestDigitolApp(unittest.TestCase):
         self.assertIn('AI Automations & Virtual Assistant Agency', html)
         self.assertIn('Turn Dormant Leads & Traffic into', html)
         self.assertIn('Book Your Free AI & VA Audit', html)
+        self.assertIn('High-Converting Website Design & Funnels', html)
         self.assertIn('Database Reactivation', html)
         self.assertIn('AI Automations & Virtual Assistants', html)
 
     def test_services_page(self):
-        """Verify services page renders all 4 pillars with business outcomes."""
+        """Verify services page renders all pillars with business outcomes."""
         response = self.client.get('/services')
         self.assertEqual(response.status_code, 200)
         html = response.get_data(as_text=True)
-        self.assertIn('Database Reactivation (AI & SMS)', html)
+        self.assertIn('High-Converting Website Design &amp; Funnels', html)
+        self.assertIn('Database Reactivation (AI &amp; SMS)', html)
         self.assertIn('AI Automations & Dedicated Virtual Assistants', html)
         self.assertIn('Traffic & Conversion (Ads & SEO)', html)
         self.assertIn('Business in a Box (Full-Stack Setup)', html)
