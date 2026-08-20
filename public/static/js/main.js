@@ -1,6 +1,6 @@
 /**
  * DIGITOL AGENCY - MAIN JAVASCRIPT & MOBILE AUTOMATIONS
- * Live AI Sandbox Simulator, Sticky Mobile Dock, ROI Calculator, and Event Stream Ticker
+ * Live AI & Virtual Assistant Sandbox Simulator, Sticky Mobile Dock, ROI Calculator, and Event Stream Ticker
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,20 +56,20 @@ function initStickyHeader() {
 }
 
 /* ==========================================================================
-   INTERACTIVE LIVE AI SANDBOX SIMULATOR (SHOWCASE AGENCY CAPABILITIES)
+   INTERACTIVE LIVE AI & VA SANDBOX SIMULATOR
    ========================================================================== */
 
 const AI_SCENARIOS = {
   voice: {
-    title: 'Voice AI Receptionist Call',
-    status: 'Call In Progress • Latency: 420ms',
+    title: 'Dedicated VA Phone & Dispatch Workflow',
+    status: 'Live Inbound Call Handled by Dedicated VA',
     messages: [
       { sender: 'user', text: 'Caller: "Hi, I have a leak in my roof from last night\'s storm. Can someone come out for an estimate today?"' },
-      { sender: 'ai', text: 'Digitol Voice AI: "I can absolutely help with that right away. We have an emergency estimator in your area between 2:00 PM and 4:00 PM today. Does that window work for you?"' },
+      { sender: 'ai', text: 'Dedicated VA (Maria): "Hi, thank you for calling Solis Roofing! This is Maria. I can definitely help with that. We have an emergency estimator in your area between 2:00 PM and 4:00 PM today. Does that window work for you?"' },
       { sender: 'user', text: 'Caller: "Yes, 2:30 PM is perfect. My address is 742 Evergreen Terrace."' },
-      { sender: 'ai', text: 'Digitol Voice AI: "All set! You\'re confirmed for 2:30 PM today. I\'ve just sent a calendar invite and SMS confirmation with your estimator\'s details."' }
+      { sender: 'ai', text: 'Dedicated VA (Maria): "All set! You\'re locked in for 2:30 PM today with our lead inspector. I\'ve just dispatched the job in our CRM and sent an SMS confirmation to your mobile."' }
     ],
-    actionText: '✓ Booked $4,500 Estimate • Syncing to CRM in 0.8s'
+    actionText: '✓ Booked $4,500 Estimate • Logged in CRM by Dedicated VA'
   },
   sms: {
     title: 'Dormant CRM SMS Reactivation',
@@ -79,20 +79,20 @@ const AI_SCENARIOS = {
       { sender: 'user', text: 'Lead: "Hey, we put it on pause last year because of pricing. Why do you ask?"' },
       { sender: 'ai', text: 'Digitol AI: "Totally understand. We actually launched a dedicated small firm tier that cuts setup by 60%. I can send a 3-minute video breakdown or grab 10 mins this Thursday?"' },
       { sender: 'user', text: 'Lead: "Let\'s do Thursday at 11 AM."' },
-      { sender: 'ai', text: 'Digitol AI: "Booked! Just sent a calendar invite to your email. Talk Thursday at 11 AM!"' }
+      { sender: 'ai', text: 'Digitol AI: "Booked! Just sent a calendar invite to your email. Our team will speak with you Thursday at 11 AM!"' }
     ],
     actionText: '✓ Reactivated $12,000 Opportunity from Cold CRM'
   },
   ads: {
-    title: 'Instant Google Ads Lead Qualifier',
-    status: 'Speed to Lead: 1.8 Seconds',
+    title: 'Instant Google Ads Lead Qualifier & VA Routing',
+    status: 'Speed to Lead: &lt; 2 Seconds',
     messages: [
-      { sender: 'user', text: 'Prospect submitted form: "Need comprehensive dental implants consultation."' },
+      { sender: 'user', text: 'Prospect submitted web form: "Need comprehensive dental implants consultation."' },
       { sender: 'ai', text: 'Digitol AI (SMS <2s): "Hi Jennifer, thanks for reaching out to Zenith Dental! Dr. Kim has 2 consultation slots open tomorrow at 10 AM or 3 PM. Which one fits your schedule?"' },
       { sender: 'user', text: 'Prospect: "3 PM tomorrow works great for me!"' },
-      { sender: 'ai', text: 'Digitol AI: "You\'re locked in for 3:00 PM tomorrow with Dr. Kim. Here\'s the clinic location and pre-consult checklist: [Link]"' }
+      { sender: 'ai', text: 'Dedicated VA Desk: "Confirmed! Our patient intake coordinator Maria has added you to tomorrow\'s schedule at 3:00 PM. Here\'s the clinic location: [Link]"' }
     ],
-    actionText: '✓ High-Ticket Patient Scheduled & Verified'
+    actionText: '✓ Patient Scheduled & Dispatched to Dedicated VA'
   }
 };
 
@@ -117,7 +117,6 @@ function initAiSandboxSimulator() {
 
     chatContainer.innerHTML = '';
 
-    // Render messages with animated typing delay
     data.messages.forEach((msg, index) => {
       setTimeout(() => {
         const bubble = document.createElement('div');
@@ -127,7 +126,7 @@ function initAiSandboxSimulator() {
           bubble.innerHTML = `
             <div class="ai-bubble-tag">
               <span class="pulse-dot" style="width:5px; height:5px;"></span>
-              Digitol Autonomous AI
+              Digitol Growth Team
             </div>
             <div>${msg.text}</div>
           `;
@@ -152,7 +151,6 @@ function initAiSandboxSimulator() {
     });
   });
 
-  // Initial load with voice scenario
   renderScenario('voice');
 }
 
@@ -161,9 +159,9 @@ function initAiSandboxSimulator() {
    ========================================================================== */
 
 const RECENT_AUTOMATIONS = [
-  { icon: '📞', text: 'Voice AI answered in 1.4s & booked a $4,200 job', company: 'Solis Home Services • 12s ago' },
-  { icon: '💬', text: 'Cold CRM lead reactivated ($8,500 contract)', company: 'Apex Legal Group • 2m ago' },
-  { icon: '🎯', text: 'Google Ads inbound qualified & scheduled', company: 'Zenith MedSpa • 4m ago' },
+  { icon: '👥', text: 'Dedicated Virtual Assistant answered call & booked $4,200 job', company: 'Solis Home Services • 12s ago' },
+  { icon: '💬', text: 'Cold CRM lead reactivated ($8,500 contract) via AI SMS', company: 'Apex Legal Group • 2m ago' },
+  { icon: '🎯', text: 'Google Ads inbound qualified & scheduled with VA desk', company: 'Zenith MedSpa • 4m ago' },
   { icon: '⚡', text: '24/7 AI chat answered after-hours emergency inquiry', company: 'ProFlow Plumbing • 7m ago' },
   { icon: '🚀', text: 'Business in a Box website & CRM launched live', company: 'Horizon Realty • 11m ago' }
 ];
@@ -216,11 +214,9 @@ function initMobileDockScroll() {
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     if (currentScroll > lastScroll && currentScroll > 300) {
-      // Scrolling down: subtle slide down to give reading room
       dock.style.transform = 'translateY(15px)';
       dock.style.opacity = '0.9';
     } else {
-      // Scrolling up: instant accessible conversion trigger
       dock.style.transform = 'translateY(0)';
       dock.style.opacity = '1';
     }
@@ -256,7 +252,7 @@ function initFaqAccordion() {
 }
 
 /* ==========================================================================
-   INTERACTIVE AI ROI CALCULATOR (CRO FEATURE)
+   INTERACTIVE AI & VA ROI CALCULATOR (CRO FEATURE)
    ========================================================================== */
 
 function initRoiCalculator() {
@@ -321,7 +317,7 @@ function triggerHaptic(duration = 10) {
     try {
       window.navigator.vibrate(duration);
     } catch (e) {
-      // Silent ignore on unsupported environments
+      // Silent fallback
     }
   }
 }

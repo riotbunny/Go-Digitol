@@ -18,11 +18,11 @@ class TestDigitolApp(unittest.TestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         html = response.get_data(as_text=True)
-        self.assertIn('AI-Powered Growth & Automation Agency', html)
+        self.assertIn('AI Automations & Virtual Assistant Agency', html)
         self.assertIn('Turn Dormant Leads & Traffic into', html)
-        self.assertIn('Book Your Free AI Audit', html)
+        self.assertIn('Book Your Free AI & VA Audit', html)
         self.assertIn('Database Reactivation', html)
-        self.assertIn('AI Automations & Answering Services', html)
+        self.assertIn('AI Automations & Virtual Assistants', html)
         self.assertIn('Traffic & Conversion', html)
         self.assertIn('Business in a Box', html)
         self.assertIn('Calculate Your Untapped Revenue', html)
@@ -34,7 +34,7 @@ class TestDigitolApp(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         html = response.get_data(as_text=True)
         self.assertIn('Database Reactivation (AI & SMS)', html)
-        self.assertIn('AI Automations & Answering Services', html)
+        self.assertIn('AI Automations & Dedicated Virtual Assistants', html)
         self.assertIn('Traffic & Conversion (Ads & SEO)', html)
         self.assertIn('Business in a Box (Full-Stack Setup)', html)
 
@@ -45,9 +45,9 @@ class TestDigitolApp(unittest.TestCase):
         html = response.get_data(as_text=True)
         self.assertIn('breadcrumb-funnel', html)
         self.assertIn('What industry is your business in?', html)
-        self.assertIn('What is your biggest revenue bottleneck?', html)
+        self.assertIn('What is your biggest operational or revenue bottleneck?', html)
         self.assertIn('What is your current monthly lead volume?', html)
-        self.assertIn('Where should we send your AI Growth Blueprint?', html)
+        self.assertIn('Where should we send your Growth Blueprint?', html)
 
     def test_thank_you_page(self):
         """Verify thank you page with personalized name."""
@@ -74,13 +74,13 @@ class TestDigitolApp(unittest.TestCase):
         """Verify valid payload saves lead and returns success."""
         payload = {
             "industry": "Home Services & Contractors",
-            "primary_goal": "Reactivate Dormant CRM Leads",
+            "primary_goal": "Dedicated Virtual Assistant Staffing",
             "lead_volume": "201-1000 leads/mo",
             "name": "David Miller",
             "company": "Miller Roofing LLC",
             "email": "david@millerroofing.com",
             "phone": "555-234-5678",
-            "notes": "Testing automated breadcrumb lead funnel"
+            "notes": "Testing VA placement request"
         }
         response = self.client.post('/api/contact', json=payload)
         self.assertEqual(response.status_code, 200)

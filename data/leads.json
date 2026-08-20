@@ -76,5 +76,18 @@
     "id": "LEAD-0006",
     "lead_score": 90,
     "created_at": "2026-08-20T02:37:29.918337+00:00"
+  },
+  {
+    "company": "Miller Roofing LLC",
+    "email": "david@millerroofing.com",
+    "industry": "Home Services & Contractors",
+    "lead_volume": "201-1000 leads/mo",
+    "name": "David Miller",
+    "notes": "Testing VA placement request",
+    "phone": "555-234-5678",
+    "primary_goal": "Dedicated Virtual Assistant Staffing",
+    "id": "LEAD-0007",
+    "lead_score": 90,
+    "created_at": "2026-08-20T02:39:41.138985+00:00"
   }
 ]
