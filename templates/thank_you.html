@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section-padding" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);">
+  <div class="container container-narrow" style="text-align: center;">
+    
+    <!-- Success Icon Badge -->
+    <div style="width: 72px; height: 72px; background: rgba(16, 185, 129, 0.15); color: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.25rem; margin: 0 auto 1.5rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);">
+      ✓
+    </div>
+
+    <div class="eyebrow" style="background: rgba(16, 185, 129, 0.1); color: #059669; border-color: rgba(16, 185, 129, 0.3);">
+      Application Received & Verified
+    </div>
+
+    <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1rem;">
+      You're All Set, {{ lead_name }}!
+    </h1>
+
+    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem;">
+      Our AI growth engineers are already preparing your customized revenue leakage report. A calendar invite and audit preparation checklist have been dispatched to your email.
+    </p>
+
+    <!-- Next Steps Card -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.5rem; text-align: left; box-shadow: var(--shadow-lg); margin-bottom: 3rem;">
+      <h3 style="font-size: 1.25rem; color: var(--navy-900); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem;">
+        What Happens Next (The Next 24 Hours):
+      </h3>
+
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--navy-900); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0;">
+            1
+          </div>
+          <div>
+            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">CRM & Pipeline Data Analysis</h4>
+            <p style="font-size: 0.875rem; color: var(--text-muted);">
+              We calculate your exact missed call rate, CRM dormancy index, and high-intent keyword acquisition opportunities.
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--navy-900); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0;">
+            2
+          </div>
+          <div>
+            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">Custom AI Prototype Build</h4>
+            <p style="font-size: 0.875rem; color: var(--text-muted);">
+              We build a sandbox Voice AI receptionist and SMS reactivation workflow customized for your company to test live on our call.
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--cta-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0;">
+            3
+          </div>
+          <div>
+            <h4 style="font-size: 1rem; color: var(--navy-900); margin-bottom: 0.25rem;">Live 30-Minute Growth Strategy Session</h4>
+            <p style="font-size: 0.875rem; color: var(--text-muted);">
+              We walk through your blueprint step-by-step, answer technical questions, and present our transparent implementation roadmap.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Need Immediate Assistance -->
+    <div style="background: var(--navy-900); color: #ffffff; border-radius: var(--radius-lg); padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; text-align: left;">
+      <div>
+        <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.25rem;">Need Priority Immediate Onboarding?</h4>
+        <p style="color: #94a3b8; font-size: 0.85rem;">Call our senior partner desk directly for immediate routing.</p>
+      </div>
+      <a href="tel:+18004923444" class="btn btn-cta">
+        <span>Call (800) 492-DIGI</span>
+      </a>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <a href="{{ url_for('home') }}" class="card-link">
+        <span>← Return to Home Page</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section-padding" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);">
+  <div class="container container-narrow" style="text-align: center; padding: 4rem 1.5rem;">
+    <div class="eyebrow eyebrow-navy">404 Error • Page Not Found</div>
+    <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; color: var(--navy-900);">
+      Looking to Grow Your Revenue?
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+      The page you're looking for has moved or doesn't exist. Don't worry — your future AI growth roadmap is just one click away.
+    </p>
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <a href="{{ url_for('home') }}" class="btn btn-secondary">
+        <span>Back to Homepage</span>
+      </a>
+      <a href="{{ url_for('contact') }}" class="btn btn-cta">
+        <span>Book Free AI Growth Audit →</span>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

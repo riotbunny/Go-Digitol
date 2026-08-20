@@ -1,0 +1,332 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section-padding" style="background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);">
+  <div class="container">
+    
+    <!-- Page Header -->
+    <div style="text-align: center; max-width: 760px; margin: 0 auto 3rem;">
+      <div class="eyebrow">
+        <span class="pulse-dot"></span>
+        <span>Free 30-Minute AI Growth Audit</span>
+      </div>
+      <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 0.75rem;">
+        Claim Your Custom AI Automation Blueprint
+      </h1>
+      <p style="font-size: 1.05rem; color: var(--text-secondary);">
+        Answer 3 quick questions about your business so our engineers can prepare a tailored revenue leakage analysis and AI deployment roadmap.
+      </p>
+    </div>
+
+    <!-- Contact & Breadcrumb Layout -->
+    <div class="contact-layout">
+      
+      <!-- Multi-Step Breadcrumb Funnel Card -->
+      <div class="breadcrumb-card">
+        
+        <!-- Progress Bar Indicator -->
+        <div class="progress-container">
+          <div class="progress-info">
+            <span class="progress-step-text" id="progress-step-text">Step 1 of 4</span>
+            <span class="progress-percent" id="progress-percent">25% Complete</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+          </div>
+        </div>
+
+        <form id="breadcrumb-funnel" method="POST" action="{{ url_for('api_contact') }}">
+          
+          <!-- ==========================================
+               STEP 1: INDUSTRY (Low Friction)
+               ========================================== -->
+          <div class="step-pane active" data-step="1">
+            <h3 class="step-heading">What industry is your business in?</h3>
+            <p class="step-subheading">This helps us tailor specific AI voice models and conversion sequences for your niche.</p>
+
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="industry" value="Home Services & Contractors">
+                <div class="option-header">
+                  <span class="option-icon">🔨</span>
+                  <span>Home Services</span>
+                </div>
+                <span class="option-desc">HVAC, Roofing, Plumbing, Electrical, Solar</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="industry" value="Legal, Financial & Professional">
+                <div class="option-header">
+                  <span class="option-icon">⚖️</span>
+                  <span>Legal & Finance</span>
+                </div>
+                <span class="option-desc">Law Firms, Wealth Management, CPAs, Insurance</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="industry" value="Healthcare, MedSpa & Wellness">
+                <div class="option-header">
+                  <span class="option-icon">🩺</span>
+                  <span>Healthcare & MedSpa</span>
+                </div>
+                <span class="option-desc">Clinics, Aesthetics, Dental, Chiropractic</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="industry" value="Real Estate & Brokerages">
+                <div class="option-header">
+                  <span class="option-icon">🏡</span>
+                  <span>Real Estate</span>
+                </div>
+                <span class="option-desc">Agencies, Commercial Brokers, Property Dev</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="industry" value="B2B Services & SaaS">
+                <div class="option-header">
+                  <span class="option-icon">💼</span>
+                  <span>B2B & Tech</span>
+                </div>
+                <span class="option-desc">Consulting, Software, IT Services, Agency</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="industry" value="Other Growth Business">
+                <div class="option-header">
+                  <span class="option-icon">🚀</span>
+                  <span>Other Industry</span>
+                </div>
+                <span class="option-desc">Retail, Education, E-Commerce, Hospitality</span>
+                <span class="option-indicator"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- ==========================================
+               STEP 2: PRIMARY GOAL / BOTTLENECK
+               ========================================== -->
+          <div class="step-pane" data-step="2">
+            <h3 class="step-heading">What is your biggest revenue bottleneck?</h3>
+            <p class="step-subheading">Select your primary objective so we can customize your audit presentation.</p>
+
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="primary_goal" value="Reactivate Dormant CRM Leads">
+                <div class="option-header">
+                  <span class="option-icon">⚡</span>
+                  <span>Dormant CRM Leads</span>
+                </div>
+                <span class="option-desc">Unlock appointments from past inquiries with zero ad spend</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="primary_goal" value="24/7 AI Voice & Answering Service">
+                <div class="option-header">
+                  <span class="option-icon">📞</span>
+                  <span>Missed Calls & Leads</span>
+                </div>
+                <span class="option-desc">Answer inbound calls in &lt; 2s with Voice AI receptionist</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="primary_goal" value="High-Intent Paid Traffic (Ads)">
+                <div class="option-header">
+                  <span class="option-icon">🎯</span>
+                  <span>Scale Paid Traffic</span>
+                </div>
+                <span class="option-desc">High-ROI Google & Meta Ads targeting ready buyers</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="primary_goal" value="Full Digital Infrastructure (Business in a Box)">
+                <div class="option-header">
+                  <span class="option-icon">🚀</span>
+                  <span>Complete Infrastructure</span>
+                </div>
+                <span class="option-desc">Turn-key website, funnels, CRM, and automation pipeline</span>
+                <span class="option-indicator"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- ==========================================
+               STEP 3: ESTIMATED LEAD VOLUME
+               ========================================== -->
+          <div class="step-pane" data-step="3">
+            <h3 class="step-heading">What is your current monthly lead volume?</h3>
+            <p class="step-subheading">This helps calculate potential recovered revenue and server capacity.</p>
+
+            <div class="options-grid">
+              <label class="option-card">
+                <input type="radio" name="lead_volume" value="1-50 leads/mo">
+                <div class="option-header">
+                  <span class="option-icon">🌱</span>
+                  <span>1 - 50 leads/mo</span>
+                </div>
+                <span class="option-desc">Growing business looking to establish systems</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="lead_volume" value="51-200 leads/mo">
+                <div class="option-header">
+                  <span class="option-icon">📈</span>
+                  <span>51 - 200 leads/mo</span>
+                </div>
+                <span class="option-desc">Steady inbound volume needing automation</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="lead_volume" value="201-1000 leads/mo">
+                <div class="option-header">
+                  <span class="option-icon">🔥</span>
+                  <span>201 - 1,000 leads/mo</span>
+                </div>
+                <span class="option-desc">High-volume operation with significant revenue leakage</span>
+                <span class="option-indicator"></span>
+              </label>
+
+              <label class="option-card">
+                <input type="radio" name="lead_volume" value="1000+ leads/mo">
+                <div class="option-header">
+                  <span class="option-icon">⚡</span>
+                  <span>1,000+ leads/mo</span>
+                </div>
+                <span class="option-desc">Enterprise scale requiring dedicated AI voice clusters</span>
+                <span class="option-indicator"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- ==========================================
+               STEP 4: CONTACT INFORMATION & SCHEDULING
+               ========================================== -->
+          <div class="step-pane" data-step="4">
+            <h3 class="step-heading">Where should we send your AI Growth Blueprint?</h3>
+            <p class="step-subheading">Enter your contact info to confirm your free 30-minute strategy session.</p>
+
+            <div class="form-grid">
+              <div>
+                <label class="form-label" for="lead-name">
+                  Full Name <span class="required">*</span>
+                </label>
+                <input type="text" id="lead-name" name="name" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+              </div>
+
+              <div>
+                <label class="form-label" for="lead-company">
+                  Company Name <span class="required">*</span>
+                </label>
+                <input type="text" id="lead-company" name="company" class="form-input" placeholder="e.g. Apex Legal Group" required>
+              </div>
+
+              <div>
+                <label class="form-label" for="lead-email">
+                  Work Email <span class="required">*</span>
+                </label>
+                <input type="email" id="lead-email" name="email" class="form-input" placeholder="sarah@apexlegal.com" required>
+              </div>
+
+              <div>
+                <label class="form-label" for="lead-phone">
+                  Phone Number (for AI Demo Call) <span class="required">*</span>
+                </label>
+                <input type="tel" id="lead-phone" name="phone" class="form-input" placeholder="(555) 000-0000" required>
+              </div>
+
+              <div class="form-group-full">
+                <label class="form-label" for="lead-notes">
+                  Additional Notes / CRM Currently Used (Optional)
+                </label>
+                <textarea id="lead-notes" name="notes" rows="2" class="form-textarea" placeholder="e.g. Currently using GoHighLevel, looking to reactivate 1,200 past contacts..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Footer -->
+          <div class="form-navigation">
+            <button type="button" class="btn-back hidden" id="btn-prev-step">
+              <span aria-hidden="true">←</span>
+              <span>Back</span>
+            </button>
+
+            <div>
+              <button type="button" class="btn btn-cta" id="btn-next-step">
+                <span>Continue</span>
+                <span aria-hidden="true">→</span>
+              </button>
+
+              <button type="submit" class="btn btn-cta btn-cta-lg" id="btn-submit-funnel" style="display: none;">
+                <span>Claim Your Free AI Growth Audit →</span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Trust Sidebar -->
+      <aside class="contact-sidebar">
+        
+        <!-- Trust Box -->
+        <div class="trust-box">
+          <h3 class="trust-box-title">Why Schedule an AI Audit?</h3>
+          <ul class="trust-bullets">
+            <li class="trust-bullet-item">
+              <div class="trust-bullet-icon">📊</div>
+              <div class="trust-bullet-text">
+                <h4>Custom Revenue Leakage Map</h4>
+                <p>We show you the exact math on missed calls and dormant CRM opportunities.</p>
+              </div>
+            </li>
+            <li class="trust-bullet-item">
+              <div class="trust-bullet-icon">🤖</div>
+              <div class="trust-bullet-text">
+                <h4>Live Voice AI Interactive Demo</h4>
+                <p>Test a live AI voice receptionist customized with your business FAQs.</p>
+              </div>
+            </li>
+            <li class="trust-bullet-item">
+              <div class="trust-bullet-icon">🛡️</div>
+              <div class="trust-bullet-text">
+                <h4>Zero-Obligation Guarantee</h4>
+                <p>No high-pressure sales pitch. If we're not a fit, you keep the entire blueprint.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Quote Card -->
+        <div class="sidebar-quote">
+          <div style="color: var(--rating-gold); font-size: 0.9rem; margin-bottom: 0.5rem;">★★★★★ Verified Client</div>
+          <p class="sidebar-quote-text">
+            "The 30-minute audit opened our eyes to $40k/month in missed calls. Digitol had our Voice AI running in 8 days."
+          </p>
+          <div class="sidebar-quote-author">Marcus Sterling</div>
+          <div class="sidebar-quote-sub">Managing Partner, Apex Legal</div>
+        </div>
+
+        <!-- Privacy & Security Notice -->
+        <div style="font-size: 0.775rem; color: var(--text-muted); text-align: center; padding: 0 0.5rem;">
+          🔒 <strong>Strict Privacy Policy:</strong> Your data is 256-bit encrypted and never shared. We strictly adhere to TCPA and GDPR standards.
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/breadcrumb-form.js') }}"></script>
+{% endblock %}

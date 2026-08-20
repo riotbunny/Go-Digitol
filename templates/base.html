@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title or "Digitol | AI-Powered Growth & Automation Agency" }}</title>
+  <meta name="description" content="Digitol transforms dormant leads into booked appointments with 24/7 Voice AI, smart SMS reactivation, high-ROI ads, and turn-key digital infrastructure.">
+  <meta name="keywords" content="AI automation agency, database reactivation, Voice AI receptionist, digital marketing, lead generation, CRO, AI answering service">
+  
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Digitol | AI Automation & Growth Agency">
+  <meta property="og:description" content="Turn dormant leads & ad traffic into predictable, booked revenue 24/7 with autonomous AI pipelines.">
+  <meta property="og:image" content="/static/images/og-preview.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans for crisp, modern CRO typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/breadcrumb.css') }}">
+
+  <!-- Structured Schema Data for SEO & Credibility -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Digitol AI & Digital Marketing Agency",
+    "image": "/static/images/logo.png",
+    "description": "High-growth AI automation, database reactivation, voice AI receptionists, and digital marketing infrastructure.",
+    "priceRange": "$$$",
+    "telephone": "+1-800-492-3444",
+    "areaServed": "Global",
+    "serviceType": [
+      "Database Reactivation",
+      "AI Automations & Answering Services",
+      "Traffic & Conversion",
+      "Business in a Box"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- 1. Urgency & High-Converting Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Announcement">
+    <span class="badge-fire">🔥 High Demand</span>
+    <span>Only <strong>3 AI Growth Audit</strong> slots remaining for this month!</span>
+    <a href="{{ url_for('contact') }}">Claim your free slot →</a>
+  </aside>
+
+  <!-- 2. Sticky Authority Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="{{ url_for('home') }}" class="logo" aria-label="Digitol Home">
+        <div class="logo-icon">D</div>
+        <span>Digitol<span class="logo-dot">.</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="{{ url_for('home') }}" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
+          <li><a href="{{ url_for('services') }}" class="nav-link {% if request.path == '/services' %}active{% endif %}">Services</a></li>
+          <li><a href="{{ url_for('home') }}#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="{{ url_for('home') }}#roi-calculator" class="nav-link">ROI Calculator</a></li>
+          <li><a href="{{ url_for('home') }}#case-studies" class="nav-link">Results</a></li>
+          <li><a href="{{ url_for('home') }}#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header CTAs (10% High-Contrast Conversion Orange) -->
+      <div class="header-actions">
+        <a href="tel:+18004923444" class="phone-quick-link" aria-label="Call Digitol">
+          <span>📞</span>
+          <span>(800) 492-DIGI</span>
+        </a>
+        <a href="{{ url_for('contact') }}" class="btn btn-cta" id="header-cta-btn">
+          <span>Book Free AI Audit</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <button class="mobile-toggle" aria-label="Open Mobile Menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Flash Message Container -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="container" style="margin-top: 1.5rem;">
+        {% for category, message in messages %}
+          <div class="toast" style="position: static; margin-bottom: 0.75rem;">
+            <span>{{ "⚠️" if category == 'error' else "✅" }}</span>
+            <span>{{ message }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Main Dynamic Content -->
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- 3. Authority Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Summary -->
+        <div class="footer-brand">
+          <a href="{{ url_for('home') }}" class="logo">
+            <div class="logo-icon">D</div>
+            <span>Digitol<span class="logo-dot">.</span></span>
+          </a>
+          <p class="footer-desc">
+            We engineer autonomous AI voice receptionists, 24/7 lead reactivation engines, and conversion-focused digital infrastructure for modern businesses.
+          </p>
+          <div class="trust-microcopy" style="color: #94a3b8;">
+            <span><span class="check-icon">✓</span> SOC2 Type II Certified</span>
+            <span><span class="check-icon">✓</span> 99.9% Uptime SLA</span>
+          </div>
+        </div>
+
+        <!-- Core Services Links -->
+        <div>
+          <h4 class="footer-col-title">Core Services</h4>
+          <ul class="footer-links">
+            <li><a href="{{ url_for('services') }}#reactivation">Database Reactivation</a></li>
+            <li><a href="{{ url_for('services') }}#ai-answering">24/7 Voice & Chat AI</a></li>
+            <li><a href="{{ url_for('services') }}#traffic-conversion">Traffic & Paid Ads (ROI)</a></li>
+            <li><a href="{{ url_for('services') }}#business-in-a-box">Business in a Box Funnels</a></li>
+            <li><a href="{{ url_for('services') }}">All Capabilities →</a></li>
+          </ul>
+        </div>
+
+        <!-- Agency & Proof -->
+        <div>
+          <h4 class="footer-col-title">Company & Trust</h4>
+          <ul class="footer-links">
+            <li><a href="{{ url_for('home') }}#case-studies">Client Case Studies</a></li>
+            <li><a href="{{ url_for('home') }}#roi-calculator">Revenue ROI Calculator</a></li>
+            <li><a href="{{ url_for('home') }}#how-it-works">Our 3-Step Velocity Model</a></li>
+            <li><a href="{{ url_for('home') }}#faq">Frequently Asked Questions</a></li>
+            <li><a href="{{ url_for('contact') }}">Agency Partner Portal</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact / Instant CTA -->
+        <div>
+          <h4 class="footer-col-title">Get In Touch</h4>
+          <ul class="footer-links">
+            <li><strong>Direct Line:</strong> (800) 492-3444</li>
+            <li><strong>Email:</strong> growth@digitolagency.com</li>
+            <li><strong>Headquarters:</strong> Austin, TX • Global Ops</li>
+            <li style="margin-top: 0.5rem;">
+              <a href="{{ url_for('contact') }}" class="btn btn-cta" style="font-size: 0.85rem; padding: 0.6rem 1.1rem; width: 100%;">
+                Book 30-Min AI Audit →
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Credits & Compliance -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 Digitol AI Agency LLC. All rights reserved. Built for maximum conversion rate optimization.
+        </div>
+        <div class="footer-security-badges">
+          <span>🔒 256-Bit SSL Encrypted</span>
+          <span>🛡️ HIPAA & GDPR Ready</span>
+          <span>⭐ 4.9/5 Rating (140+ Reviews)</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Main Scripts -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
