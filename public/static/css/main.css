@@ -521,6 +521,26 @@ img, svg {
   color: var(--cta-text);
   box-shadow: var(--shadow-cta);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: rotate(25deg);
+  animation: btnSheenSweep 5.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes btnSheenSweep {
+  0%, 75% { transform: translateX(0) rotate(25deg); }
+  100% { transform: translateX(500%) rotate(25deg); }
 }
 
 .btn-cta:hover {
@@ -533,6 +553,19 @@ img, svg {
 .btn-cta:active {
   transform: translateY(0);
   box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+}
+
+/* Scroll-Driven Reveal Animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .btn-cta-lg {
@@ -767,9 +800,12 @@ img, svg {
   box-sizing: border-box;
 }
 
-.stream-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateX(4px);
+.stream-item:hover,
+.stream-item.stream-highlight {
+  background: rgba(255, 87, 34, 0.12);
+  border-color: rgba(255, 87, 34, 0.45);
+  transform: translateX(5px);
+  box-shadow: 0 4px 14px rgba(255, 87, 34, 0.2);
 }
 
 .stream-item-header {
@@ -999,6 +1035,35 @@ img, svg {
   align-self: flex-start;
   border-bottom-left-radius: 4px;
   border: 1px solid rgba(255, 87, 34, 0.35);
+}
+
+.typing-bubble {
+  padding: 0.6rem 0.9rem !important;
+  width: fit-content;
+  min-width: 60px;
+}
+
+.typing-dots-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.type-dot {
+  width: 7px;
+  height: 7px;
+  background: #94a3b8;
+  border-radius: 50%;
+  animation: bounceTyping 1.2s infinite ease-in-out;
+}
+
+.type-dot:nth-child(1) { animation-delay: 0s; }
+.type-dot:nth-child(2) { animation-delay: 0.2s; }
+.type-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounceTyping {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1.2); opacity: 1; background: var(--cta-primary); }
 }
 
 .ai-bubble-tag {
