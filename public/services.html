@@ -82,16 +82,124 @@
           <span>Book Free AI Audit</span>
           <span aria-hidden="true">→</span>
         </a>
-        <button class="mobile-toggle" aria-label="Open Mobile Menu" aria-expanded="false">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
+        
+        <!-- Highly-Optimized Animated Hamburger Button -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-line line-1"></span>
+          <span class="hamburger-line line-2"></span>
+          <span class="hamburger-line line-3"></span>
         </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Off-Canvas Drawer Navigation -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    
+    <!-- Drawer Header -->
+    <div class="drawer-header">
+      <a href="/" class="logo drawer-logo">
+        <div class="logo-icon" style="width:32px; height:32px; font-size:1.1rem;">D</div>
+        <span>Digitol<span class="logo-dot">.</span></span>
+      </a>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation menu">
+        ✕
+      </button>
+    </div>
+
+    <!-- Drawer Navigation Links -->
+    <nav class="drawer-nav">
+      <ul class="drawer-menu">
+        <li>
+          <a href="/" class="drawer-link ">
+            <span class="drawer-icon">🏠</span>
+            <div class="drawer-link-text">
+              <span class="drawer-title">Home</span>
+              <span class="drawer-desc">AI-Powered Growth Agency</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/services" class="drawer-link active">
+            <span class="drawer-icon">⚙️</span>
+            <div class="drawer-link-text">
+              <span class="drawer-title">Our Services</span>
+              <span class="drawer-desc">Reactivation, VAs, Ads & Infrastructure</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/#ai-sandbox" class="drawer-link">
+            <span class="drawer-icon">🤖</span>
+            <div class="drawer-link-text">
+              <span class="drawer-title">Live AI & VA Demo</span>
+              <span class="drawer-desc">Interactive Simulation Sandbox</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/#how-it-works" class="drawer-link">
+            <span class="drawer-icon">📈</span>
+            <div class="drawer-link-text">
+              <span class="drawer-title">How It Works</span>
+              <span class="drawer-desc">3-Step Velocity Framework</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/#roi-calculator" class="drawer-link">
+            <span class="drawer-icon">🧮</span>
+            <div class="drawer-link-text">
+              <span class="drawer-title">Revenue ROI Calculator</span>
+              <span class="drawer-desc">Calculate Untapped Pipeline Gains</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/#case-studies" class="drawer-link">
+            <span class="drawer-icon">⭐</span>
+            <div class="drawer-link-text">
+              <span class="drawer-title">Case Studies & Results</span>
+              <span class="drawer-desc">Verified Client Proof & Metrics</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/#faq" class="drawer-link">
+            <span class="drawer-icon">❓</span>
+            <div class="drawer-link-text">
+              <span class="drawer-title">FAQ</span>
+              <span class="drawer-desc">Frequently Asked Questions</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Drawer Primary CTA -->
+    <div class="drawer-cta-box">
+      <a href="/contact" class="btn btn-cta" style="width: 100%; padding: 0.95rem 1.25rem; font-size: 1rem;">
+        <span>⚡ Book Free AI & VA Audit →</span>
+      </a>
+      <div style="text-align: center; margin-top: 0.75rem; font-size: 0.75rem; color: #64748b; font-weight: 600;">
+        ✓ Free 30-min strategy call • ✓ Zero obligation
+      </div>
+    </div>
+
+    <!-- Drawer Quick Contact & Trust Footer -->
+    <div class="drawer-footer">
+      <a href="tel:+18004923444" class="drawer-phone-row">
+        <span>📞</span>
+        <span>(800) 492-DIGI</span>
+      </a>
+      <div class="drawer-trust-badges">
+        <span>🔒 SOC2 Certified</span>
+        <span>⭐ 4.9/5 Rating</span>
+      </div>
+    </div>
+
+  </aside>
 
   <!-- Flash Message Container -->
   

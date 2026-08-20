@@ -1,10 +1,10 @@
 /**
  * DIGITOL AGENCY - MAIN JAVASCRIPT & MOBILE AUTOMATIONS
- * Live AI & Virtual Assistant Sandbox Simulator, Sticky Mobile Dock, ROI Calculator, and Event Stream Ticker
+ * Mobile Hamburger Drawer, AI & VA Sandbox Simulator, Sticky Mobile Dock, ROI Calculator, and Event Stream Ticker
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initMobileNav();
+  initMobileHamburgerDrawer();
   initFaqAccordion();
   initRoiCalculator();
   initStickyHeader();
@@ -14,31 +14,84 @@ document.addEventListener('DOMContentLoaded', () => {
   initHapticFeedback();
 });
 
-/* Mobile Navigation Toggle */
-function initMobileNav() {
-  const toggleBtn = document.querySelector('.mobile-toggle');
-  const navMenu = document.querySelector('.nav-menu');
+/* ==========================================================================
+   HIGHLY OPTIMIZED MOBILE HAMBURGER & OFF-CANVAS DRAWER
+   ========================================================================== */
 
-  if (toggleBtn && navMenu) {
-    toggleBtn.addEventListener('click', () => {
-      triggerHaptic(15);
-      navMenu.classList.toggle('show');
-      const isExpanded = navMenu.classList.contains('show');
-      toggleBtn.setAttribute('aria-expanded', isExpanded);
-    });
+function initMobileHamburgerDrawer() {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const drawer = document.getElementById('mobile-nav-drawer');
+  const backdrop = document.getElementById('mobile-drawer-backdrop');
+  const closeBtn = document.getElementById('drawer-close-btn');
 
-    document.addEventListener('click', (e) => {
-      if (!toggleBtn.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('show');
-      }
-    });
+  if (!hamburgerBtn || !drawer || !backdrop) return;
 
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('show');
-      });
-    });
+  function openDrawer() {
+    triggerHaptic(15);
+    hamburgerBtn.classList.add('active');
+    hamburgerBtn.setAttribute('aria-expanded', 'true');
+    drawer.classList.add('active');
+    drawer.setAttribute('aria-hidden', 'false');
+    backdrop.classList.add('active');
+    backdrop.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('menu-open');
   }
+
+  function closeDrawer() {
+    triggerHaptic(10);
+    hamburgerBtn.classList.remove('active');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+    drawer.classList.remove('active');
+    drawer.setAttribute('aria-hidden', 'true');
+    backdrop.classList.remove('active');
+    backdrop.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('menu-open');
+  }
+
+  hamburgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (drawer.classList.contains('active')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  backdrop.addEventListener('click', closeDrawer);
+
+  // Close when clicking any drawer link
+  drawer.querySelectorAll('.drawer-link, .drawer-cta-box a').forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(closeDrawer, 120);
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+
+  // Swipe-to-close touch gesture support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  drawer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  drawer.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX - touchStartX > 60) {
+      // Swiped right -> close drawer
+      closeDrawer();
+    }
+  }, { passive: true });
 }
 
 /* Sticky Header Shadow on Scroll */
@@ -85,7 +138,7 @@ const AI_SCENARIOS = {
   },
   ads: {
     title: 'Instant Google Ads Lead Qualifier & VA Routing',
-    status: 'Speed to Lead: &lt; 2 Seconds',
+    status: 'Speed to Lead: < 2 Seconds',
     messages: [
       { sender: 'user', text: 'Prospect submitted web form: "Need comprehensive dental implants consultation."' },
       { sender: 'ai', text: 'Digitol AI (SMS <2s): "Hi Jennifer, thanks for reaching out to Zenith Dental! Dr. Kim has 2 consultation slots open tomorrow at 10 AM or 3 PM. Which one fits your schedule?"' },
@@ -349,7 +402,7 @@ function showToast(message, type = 'info') {
 }
 
 function initHapticFeedback() {
-  document.querySelectorAll('.btn, .option-card, .scenario-chip').forEach(el => {
+  document.querySelectorAll('.btn, .option-card, .scenario-chip, .drawer-link').forEach(el => {
     el.addEventListener('click', () => triggerHaptic(12));
   });
 }
