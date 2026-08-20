@@ -92,8 +92,9 @@
   font-size: clamp(1.25rem, 2.5vw, 1.65rem);
   margin-bottom: 0.5rem;
   color: var(--navy-900);
-  word-break: break-word;
+  word-break: normal;
   overflow-wrap: break-word;
+  hyphens: none;
 }
 
 .step-subheading {
