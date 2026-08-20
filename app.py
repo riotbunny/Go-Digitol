@@ -33,7 +33,7 @@ LEADS_FILE = os.path.join(LEADS_DIR, 'leads.json')
 # ==============================================================================
 # EMAIL & NOTIFICATION CONFIGURATION
 # ==============================================================================
-NOTIFICATION_EMAIL = os.environ.get('NOTIFICATION_EMAIL', os.environ.get('RECIPIENT_EMAIL', 'abelv27@gmail.com'))
+NOTIFICATION_EMAIL = os.environ.get('NOTIFICATION_EMAIL', os.environ.get('RECIPIENT_EMAIL', 'vela956Abel@gmail.com'))
 SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'leads@godigitol.com')
 
 RESEND_API_KEY = os.environ.get('RESEND_API_KEY')
