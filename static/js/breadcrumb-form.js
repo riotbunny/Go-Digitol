@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('breadcrumb-funnel');
   if (!form) return;
 
-  let currentStep = 1;
   const totalSteps = 4;
+  let currentStep = 1;
 
   const stepPanes = form.querySelectorAll('.step-pane');
   const progressBar = document.getElementById('progress-bar-fill');
@@ -31,11 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
+      if (currentStep >= totalSteps) return;
       if (window.triggerHaptic) window.triggerHaptic(15);
       if (validateCurrentStep(currentStep)) {
-        if (currentStep < totalSteps) {
-          goToStep(currentStep + 1);
-        }
+        goToStep(currentStep + 1);
       }
     });
   }
@@ -130,10 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.triggerHaptic) window.triggerHaptic(15);
 
         const radio = card.querySelector('input[type="radio"]');
-        const parentGroup = card.closest('.options-grid');
+        const parentPane = card.closest('.step-pane');
+        const paneStep = parentPane ? parseInt(parentPane.getAttribute('data-step'), 10) : currentStep;
 
-        if (parentGroup) {
-          parentGroup.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+        if (parentPane) {
+          parentPane.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
         }
 
         card.classList.add('selected');
@@ -141,25 +141,29 @@ document.addEventListener('DOMContentLoaded', () => {
           radio.checked = true;
         }
 
-        // Auto-advance for frictionless discovery flow
-        if (currentStep < totalSteps) {
+        // Only auto-advance if clicking an option in an earlier step (1, 2, or 3)
+        if (paneStep < totalSteps && paneStep === currentStep) {
           setTimeout(() => {
-            goToStep(currentStep + 1);
-          }, 240);
+            goToStep(paneStep + 1);
+          }, 220);
         }
       });
     });
   }
 
   function goToStep(stepNumber) {
+    const clampedStep = Math.max(1, Math.min(stepNumber, totalSteps));
+    currentStep = clampedStep;
+
     stepPanes.forEach(pane => {
-      pane.classList.remove('active');
-      if (parseInt(pane.getAttribute('data-step'), 10) === stepNumber) {
+      const paneStep = parseInt(pane.getAttribute('data-step'), 10);
+      if (paneStep === clampedStep) {
         pane.classList.add('active');
+      } else {
+        pane.classList.remove('active');
       }
     });
 
-    currentStep = stepNumber;
     updateProgressUI();
 
     const cardRect = form.getBoundingClientRect();
@@ -169,13 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateProgressUI() {
-    const percent = Math.round((currentStep / totalSteps) * 100);
+    const percent = Math.min(100, Math.round((currentStep / totalSteps) * 100));
 
     const stepLabels = [
       'Step 1 of 4: Business Discovery',
-      'Step 2 of 4: Growth Goals',
+      'Step 2 of 4: Services of Interest',
       'Step 3 of 4: Monthly Volume',
-      'Step 4 of 4: Contact & Details'
+      'Step 4 of 4: Contact & Business Details'
     ];
 
     if (progressBar) {
@@ -191,17 +195,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (backBtn) {
       if (currentStep === 1) {
         backBtn.classList.add('hidden');
+        backBtn.style.display = 'none';
       } else {
         backBtn.classList.remove('hidden');
+        backBtn.style.display = 'inline-flex';
       }
     }
 
     if (currentStep === totalSteps) {
-      if (nextBtn) nextBtn.style.display = 'none';
-      if (submitBtn) submitBtn.style.display = 'inline-flex';
+      if (nextBtn) {
+        nextBtn.style.display = 'none';
+      }
+      if (submitBtn) {
+        submitBtn.style.display = 'inline-flex';
+      }
     } else {
-      if (nextBtn) nextBtn.style.display = 'inline-flex';
-      if (submitBtn) submitBtn.style.display = 'none';
+      if (nextBtn) {
+        nextBtn.style.display = 'inline-flex';
+      }
+      if (submitBtn) {
+        submitBtn.style.display = 'none';
+      }
     }
   }
 
@@ -230,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.showToast) {
           window.showToast('Please enter your full name.', 'error');
         }
-        nameInput.focus();
+        if (nameInput) nameInput.focus();
         return false;
       }
 
@@ -238,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.showToast) {
           window.showToast('Please enter your business / company name.', 'error');
         }
-        companyInput.focus();
+        if (companyInput) companyInput.focus();
         return false;
       }
 
@@ -247,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.showToast) {
           window.showToast('Please enter a valid work email address.', 'error');
         }
-        emailInput.focus();
+        if (emailInput) emailInput.focus();
         return false;
       }
 
@@ -274,5 +288,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return true;
   }
 
-  updateProgressUI();
+  // Initialize UI on step 1
+  goToStep(1);
 });
