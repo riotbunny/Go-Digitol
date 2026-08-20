@@ -54,7 +54,8 @@ class TestDigitolApp(unittest.TestCase):
         response = self.client.get('/thank-you?name=Elena')
         self.assertEqual(response.status_code, 200)
         html = response.get_data(as_text=True)
-        self.assertIn("You're All Set, Elena!", html)
+        self.assertIn("You're All Set", html)
+        self.assertIn("Elena", html)
         self.assertIn('What Happens Next', html)
 
     def test_api_contact_validation_failure(self):

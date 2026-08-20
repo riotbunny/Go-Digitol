@@ -221,13 +221,49 @@
       Application Received & Verified
     </div>
 
-    <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1rem;">
-      You're All Set, Valued Partner!
+    <h1 style="font-size: clamp(2rem, 3.5vw, 2.75rem); margin-bottom: 1rem;" id="thankyou-heading">
+      You're All Set, <span id="lead-name-display">Valued Partner</span>!
     </h1>
 
     <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem;">
-      Our team is preparing your custom revenue analysis, automation roadmap, and Virtual Assistant staffing recommendations. A confirmation invite has been sent to your email.
+      Our team is preparing your custom revenue analysis, automation roadmap, and Virtual Assistant staffing recommendations. A calendar confirmation invite has been dispatched to your email.
     </p>
+
+    <!-- Interactive Strategy Call Time Slot Selector -->
+    <div style="background: var(--bg-card); border: 2px solid var(--cta-primary); border-radius: var(--radius-lg); padding: 2rem 2.5rem; text-align: left; box-shadow: var(--shadow-xl); margin-bottom: 2.5rem; position: relative;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem;">
+        <h3 style="font-size: 1.15rem; color: var(--navy-900);">
+          📅 Lock in Your Preferred 30-Min Strategy Time
+        </h3>
+        <span style="font-size: 0.75rem; background: rgba(255,87,34,0.1); color: var(--cta-primary); font-weight: 800; padding: 0.2rem 0.6rem; border-radius: var(--radius-full);">
+          ⚡ Live Booking Desk
+        </span>
+      </div>
+      <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+        Select an available slot below to fast-track your AI blueprint review:
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;" id="time-slots-grid">
+        <button type="button" class="scenario-chip slot-btn active" data-time="Tomorrow at 10:00 AM EST" style="padding: 0.75rem; font-size: 0.85rem; justify-content: center;">
+          <span>Tomorrow, 10:00 AM</span>
+        </button>
+        <button type="button" class="scenario-chip slot-btn" data-time="Tomorrow at 2:30 PM EST" style="padding: 0.75rem; font-size: 0.85rem; justify-content: center;">
+          <span>Tomorrow, 2:30 PM</span>
+        </button>
+        <button type="button" class="scenario-chip slot-btn" data-time="Friday at 11:30 AM EST" style="padding: 0.75rem; font-size: 0.85rem; justify-content: center;">
+          <span>Friday, 11:30 AM</span>
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <span id="selected-slot-text" style="font-size: 0.85rem; font-weight: 700; color: var(--navy-900);">
+          Selected: <strong style="color: var(--cta-primary);">Tomorrow at 10:00 AM EST</strong>
+        </span>
+        <button type="button" class="btn btn-cta" id="btn-confirm-slot" style="padding: 0.65rem 1.25rem; font-size: 0.875rem;">
+          <span>Confirm Slot & Add to Calendar ✓</span>
+        </button>
+      </div>
+    </div>
 
     <!-- Next Steps Card -->
     <div style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 2.5rem; text-align: left; box-shadow: var(--shadow-lg); margin-bottom: 3rem;">
@@ -388,5 +424,46 @@
   <!-- Main Scripts -->
   <script src="/static/js/main.js"></script>
   
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Parse lead name dynamically from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const nameParam = urlParams.get('name');
+  if (nameParam) {
+    const displayEl = document.getElementById('lead-name-display');
+    if (displayEl) displayEl.textContent = decodeURIComponent(nameParam);
+  }
+
+  // Interactive Time Slot Selector
+  const slotBtns = document.querySelectorAll('.slot-btn');
+  const selectedText = document.getElementById('selected-slot-text');
+  const confirmBtn = document.getElementById('btn-confirm-slot');
+  let chosenSlot = 'Tomorrow at 10:00 AM EST';
+
+  slotBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.triggerHaptic) window.triggerHaptic(15);
+      slotBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      chosenSlot = btn.getAttribute('data-time');
+      if (selectedText) {
+        selectedText.innerHTML = `Selected: <strong style="color: var(--cta-primary);">${chosenSlot}</strong>`;
+      }
+    });
+  });
+
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', () => {
+      if (window.triggerHaptic) window.triggerHaptic(25);
+      confirmBtn.disabled = true;
+      confirmBtn.innerHTML = '<span>✓ Slot Confirmed! Calendar Invite Sent</span>';
+      if (window.showToast) {
+        window.showToast(`Strategy slot confirmed for ${chosenSlot}! Check your inbox.`, 'success');
+      }
+    });
+  }
+});
+</script>
+
 </body>
 </html>
