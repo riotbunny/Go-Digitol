@@ -1,0 +1,21 @@
+{
+  "name": "go-digitol",
+  "version": "1.0.0",
+  "description": "Digitol - AI Automations, Dedicated Virtual Assistant Staffing & High-Converting Web Architecture",
+  "main": "app.py",
+  "scripts": {
+    "dev": "python app.py",
+    "start": "python app.py",
+    "build": "python export_static.py",
+    "test": "python test_app.py"
+  },
+  "keywords": [
+    "cro",
+    "lead-gen",
+    "ai-automation",
+    "virtual-assistant",
+    "landing-page"
+  ],
+  "author": "Digitol Agency",
+  "license": "MIT"
+}
