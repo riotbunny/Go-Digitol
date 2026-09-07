@@ -45,74 +45,13 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-/* ==========================================================================
-   DYNAMIC TYPEWRITER COMPONENT
-   ========================================================================== */
-const TypewriterText = ({
-  phrases = [
-    'SCALES QUALIFIED PIPELINE',
-    'OUTRANKS YOUR COMPETITION',
-    'TURNS TRAFFIC INTO BUYERS',
-    'MAXIMIZES MARKETING ROI',
-    'DRIVES MEASURABLE REVENUE.'
-  ],
-  typeSpeed = 70,
-  deleteSpeed = 32,
-  pauseDelay = 1800,
-  switchDelay = 350,
-  stopAtEnd = true
-}) => {
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [currentText, setCurrentText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [isFinished, setIsFinished] = useState(false);
-
-  useEffect(() => {
-    if (isFinished) return;
-
-    let timer;
-    const isLastPhrase = currentPhraseIndex === phrases.length - 1;
-    const fullText = phrases[currentPhraseIndex];
-
-    if (!isDeleting) {
-      if (currentText.length < fullText.length) {
-        timer = setTimeout(() => {
-          setCurrentText(fullText.slice(0, currentText.length + 1));
-        }, typeSpeed);
-      } else {
-        // If we reached the end of the last phrase and stopAtEnd is active, lock it in!
-        if (stopAtEnd && isLastPhrase) {
-          setIsFinished(true);
-          return;
-        }
-        // Otherwise pause before deleting
-        timer = setTimeout(() => {
-          setIsDeleting(true);
-        }, pauseDelay);
-      }
-    } else {
-      if (currentText.length > 0) {
-        timer = setTimeout(() => {
-          setCurrentText(fullText.slice(0, currentText.length - 1));
-        }, deleteSpeed);
-      } else {
-        // Finished deleting, proceed to next phrase
-        setIsDeleting(false);
-        setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
-        timer = setTimeout(() => {}, switchDelay);
-      }
-    }
-
-    return () => clearTimeout(timer);
-  }, [currentText, isDeleting, currentPhraseIndex, phrases, typeSpeed, deleteSpeed, pauseDelay, switchDelay, stopAtEnd, isFinished]);
-
-  return (
-    <span className={`inline-block min-h-[1.15em] transition-all duration-500 ${isFinished ? 'text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.35)]' : 'text-neutral-400'}`}>
-      <span>{currentText}</span>
-      {!isFinished && <span className="typewriter-cursor" aria-hidden="true" />}
-    </span>
-  );
-};
+// Enterprise-Grade 10/10 UI Components
+import SpotlightCard from './components/SpotlightCard';
+import KineticCounter from './components/KineticCounter';
+import ClientLogoMarquee from './components/ClientLogoMarquee';
+import BeforeAfterComparison from './components/BeforeAfterComparison';
+import StarfieldCanvas from './components/StarfieldCanvas';
+import TypewriterText from './components/TypewriterText';
 
 /* ==========================================================================
    REVENUE CONVERSION DEMONSTRATION WORKFLOW
@@ -124,69 +63,72 @@ const RevenueProofShowcase = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="max-w-4xl mx-auto mb-16 bg-neutral-950/85 border border-white/15 rounded-sm p-6 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] relative overflow-hidden"
+      className="max-w-4xl mx-auto mb-16 w-full"
     >
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-      
-      {/* Top Telemetry Header */}
-      <div className="flex justify-between items-center pb-4 mb-6 border-b border-white/10 font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
-        <span className="flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          CLOSED-LOOP REVENUE ACCELERATION PLATFORM // LIVE WORKFLOW
-        </span>
-        <span>PROPRIETARY ATTRIBUTION</span>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-        {/* Step 1: Acquisition */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-neutral-700 flex items-center justify-center text-neutral-300">
-              <Search size={18} className="text-white" />
-            </div>
-            <div>
-              <div className="font-mono text-[9px] uppercase tracking-widest text-neutral-400">01 // ACQUISITION</div>
-              <div className="text-xs font-bold text-white tracking-wider uppercase">HIGH-INTENT SEARCH TRAFFIC</div>
-            </div>
-          </div>
-          <p className="text-[11px] text-neutral-400 leading-relaxed pt-1">
-            Top #1 organic Google rankings &amp; high-ROAS PPC campaigns capture ready-to-buy commercial prospects.
-          </p>
+      <SpotlightCard className="p-6 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] relative overflow-hidden border-white/20">
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+        
+        {/* Top Telemetry Header */}
+        <div className="flex justify-between items-center pb-4 mb-6 border-b border-white/10 font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
+          <span className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            CLOSED-LOOP REVENUE ACCELERATION PLATFORM // LIVE WORKFLOW
+          </span>
+          <span className="text-neutral-400">PROPRIETARY ATTRIBUTION</span>
         </div>
 
-        {/* Step 2: Conversion & Attribution */}
-        <div className="flex flex-col space-y-2 p-4 bg-white/[0.04] border border-white/20 rounded-sm relative">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 font-mono text-[9px] text-white tracking-widest uppercase">
-              <MousePointerClick size={14} className="text-white" />
-              <span>02 // CRO CONVERSION</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+          {/* Step 1: Acquisition */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-neutral-700 flex items-center justify-center text-neutral-300">
+                <Search size={18} className="text-white" />
+              </div>
+              <div>
+                <div className="font-mono text-[9px] uppercase tracking-widest text-neutral-400">01 // ACQUISITION</div>
+                <div className="text-xs font-bold text-white tracking-wider uppercase">HIGH-INTENT SEARCH TRAFFIC</div>
+              </div>
             </div>
-            <span className="font-mono text-[9px] px-1.5 py-0.5 border border-white/20 bg-white/10 text-white rounded-none">
-              SUB-SECOND
-            </span>
+            <p className="text-[11px] text-neutral-400 leading-relaxed pt-1">
+              Top #1 organic Google rankings &amp; high-ROAS PPC campaigns capture ready-to-buy commercial prospects.
+            </p>
           </div>
-          <div className="bg-black/90 p-2.5 border border-white/15 rounded-sm font-mono text-[11px] text-neutral-200">
-            <span className="text-neutral-400 block text-[9px] mb-0.5 tracking-wider">LIVE ATTRIBUTION ENGINE</span>
-            Qualified lead generated via custom web funnel &amp; synced directly to CRM in real time.
-          </div>
-        </div>
 
-        {/* Step 3: Verified Revenue */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
-              <CheckCircle2 size={18} />
+          {/* Step 2: Conversion & Attribution */}
+          <div className="flex flex-col space-y-2 p-4 bg-white/[0.04] border border-white/20 rounded-sm relative">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 font-mono text-[9px] text-white tracking-widest uppercase">
+                <MousePointerClick size={14} className="text-white" />
+                <span>02 // CRO CONVERSION</span>
+              </div>
+              <span className="font-mono text-[9px] px-1.5 py-0.5 border border-white/20 bg-white/10 text-white rounded-none">
+                SUB-SECOND
+              </span>
             </div>
-            <div>
-              <div className="font-mono text-[9px] uppercase tracking-widest text-emerald-400">03 // REVENUE IMPACT</div>
-              <div className="text-xs font-bold text-white tracking-wider uppercase">CLOSED CLIENT DEAL</div>
+            <div className="bg-black/90 p-2.5 border border-white/15 rounded-sm font-mono text-[11px] text-neutral-200">
+              <span className="text-neutral-400 block text-[9px] mb-0.5 tracking-wider">LIVE ATTRIBUTION ENGINE</span>
+              Qualified lead generated via custom web funnel &amp; synced directly to CRM in real time.
             </div>
           </div>
-          <div className="inline-flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-[10px] px-2.5 py-1 tracking-wider uppercase">
-            <span>+$18,500 CLIENT REVENUE</span>
+
+          {/* Step 3: Verified Revenue */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+                <CheckCircle2 size={18} />
+              </div>
+              <div>
+                <div className="font-mono text-[9px] uppercase tracking-widest text-emerald-400">03 // REVENUE IMPACT</div>
+                <div className="text-xs font-bold text-white tracking-wider uppercase">CLOSED CLIENT DEAL</div>
+              </div>
+            </div>
+            <div className="inline-flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-[10px] px-2.5 py-1 tracking-wider uppercase">
+              <span>+</span>
+              <KineticCounter value={18500} prefix="$" suffix=" CLIENT REVENUE" />
+            </div>
           </div>
         </div>
-      </div>
+      </SpotlightCard>
     </motion.div>
   );
 };
@@ -561,11 +503,14 @@ export default function App() {
           2. HERO VIEWPORT SECTION (FULL SCREEN)
           ====================================================================== */}
       <section 
-        className="min-h-screen relative flex flex-col justify-center items-center px-6 pt-24 pb-16 bg-cover bg-center bg-no-repeat starlink-grid"
+        className="min-h-screen relative flex flex-col justify-center items-center px-6 pt-24 pb-16 bg-cover bg-center bg-no-repeat starlink-grid overflow-hidden"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/65 to-black pointer-events-none" />
         <div className="radar-scan" />
+        
+        {/* Ambient Deep-Space Particle Field */}
+        <StarfieldCanvas particleCount={65} />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
           {/* Badge */}
@@ -637,24 +582,35 @@ export default function App() {
           {/* Proof Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-b border-white/10 py-6 font-mono bg-black/60 backdrop-blur-md">
             <div>
-              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">$14.2M+</div>
+              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <KineticCounter value={14.2} prefix="$" suffix="M+" decimals={1} />
+              </div>
               <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">VERIFIED CLIENT REVENUE</div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">48,500+</div>
+              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <KineticCounter value={48500} suffix="+" />
+              </div>
               <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">QUALIFIED LEADS DRIVEN</div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">4.2x</div>
+              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <KineticCounter value={4.2} suffix="x" decimals={1} />
+              </div>
               <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">AVERAGE CLIENT ROAS</div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">99.4%</div>
+              <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <KineticCounter value={99.4} suffix="%" decimals={1} />
+              </div>
               <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">CLIENT RETENTION RATE</div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Infinite Client Logo Marquee (Social Proof) */}
+      <ClientLogoMarquee />
 
       {/* ======================================================================
           3. FULL-SERVICE MARKETING SUITE (MIN-H-SCREEN)
@@ -704,68 +660,88 @@ export default function App() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="bg-neutral-950/85 border border-white/20 p-8 sm:p-12 rounded-sm backdrop-blur-2xl shadow-2xl relative overflow-hidden"
+            className="w-full"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              {/* Left Column: Details */}
-              <div className="lg:col-span-7 space-y-6">
-                <div className="inline-block font-mono text-[10px] tracking-[0.25em] px-2.5 py-1 bg-white/10 text-white border border-white/20 uppercase">
-                  {CORE_SERVICES[activeServiceTab].tag}
-                </div>
-                <h3 className="text-2xl sm:text-4xl font-bold uppercase tracking-tight text-white">
-                  {CORE_SERVICES[activeServiceTab].title}
-                </h3>
-                <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                  {CORE_SERVICES[activeServiceTab].desc}
-                </p>
-
-                <div className="space-y-2.5 pt-2">
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 mb-2">
-                    KEY STRATEGIC DELIVERABLES:
+            <SpotlightCard className="p-8 sm:p-12 backdrop-blur-2xl shadow-2xl relative overflow-hidden border-white/20">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                {/* Left Column: Details */}
+                <div className="lg:col-span-7 space-y-6">
+                  <div className="inline-block font-mono text-[10px] tracking-[0.25em] px-2.5 py-1 bg-white/10 text-white border border-white/20 uppercase">
+                    {CORE_SERVICES[activeServiceTab].tag}
                   </div>
-                  {CORE_SERVICES[activeServiceTab].features.map((item, i) => (
-                    <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-neutral-300">
-                      <span className="font-mono text-white text-xs mt-0.5">•</span>
-                      <span>{item}</span>
+                  <h3 className="text-2xl sm:text-4xl font-bold uppercase tracking-tight text-white">
+                    {CORE_SERVICES[activeServiceTab].title}
+                  </h3>
+                  <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
+                    {CORE_SERVICES[activeServiceTab].desc}
+                  </p>
+
+                  <div className="space-y-2.5 pt-2">
+                    <div className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 mb-2">
+                      KEY STRATEGIC DELIVERABLES:
                     </div>
-                  ))}
+                    {CORE_SERVICES[activeServiceTab].features.map((item, i) => (
+                      <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-neutral-300">
+                        <span className="font-mono text-white text-xs mt-0.5">•</span>
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="pt-6">
+                    <button
+                      onClick={() => openAuditModal(CORE_SERVICES[activeServiceTab].title)}
+                      className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all flex items-center gap-2"
+                    >
+                      <span>REQUEST A CUSTOM PROPOSAL</span>
+                      <ArrowUpRight size={14} />
+                    </button>
+                  </div>
                 </div>
 
-                <div className="pt-6">
-                  <button
-                    onClick={() => openAuditModal(CORE_SERVICES[activeServiceTab].title)}
-                    className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all flex items-center gap-2"
-                  >
-                    <span>REQUEST A CUSTOM PROPOSAL</span>
-                    <ArrowUpRight size={14} />
-                  </button>
+                {/* Right Column: Performance Specs */}
+                <div className="lg:col-span-5 bg-black/90 border border-white/15 p-6 space-y-6 font-mono rounded-none backdrop-blur-md">
+                  <div className="text-[10px] text-neutral-400 tracking-[0.25em] uppercase border-b border-white/10 pb-3 flex justify-between items-center">
+                    <span>KEY SERVICE BENCHMARKS</span>
+                    <LineChart size={12} className="text-emerald-400" />
+                  </div>
+
+                  <div className="space-y-4">
+                    {CORE_SERVICES[activeServiceTab].metrics.map((m, idx) => (
+                      <div key={idx} className="p-3 bg-white/[0.03] border border-white/10 flex justify-between items-center">
+                        <span className="text-[10px] text-neutral-400 tracking-wider uppercase">{m.label}</span>
+                        <span className="text-base font-bold text-white tracking-tight">{m.val}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* High-Tech Animated Telemetry Waveform */}
+                  <div className="pt-2 border-t border-white/10">
+                    <div className="flex justify-between items-center text-[9px] text-neutral-500 mb-1.5 uppercase tracking-wider">
+                      <span>LIVE TELEMETRY STREAM</span>
+                      <span className="text-emerald-400 font-bold">OPTIMAL // 99.8% ACCURACY</span>
+                    </div>
+                    <svg className="w-full h-8 stroke-emerald-400/80 fill-none" viewBox="0 0 300 32">
+                      <path
+                        d="M0 16 Q 25 4, 50 16 T 100 16 T 150 28 T 200 6 T 250 20 T 300 16"
+                        strokeWidth="1.5"
+                      />
+                      <circle cx="200" cy="6" r="3" fill="#34d399" className="animate-pulse" />
+                    </svg>
+                  </div>
+
+                  <div className="text-[10px] text-neutral-500 leading-relaxed pt-1">
+                    // Seamless integration verified with Google Analytics 4, Salesforce, HubSpot, Shopify, WordPress, and Custom CRMs.
+                  </div>
                 </div>
               </div>
-
-              {/* Right Column: Performance Specs */}
-              <div className="lg:col-span-5 bg-black/90 border border-white/15 p-6 space-y-6 font-mono rounded-none backdrop-blur-md">
-                <div className="text-[10px] text-neutral-400 tracking-[0.25em] uppercase border-b border-white/10 pb-3 flex justify-between items-center">
-                  <span>KEY SERVICE BENCHMARKS</span>
-                  <LineChart size={12} className="text-emerald-400" />
-                </div>
-
-                <div className="space-y-4">
-                  {CORE_SERVICES[activeServiceTab].metrics.map((m, idx) => (
-                    <div key={idx} className="p-3 bg-white/[0.03] border border-white/10 flex justify-between items-center">
-                      <span className="text-[10px] text-neutral-400 tracking-wider uppercase">{m.label}</span>
-                      <span className="text-base font-bold text-white tracking-tight">{m.val}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="text-[10px] text-neutral-500 leading-relaxed pt-2 border-t border-white/10">
-                  // Seamless integration verified with Google Analytics 4, Salesforce, HubSpot, Shopify, WordPress, and Custom CRMs.
-                </div>
-              </div>
-            </div>
+            </SpotlightCard>
           </motion.div>
         </div>
       </section>
+
+      {/* Interactive Before vs. After Performance Audit Slider */}
+      <BeforeAfterComparison />
 
       {/* ======================================================================
           4. PROPRIETARY TECHNOLOGY PLATFORM (WebFX MarketingCloudFX equivalent)
@@ -786,13 +762,13 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {TECH_SUITE.map((t, idx) => (
-              <div key={idx} className="bg-neutral-950 border border-white/15 p-6 rounded-sm space-y-4 flex flex-col justify-between">
+              <SpotlightCard key={idx} className="p-6 space-y-4 flex flex-col justify-between border-white/15">
                 <div>
                   <div className="flex justify-between items-center mb-3">
                     <span className="font-mono text-[9px] px-2 py-0.5 bg-white/10 border border-white/20 text-white uppercase tracking-wider">
                       {t.tag}
                     </span>
-                    <Cpu size={14} className="text-neutral-500" />
+                    <Cpu size={14} className="text-neutral-400" />
                   </div>
                   <h3 className="text-lg font-bold text-white uppercase tracking-tight">{t.name}</h3>
                   <p className="text-xs text-neutral-400 mt-2 leading-relaxed">{t.desc}</p>
@@ -801,7 +777,7 @@ export default function App() {
                   <span>BENCHMARK:</span>
                   <span>{t.stat}</span>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
@@ -851,48 +827,52 @@ export default function App() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="bg-black border border-white/20 p-8 sm:p-12 rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+            className="w-full"
           >
-            <div className="lg:col-span-8 space-y-6">
-              <div className="font-mono text-[10px] tracking-[0.25em] text-emerald-400 uppercase">
-                {INDUSTRY_PLAYBOOKS[activeIndustryTab].sector}
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white">
-                {INDUSTRY_PLAYBOOKS[activeIndustryTab].headline}
-              </h3>
-              <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                {INDUSTRY_PLAYBOOKS[activeIndustryTab].desc}
-              </p>
-              <div className="space-y-2 pt-2">
-                {INDUSTRY_PLAYBOOKS[activeIndustryTab].points.map((pt, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-200">
-                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
-                    <span>{pt}</span>
+            <SpotlightCard className="p-8 sm:p-12 border-white/20">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-8 space-y-6">
+                  <div className="font-mono text-[10px] tracking-[0.25em] text-emerald-400 uppercase">
+                    {INDUSTRY_PLAYBOOKS[activeIndustryTab].sector}
                   </div>
-                ))}
-              </div>
-              <div className="pt-4">
-                <button
-                  onClick={() => openAuditModal(INDUSTRY_PLAYBOOKS[activeIndustryTab].sector)}
-                  className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all flex items-center gap-2"
-                >
-                  <span>REQUEST {INDUSTRY_PLAYBOOKS[activeIndustryTab].sector.split('&')[0]} ROADMAP</span>
-                  <ArrowUpRight size={14} />
-                </button>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 bg-neutral-950 border border-white/15 p-6 space-y-4 font-mono">
-              <div className="text-[10px] text-neutral-400 tracking-widest uppercase border-b border-white/10 pb-2">
-                SECTOR BENCHMARKS
-              </div>
-              {INDUSTRY_PLAYBOOKS[activeIndustryTab].metrics.map((m, i) => (
-                <div key={i} className="p-3 bg-white/[0.02] border border-white/10 flex justify-between items-center">
-                  <span className="text-[10px] text-neutral-400 uppercase">{m.label}</span>
-                  <span className="text-sm font-bold text-white">{m.val}</span>
+                  <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white">
+                    {INDUSTRY_PLAYBOOKS[activeIndustryTab].headline}
+                  </h3>
+                  <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
+                    {INDUSTRY_PLAYBOOKS[activeIndustryTab].desc}
+                  </p>
+                  <div className="space-y-2 pt-2">
+                    {INDUSTRY_PLAYBOOKS[activeIndustryTab].points.map((pt, i) => (
+                      <div key={i} className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-200">
+                        <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="pt-4">
+                    <button
+                      onClick={() => openAuditModal(INDUSTRY_PLAYBOOKS[activeIndustryTab].sector)}
+                      className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all flex items-center gap-2"
+                    >
+                      <span>REQUEST {INDUSTRY_PLAYBOOKS[activeIndustryTab].sector.split('&')[0]} ROADMAP</span>
+                      <ArrowUpRight size={14} />
+                    </button>
+                  </div>
                 </div>
-              ))}
-            </div>
+
+                <div className="lg:col-span-4 bg-neutral-950 border border-white/15 p-6 space-y-4 font-mono">
+                  <div className="text-[10px] text-neutral-400 tracking-widest uppercase border-b border-white/10 pb-2">
+                    SECTOR BENCHMARKS
+                  </div>
+                  {INDUSTRY_PLAYBOOKS[activeIndustryTab].metrics.map((m, i) => (
+                    <div key={i} className="p-3 bg-white/[0.02] border border-white/10 flex justify-between items-center">
+                      <span className="text-[10px] text-neutral-400 uppercase">{m.label}</span>
+                      <span className="text-sm font-bold text-white">{m.val}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SpotlightCard>
           </motion.div>
         </div>
       </section>
@@ -920,92 +900,94 @@ export default function App() {
             </p>
           </div>
 
-          <div className="bg-neutral-950/90 border border-white/20 p-8 sm:p-12 rounded-sm backdrop-blur-2xl shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            {/* Left Controls */}
-            <div className="lg:col-span-7 space-y-8 font-mono">
-              {/* Slider 1: Traffic */}
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
-                  <span>MONTHLY WEBSITE VISITORS:</span>
-                  <span className="font-bold text-white">{calcVisitors.toLocaleString()} VISITORS/MO</span>
+          <SpotlightCard className="p-8 sm:p-12 backdrop-blur-2xl shadow-2xl border-white/20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              {/* Left Controls */}
+              <div className="lg:col-span-7 space-y-8 font-mono">
+                {/* Slider 1: Traffic */}
+                <div className="space-y-2">
+                  <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
+                    <span>MONTHLY WEBSITE VISITORS:</span>
+                    <span className="font-bold text-white">{calcVisitors.toLocaleString()} VISITORS/MO</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="2500"
+                    max="100000"
+                    step="1000"
+                    value={calcVisitors}
+                    onChange={(e) => setCalcVisitors(Number(e.target.value))}
+                    className="w-full h-1.5 bg-neutral-800 accent-white rounded-none cursor-pointer"
+                  />
                 </div>
-                <input
-                  type="range"
-                  min="2500"
-                  max="100000"
-                  step="1000"
-                  value={calcVisitors}
-                  onChange={(e) => setCalcVisitors(Number(e.target.value))}
-                  className="w-full h-1.5 bg-neutral-800 accent-white rounded-none cursor-pointer"
-                />
+
+                {/* Slider 2: Deal Value */}
+                <div className="space-y-2">
+                  <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
+                    <span>AVERAGE CLIENT / CONTRACT VALUE:</span>
+                    <span className="font-bold text-white">${calcAvgDeal.toLocaleString()}</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="500"
+                    max="25000"
+                    step="250"
+                    value={calcAvgDeal}
+                    onChange={(e) => setCalcAvgDeal(Number(e.target.value))}
+                    className="w-full h-1.5 bg-neutral-800 accent-white rounded-none cursor-pointer"
+                  />
+                </div>
+
+                {/* Slider 3: Target Conversion Lift */}
+                <div className="space-y-2">
+                  <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
+                    <span>TARGET CONVERSION RATE INCREASE:</span>
+                    <span className="font-bold text-white">+{calcConvLift.toFixed(1)}% LIFT</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0.5"
+                    max="5.0"
+                    step="0.1"
+                    value={calcConvLift}
+                    onChange={(e) => setCalcConvLift(Number(e.target.value))}
+                    className="w-full h-1.5 bg-neutral-800 accent-white rounded-none cursor-pointer"
+                  />
+                </div>
+
+                <div className="text-[11px] text-neutral-400 font-sans">
+                  * Based on verified WebFX and industry agency performance metrics across over 1,000+ client campaigns.
+                </div>
               </div>
 
-              {/* Slider 2: Deal Value */}
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
-                  <span>AVERAGE CLIENT / CONTRACT VALUE:</span>
-                  <span className="font-bold text-white">${calcAvgDeal.toLocaleString()}</span>
+              {/* Right Output Console */}
+              <div className="lg:col-span-5 bg-black/90 p-8 border border-white/20 text-center space-y-6 backdrop-blur-md rounded-sm">
+                <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
+                  PROJECTED ANNUAL REVENUE GROWTH
                 </div>
-                <input
-                  type="range"
-                  min="500"
-                  max="25000"
-                  step="250"
-                  value={calcAvgDeal}
-                  onChange={(e) => setCalcAvgDeal(Number(e.target.value))}
-                  className="w-full h-1.5 bg-neutral-800 accent-white rounded-none cursor-pointer"
-                />
-              </div>
 
-              {/* Slider 3: Target Conversion Lift */}
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
-                  <span>TARGET CONVERSION RATE INCREASE:</span>
-                  <span className="font-bold text-white">+{calcConvLift.toFixed(1)}% LIFT</span>
+                <div>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold font-mono tracking-tight text-white">
+                    <KineticCounter value={annualRevenueGrowth} prefix="+$" duration={500} />
+                  </div>
+                  <div className="font-mono text-[11px] text-neutral-400 tracking-widest uppercase mt-1">
+                    PER YEAR (<KineticCounter value={monthlyRevenueGrowth} prefix="+$" suffix="/MO" duration={500} />)
+                  </div>
                 </div>
-                <input
-                  type="range"
-                  min="0.5"
-                  max="5.0"
-                  step="0.1"
-                  value={calcConvLift}
-                  onChange={(e) => setCalcConvLift(Number(e.target.value))}
-                  className="w-full h-1.5 bg-neutral-800 accent-white rounded-none cursor-pointer"
-                />
-              </div>
 
-              <div className="text-[11px] text-neutral-400 font-sans">
-                * Based on verified WebFX and industry agency performance metrics across over 1,000+ client campaigns.
+                <div className="p-3 bg-white/[0.03] border border-white/10 font-mono text-xs text-emerald-400 tracking-wider uppercase">
+                  PROJECTED ROI: <KineticCounter value={parseFloat(estimatedROIMultiplier) || 1} suffix="x" decimals={1} duration={500} /> ON AD INVESTMENT
+                </div>
+
+                <button
+                  onClick={() => openAuditModal()}
+                  className="w-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] py-4 border border-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95"
+                >
+                  REQUEST CUSTOM GROWTH PROPOSAL
+                </button>
               </div>
             </div>
-
-            {/* Right Output Console */}
-            <div className="lg:col-span-5 bg-black/90 p-8 border border-white/20 text-center space-y-6 backdrop-blur-md">
-              <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
-                PROJECTED ANNUAL REVENUE GROWTH
-              </div>
-
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold font-mono tracking-tight text-white">
-                  +${annualRevenueGrowth.toLocaleString()}
-                </div>
-                <div className="font-mono text-[11px] text-neutral-400 tracking-widest uppercase mt-1">
-                  PER YEAR (+${monthlyRevenueGrowth.toLocaleString()}/MO)
-                </div>
-              </div>
-
-              <div className="p-3 bg-white/[0.03] border border-white/10 font-mono text-xs text-emerald-400 tracking-wider uppercase">
-                PROJECTED ROI: {estimatedROIMultiplier}x ON AD INVESTMENT
-              </div>
-
-              <button
-                onClick={() => openAuditModal()}
-                className="w-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] py-4 border border-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95"
-              >
-                REQUEST CUSTOM GROWTH PROPOSAL
-              </button>
-            </div>
-          </div>
+          </SpotlightCard>
         </div>
       </section>
 
@@ -1031,7 +1013,7 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Case 1 */}
-            <div className="bg-neutral-950/90 border border-white/15 p-6 rounded-sm space-y-4 font-mono backdrop-blur-md">
+            <SpotlightCard className="p-6 space-y-4 font-mono border-white/15">
               <div className="flex justify-between items-center text-[10px] text-neutral-400 border-b border-white/10 pb-3 uppercase tracking-widest">
                 <span>APEX LEGAL PARTNERS</span>
                 <span className="text-emerald-400">+310% SIGNED CASES</span>
@@ -1042,10 +1024,10 @@ export default function App() {
               <div className="pt-2 text-[10px] text-neutral-500 uppercase tracking-widest">
                 — MARCUS STERLING, MANAGING PARTNER
               </div>
-            </div>
+            </SpotlightCard>
 
             {/* Case 2 */}
-            <div className="bg-neutral-950/90 border border-white/15 p-6 rounded-sm space-y-4 font-mono backdrop-blur-md">
+            <SpotlightCard className="p-6 space-y-4 font-mono border-white/15">
               <div className="flex justify-between items-center text-[10px] text-neutral-400 border-b border-white/10 pb-3 uppercase tracking-widest">
                 <span>SOLIS HOME SERVICES</span>
                 <span className="text-emerald-400">+280% ORGANIC LEADS</span>
@@ -1056,10 +1038,10 @@ export default function App() {
               <div className="pt-2 text-[10px] text-neutral-500 uppercase tracking-widest">
                 — ELENA RODRIGUEZ, OPERATIONS DIRECTOR
               </div>
-            </div>
+            </SpotlightCard>
 
             {/* Case 3 */}
-            <div className="bg-neutral-950/90 border border-white/15 p-6 rounded-sm space-y-4 font-mono backdrop-blur-md">
+            <SpotlightCard className="p-6 space-y-4 font-mono border-white/15">
               <div className="flex justify-between items-center text-[10px] text-neutral-400 border-b border-white/10 pb-3 uppercase tracking-widest">
                 <span>ZENITH MEDSPA GROUP</span>
                 <span className="text-emerald-400">+185% NEW PATIENTS</span>
@@ -1070,7 +1052,7 @@ export default function App() {
               <div className="pt-2 text-[10px] text-neutral-500 uppercase tracking-widest">
                 — DR. DANIEL KIM, MEDICAL DIRECTOR
               </div>
-            </div>
+            </SpotlightCard>
           </div>
 
           <div className="mt-16 text-center">
