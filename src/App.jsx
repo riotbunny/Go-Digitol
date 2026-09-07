@@ -617,6 +617,13 @@ export default function App() {
 
           {/* Action Button */}
           <div className="flex items-center gap-4">
+            <a
+              href="tel:+18004923444"
+              className="hidden xl:flex items-center gap-1.5 text-neutral-300 hover:text-white font-mono text-[10px] tracking-wider transition-colors border border-white/10 hover:border-white/30 px-3 py-1.5 bg-white/[0.02]"
+            >
+              <PhoneCall size={12} className="text-emerald-400" />
+              <span>(800) 492-DIGI</span>
+            </a>
             <div className="hidden sm:flex items-center gap-2 font-mono text-[10px] tracking-widest text-neutral-400 uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               <span>ACCEPTING PARTNERS</span>
@@ -1325,6 +1332,13 @@ export default function App() {
                         style={{ width: `${currentStep * 25}%` }}
                       />
                     </div>
+                    <div className="flex justify-between items-center text-[9px] text-neutral-400 uppercase tracking-widest pt-2">
+                      <span className="text-emerald-400 flex items-center gap-1.5 font-bold">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        NO LONG-TERM CONTRACT LOCK-IN
+                      </span>
+                      <span className="hidden sm:inline">100% FIRST-PARTY DATA OWNERSHIP</span>
+                    </div>
                   </div>
 
                   {/* Step 1: Industry Classification */}
@@ -1443,9 +1457,25 @@ export default function App() {
                         <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-1">
                           {currentConfig.step4Title}
                         </h3>
-                        <p className="text-neutral-400 text-xs font-mono tracking-wide">
+                        <p className="text-neutral-400 text-xs font-mono tracking-wide mb-3">
                           {currentConfig.step4Subtitle}
                         </p>
+
+                        {/* Deliverables Value Strip */}
+                        <div className="p-3 bg-white/[0.03] border border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono text-[10px] text-neutral-300">
+                          <div className="flex items-center gap-1.5 text-emerald-400">
+                            <CheckCircle2 size={12} className="shrink-0" />
+                            <span>Competitor Gap Audit</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 text-emerald-400">
+                            <CheckCircle2 size={12} className="shrink-0" />
+                            <span>CRO &amp; Speed Analysis</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 text-emerald-400">
+                            <CheckCircle2 size={12} className="shrink-0" />
+                            <span>12-Mo ROAS Forecast</span>
+                          </div>
+                        </div>
                       </div>
 
                       <div className="space-y-3 pt-2 font-mono text-xs">
@@ -1512,7 +1542,7 @@ export default function App() {
                         </div>
                       </div>
 
-                      <div className="pt-4">
+                      <div className="pt-4 space-y-2.5">
                         <button
                           type="submit"
                           disabled={isSubmitting}
@@ -1520,6 +1550,15 @@ export default function App() {
                         >
                           <span>{isSubmitting ? 'PREPARING YOUR PROPOSAL...' : currentConfig.buttonText}</span>
                         </button>
+
+                        {/* Privacy Trust & Turnaround Guarantee */}
+                        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 pt-1 text-[10px] text-neutral-400 font-mono">
+                          <span className="flex items-center gap-1 text-emerald-400">
+                            <ShieldCheck size={12} />
+                            <span>100% Confidential • Zero Spam Guarantee</span>
+                          </span>
+                          <span className="text-neutral-400">⏱️ Blueprint delivered within 24 business hours</span>
+                        </div>
                       </div>
                     </motion.form>
                   )}
