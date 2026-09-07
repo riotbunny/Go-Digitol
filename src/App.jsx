@@ -55,6 +55,182 @@ import TypewriterText from './components/TypewriterText';
 
 
 
+// Helper to detect service category from strings
+const getServiceCategory = (goalStr = '') => {
+  const s = (goalStr || '').toLowerCase();
+  if (s.includes('web') || s.includes('design') || s.includes('cro') || s.includes('landing') || s.includes('site')) {
+    return 'web_design';
+  }
+  if (s.includes('ppc') || s.includes('pay-per-click') || s.includes('ad') || s.includes('paid')) {
+    return 'ppc';
+  }
+  if (s.includes('seo') || s.includes('search') || s.includes('organic')) {
+    return 'seo';
+  }
+  if (s.includes('content') || s.includes('creative') || s.includes('pr')) {
+    return 'content';
+  }
+  if (s.includes('automation') || s.includes('tracking') || s.includes('crm') || s.includes('revenue tracking')) {
+    return 'automation';
+  }
+  return 'growth';
+};
+
+const SERVICE_CONFIGS = {
+  web_design: {
+    category: 'web_design',
+    serviceName: 'Web Design & CRO',
+    step2Title: '02 // WHAT TYPE OF WEB PROJECT DO YOU NEED?',
+    step2Subtitle: 'Select the web architecture scope for your business.',
+    step2Options: [
+      { title: '⚡ FULL CUSTOM WEBSITE REDESIGN', desc: 'Complete rebuild engineered for sub-second speed & maximum CRO lead generation' },
+      { title: '🚀 BRAND-NEW WEBSITE (FROM SCRATCH)', desc: 'Modern responsive website built on scalable, secure enterprise infrastructure' },
+      { title: '🎯 HIGH-CONVERTING LANDING PAGE FUNNEL', desc: 'Targeted conversion landing pages for paid ads and marketing campaigns' },
+      { title: '🛍️ E-COMMERCE STORE & CHECKOUT FUNNEL', desc: 'High-speed e-commerce architecture with frictionless cart and checkout flow' },
+      { title: '⚙️ CUSTOM WEB APPLICATION / CLIENT PORTAL', desc: 'Interactive web apps, customer portals, custom calculators, and dashboards' }
+    ],
+    step3Title: '03 // ESTIMATED WEBSITE PROJECT BUDGET',
+    step3Subtitle: 'What is your target investment for this custom web design & conversion engine build?',
+    step3Options: [
+      '$3,500 - $7,500 (Growth Landing Funnel / Starter Redesign)',
+      '$7,500 - $15,000 (Custom High-Performance Architecture)',
+      '$15,000 - $30,000 (Full Enterprise Multi-Page & CRO Engine)',
+      '$30,000+ (Custom Web App / Complex Enterprise Platform)'
+    ],
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR WEBSITE ARCHITECTURE & CRO BLUEPRINT?',
+    step4Subtitle: 'Enter your contact details and current website URL (if redesign) for a complimentary CRO audit.',
+    urlLabel: 'CURRENT WEBSITE URL (OPTIONAL IF BUILDING NEW)',
+    urlPlaceholder: 'https://yourcompany.com (or leave blank if new build)',
+    buttonText: 'REQUEST MY CUSTOM WEBSITE & CRO BLUEPRINT →'
+  },
+  ppc: {
+    category: 'ppc',
+    serviceName: 'Paid Media & PPC Advertising',
+    step2Title: '02 // WHAT PAID ADVERTISING CHANNELS DO YOU NEED?',
+    step2Subtitle: 'Select your primary paid acquisition channels.',
+    step2Options: [
+      { title: '🎯 GOOGLE SEARCH & HIGH-INTENT ADS', desc: 'Capture active buyers searching for your exact high-ticket services' },
+      { title: '📱 META ADS (FACEBOOK & INSTAGRAM)', desc: 'Demographic & behavioral audience targeting with high-converting creative' },
+      { title: '🎬 YOUTUBE & PROGRAMMATIC VIDEO ADS', desc: 'High-impact video campaigns targeting in-market commercial decision makers' },
+      { title: '⚡ MULTI-CHANNEL PAID FUNNEL & RETARGETING', desc: 'Omnichannel paid strategy with server-side CAPI tracking and automated ROAS tuning' }
+    ],
+    step3Title: '03 // TARGET MONTHLY AD SPEND SCALE',
+    step3Subtitle: 'What is your approximate monthly media spend for Google / Meta Ads?',
+    step3Options: [
+      '$2,500 - $5,000 / MONTH (Media Spend)',
+      '$5,000 - $15,000 / MONTH (Media Spend)',
+      '$15,000 - $50,000 / MONTH (Media Spend)',
+      '$50,000+ / MONTH (Enterprise Scaling)'
+    ],
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR PAID MEDIA & ROAS PROJECTION?',
+    step4Subtitle: 'We will build a custom competitor keyword & paid channel ROAS forecast.',
+    urlLabel: 'LANDING PAGE / WEBSITE URL *',
+    urlPlaceholder: 'https://yourcompany.com',
+    buttonText: 'REQUEST MY CUSTOM ROAS PROJECTION →'
+  },
+  seo: {
+    category: 'seo',
+    serviceName: 'SEO & AI Search Dominance',
+    step2Title: '02 // WHAT SEO & ORGANIC REACH DO YOU NEED?',
+    step2Subtitle: 'Select your target organic search strategy.',
+    step2Options: [
+      { title: '🔍 LOCAL SEO & GOOGLE MAPS PACK #1', desc: 'Dominate high-intent local map pack rankings across all service areas' },
+      { title: '🚀 NATIONAL & COMMERCIAL KEYWORD RANKINGS', desc: 'Rank #1 organically for competitive high-volume industry terms' },
+      { title: '🤖 AI SEARCH OPTIMIZATION (GEO)', desc: 'Secure prominent citations in ChatGPT, Google Gemini & Perplexity summaries' },
+      { title: '🏢 MULTI-LOCATION ENTERPRISE SEO', desc: 'Scalable organic search architecture for multi-location or franchise businesses' }
+    ],
+    step3Title: '03 // MONTHLY ORGANIC GROWTH INVESTMENT',
+    step3Subtitle: 'What is your target monthly investment for SEO & AI Search acceleration?',
+    step3Options: [
+      '$1,500 - $3,500 / MONTH (Local Market Focus)',
+      '$3,500 - $7,500 / MONTH (Regional Growth)',
+      '$7,500 - $15,000 / MONTH (National Competitive)',
+      '$15,000+ / MONTH (Enterprise / Multi-Location)'
+    ],
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR COMPREHENSIVE SEO & AI SEARCH AUDIT?',
+    step4Subtitle: 'We will run a complete keyword gap, competitor analysis, and AI search visibility audit.',
+    urlLabel: 'WEBSITE URL (FOR SEO & COMPETITOR AUDIT) *',
+    urlPlaceholder: 'https://yourcompany.com',
+    buttonText: 'REQUEST MY COMPLIMENTARY SEO AUDIT →'
+  },
+  content: {
+    category: 'content',
+    serviceName: 'Content Marketing & Brand Authority',
+    step2Title: '02 // WHAT CONTENT ASSETS DO YOU NEED?',
+    step2Subtitle: 'Select the creative & authority assets you want produced.',
+    step2Options: [
+      { title: '✍️ COMMERCIAL PILLAR ARTICLES & SEO BLOGS', desc: 'In-depth commercial guides that rank and convert qualified buyers' },
+      { title: '📊 DATA INFOGRAPHICS & INDUSTRY WHITEPAPERS', desc: 'Original research and data assets designed to earn high-authority backlinks' },
+      { title: '🎬 VIDEO MARKETING & EXECUTIVE INTERVIEWS', desc: 'High-production short and long-form video content for social and web' },
+      { title: '📰 DIGITAL PR & HIGH-TIER MEDIA SYNDICATION', desc: 'Feature placements across authoritative industry publications and news outlets' }
+    ],
+    step3Title: '03 // MONTHLY CONTENT PRODUCTION SCALE',
+    step3Subtitle: 'What is your target monthly investment for authority content & digital PR?',
+    step3Options: [
+      '$1,500 - $3,500 / MONTH (Core Blog & Search Authority)',
+      '$3,500 - $7,500 / MONTH (Pillars, Infographics & Digital PR)',
+      '$7,500 - $15,000 / MONTH (Full Multimedia & Video Production)',
+      '$15,000+ / MONTH (Enterprise Content Machine)'
+    ],
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR CONTENT & PR STRATEGY ROADMAP?',
+    step4Subtitle: 'We will outline high-intent topics, competitor content gaps, and an authority roadmap.',
+    urlLabel: 'CURRENT WEBSITE / CONTENT URL',
+    urlPlaceholder: 'https://yourcompany.com',
+    buttonText: 'REQUEST MY CONTENT STRATEGY ROADMAP →'
+  },
+  automation: {
+    category: 'automation',
+    serviceName: 'Revenue Tracking & Marketing Automation',
+    step2Title: '02 // WHAT AUTOMATION SYSTEMS DO YOU NEED?',
+    step2Subtitle: 'Select the revenue intelligence capabilities for your pipeline.',
+    step2Options: [
+      { title: '📊 CLOSED-LOOP CRM & REVENUE ATTRIBUTION', desc: 'Track every lead and closed deal back to exact marketing channel and keyword' },
+      { title: '📞 DYNAMIC CALL TRACKING & LEAD SCORING', desc: 'Call recording, keyword source attribution, and automated qualification' },
+      { title: '⚡ AUTOMATED EMAIL & SMS LEAD NURTURE', desc: 'Instant speed-to-lead follow-up workflows and automated review generation' },
+      { title: '🔗 CRM PIPELINE INTEGRATION (SALESFORCE / HUBSPOT / GHL)', desc: 'Seamless 2-way data sync between marketing funnels and your sales team' }
+    ],
+    step3Title: '03 // MONTHLY LEAD VOLUME & PIPELINE SCALE',
+    step3Subtitle: 'What is your current monthly inbound lead / contact volume?',
+    step3Options: [
+      '50 - 250 LEADS / MONTH',
+      '250 - 1,000 LEADS / MONTH',
+      '1,000 - 5,000 LEADS / MONTH',
+      '5,000+ LEADS / MONTH (ENTERPRISE SCALE)'
+    ],
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR REVENUE ATTRIBUTION BLUEPRINT?',
+    step4Subtitle: 'We will map your closed-loop tracking, CRM data sync, and automation architecture.',
+    urlLabel: 'PRIMARY WEBSITE / CRM DOMAIN',
+    urlPlaceholder: 'https://yourcompany.com',
+    buttonText: 'REQUEST REVENUE ATTRIBUTION BLUEPRINT →'
+  },
+  growth: {
+    category: 'growth',
+    serviceName: 'Full-Service Digital Growth',
+    step2Title: '02 // WHAT SERVICES ARE YOU LOOKING FOR?',
+    step2Subtitle: 'Select the primary digital marketing solutions you need.',
+    step2Options: [
+      { title: '🔍 SEARCH ENGINE OPTIMIZATION (SEO & AI SEARCH)', desc: 'Dominate organic Google rankings, local search, and AI Search Overviews' },
+      { title: '🎯 PAY-PER-CLICK ADVERTISING (PPC & PAID MEDIA)', desc: 'High-ROAS Google Ads, Meta Ads, and paid social campaigns' },
+      { title: '💻 CUSTOM WEB DESIGN & CONVERSION RATE (CRO)', desc: 'High-speed, conversion-engineered website and landing page funnels' },
+      { title: '✍️ CONTENT MARKETING & BRAND ASSETS', desc: 'Authoritative commercial content, infographics, and digital PR' },
+      { title: '🚀 FULL-SERVICE DIGITAL GROWTH (ALL CHANNELS)', desc: 'Complete end-to-end digital marketing management and revenue attribution' }
+    ],
+    step3Title: '03 // MONTHLY MARKETING INVESTMENT SCALE',
+    step3Subtitle: 'What is your target monthly marketing growth budget?',
+    step3Options: [
+      '$2,500 - $5,000 / MONTH (Growth Tier)',
+      '$5,000 - $10,000 / MONTH (Scale Tier)',
+      '$10,000 - $25,000 / MONTH (Domination Tier)',
+      '$25,000+ / MONTH (Enterprise Custom)'
+    ],
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR CUSTOM REVENUE PROPOSAL?',
+    step4Subtitle: 'Enter your contact info and website URL for an automated SEO, CRO & revenue audit.',
+    urlLabel: 'WEBSITE URL (FOR FREE AUDIT)',
+    urlPlaceholder: 'https://yourcompany.com',
+    buttonText: 'REQUEST MY CUSTOM MARKETING PROPOSAL →'
+  }
+};
+
 /* ==========================================================================
    MAIN APPLICATION COMPONENT
    ========================================================================== */
@@ -75,8 +251,13 @@ export default function App() {
     website_url: '',
     email: '',
     phone: '',
-    notes: ''
+    notes: '',
+    service_category: 'growth'
   });
+
+  // Active service config based on current selection
+  const activeServiceCategory = formData.service_category || getServiceCategory(formData.primary_goal) || 'growth';
+  const currentConfig = SERVICE_CONFIGS[activeServiceCategory] || SERVICE_CONFIGS.growth;
 
   // ROI Calculator State
   const [calcVisitors, setCalcVisitors] = useState(25000);
@@ -120,15 +301,39 @@ export default function App() {
     }
   }, [modalOpen]);
 
-  const openAuditModal = (preselectedGoal = '') => {
-    if (preselectedGoal) {
-      setFormData(prev => ({ ...prev, primary_goal: preselectedGoal }));
+  const openAuditModal = (options = {}) => {
+    if (typeof options === 'string') {
+      const cat = getServiceCategory(options);
+      setFormData(prev => ({
+        ...prev,
+        primary_goal: options,
+        service_category: cat
+      }));
+      setCurrentStep(1);
+    } else {
+      const { service = '', serviceKey = '', industry = '', step = 1, notes = '' } = options;
+      const cat = serviceKey || (service ? getServiceCategory(service) : 'growth');
+      setFormData(prev => ({
+        ...prev,
+        primary_goal: service || prev.primary_goal,
+        industry: industry || prev.industry,
+        notes: notes || prev.notes,
+        service_category: cat
+      }));
+      setCurrentStep(step);
     }
+    setSubmitted(false);
     setModalOpen(true);
   };
 
   const handleStepSelect = (field, value) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData(prev => {
+      const updated = { ...prev, [field]: value };
+      if (field === 'primary_goal') {
+        updated.service_category = getServiceCategory(value);
+      }
+      return updated;
+    });
     if (currentStep < 4) {
       setCurrentStep(prev => prev + 1);
     }
@@ -161,6 +366,7 @@ export default function App() {
   const CORE_SERVICES = [
     {
       id: '01',
+      serviceKey: 'seo',
       tag: 'ORGANIC SEARCH & AI OVERVIEWS',
       title: 'SEARCH ENGINE OPTIMIZATION (SEO & AI SEARCH)',
       shortTitle: 'SEARCH ENGINE OPTIMIZATION',
@@ -179,6 +385,7 @@ export default function App() {
     },
     {
       id: '02',
+      serviceKey: 'ppc',
       tag: 'PAID MEDIA & ROAS',
       title: 'PAY-PER-CLICK ADVERTISING (PPC & PAID MEDIA)',
       shortTitle: 'PAY-PER-CLICK ADVERTISING',
@@ -197,6 +404,7 @@ export default function App() {
     },
     {
       id: '03',
+      serviceKey: 'web_design',
       tag: 'CONVERSION RATE OPTIMIZATION',
       title: 'CUSTOM WEB DESIGN & CONVERSION ENGINES',
       shortTitle: 'CUSTOM WEB DESIGN & CRO',
@@ -215,6 +423,7 @@ export default function App() {
     },
     {
       id: '04',
+      serviceKey: 'content',
       tag: 'CONTENT MARKETING & AUTHORITY',
       title: 'CONTENT MARKETING & CREATIVE ASSETS',
       shortTitle: 'CONTENT MARKETING',
@@ -233,6 +442,7 @@ export default function App() {
     },
     {
       id: '05',
+      serviceKey: 'automation',
       tag: 'REVENUE INTELLIGENCE & TECH',
       title: 'REVENUE TRACKING & MARKETING AUTOMATION',
       shortTitle: 'REVENUE TRACKING & AUTOMATION',
@@ -617,10 +827,10 @@ export default function App() {
 
                   <div className="pt-6">
                     <button
-                      onClick={() => openAuditModal(CORE_SERVICES[activeServiceTab].title)}
+                      onClick={() => openAuditModal({ service: CORE_SERVICES[activeServiceTab].title, serviceKey: CORE_SERVICES[activeServiceTab].serviceKey })}
                       className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all flex items-center gap-2"
                     >
-                      <span>REQUEST A CUSTOM PROPOSAL</span>
+                      <span>REQUEST {CORE_SERVICES[activeServiceTab].shortTitle} PROPOSAL</span>
                       <ArrowUpRight size={14} />
                     </button>
                   </div>
@@ -778,7 +988,7 @@ export default function App() {
                   </div>
                   <div className="pt-4">
                     <button
-                      onClick={() => openAuditModal(INDUSTRY_PLAYBOOKS[activeIndustryTab].sector)}
+                      onClick={() => openAuditModal({ industry: INDUSTRY_PLAYBOOKS[activeIndustryTab].sector, step: 2 })}
                       className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all flex items-center gap-2"
                     >
                       <span>REQUEST {INDUSTRY_PLAYBOOKS[activeIndustryTab].sector.split('&')[0]} ROADMAP</span>
@@ -911,7 +1121,11 @@ export default function App() {
                 </div>
 
                 <button
-                  onClick={() => openAuditModal()}
+                  onClick={() => openAuditModal({
+                    service: 'FULL-SERVICE DIGITAL GROWTH (ALL CHANNELS)',
+                    serviceKey: 'growth',
+                    notes: `Calculated from ROI Simulator: Projected +$${monthlyRevenueGrowth.toLocaleString()}/mo growth (${estimatedROIMultiplier}x ROI on $${calcAvgDeal.toLocaleString()} avg deal & ${calcVisitors.toLocaleString()} visitors)`
+                  })}
                   className="w-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] py-4 border border-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95"
                 >
                   REQUEST CUSTOM GROWTH PROPOSAL
@@ -1073,9 +1287,20 @@ export default function App() {
             >
               {/* Top Modal Header */}
               <div className="flex justify-between items-center pb-4 mb-6 border-b border-white/10">
-                <div className="flex items-center gap-2.5 font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
-                  <BarChart3 size={14} className="text-white" />
-                  <span>[DIGITOL MARKETING // FREE REVENUE PROPOSAL]</span>
+                <div className="flex items-center gap-3">
+                  {currentStep > 1 && !submitted && (
+                    <button
+                      type="button"
+                      onClick={() => setCurrentStep(prev => prev - 1)}
+                      className="px-2 py-1 text-[10px] font-mono uppercase tracking-widest text-neutral-400 hover:text-white border border-white/15 hover:border-white transition-colors flex items-center gap-1"
+                    >
+                      ← BACK
+                    </button>
+                  )}
+                  <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] text-neutral-400 uppercase">
+                    <BarChart3 size={14} className="text-white" />
+                    <span>[DIGITOL MARKETING // {currentConfig.serviceName.toUpperCase()} PROPOSAL]</span>
+                  </div>
                 </div>
                 <button
                   onClick={() => setModalOpen(false)}
@@ -1112,7 +1337,7 @@ export default function App() {
                     >
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-1">
-                          01 // SELECT YOUR INDUSTRY
+                          01 // {formData.primary_goal ? `WHAT INDUSTRY IS YOUR ${currentConfig.serviceName.toUpperCase()} FOR?` : 'SELECT YOUR INDUSTRY'}
                         </h3>
                         <p className="text-neutral-400 text-xs font-mono tracking-wide">
                           Select your primary industry so we can prepare sector-specific benchmark data.
@@ -1141,7 +1366,7 @@ export default function App() {
                     </motion.div>
                   )}
 
-                  {/* Step 2: Primary Marketing Goal */}
+                  {/* Step 2: Primary Marketing Goal / Service Scope */}
                   {currentStep === 2 && (
                     <motion.div
                       key="step2"
@@ -1151,21 +1376,15 @@ export default function App() {
                     >
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-1">
-                          02 // WHAT SERVICES ARE YOU LOOKING FOR?
+                          {currentConfig.step2Title}
                         </h3>
                         <p className="text-neutral-400 text-xs font-mono tracking-wide">
-                          Select the primary digital marketing solutions you need.
+                          {currentConfig.step2Subtitle}
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 gap-2.5 font-mono text-xs">
-                        {[
-                          { title: '🔍 SEARCH ENGINE OPTIMIZATION (SEO & AI SEARCH)', desc: 'Dominate organic Google rankings, local search, and AI Search Overviews' },
-                          { title: '🎯 PAY-PER-CLICK ADVERTISING (PPC & PAID MEDIA)', desc: 'High-ROAS Google Ads, Meta Ads, and paid social campaigns' },
-                          { title: '💻 CUSTOM WEB DESIGN & CONVERSION RATE (CRO)', desc: 'High-speed, conversion-engineered website and landing page funnels' },
-                          { title: '✍️ CONTENT MARKETING & BRAND ASSETS', desc: 'Authoritative commercial content, infographics, and digital PR' },
-                          { title: '🚀 FULL-SERVICE DIGITAL GROWTH (ALL CHANNELS)', desc: 'Complete end-to-end digital marketing management and revenue attribution' }
-                        ].map((svc) => (
+                        {currentConfig.step2Options.map((svc) => (
                           <button
                             key={svc.title}
                             onClick={() => handleStepSelect('primary_goal', svc.title)}
@@ -1179,7 +1398,7 @@ export default function App() {
                     </motion.div>
                   )}
 
-                  {/* Step 3: Monthly Marketing Budget */}
+                  {/* Step 3: Conditional Investment / Budget / Scale */}
                   {currentStep === 3 && (
                     <motion.div
                       key="step3"
@@ -1189,20 +1408,15 @@ export default function App() {
                     >
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-1">
-                          03 // MONTHLY MARKETING INVESTMENT SCALE
+                          {currentConfig.step3Title}
                         </h3>
                         <p className="text-neutral-400 text-xs font-mono tracking-wide">
-                          What is your target monthly marketing budget?
+                          {currentConfig.step3Subtitle}
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 font-mono text-xs">
-                        {[
-                          '$1,500 - $3,500 / MONTH',
-                          '$3,500 - $7,500 / MONTH',
-                          '$7,500 - $15,000 / MONTH',
-                          '$15,000+ / MONTH (ENTERPRISE)'
-                        ].map((vol) => (
+                        {currentConfig.step3Options.map((vol) => (
                           <button
                             key={vol}
                             onClick={() => handleStepSelect('lead_volume', vol)}
@@ -1227,10 +1441,10 @@ export default function App() {
                     >
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-1">
-                          04 // WHERE SHOULD WE SEND YOUR PROPOSAL?
+                          {currentConfig.step4Title}
                         </h3>
                         <p className="text-neutral-400 text-xs font-mono tracking-wide">
-                          Enter your contact info and website URL for an automated SEO &amp; CRO website audit.
+                          {currentConfig.step4Subtitle}
                         </p>
                       </div>
 
@@ -1262,10 +1476,10 @@ export default function App() {
                         </div>
 
                         <div>
-                          <label className="block text-[10px] text-neutral-400 uppercase tracking-widest mb-1.5">WEBSITE URL (FOR FREE AUDIT)</label>
+                          <label className="block text-[10px] text-neutral-400 uppercase tracking-widest mb-1.5">{currentConfig.urlLabel}</label>
                           <input
                             type="url"
-                            placeholder="https://yourcompany.com"
+                            placeholder={currentConfig.urlPlaceholder}
                             className="w-full bg-neutral-950 border border-white/20 p-3 text-white text-xs font-mono focus:border-white focus:outline-none transition-all rounded-none"
                             value={formData.website_url}
                             onChange={(e) => setFormData({ ...formData, website_url: e.target.value })}
@@ -1304,7 +1518,7 @@ export default function App() {
                           disabled={isSubmitting}
                           className="w-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] py-4 border border-white transition-all shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95 flex items-center justify-center gap-2"
                         >
-                          <span>{isSubmitting ? 'PREPARING YOUR PROPOSAL...' : 'REQUEST MY CUSTOM MARKETING PROPOSAL →'}</span>
+                          <span>{isSubmitting ? 'PREPARING YOUR PROPOSAL...' : currentConfig.buttonText}</span>
                         </button>
                       </div>
                     </motion.form>
@@ -1326,12 +1540,12 @@ export default function App() {
                       PROPOSAL REQUEST RECEIVED
                     </div>
                     <h3 className="text-2xl font-bold uppercase tracking-tight text-white">
-                      CUSTOM DIGITAL MARKETING PROPOSAL QUEUED FOR {formData.company || 'YOUR BUSINESS'}
+                      CUSTOM {currentConfig.serviceName.toUpperCase()} PROPOSAL QUEUED FOR {formData.company || 'YOUR BUSINESS'}
                     </h3>
                   </div>
 
                   <p className="text-neutral-400 text-xs max-w-md mx-auto leading-relaxed">
-                    A confirmation email has been dispatched to <span className="text-white font-mono">{formData.email}</span>. A senior growth strategist has been assigned to conduct your competitor &amp; revenue analysis.
+                    A confirmation email has been dispatched to <span className="text-white font-mono">{formData.email}</span>. A senior strategist specializing in {currentConfig.serviceName} has been assigned to your proposal.
                   </p>
 
                   {/* Interactive Strategy Call Booking Desk */}
