@@ -344,8 +344,11 @@ export default function App() {
       {/* ======================================================================
           2. HERO VIEWPORT SECTION (FULL SCREEN)
           ====================================================================== */}
-      <section className="min-h-screen relative flex flex-col justify-center items-center px-6 pt-24 pb-16 starlink-grid">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-black pointer-events-none" />
+      <section 
+        className="min-h-screen relative flex flex-col justify-center items-center px-6 pt-24 pb-16 bg-cover bg-center bg-no-repeat starlink-grid"
+        style={{ backgroundImage: "url('/images/hero_bg.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black pointer-events-none" />
         <div className="radar-scan" />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
@@ -407,7 +410,7 @@ export default function App() {
           <StarlinkProofShowcase />
 
           {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-b border-white/10 py-6 font-mono">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-b border-white/10 py-6 font-mono bg-black/40 backdrop-blur-md">
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">$14.2M+</div>
               <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">RECOVERED CAPITAL</div>
@@ -431,8 +434,14 @@ export default function App() {
       {/* ======================================================================
           3. ARCHITECTURE & 5 CORE PILLARS (MIN-H-SCREEN)
           ====================================================================== */}
-      <section id="architecture" className="min-h-screen py-28 px-6 bg-black relative border-t border-white/10 flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto w-full">
+      <section 
+        id="architecture" 
+        className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center"
+        style={{ backgroundImage: "url('/images/architecture_bg.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/85 backdrop-blur-[2px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
           {/* Section Header */}
           <div className="text-left mb-16">
             <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
@@ -454,8 +463,8 @@ export default function App() {
                 onClick={() => setActivePillar(idx)}
                 className={`p-3.5 text-left border transition-all ${
                   activePillar === idx
-                    ? 'bg-white text-black border-white font-bold'
-                    : 'bg-neutral-950/60 text-neutral-400 border-white/10 hover:border-white/30 hover:text-white'
+                    ? 'bg-white text-black border-white font-bold shadow-[0_0_15px_rgba(255,255,255,0.2)]'
+                    : 'bg-neutral-950/80 text-neutral-400 border-white/15 hover:border-white/40 hover:text-white backdrop-blur-md'
                 }`}
               >
                 <div className="text-[9px] opacity-60 mb-0.5">{p.id} // {p.tag}</div>
@@ -470,7 +479,7 @@ export default function App() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="bg-neutral-950/80 border border-white/20 p-8 sm:p-12 rounded-sm backdrop-blur-2xl shadow-2xl relative overflow-hidden"
+            className="bg-neutral-950/85 border border-white/20 p-8 sm:p-12 rounded-sm backdrop-blur-2xl shadow-2xl relative overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Left Column: Details */}
@@ -509,7 +518,7 @@ export default function App() {
               </div>
 
               {/* Right Column: Telemetry Specs */}
-              <div className="lg:col-span-5 bg-black/80 border border-white/10 p-6 space-y-6 font-mono rounded-none">
+              <div className="lg:col-span-5 bg-black/90 border border-white/15 p-6 space-y-6 font-mono rounded-none backdrop-blur-md">
                 <div className="text-[10px] text-neutral-400 tracking-[0.25em] uppercase border-b border-white/10 pb-3 flex justify-between items-center">
                   <span>TELEMETRY METRICS</span>
                   <Activity size={12} className="text-emerald-400" />
@@ -517,7 +526,7 @@ export default function App() {
 
                 <div className="space-y-4">
                   {ARCHITECTURE_PILLARS[activePillar].metrics.map((m, idx) => (
-                    <div key={idx} className="p-3 bg-white/[0.02] border border-white/10 flex justify-between items-center">
+                    <div key={idx} className="p-3 bg-white/[0.03] border border-white/10 flex justify-between items-center">
                       <span className="text-[10px] text-neutral-400 tracking-wider uppercase">{m.label}</span>
                       <span className="text-base font-bold text-white tracking-tight">{m.val}</span>
                     </div>
@@ -536,8 +545,14 @@ export default function App() {
       {/* ======================================================================
           4. REVENUE SIMULATOR (ROI TELEMETRY ENGINE) (MIN-H-SCREEN)
           ====================================================================== */}
-      <section id="roi" className="min-h-screen py-28 px-6 bg-black relative border-t border-white/10 flex flex-col justify-center starlink-grid-fine">
-        <div className="max-w-5xl mx-auto w-full">
+      <section 
+        id="roi" 
+        className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center starlink-grid-fine"
+        style={{ backgroundImage: "url('/images/roi_bg.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/85 backdrop-blur-[2px] pointer-events-none" />
+
+        <div className="max-w-5xl mx-auto w-full relative z-10">
           <div className="text-center mb-16">
             <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
               FINANCIAL SIMULATION PROTOCOL
@@ -610,7 +625,7 @@ export default function App() {
             </div>
 
             {/* Right Output Console */}
-            <div className="lg:col-span-5 bg-black p-8 border border-white/20 text-center space-y-6">
+            <div className="lg:col-span-5 bg-black/90 p-8 border border-white/20 text-center space-y-6 backdrop-blur-md">
               <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
                 ESTIMATED RECOVERABLE CAPITAL
               </div>
@@ -642,8 +657,14 @@ export default function App() {
       {/* ======================================================================
           5. ENTERPRISE TELEMETRY & CASE LOGS (MIN-H-SCREEN)
           ====================================================================== */}
-      <section id="telemetry" className="min-h-screen py-28 px-6 bg-black relative border-t border-white/10 flex flex-col justify-center">
-        <div className="max-w-7xl mx-auto w-full">
+      <section 
+        id="telemetry" 
+        className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center"
+        style={{ backgroundImage: "url('/images/telemetry_bg.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/85 backdrop-blur-[2px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="text-left mb-16">
             <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
               VERIFIED ENTERPRISE LOGS
@@ -655,7 +676,7 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Case 1 */}
-            <div className="bg-neutral-950 border border-white/15 p-6 rounded-sm space-y-4 font-mono">
+            <div className="bg-neutral-950/90 border border-white/15 p-6 rounded-sm space-y-4 font-mono backdrop-blur-md">
               <div className="flex justify-between items-center text-[10px] text-neutral-400 border-b border-white/10 pb-3 uppercase tracking-widest">
                 <span>APEX LEGAL GROUP</span>
                 <span className="text-emerald-400">+$184K REVENUE</span>
@@ -669,7 +690,7 @@ export default function App() {
             </div>
 
             {/* Case 2 */}
-            <div className="bg-neutral-950 border border-white/15 p-6 rounded-sm space-y-4 font-mono">
+            <div className="bg-neutral-950/90 border border-white/15 p-6 rounded-sm space-y-4 font-mono backdrop-blur-md">
               <div className="flex justify-between items-center text-[10px] text-neutral-400 border-b border-white/10 pb-3 uppercase tracking-widest">
                 <span>SOLIS HOME SERVICES</span>
                 <span className="text-emerald-400">0 MISSED CALLS</span>
@@ -683,7 +704,7 @@ export default function App() {
             </div>
 
             {/* Case 3 */}
-            <div className="bg-neutral-950 border border-white/15 p-6 rounded-sm space-y-4 font-mono">
+            <div className="bg-neutral-950/90 border border-white/15 p-6 rounded-sm space-y-4 font-mono backdrop-blur-md">
               <div className="flex justify-between items-center text-[10px] text-neutral-400 border-b border-white/10 pb-3 uppercase tracking-widest">
                 <span>ZENITH MEDSPA</span>
                 <span className="text-emerald-400">+340% CONSULTS</span>
