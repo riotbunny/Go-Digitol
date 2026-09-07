@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 /**
  * TypewriterText
- * Smoothly types through performance slogans and permanently locks onto
- * the final strong slogan without blinking cursor artifacts.
+ * Smoothly types through performance slogans with ZERO layout shift (CLS).
+ * Uses a CSS Grid invisible ghost reserver so the text below NEVER jumps or shifts.
  */
 export default function TypewriterText({
   phrases = [
@@ -23,6 +23,14 @@ export default function TypewriterText({
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
+
+  // Find the longest phrase to lock in the layout dimensions permanently
+  const longestPhrase = useMemo(() => {
+    return phrases.reduce((longest, current) =>
+      current.length > longest.length ? current : longest,
+      phrases[0] || ''
+    );
+  }, [phrases]);
 
   useEffect(() => {
     if (isFinished) return;
@@ -61,9 +69,26 @@ export default function TypewriterText({
   }, [currentText, isDeleting, currentPhraseIndex, phrases, typeSpeed, deleteSpeed, pauseDelay, switchDelay, stopAtEnd, isFinished]);
 
   return (
-    <span className={`inline-block min-h-[1.15em] transition-all duration-500 ${isFinished ? 'text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.35)]' : 'text-neutral-400'}`}>
-      <span>{currentText}</span>
-      {!isFinished && <span className="typewriter-cursor" aria-hidden="true" />}
+    <span className="relative inline-grid grid-cols-1 grid-rows-1 items-center justify-center text-center align-middle">
+      {/* Invisible Ghost Element: Permanently locks height & width so text below never shifts */}
+      <span
+        className="invisible select-none pointer-events-none col-start-1 row-start-1 opacity-0"
+        aria-hidden="true"
+      >
+        {longestPhrase}
+      </span>
+
+      {/* Live Animated Text */}
+      <span
+        className={`col-start-1 row-start-1 inline-flex items-center justify-center transition-colors duration-500 ${
+          isFinished
+            ? 'text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.35)]'
+            : 'text-neutral-400'
+        }`}
+      >
+        <span>{currentText || '\u00A0'}</span>
+        {!isFinished && <span className="typewriter-cursor" aria-hidden="true" />}
+      </span>
     </span>
   );
 }

@@ -529,19 +529,21 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.8 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight uppercase leading-[1.05] text-white mb-8 drop-shadow-2xl"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight uppercase leading-[1.08] text-white mb-8 drop-shadow-2xl flex flex-col items-center justify-center text-center"
           >
-            THE DIGITAL AGENCY THAT <br />
-            <TypewriterText
-              phrases={[
-                'SCALES QUALIFIED PIPELINE',
-                'OUTRANKS YOUR COMPETITION',
-                'TURNS TRAFFIC INTO BUYERS',
-                'MAXIMIZES MARKETING ROI',
-                'DRIVES MEASURABLE REVENUE.'
-              ]}
-              stopAtEnd={true}
-            />
+            <span className="block">THE DIGITAL AGENCY THAT</span>
+            <span className="block mt-1 sm:mt-2">
+              <TypewriterText
+                phrases={[
+                  'SCALES QUALIFIED PIPELINE',
+                  'OUTRANKS YOUR COMPETITION',
+                  'TURNS TRAFFIC INTO BUYERS',
+                  'MAXIMIZES MARKETING ROI',
+                  'DRIVES MEASURABLE REVENUE.'
+                ]}
+                stopAtEnd={true}
+              />
+            </span>
           </motion.h1>
 
           {/* Subheading */}
