@@ -551,7 +551,7 @@ export default function App() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-neutral-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 font-normal leading-relaxed tracking-wide drop-shadow-md"
           >
-            Grow your business with a tech-enabled digital marketing partner. We connect custom SEO, high-ROAS PPC advertising, conversion-driven web design, and revenue tracking to generate qualified leads and closed deals.
+            Scale your enterprise with a tech-enabled digital marketing partner. We unite technical SEO, high-ROAS paid media, conversion-engineered web architecture, and closed-loop revenue attribution to generate qualified pipeline and maximize closed deals.
           </motion.p>
 
           {/* Action CTAs */}
@@ -591,7 +591,7 @@ export default function App() {
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 <KineticCounter value={48500} suffix="+" />
               </div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">QUALIFIED LEADS DRIVEN</div>
+              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">QUALIFIED LEADS GENERATED</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
