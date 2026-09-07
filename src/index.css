@@ -102,10 +102,10 @@
 .typewriter-cursor {
   display: inline-block;
   width: 4px;
-  height: 0.82em;
+  height: 0.85em;
   background-color: #ffffff;
   margin-left: 6px;
-  vertical-align: middle;
+  vertical-align: -0.04em;
   animation: cursorBlink 0.9s infinite ease-in-out;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }

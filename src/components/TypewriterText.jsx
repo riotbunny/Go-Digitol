@@ -72,7 +72,7 @@ export default function TypewriterText({
     <span className="relative inline-grid grid-cols-1 grid-rows-1 items-center justify-center text-center align-middle">
       {/* Invisible Ghost Element: Permanently locks height & width so text below never shifts */}
       <span
-        className="invisible select-none pointer-events-none col-start-1 row-start-1 opacity-0"
+        className="invisible select-none pointer-events-none col-start-1 row-start-1 opacity-0 text-center"
         aria-hidden="true"
       >
         {longestPhrase}
@@ -80,13 +80,13 @@ export default function TypewriterText({
 
       {/* Live Animated Text */}
       <span
-        className={`col-start-1 row-start-1 inline-flex items-center justify-center transition-colors duration-500 ${
+        className={`col-start-1 row-start-1 text-center transition-colors duration-500 ${
           isFinished
             ? 'text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.35)]'
             : 'text-neutral-400'
         }`}
       >
-        <span>{currentText || '\u00A0'}</span>
+        {currentText || '\u00A0'}
         {!isFinished && <span className="typewriter-cursor" aria-hidden="true" />}
       </span>
     </span>
