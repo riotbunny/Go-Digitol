@@ -16,6 +16,7 @@ import {
   Calendar,
   ArrowUpRight,
   ChevronRight,
+  ChevronDown,
   Globe,
   Database,
   X,
@@ -26,13 +27,28 @@ import {
   Layers,
   LineChart,
   ShieldCheck,
-  Compass
+  Compass,
+  Award,
+  Users,
+  Activity,
+  Cpu,
+  Lock,
+  Smartphone,
+  Zap,
+  HelpCircle,
+  Briefcase,
+  Building2,
+  Stethoscope,
+  Scale,
+  Wrench,
+  ShoppingBag,
+  ExternalLink
 } from 'lucide-react';
 
 /* ==========================================================================
-   REVENUE ACCELERATION SHOWCASE (END-TO-END DIGITAL MARKETING WORKFLOW)
+   REVENUE CONVERSION DEMONSTRATION WORKFLOW
    ========================================================================== */
-const WebFXStyleShowcase = () => {
+const RevenueProofShowcase = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -47,13 +63,13 @@ const WebFXStyleShowcase = () => {
       <div className="flex justify-between items-center pb-4 mb-6 border-b border-white/10 font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
         <span className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          CLOSED-LOOP REVENUE ACCELERATION FRAMEWORK
+          CLOSED-LOOP REVENUE ACCELERATION PLATFORM // LIVE WORKFLOW
         </span>
         <span>PROPRIETARY ATTRIBUTION</span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-        {/* Step 1: High-Intent Acquisition */}
+        {/* Step 1: Acquisition */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-neutral-700 flex items-center justify-center text-neutral-300">
@@ -65,7 +81,7 @@ const WebFXStyleShowcase = () => {
             </div>
           </div>
           <p className="text-[11px] text-neutral-400 leading-relaxed pt-1">
-            Top #1 organic Google rankings &amp; optimized PPC ads capture ready-to-buy commercial prospects.
+            Top #1 organic Google rankings &amp; high-ROAS PPC campaigns capture ready-to-buy commercial prospects.
           </p>
         </div>
 
@@ -86,7 +102,7 @@ const WebFXStyleShowcase = () => {
           </div>
         </div>
 
-        {/* Step 3: Verified Client Revenue */}
+        {/* Step 3: Verified Revenue */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
@@ -107,7 +123,7 @@ const WebFXStyleShowcase = () => {
 };
 
 /* ==========================================================================
-   MAIN APPLICATION COMPONENT (WEBFX FULL-SERVICE AGENCY SERVICES)
+   MAIN APPLICATION COMPONENT
    ========================================================================== */
 export default function App() {
   // Modal State
@@ -129,23 +145,27 @@ export default function App() {
     notes: ''
   });
 
-  // ROI Calculator State (WebFX Traffic & Conversion Lift Calculator)
-  const [calcVisitors, setCalcVisitors] = useState(15000);
-  const [calcAvgDeal, setCalcAvgDeal] = useState(3500);
-  const [calcConvLift, setCalcConvLift] = useState(1.8);
+  // ROI Calculator State
+  const [calcVisitors, setCalcVisitors] = useState(25000);
+  const [calcAvgDeal, setCalcAvgDeal] = useState(4500);
+  const [calcConvLift, setCalcConvLift] = useState(2.2);
+  const [calcCloseRate, setCalcCloseRate] = useState(25);
 
-  // Active Service Pillar
-  const [activePillar, setActivePillar] = useState(0);
+  // Active Tab States
+  const [activeServiceTab, setActiveServiceTab] = useState(0);
+  const [activeIndustryTab, setActiveIndustryTab] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   // Selected calendar time slot on confirmation
   const [selectedSlot, setSelectedSlot] = useState('Tomorrow, 10:00 AM EST');
   const [slotConfirmed, setSlotConfirmed] = useState(false);
 
-  // Calculate WebFX Revenue Growth Metrics
+  // Calculations for ROI Calculator
   const calculatedAdditionalLeads = Math.round(calcVisitors * (calcConvLift / 100));
-  const calculatedClosedClients = Math.round(calculatedAdditionalLeads * 0.20);
+  const calculatedClosedClients = Math.round(calculatedAdditionalLeads * (calcCloseRate / 100));
   const annualRevenueGrowth = calculatedClosedClients * calcAvgDeal * 12;
   const monthlyRevenueGrowth = Math.round(annualRevenueGrowth / 12);
+  const estimatedROIMultiplier = ((annualRevenueGrowth / 36000) || 1).toFixed(1);
 
   // Handle ESC key to close modal
   useEffect(() => {
@@ -204,92 +224,217 @@ export default function App() {
     }
   };
 
-  // 5 Core WebFX-Style Digital Marketing Solutions
-  const WEBFX_CORE_SERVICES = [
+  // 1. FULL-SERVICE DIGITAL MARKETING PILLARS
+  const CORE_SERVICES = [
     {
       id: '01',
       tag: 'ORGANIC SEARCH & AI OVERVIEWS',
       title: 'SEARCH ENGINE OPTIMIZATION (SEO & AI SEARCH)',
-      desc: 'Dominate high-intent Google search results and next-generation AI Search Overviews. We combine advanced technical SEO, content authority architecture, and local map pack dominance to drive sustainable organic revenue.',
+      shortTitle: 'SEARCH ENGINE OPTIMIZATION',
+      desc: 'Dominate commercial Google search rankings and next-generation AI Search Overviews. We build scalable organic revenue engines through technical SEO audits, high-intent keyword mapping, authoritative link building, and local map pack dominance.',
       metrics: [
         { label: 'ORGANIC TRAFFIC LIFT', val: '+280%' },
         { label: 'KEYWORD #1 RANKINGS', val: '9,400+' },
         { label: 'ROI ATTRIBUTION', val: '100% TRACKED' }
       ],
-      deliverables: [
-        'Comprehensive technical SEO audit and Core Web Vitals optimization',
-        'AI Search Optimization (GEO) ensuring inclusion in AI search summaries',
+      features: [
+        'Comprehensive technical architecture & Core Web Vitals optimization',
+        'AI Search Optimization (GEO) ensuring presence in generative summaries',
         'High-authority backlink acquisition & digital PR campaigns',
-        'Local SEO & Google Business Profile optimization across all locations'
+        'Local SEO & Google Business Profile dominance across all service areas'
       ]
     },
     {
       id: '02',
-      tag: 'PAID ADVERTISING & ROAS',
+      tag: 'PAID MEDIA & ROAS',
       title: 'PAY-PER-CLICK ADVERTISING (PPC & PAID MEDIA)',
-      desc: 'Capture ready-to-buy commercial prospects with precision Google Ads, Meta Ads, and programmatic media management. Powered by proprietary bid optimization and server-side tracking to maximize return on ad spend (ROAS).',
+      shortTitle: 'PAY-PER-CLICK ADVERTISING',
+      desc: 'Drive immediate, high-intent leads and sales with precision Google Ads, Meta Ads, and programmatic campaigns. Powered by proprietary bid optimization and server-side tracking to maximize return on ad spend (ROAS).',
       metrics: [
         { label: 'AVERAGE CLIENT ROAS', val: '4.2x' },
-        { label: 'COST PER LEAD REDUCTION', val: '-38%' },
+        { label: 'COST PER ACQUISITION', val: '-38%' },
         { label: 'MANAGED AD SPEND', val: '$50M+' }
       ],
-      deliverables: [
-        'Google Search, Display, Shopping, and YouTube campaign management',
-        'Meta (Facebook & Instagram) hyper-targeted paid social advertising',
-        'Continuous negative keyword sculpting and conversion rate bid tuning',
-        'Server-side Conversion API (CAPI) tracking for flawless attribution'
+      features: [
+        'Google Search, Display, Shopping, and YouTube advertising management',
+        'Meta (Facebook & Instagram) hyper-targeted demographic campaigns',
+        'Continuous negative keyword sculpting and conversion bid tuning',
+        'Server-side Conversion API (CAPI) tracking for accurate attribution'
       ]
     },
     {
       id: '03',
       tag: 'CONVERSION RATE OPTIMIZATION',
       title: 'CUSTOM WEB DESIGN & CONVERSION ENGINES',
-      desc: 'High-speed, conversion-engineered websites and landing pages built to turn traffic into qualified phone calls, quote requests, and sales. Engineered with mobile-first responsive architecture and sub-second load times.',
+      shortTitle: 'CUSTOM WEB DESIGN & CRO',
+      desc: 'Sub-second, conversion-engineered websites and landing pages built to turn traffic into qualified phone calls, quote requests, and signed contracts. Mobile-first, ADA-accessible, and built on high-performance infrastructure.',
       metrics: [
         { label: 'PAGE LOAD SPEED', val: '< 0.8 SEC' },
         { label: 'AVG CONVERSION INCREASE', val: '+240%' },
         { label: 'DESIGN AWARDS', val: '50+ AWARDS' }
       ],
-      deliverables: [
-        'Custom CRO website design with frictionless interactive booking funnels',
+      features: [
+        'Custom CRO website architecture with frictionless lead capture funnels',
         'Direct 2-way CRM synchronization via automated real-time webhooks',
         'Zero render-blocking scripts with guaranteed 95+ Google PageSpeed score',
-        'Integrated behavioral heatmaps, A/B testing, and user session replay'
+        'Behavioral heatmap tracking, A/B split testing, and user session replay'
       ]
     },
     {
       id: '04',
       tag: 'CONTENT MARKETING & AUTHORITY',
       title: 'CONTENT MARKETING & CREATIVE ASSETS',
-      desc: 'Data-driven content marketing that builds industry authority, earns high-quality inbound links, and guides qualified prospects down the purchasing funnel from discovery to signed contract.',
+      shortTitle: 'CONTENT MARKETING',
+      desc: 'Data-driven content marketing that establishes industry authority, earns high-quality backlinks, and guides qualified prospects down the sales funnel from discovery to closed deal.',
       metrics: [
-        { label: 'CONTENT PIECES PUBLISHED', val: '120K+' },
+        { label: 'CONTENT ASSETS PUBLISHED', val: '120K+' },
         { label: 'AVG DWELL TIME LIFT', val: '+165%' },
         { label: 'ENGAGEMENT BENCHMARK', val: 'TOP 5%' }
       ],
-      deliverables: [
-        'In-depth commercial pillar pages, thought leadership blogs, and whitepapers',
+      features: [
+        'Commercial pillar pages, thought leadership blogs, and technical whitepapers',
         'Interactive tools, calculators, infographics, and custom data visualizers',
         'High-production video marketing and executive interview clips',
-        'Full content distribution across industry publications and syndication networks'
+        'Full content syndication across authoritative industry publications'
       ]
     },
     {
       id: '05',
       tag: 'REVENUE INTELLIGENCE & TECH',
       title: 'REVENUE TRACKING & MARKETING AUTOMATION',
-      desc: 'Eliminate guesswork with unified revenue attribution software. Track every lead, call, form submission, and closed deal down to the exact marketing channel and keyword that generated it.',
+      shortTitle: 'REVENUE TRACKING & AUTOMATION',
+      desc: 'Eliminate marketing guesswork with unified revenue attribution software. Track every lead, call, form submission, and closed deal down to the exact marketing channel and keyword that generated it.',
       metrics: [
         { label: 'FIRST-PARTY DATA ACCURACY', val: '100%' },
         { label: 'CRM INTEGRATIONS', val: '50+ CRMs' },
         { label: 'REPORTING CADENCE', val: 'REAL TIME' }
       ],
-      deliverables: [
+      features: [
         'Dynamic call tracking and recording with automatic lead scoring',
         'End-to-end closed-loop CRM integration (Salesforce, HubSpot, GoHighLevel)',
         'Custom automated lead nurture workflows via email & SMS triggers',
         'Live 24/7 executive client reporting portal with real contract ROI metrics'
       ]
+    }
+  ];
+
+  // 2. PROPRIETARY REVENUE TECHNOLOGY SUITE (WebFX MarketingCloudFX equivalent)
+  const TECH_SUITE = [
+    {
+      name: 'LeadAttributionOS',
+      tag: 'FIRST-PARTY DATA',
+      desc: 'Multi-touch attribution engine connecting every closed revenue deal back to the exact campaign, ad creative, and search query.',
+      stat: '100% Attribution'
+    },
+    {
+      name: 'CallTrackerOS',
+      tag: 'VOICE INTELLIGENCE',
+      desc: 'Dynamic phone number insertion with call recording, keyword tracking, and automated AI lead quality scoring.',
+      stat: '< 1s Real-Time Sync'
+    },
+    {
+      name: 'CompetitorRadarOS',
+      tag: 'MARKET INTEL',
+      desc: 'Continuous competitive intelligence scanning competitor ranking shifts, backlink gains, and ad spend strategy.',
+      stat: '24/7 Monitoring'
+    },
+    {
+      name: 'SpeedEngineOS',
+      tag: 'CORE WEB VITALS',
+      desc: 'Sub-second performance monitoring and edge caching engine guaranteeing top Google PageSpeed ratings.',
+      stat: '0.8s Global CDN'
+    }
+  ];
+
+  // 3. INDUSTRY-SPECIFIC PLAYBOOKS
+  const INDUSTRY_PLAYBOOKS = [
+    {
+      sector: 'HOME SERVICES & CONTRACTING',
+      icon: Wrench,
+      headline: 'Dominating Local Search & Capturing High-Ticket Jobs',
+      desc: 'From HVAC and roofing to plumbing and electrical, we position your business at the top of Google Local Map Packs and High-Intent Google Ads, driving pre-qualified homeowner calls directly into your dispatch software.',
+      metrics: [
+        { label: 'ORGANIC LEADS', val: '+280%' },
+        { label: 'AVERAGE JOB VALUE', val: '$4,800' },
+        { label: 'LOCAL 3-PACK RANK', val: '#1 RANKING' }
+      ],
+      points: [
+        'ServiceTitan, Jobber, and Housecall Pro CRM integration',
+        'Emergency 24/7 call tracking and instant response workflows',
+        'Automated 5-star Google review generation sequences'
+      ]
+    },
+    {
+      sector: 'LEGAL & LAW PRACTICES',
+      icon: Scale,
+      headline: 'Securing High-Value Signed Cases with Precision PPC & SEO',
+      desc: 'For personal injury, commercial litigation, and corporate law firms, we capture high-intent search traffic and convert prospects into retained consultations with ethical, bar-compliant marketing funnels.',
+      metrics: [
+        { label: 'SIGNED CASES', val: '+310%' },
+        { label: 'COST PER SIGNED CASE', val: '-42%' },
+        { label: 'CASE PIPELINE VALUE', val: '$8.4M+' }
+      ],
+      points: [
+        'Clio, Filevine, and LawRuler legal CRM integrations',
+        'Hyper-targeted geo-fenced PPC targeting courthouse and accident areas',
+        'High-authority legal directory and digital PR link building'
+      ]
+    },
+    {
+      sector: 'HEALTHCARE & MEDICAL PRACTICES',
+      icon: Stethoscope,
+      headline: 'Attracting High-Value Patients & Filling Procedure Schedules',
+      desc: 'From MedSpas and cosmetic surgery to dental and specialty clinics, our HIPAA-compliant marketing systems build trust, dominate local search, and drive patient bookings on autopilot.',
+      metrics: [
+        { label: 'NEW PATIENT BOOKINGS', val: '+185%' },
+        { label: 'SHOW-UP RATE', val: '94%' },
+        { label: 'PATIENT LTV', val: '$3,200' }
+      ],
+      points: [
+        '100% HIPAA-compliant lead tracking and conversion attribution',
+        'Interactive procedure cost calculators and visual before/after galleries',
+        'Automated SMS/email appointment confirmation and nurture'
+      ]
+    },
+    {
+      sector: 'B2B & ENTERPRISE MANUFACTURING',
+      icon: Building2,
+      headline: 'Generating High-Ticket Enterprise RFQs & Corporate Contracts',
+      desc: 'We position industrial manufacturers, distributors, and enterprise B2B service providers in front of procurement executives with account-based marketing and technical SEO content.',
+      metrics: [
+        { label: 'QUALIFIED RFQs', val: '+420%' },
+        { label: 'AVG CONTRACT VALUE', val: '$45,000+' },
+        { label: 'SALES CYCLE REDUCTION', val: '-35%' }
+      ],
+      points: [
+        'HubSpot, Salesforce, and Zoho B2B CRM pipeline tracking',
+        'Account-Based Marketing (ABM) on LinkedIn and Google Search',
+        'Technical whitepaper and product spec sheet download funnels'
+      ]
+    }
+  ];
+
+  // 4. FREQUENTLY ASKED QUESTIONS
+  const FAQS = [
+    {
+      q: 'How does Digitol track and attribute real revenue to marketing campaigns?',
+      a: 'Unlike traditional agencies that only report on impressions and clicks, we integrate proprietary first-party tracking software directly with your CRM and phone systems. Every phone call, form submission, and signed contract is automatically tied back to the exact marketing channel, campaign, and keyword that generated it.'
+    },
+    {
+      q: 'How quickly can our business expect to see measurable results?',
+      a: 'Paid advertising (Google Ads & Meta) and custom landing page funnels typically begin driving qualified leads within the first 7 to 14 days. Comprehensive Search Engine Optimization (SEO) and content authority strategies compound over 60 to 90 days to establish sustainable, scalable organic market dominance.'
+    },
+    {
+      q: 'Do we own our website, ad accounts, and analytics data?',
+      a: 'Yes, 100%. You maintain full administrative ownership of your domain, website codebase, Google Ads accounts, Meta Business Manager, and CRM data. We believe in complete transparency and earning your partnership every month through verified performance.'
+    },
+    {
+      q: 'What makes Digitol different from traditional digital marketing agencies?',
+      a: 'Three key pillars: 1) We focus exclusively on bottom-line client revenue rather than vanity metrics, 2) We deploy custom, sub-second conversion web technology engineered for speed, and 3) You work with a dedicated senior strategy pod with transparent 24/7 reporting.'
+    },
+    {
+      q: 'What are your contract terms and onboarding requirements?',
+      a: 'We offer flexible, performance-aligned agreements designed around your growth goals. Onboarding takes approximately 7 business days, during which our engineering team sets up tracking pixels, performs technical audits, and prepares your launch roadmap.'
     }
   ];
 
@@ -320,9 +465,11 @@ export default function App() {
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-8 font-mono text-[11px] tracking-[0.2em] text-neutral-400 uppercase">
             <a href="#services" className="hover:text-white transition-colors">SERVICES</a>
+            <a href="#technology" className="hover:text-white transition-colors">TECHNOLOGY</a>
+            <a href="#industries" className="hover:text-white transition-colors">INDUSTRIES</a>
             <a href="#revenue-calculator" className="hover:text-white transition-colors">ROI CALCULATOR</a>
-            <a href="#results" className="hover:text-white transition-colors">CASE STUDIES</a>
-            <a href="tel:+18004923444" className="hover:text-white transition-colors">(800) 492-DIGI</a>
+            <a href="#results" className="hover:text-white transition-colors">RESULTS</a>
+            <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
           </nav>
 
           {/* Action Button */}
@@ -407,7 +554,7 @@ export default function App() {
           </motion.div>
 
           {/* Revenue Acceleration Showcase */}
-          <WebFXStyleShowcase />
+          <RevenueProofShowcase />
 
           {/* Proof Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-b border-white/10 py-6 font-mono bg-black/60 backdrop-blur-md">
@@ -417,7 +564,7 @@ export default function App() {
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">48,500+</div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">QUALIFIED LEADS GENERATED</div>
+              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">QUALIFIED LEADS DRIVEN</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">4.2x</div>
@@ -457,25 +604,25 @@ export default function App() {
 
           {/* Service Selector Tabs */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mb-8 font-mono text-[10px] tracking-[0.2em] uppercase">
-            {WEBFX_CORE_SERVICES.map((s, idx) => (
+            {CORE_SERVICES.map((s, idx) => (
               <button
                 key={s.id}
-                onClick={() => setActivePillar(idx)}
+                onClick={() => setActiveServiceTab(idx)}
                 className={`p-3.5 text-left border transition-all ${
-                  activePillar === idx
+                  activeServiceTab === idx
                     ? 'bg-white text-black border-white font-bold shadow-[0_0_15px_rgba(255,255,255,0.2)]'
                     : 'bg-neutral-950/80 text-neutral-400 border-white/15 hover:border-white/40 hover:text-white backdrop-blur-md'
                 }`}
               >
                 <div className="text-[9px] opacity-60 mb-0.5">{s.id} // {s.tag}</div>
-                <div className="truncate font-semibold text-xs">{s.title.split('(')[0]}</div>
+                <div className="truncate font-semibold text-xs">{s.shortTitle}</div>
               </button>
             ))}
           </div>
 
           {/* Active Service Workstation Display */}
           <motion.div
-            key={activePillar}
+            key={activeServiceTab}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
@@ -485,20 +632,20 @@ export default function App() {
               {/* Left Column: Details */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-block font-mono text-[10px] tracking-[0.25em] px-2.5 py-1 bg-white/10 text-white border border-white/20 uppercase">
-                  {WEBFX_CORE_SERVICES[activePillar].tag}
+                  {CORE_SERVICES[activeServiceTab].tag}
                 </div>
                 <h3 className="text-2xl sm:text-4xl font-bold uppercase tracking-tight text-white">
-                  {WEBFX_CORE_SERVICES[activePillar].title}
+                  {CORE_SERVICES[activeServiceTab].title}
                 </h3>
                 <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                  {WEBFX_CORE_SERVICES[activePillar].desc}
+                  {CORE_SERVICES[activeServiceTab].desc}
                 </p>
 
                 <div className="space-y-2.5 pt-2">
                   <div className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 mb-2">
                     KEY STRATEGIC DELIVERABLES:
                   </div>
-                  {WEBFX_CORE_SERVICES[activePillar].deliverables.map((item, i) => (
+                  {CORE_SERVICES[activeServiceTab].features.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-neutral-300">
                       <span className="font-mono text-white text-xs mt-0.5">•</span>
                       <span>{item}</span>
@@ -508,7 +655,7 @@ export default function App() {
 
                 <div className="pt-6">
                   <button
-                    onClick={() => openAuditModal(WEBFX_CORE_SERVICES[activePillar].title)}
+                    onClick={() => openAuditModal(CORE_SERVICES[activeServiceTab].title)}
                     className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all flex items-center gap-2"
                   >
                     <span>REQUEST A CUSTOM PROPOSAL</span>
@@ -525,7 +672,7 @@ export default function App() {
                 </div>
 
                 <div className="space-y-4">
-                  {WEBFX_CORE_SERVICES[activePillar].metrics.map((m, idx) => (
+                  {CORE_SERVICES[activeServiceTab].metrics.map((m, idx) => (
                     <div key={idx} className="p-3 bg-white/[0.03] border border-white/10 flex justify-between items-center">
                       <span className="text-[10px] text-neutral-400 tracking-wider uppercase">{m.label}</span>
                       <span className="text-base font-bold text-white tracking-tight">{m.val}</span>
@@ -543,7 +690,137 @@ export default function App() {
       </section>
 
       {/* ======================================================================
-          4. REVENUE GROWTH & CONVERSION LIFT CALCULATOR (MIN-H-SCREEN)
+          4. PROPRIETARY TECHNOLOGY PLATFORM (WebFX MarketingCloudFX equivalent)
+          ====================================================================== */}
+      <section id="technology" className="py-28 px-6 bg-black relative border-t border-white/10 starlink-grid">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
+              PROPRIETARY TECHNOLOGY SUITE
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight uppercase text-white">
+              ENGINEERED FOR REVENUE INTELLIGENCE
+            </h2>
+            <p className="text-neutral-300 text-sm sm:text-base mt-3">
+              Our in-house technology platform gives your enterprise unfair transparency—tracking multi-touch attribution, incoming phone leads, competitor strategies, and site speed in real time.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TECH_SUITE.map((t, idx) => (
+              <div key={idx} className="bg-neutral-950 border border-white/15 p-6 rounded-sm space-y-4 flex flex-col justify-between">
+                <div>
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="font-mono text-[9px] px-2 py-0.5 bg-white/10 border border-white/20 text-white uppercase tracking-wider">
+                      {t.tag}
+                    </span>
+                    <Cpu size={14} className="text-neutral-500" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white uppercase tracking-tight">{t.name}</h3>
+                  <p className="text-xs text-neutral-400 mt-2 leading-relaxed">{t.desc}</p>
+                </div>
+                <div className="pt-4 border-t border-white/10 font-mono text-xs text-emerald-400 font-bold flex justify-between items-center">
+                  <span>BENCHMARK:</span>
+                  <span>{t.stat}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================================================================
+          5. INDUSTRY-SPECIFIC PLAYBOOKS
+          ====================================================================== */}
+      <section id="industries" className="py-28 px-6 bg-neutral-950 relative border-t border-white/10">
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="text-left mb-16">
+            <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
+              SPECIALIZED INDUSTRY PLAYBOOKS
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight uppercase text-white">
+              CUSTOMIZED FOR YOUR COMMERCIAL SECTOR
+            </h2>
+            <p className="text-neutral-300 text-sm sm:text-base max-w-2xl mt-3">
+              Every vertical requires tailored conversion architecture, keyword intent sculpting, and compliance. Explore our proven industry frameworks.
+            </p>
+          </div>
+
+          {/* Industry Tab Navigation */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-8 font-mono text-xs">
+            {INDUSTRY_PLAYBOOKS.map((p, idx) => {
+              const IconComponent = p.icon;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => setActiveIndustryTab(idx)}
+                  className={`p-4 text-left border transition-all flex items-center gap-3 ${
+                    activeIndustryTab === idx
+                      ? 'bg-white text-black border-white font-bold'
+                      : 'bg-black text-neutral-400 border-white/15 hover:border-white/40 hover:text-white'
+                  }`}
+                >
+                  <IconComponent size={18} />
+                  <span className="truncate uppercase tracking-wider">{p.sector.split('&')[0]}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Industry Display */}
+          <motion.div
+            key={activeIndustryTab}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="bg-black border border-white/20 p-8 sm:p-12 rounded-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+          >
+            <div className="lg:col-span-8 space-y-6">
+              <div className="font-mono text-[10px] tracking-[0.25em] text-emerald-400 uppercase">
+                {INDUSTRY_PLAYBOOKS[activeIndustryTab].sector}
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white">
+                {INDUSTRY_PLAYBOOKS[activeIndustryTab].headline}
+              </h3>
+              <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
+                {INDUSTRY_PLAYBOOKS[activeIndustryTab].desc}
+              </p>
+              <div className="space-y-2 pt-2">
+                {INDUSTRY_PLAYBOOKS[activeIndustryTab].points.map((pt, i) => (
+                  <div key={i} className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-200">
+                    <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
+                    <span>{pt}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="pt-4">
+                <button
+                  onClick={() => openAuditModal(INDUSTRY_PLAYBOOKS[activeIndustryTab].sector)}
+                  className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all flex items-center gap-2"
+                >
+                  <span>REQUEST {INDUSTRY_PLAYBOOKS[activeIndustryTab].sector.split('&')[0]} ROADMAP</span>
+                  <ArrowUpRight size={14} />
+                </button>
+              </div>
+            </div>
+
+            <div className="lg:col-span-4 bg-neutral-950 border border-white/15 p-6 space-y-4 font-mono">
+              <div className="text-[10px] text-neutral-400 tracking-widest uppercase border-b border-white/10 pb-2">
+                SECTOR BENCHMARKS
+              </div>
+              {INDUSTRY_PLAYBOOKS[activeIndustryTab].metrics.map((m, i) => (
+                <div key={i} className="p-3 bg-white/[0.02] border border-white/10 flex justify-between items-center">
+                  <span className="text-[10px] text-neutral-400 uppercase">{m.label}</span>
+                  <span className="text-sm font-bold text-white">{m.val}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ======================================================================
+          6. REVENUE GROWTH & CONVERSION LIFT CALCULATOR (MIN-H-SCREEN)
           ====================================================================== */}
       <section 
         id="revenue-calculator" 
@@ -561,7 +838,7 @@ export default function App() {
               PROJECT YOUR DIGITAL MARKETING ROI
             </h2>
             <p className="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto mt-3">
-              Calculate the projected revenue lift your business can achieve by increasing qualified traffic and optimizing your conversion rate.
+              Calculate the projected revenue lift your business can achieve by increasing qualified organic traffic and optimizing conversion rates.
             </p>
           </div>
 
@@ -588,7 +865,7 @@ export default function App() {
               {/* Slider 2: Deal Value */}
               <div className="space-y-2">
                 <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
-                  <span>AVERAGE CLIENT / ORDER VALUE:</span>
+                  <span>AVERAGE CLIENT / CONTRACT VALUE:</span>
                   <span className="font-bold text-white">${calcAvgDeal.toLocaleString()}</span>
                 </div>
                 <input
@@ -640,7 +917,7 @@ export default function App() {
               </div>
 
               <div className="p-3 bg-white/[0.03] border border-white/10 font-mono text-xs text-emerald-400 tracking-wider uppercase">
-                ESTIMATED NEW LEADS: +{calculatedAdditionalLeads.toLocaleString()} LEADS/MO
+                PROJECTED ROI: {estimatedROIMultiplier}x ON AD INVESTMENT
               </div>
 
               <button
@@ -655,7 +932,7 @@ export default function App() {
       </section>
 
       {/* ======================================================================
-          5. VERIFIED CLIENT RESULTS & CASE STUDIES (MIN-H-SCREEN)
+          7. VERIFIED CLIENT RESULTS & CASE STUDIES (MIN-H-SCREEN)
           ====================================================================== */}
       <section 
         id="results" 
@@ -730,7 +1007,58 @@ export default function App() {
       </section>
 
       {/* ======================================================================
-          6. FULL-SCREEN BLURRED OVERLAY MODAL (CUSTOM PROPOSAL DESK)
+          8. FREQUENTLY ASKED QUESTIONS (ACCORDION)
+          ====================================================================== */}
+      <section id="faq" className="py-28 px-6 bg-black relative border-t border-white/10 starlink-grid">
+        <div className="max-w-4xl mx-auto w-full">
+          <div className="text-center mb-16">
+            <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
+              TRANSPARENCY &amp; ACCOUNTABILITY
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight uppercase text-white">
+              FREQUENTLY ASKED QUESTIONS
+            </h2>
+            <p className="text-neutral-300 text-sm sm:text-base mt-3">
+              Everything you need to know about partnering with Digitol to scale your revenue.
+            </p>
+          </div>
+
+          <div className="space-y-3 font-mono">
+            {FAQS.map((faq, idx) => (
+              <div key={idx} className="bg-neutral-950 border border-white/15 rounded-sm overflow-hidden">
+                <button
+                  onClick={() => setOpenFaqIndex(openFaqIndex === idx ? null : idx)}
+                  className="w-full p-5 text-left flex justify-between items-center text-xs sm:text-sm font-bold text-white hover:bg-white/[0.02] transition-colors"
+                >
+                  <span className="tracking-wider">{faq.q}</span>
+                  <ChevronDown
+                    size={16}
+                    className={`transform transition-transform duration-200 text-neutral-400 ${
+                      openFaqIndex === idx ? 'rotate-180 text-white' : ''
+                    }`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {openFaqIndex === idx && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="px-5 pb-5 pt-1 text-xs text-neutral-300 font-sans leading-relaxed border-t border-white/5"
+                    >
+                      {faq.a}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ======================================================================
+          9. FULL-SCREEN BLURRED OVERLAY MODAL (CUSTOM PROPOSAL DESK)
           ====================================================================== */}
       <AnimatePresence>
         {modalOpen && (
@@ -1076,7 +1404,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* ======================================================================
-          7. FOOTER
+          10. FOOTER
           ====================================================================== */}
       <footer className="border-t border-white/10 bg-black py-16 px-6 font-mono text-xs text-neutral-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
