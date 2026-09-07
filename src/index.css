@@ -1,10 +1,107 @@
 @import "tailwindcss";
 
-body {
-  background-color: #0B0F19;
-  color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
+@layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Custom Minimalist Dark Scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #404040;
+  }
+}
+
+/* Starlink Geometric Grid & Star Background */
+.starlink-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.starlink-grid-fine {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* High-tech glow & radar scan */
+@keyframes radarSweep {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.15; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.radar-scan {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
+  animation: radarSweep 6s infinite linear;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   GOOGLE PLACES AUTOCOMPLETE DROPDOWN (.pac-container) OVERRIDES
+   Force dropdown to appear ABOVE the input field and styled in dark Starlink mode
+   ========================================================================== */
+.pac-container {
+  background-color: #050505 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.9) !important;
+  font-family: 'Inter', sans-serif !important;
+  z-index: 999999 !important;
+  margin-top: -6px !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+
+.pac-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+  padding: 10px 14px !important;
+  font-size: 13px !important;
+  color: #a3a3a3 !important;
+  cursor: pointer !important;
+}
+
+.pac-item:hover, .pac-item-selected {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+.pac-item-query {
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.pac-matched {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.pac-icon {
+  filter: invert(1) brightness(0.7) !important;
 }
