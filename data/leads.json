@@ -388,5 +388,18 @@
     "id": "LEAD-0030",
     "lead_score": 90,
     "created_at": "2026-09-07T02:45:55.216033+00:00"
+  },
+  {
+    "company": "Miller Roofing LLC",
+    "email": "david@millerroofing.com",
+    "industry": "Home Services & Contractors",
+    "lead_volume": "201-1000 leads/mo",
+    "name": "David Miller",
+    "notes": "Testing discovery request",
+    "phone": "555-234-5678",
+    "primary_goal": "Database Reactivation (Dormant Leads)",
+    "id": "LEAD-0031",
+    "lead_score": 90,
+    "created_at": "2026-09-07T02:47:47.626368+00:00"
   }
 ]
