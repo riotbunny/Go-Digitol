@@ -502,11 +502,14 @@ export default function App() {
       {/* ======================================================================
           2. HERO VIEWPORT SECTION (FULL SCREEN)
           ====================================================================== */}
-      <section 
-        className="min-h-screen relative flex flex-col justify-center items-center px-6 pt-24 pb-16 bg-cover bg-center bg-no-repeat starlink-grid overflow-hidden"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/65 to-black pointer-events-none" />
+      <section className="min-h-screen relative flex flex-col justify-center items-center px-6 pt-24 pb-16 overflow-hidden bg-black">
+        {/* Full-Bleed Large Background Photo */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-45"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/75 to-black pointer-events-none" />
+        <div className="absolute inset-0 starlink-grid pointer-events-none opacity-30" />
         <div className="radar-scan" />
         
         {/* Ambient Deep-Space Particle Field */}
@@ -619,10 +622,14 @@ export default function App() {
           ====================================================================== */}
       <section 
         id="services" 
-        className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center"
-        style={{ backgroundImage: `url(${architectureBg})` }}
+        className="min-h-screen py-28 px-6 relative border-t border-white/10 flex flex-col justify-center overflow-hidden bg-black"
       >
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px] pointer-events-none" />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-40"
+          style={{ backgroundImage: `url(${architectureBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black pointer-events-none" />
+        <div className="absolute inset-0 starlink-grid pointer-events-none opacity-20" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
           {/* Section Header */}
@@ -884,10 +891,14 @@ export default function App() {
           ====================================================================== */}
       <section 
         id="revenue-calculator" 
-        className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center starlink-grid-fine"
-        style={{ backgroundImage: `url(${roiBg})` }}
+        className="min-h-screen py-28 px-6 relative border-t border-white/10 flex flex-col justify-center overflow-hidden bg-black"
       >
-        <div className="absolute inset-0 bg-black/75 backdrop-blur-[1px] pointer-events-none" />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-40"
+          style={{ backgroundImage: `url(${roiBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black pointer-events-none" />
+        <div className="absolute inset-0 starlink-grid-fine pointer-events-none opacity-25" />
 
         <div className="max-w-5xl mx-auto w-full relative z-10">
           <div className="text-center mb-16">
@@ -998,10 +1009,14 @@ export default function App() {
           ====================================================================== */}
       <section 
         id="results" 
-        className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center"
-        style={{ backgroundImage: `url(${telemetryBg})` }}
+        className="min-h-screen py-28 px-6 relative border-t border-white/10 flex flex-col justify-center overflow-hidden bg-black"
       >
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px] pointer-events-none" />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-40"
+          style={{ backgroundImage: `url(${telemetryBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black pointer-events-none" />
+        <div className="absolute inset-0 starlink-grid pointer-events-none opacity-20" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="text-left mb-16">
