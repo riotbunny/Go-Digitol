@@ -105,3 +105,21 @@
 .pac-icon {
   filter: invert(1) brightness(0.7) !important;
 }
+
+/* Starlink Console Typewriter Cursor */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 4px;
+  height: 0.82em;
+  background-color: #ffffff;
+  margin-left: 6px;
+  vertical-align: middle;
+  animation: cursorBlink 0.9s infinite ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+

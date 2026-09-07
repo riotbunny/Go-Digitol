@@ -46,6 +46,65 @@ import {
 } from 'lucide-react';
 
 /* ==========================================================================
+   DYNAMIC TYPEWRITER COMPONENT
+   ========================================================================== */
+const TypewriterText = ({
+  phrases = [
+    'DRIVES MEASURABLE REVENUE',
+    'SCALES QUALIFIED PIPELINE',
+    'OUTRANKS YOUR COMPETITION',
+    'TURNS TRAFFIC INTO CLIENTS',
+    'MAXIMIZES MARKETING ROI'
+  ],
+  typeSpeed = 75,
+  deleteSpeed = 35,
+  pauseDelay = 2200,
+  switchDelay = 400
+}) => {
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timer;
+    const fullText = phrases[currentPhraseIndex];
+
+    if (!isDeleting) {
+      if (currentText.length < fullText.length) {
+        timer = setTimeout(() => {
+          setCurrentText(fullText.slice(0, currentText.length + 1));
+        }, typeSpeed);
+      } else {
+        // Finished typing full phrase, pause before deleting
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseDelay);
+      }
+    } else {
+      if (currentText.length > 0) {
+        timer = setTimeout(() => {
+          setCurrentText(fullText.slice(0, currentText.length - 1));
+        }, deleteSpeed);
+      } else {
+        // Finished deleting, move to next phrase
+        setIsDeleting(false);
+        setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
+        timer = setTimeout(() => {}, switchDelay);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentPhraseIndex, phrases, typeSpeed, deleteSpeed, pauseDelay, switchDelay]);
+
+  return (
+    <span className="inline-block min-h-[1.15em] text-neutral-400">
+      <span>{currentText}</span>
+      <span className="typewriter-cursor" aria-hidden="true" />
+    </span>
+  );
+};
+
+/* ==========================================================================
    REVENUE CONVERSION DEMONSTRATION WORKFLOW
    ========================================================================== */
 const RevenueProofShowcase = () => {
@@ -518,7 +577,15 @@ export default function App() {
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight uppercase leading-[1.05] text-white mb-8 drop-shadow-2xl"
           >
             THE DIGITAL AGENCY THAT <br />
-            <span className="text-neutral-400">DRIVES MEASURABLE REVENUE</span>
+            <TypewriterText
+              phrases={[
+                'DRIVES MEASURABLE REVENUE',
+                'SCALES QUALIFIED PIPELINE',
+                'OUTRANKS YOUR COMPETITION',
+                'TURNS TRAFFIC INTO CLIENTS',
+                'MAXIMIZES MARKETING ROI'
+              ]}
+            />
           </motion.h1>
 
           {/* Subheading */}
