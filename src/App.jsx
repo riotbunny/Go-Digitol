@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import heroBg from './assets/hero_bg.jpg';
+import architectureBg from './assets/architecture_bg.jpg';
+import roiBg from './assets/roi_bg.jpg';
+import telemetryBg from './assets/telemetry_bg.jpg';
 import {
   Terminal,
   Activity,
@@ -346,9 +350,9 @@ export default function App() {
           ====================================================================== */}
       <section 
         className="min-h-screen relative flex flex-col justify-center items-center px-6 pt-24 pb-16 bg-cover bg-center bg-no-repeat starlink-grid"
-        style={{ backgroundImage: "url('/images/hero_bg.jpg')" }}
+        style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/65 to-black pointer-events-none" />
         <div className="radar-scan" />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
@@ -368,7 +372,7 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.8 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight uppercase leading-[1.05] text-white mb-8"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight uppercase leading-[1.05] text-white mb-8 drop-shadow-2xl"
           >
             AUTONOMOUS AI &amp; <br />
             <span className="text-neutral-400">DEDICATED STAFF</span>
@@ -379,7 +383,7 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-neutral-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 font-normal leading-relaxed tracking-wide"
+            className="text-neutral-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 font-normal leading-relaxed tracking-wide drop-shadow-md"
           >
             Eliminate pipeline leakage and missed calls. We deploy 24/7 AI conversational triage, custom CRO web architecture, and top 1% vetted Virtual Assistants to scale client acquisition.
           </motion.p>
@@ -410,7 +414,7 @@ export default function App() {
           <StarlinkProofShowcase />
 
           {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-b border-white/10 py-6 font-mono bg-black/40 backdrop-blur-md">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-b border-white/10 py-6 font-mono bg-black/60 backdrop-blur-md">
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">$14.2M+</div>
               <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">RECOVERED CAPITAL</div>
@@ -437,9 +441,9 @@ export default function App() {
       <section 
         id="architecture" 
         className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center"
-        style={{ backgroundImage: "url('/images/architecture_bg.jpg')" }}
+        style={{ backgroundImage: `url(${architectureBg})` }}
       >
-        <div className="absolute inset-0 bg-black/85 backdrop-blur-[2px] pointer-events-none" />
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
           {/* Section Header */}
@@ -450,7 +454,7 @@ export default function App() {
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight uppercase text-white">
               DIGITOL ARCHITECTURE MATRIX
             </h2>
-            <p className="text-neutral-400 text-sm sm:text-base max-w-2xl mt-3">
+            <p className="text-neutral-300 text-sm sm:text-base max-w-2xl mt-3">
               Modular revenue engineering designed to interface seamlessly with your existing CRM, phone systems, and acquisition channels.
             </p>
           </div>
@@ -548,9 +552,9 @@ export default function App() {
       <section 
         id="roi" 
         className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center starlink-grid-fine"
-        style={{ backgroundImage: "url('/images/roi_bg.jpg')" }}
+        style={{ backgroundImage: `url(${roiBg})` }}
       >
-        <div className="absolute inset-0 bg-black/85 backdrop-blur-[2px] pointer-events-none" />
+        <div className="absolute inset-0 bg-black/75 backdrop-blur-[1px] pointer-events-none" />
 
         <div className="max-w-5xl mx-auto w-full relative z-10">
           <div className="text-center mb-16">
@@ -560,7 +564,7 @@ export default function App() {
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight uppercase text-white">
               PIPELINE REVENUE RECOVERY ENGINE
             </h2>
-            <p className="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto mt-3">
+            <p className="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto mt-3">
               Model your business metrics to calculate recoverable capital currently lost to slow response times and unworked CRM leads.
             </p>
           </div>
@@ -619,7 +623,7 @@ export default function App() {
                 />
               </div>
 
-              <div className="text-[11px] text-neutral-500 font-sans">
+              <div className="text-[11px] text-neutral-400 font-sans">
                 * Based on Harvard Business Review response benchmark data: 78% of customers buy from the vendor that responds first.
               </div>
             </div>
@@ -660,9 +664,9 @@ export default function App() {
       <section 
         id="telemetry" 
         className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center"
-        style={{ backgroundImage: "url('/images/telemetry_bg.jpg')" }}
+        style={{ backgroundImage: `url(${telemetryBg})` }}
       >
-        <div className="absolute inset-0 bg-black/85 backdrop-blur-[2px] pointer-events-none" />
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="text-left mb-16">
