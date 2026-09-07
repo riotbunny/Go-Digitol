@@ -461,7 +461,7 @@ export default function App() {
     }
   ];
 
-  // 2. PROPRIETARY REVENUE TECHNOLOGY SUITE (WebFX MarketingCloudFX equivalent)
+  // 2. PROPRIETARY REVENUE TECHNOLOGY SUITE (Digitol Intelligence OS)
   const TECH_SUITE = [
     {
       name: 'Lead Attribution OS',
@@ -648,7 +648,7 @@ export default function App() {
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/75 to-black pointer-events-none" />
-        <div className="absolute inset-0 starlink-grid pointer-events-none opacity-30" />
+        <div className="absolute inset-0 digitol-grid pointer-events-none opacity-30" />
         
         {/* Ambient Deep-Space Particle Field */}
         <StarfieldCanvas particleCount={65} />
@@ -764,7 +764,7 @@ export default function App() {
           style={{ backgroundImage: `url(${architectureBg})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black pointer-events-none" />
-        <div className="absolute inset-0 starlink-grid pointer-events-none opacity-20" />
+        <div className="absolute inset-0 digitol-grid pointer-events-none opacity-20" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
           {/* Section Header */}
@@ -888,9 +888,9 @@ export default function App() {
       <BeforeAfterComparison />
 
       {/* ======================================================================
-          4. PROPRIETARY TECHNOLOGY PLATFORM (WebFX MarketingCloudFX equivalent)
+          4. PROPRIETARY TECHNOLOGY PLATFORM (Digitol Intelligence OS)
           ====================================================================== */}
-      <section id="technology" className="py-28 px-6 bg-black relative border-t border-white/10 starlink-grid">
+      <section id="technology" className="py-28 px-6 bg-black relative border-t border-white/10 digitol-grid">
         <div className="max-w-7xl mx-auto w-full">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
@@ -1033,7 +1033,7 @@ export default function App() {
           style={{ backgroundImage: `url(${roiBg})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black pointer-events-none" />
-        <div className="absolute inset-0 starlink-grid-fine pointer-events-none opacity-25" />
+        <div className="absolute inset-0 digitol-grid-fine pointer-events-none opacity-25" />
 
         <div className="max-w-5xl mx-auto w-full relative z-10">
           <div className="text-center mb-16">
@@ -1104,7 +1104,7 @@ export default function App() {
                 </div>
 
                 <div className="text-[11px] text-neutral-400 font-sans">
-                  * Based on verified WebFX and industry agency performance metrics across over 1,000+ client campaigns.
+                  * Based on verified Digitol and industry agency performance metrics across over 1,000+ client campaigns.
                 </div>
               </div>
 
@@ -1155,7 +1155,7 @@ export default function App() {
           style={{ backgroundImage: `url(${telemetryBg})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black pointer-events-none" />
-        <div className="absolute inset-0 starlink-grid pointer-events-none opacity-20" />
+        <div className="absolute inset-0 digitol-grid pointer-events-none opacity-20" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="text-left mb-16">
@@ -1225,7 +1225,7 @@ export default function App() {
       {/* ======================================================================
           8. FREQUENTLY ASKED QUESTIONS (ACCORDION)
           ====================================================================== */}
-      <section id="faq" className="py-28 px-6 bg-black relative border-t border-white/10 starlink-grid">
+      <section id="faq" className="py-28 px-6 bg-black relative border-t border-white/10 digitol-grid">
         <div className="max-w-4xl mx-auto w-full">
           <div className="text-center mb-16">
             <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">

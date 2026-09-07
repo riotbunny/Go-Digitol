@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 
 /**
  * SpotlightCard
- * Tracks mouse position and casts a subtle high-tech Starlink flashlight glow
+ * Tracks mouse position and casts a subtle high-tech radial flashlight glow
  * on card borders and frosted glass backgrounds.
  */
 export default function SpotlightCard({

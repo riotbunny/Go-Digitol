@@ -45,7 +45,7 @@ export default function BeforeAfterComparison() {
   };
 
   return (
-    <section className="py-24 px-6 relative bg-black starlink-grid">
+    <section className="py-24 px-6 relative bg-black digitol-grid">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">

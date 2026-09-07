@@ -32,15 +32,15 @@
   }
 }
 
-/* Starlink Geometric Grid & Star Background */
-.starlink-grid {
+/* Digitol Matrix Grid & Dark Background */
+.digitol-grid {
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
-.starlink-grid-fine {
+.digitol-grid-fine {
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
@@ -51,7 +51,7 @@
 
 /* ==========================================================================
    GOOGLE PLACES AUTOCOMPLETE DROPDOWN (.pac-container) OVERRIDES
-   Force dropdown to appear ABOVE the input field and styled in dark Starlink mode
+   Force dropdown to appear ABOVE the input field and styled in dark theme
    ========================================================================== */
 .pac-container {
   background-color: #050505 !important;
@@ -93,7 +93,7 @@
   filter: invert(1) brightness(0.7) !important;
 }
 
-/* Starlink Console Typewriter Cursor */
+/* Console Typewriter Cursor */
 @keyframes cursorBlink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
