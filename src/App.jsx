@@ -53,85 +53,7 @@ import BeforeAfterComparison from './components/BeforeAfterComparison';
 import StarfieldCanvas from './components/StarfieldCanvas';
 import TypewriterText from './components/TypewriterText';
 
-/* ==========================================================================
-   REVENUE CONVERSION DEMONSTRATION WORKFLOW
-   ========================================================================== */
-const RevenueProofShowcase = () => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="max-w-4xl mx-auto mb-16 w-full"
-    >
-      <SpotlightCard className="p-6 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] relative overflow-hidden border-white/20">
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent" />
-        
-        {/* Top Telemetry Header */}
-        <div className="flex justify-between items-center pb-4 mb-6 border-b border-white/10 font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            CLOSED-LOOP REVENUE ACCELERATION PLATFORM // LIVE WORKFLOW
-          </span>
-          <span className="text-neutral-400">PROPRIETARY ATTRIBUTION</span>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-          {/* Step 1: Acquisition */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-neutral-700 flex items-center justify-center text-neutral-300">
-                <Search size={18} className="text-white" />
-              </div>
-              <div>
-                <div className="font-mono text-[9px] uppercase tracking-widest text-neutral-400">01 // ACQUISITION</div>
-                <div className="text-xs font-bold text-white tracking-wider uppercase">HIGH-INTENT SEARCH TRAFFIC</div>
-              </div>
-            </div>
-            <p className="text-[11px] text-neutral-400 leading-relaxed pt-1">
-              Top #1 organic Google rankings &amp; high-ROAS PPC campaigns capture ready-to-buy commercial prospects.
-            </p>
-          </div>
-
-          {/* Step 2: Conversion & Attribution */}
-          <div className="flex flex-col space-y-2 p-4 bg-white/[0.04] border border-white/20 rounded-sm relative">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 font-mono text-[9px] text-white tracking-widest uppercase">
-                <MousePointerClick size={14} className="text-white" />
-                <span>02 // CRO CONVERSION</span>
-              </div>
-              <span className="font-mono text-[9px] px-1.5 py-0.5 border border-white/20 bg-white/10 text-white rounded-none">
-                SUB-SECOND
-              </span>
-            </div>
-            <div className="bg-black/90 p-2.5 border border-white/15 rounded-sm font-mono text-[11px] text-neutral-200">
-              <span className="text-neutral-400 block text-[9px] mb-0.5 tracking-wider">LIVE ATTRIBUTION ENGINE</span>
-              Qualified lead generated via custom web funnel &amp; synced directly to CRM in real time.
-            </div>
-          </div>
-
-          {/* Step 3: Verified Revenue */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
-                <CheckCircle2 size={18} />
-              </div>
-              <div>
-                <div className="font-mono text-[9px] uppercase tracking-widest text-emerald-400">03 // REVENUE IMPACT</div>
-                <div className="text-xs font-bold text-white tracking-wider uppercase">CLOSED CLIENT DEAL</div>
-              </div>
-            </div>
-            <div className="inline-flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-[10px] px-2.5 py-1 tracking-wider uppercase">
-              <span>+</span>
-              <KineticCounter value={18500} prefix="$" suffix=" CLIENT REVENUE" />
-            </div>
-          </div>
-        </div>
-      </SpotlightCard>
-    </motion.div>
-  );
-};
 
 /* ==========================================================================
    MAIN APPLICATION COMPONENT
@@ -510,7 +432,6 @@ export default function App() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/75 to-black pointer-events-none" />
         <div className="absolute inset-0 starlink-grid pointer-events-none opacity-30" />
-        <div className="radar-scan" />
         
         {/* Ambient Deep-Space Particle Field */}
         <StarfieldCanvas particleCount={65} />
@@ -580,9 +501,6 @@ export default function App() {
               EXPLORE SERVICES
             </a>
           </motion.div>
-
-          {/* Revenue Acceleration Showcase */}
-          <RevenueProofShowcase />
 
           {/* Proof Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-b border-white/10 py-6 font-mono bg-black/60 backdrop-blur-md">

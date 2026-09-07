@@ -63,36 +63,13 @@ export default function BeforeAfterComparison() {
 
         {/* Interactive Comparison Container */}
         <SpotlightCard className="p-4 sm:p-8 bg-neutral-950/90 border border-white/20">
-          {/* Quick preset buttons */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-white/10 font-mono text-[10px] uppercase tracking-widest text-neutral-400">
-            <div className="flex items-center gap-3">
-              <span className="text-white font-bold flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                INTERACTIVE REVEAL SLIDER
-              </span>
-              <span className="hidden sm:inline text-neutral-600">|</span>
-              <span className="hidden sm:inline">DRAG DIVIDER OR CLICK ANYWHERE</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => setSliderPosition(20)}
-                className="px-2.5 py-1 bg-white/5 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors"
-              >
-                VIEW LEGACY (20%)
-              </button>
-              <button
-                onClick={() => setSliderPosition(50)}
-                className="px-2.5 py-1 bg-white/10 border border-white/20 hover:border-white/40 text-white transition-colors"
-              >
-                SPLIT (50%)
-              </button>
-              <button
-                onClick={() => setSliderPosition(80)}
-                className="px-2.5 py-1 bg-white/5 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors"
-              >
-                VIEW DIGITOL (80%)
-              </button>
-            </div>
+          {/* Top Telemetry Header */}
+          <div className="flex items-center justify-between gap-4 pb-5 mb-6 border-b border-white/10 font-mono text-[10px] uppercase tracking-widest text-neutral-400">
+            <span className="text-white font-bold flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              INTERACTIVE REVEAL SLIDER // LIVE COMPARISON
+            </span>
+            <span className="text-neutral-500 hidden sm:inline">DRAG DIVIDER ↔ TO AUDIT PERFORMANCE</span>
           </div>
 
           {/* Dual Comparison Board */}

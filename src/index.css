@@ -47,20 +47,7 @@
   background-size: 24px 24px;
 }
 
-/* High-tech glow & radar scan */
-@keyframes radarSweep {
-  0% { transform: translateY(-100%); opacity: 0; }
-  50% { opacity: 0.15; }
-  100% { transform: translateY(100%); opacity: 0; }
-}
 
-.radar-scan {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.08) 50%, transparent 100%);
-  animation: radarSweep 6s infinite linear;
-  pointer-events: none;
-}
 
 /* ==========================================================================
    GOOGLE PLACES AUTOCOMPLETE DROPDOWN (.pac-container) OVERRIDES
