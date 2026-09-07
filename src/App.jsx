@@ -50,23 +50,28 @@ import {
    ========================================================================== */
 const TypewriterText = ({
   phrases = [
-    'DRIVES MEASURABLE REVENUE',
     'SCALES QUALIFIED PIPELINE',
     'OUTRANKS YOUR COMPETITION',
-    'TURNS TRAFFIC INTO CLIENTS',
-    'MAXIMIZES MARKETING ROI'
+    'TURNS TRAFFIC INTO BUYERS',
+    'MAXIMIZES MARKETING ROI',
+    'DRIVES MEASURABLE REVENUE.'
   ],
-  typeSpeed = 75,
-  deleteSpeed = 35,
-  pauseDelay = 2200,
-  switchDelay = 400
+  typeSpeed = 70,
+  deleteSpeed = 32,
+  pauseDelay = 1800,
+  switchDelay = 350,
+  stopAtEnd = true
 }) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
+    if (isFinished) return;
+
     let timer;
+    const isLastPhrase = currentPhraseIndex === phrases.length - 1;
     const fullText = phrases[currentPhraseIndex];
 
     if (!isDeleting) {
@@ -75,7 +80,12 @@ const TypewriterText = ({
           setCurrentText(fullText.slice(0, currentText.length + 1));
         }, typeSpeed);
       } else {
-        // Finished typing full phrase, pause before deleting
+        // If we reached the end of the last phrase and stopAtEnd is active, lock it in!
+        if (stopAtEnd && isLastPhrase) {
+          setIsFinished(true);
+          return;
+        }
+        // Otherwise pause before deleting
         timer = setTimeout(() => {
           setIsDeleting(true);
         }, pauseDelay);
@@ -86,7 +96,7 @@ const TypewriterText = ({
           setCurrentText(fullText.slice(0, currentText.length - 1));
         }, deleteSpeed);
       } else {
-        // Finished deleting, move to next phrase
+        // Finished deleting, proceed to next phrase
         setIsDeleting(false);
         setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
         timer = setTimeout(() => {}, switchDelay);
@@ -94,12 +104,12 @@ const TypewriterText = ({
     }
 
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, currentPhraseIndex, phrases, typeSpeed, deleteSpeed, pauseDelay, switchDelay]);
+  }, [currentText, isDeleting, currentPhraseIndex, phrases, typeSpeed, deleteSpeed, pauseDelay, switchDelay, stopAtEnd, isFinished]);
 
   return (
-    <span className="inline-block min-h-[1.15em] text-neutral-400">
+    <span className={`inline-block min-h-[1.15em] transition-all duration-500 ${isFinished ? 'text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.35)]' : 'text-neutral-400'}`}>
       <span>{currentText}</span>
-      <span className="typewriter-cursor" aria-hidden="true" />
+      <span className={`typewriter-cursor ${isFinished ? 'opacity-80' : ''}`} aria-hidden="true" />
     </span>
   );
 };
@@ -579,12 +589,13 @@ export default function App() {
             THE DIGITAL AGENCY THAT <br />
             <TypewriterText
               phrases={[
-                'DRIVES MEASURABLE REVENUE',
                 'SCALES QUALIFIED PIPELINE',
                 'OUTRANKS YOUR COMPETITION',
-                'TURNS TRAFFIC INTO CLIENTS',
-                'MAXIMIZES MARKETING ROI'
+                'TURNS TRAFFIC INTO BUYERS',
+                'MAXIMIZES MARKETING ROI',
+                'DRIVES MEASURABLE REVENUE.'
               ]}
+              stopAtEnd={true}
             />
           </motion.h1>
 
