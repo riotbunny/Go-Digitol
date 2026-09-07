@@ -332,25 +332,25 @@ export default function App() {
   // 2. PROPRIETARY REVENUE TECHNOLOGY SUITE (WebFX MarketingCloudFX equivalent)
   const TECH_SUITE = [
     {
-      name: 'LeadAttributionOS',
+      name: 'Lead Attribution OS',
       tag: 'FIRST-PARTY DATA',
       desc: 'Multi-touch attribution engine connecting every closed revenue deal back to the exact campaign, ad creative, and search query.',
       stat: '100% Attribution'
     },
     {
-      name: 'CallTrackerOS',
+      name: 'Call Tracker OS',
       tag: 'VOICE INTELLIGENCE',
       desc: 'Dynamic phone number insertion with call recording, keyword tracking, and automated AI lead quality scoring.',
       stat: '< 1s Real-Time Sync'
     },
     {
-      name: 'CompetitorRadarOS',
+      name: 'Competitor Radar OS',
       tag: 'MARKET INTEL',
       desc: 'Continuous competitive intelligence scanning competitor ranking shifts, backlink gains, and ad spend strategy.',
       stat: '24/7 Monitoring'
     },
     {
-      name: 'SpeedEngineOS',
+      name: 'Speed Engine OS',
       tag: 'CORE WEB VITALS',
       desc: 'Sub-second performance monitoring and edge caching engine guaranteeing top Google PageSpeed ratings.',
       stat: '0.8s Global CDN'
