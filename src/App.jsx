@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import heroBg from './assets/hero_bg.jpg';
 import architectureBg from './assets/architecture_bg.jpg';
 import roiBg from './assets/roi_bg.jpg';
 import telemetryBg from './assets/telemetry_bg.jpg';
 import {
-  Terminal,
   Activity,
   Layers,
-  Radio,
   Cpu,
   ShieldCheck,
   CheckCircle2,
@@ -17,7 +15,6 @@ import {
   Calendar,
   ArrowUpRight,
   ChevronRight,
-  Sliders,
   Globe,
   Database,
   Users,
@@ -28,48 +25,49 @@ import {
   Search,
   Check,
   MapPin,
-  Lock,
-  Clock,
-  Zap
+  TrendingUp,
+  BarChart3,
+  Target,
+  Briefcase
 } from 'lucide-react';
 
 /* ==========================================================================
-   VISUAL PROOF SHOWCASE (STARLINK MINIMALIST TELEMETRY)
+   VISUAL PROOF SHOWCASE (REVENUE CONVERSION DEMONSTRATION)
    ========================================================================== */
-const StarlinkProofShowcase = () => {
+const RevenueProofShowcase = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="max-w-4xl mx-auto mb-16 bg-neutral-950/80 border border-white/15 rounded-md p-6 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] relative overflow-hidden"
+      className="max-w-4xl mx-auto mb-16 bg-neutral-950/85 border border-white/15 rounded-sm p-6 sm:p-8 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
       
-      {/* Top Telemetry Header */}
+      {/* Top Banner */}
       <div className="flex justify-between items-center pb-4 mb-6 border-b border-white/10 font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
         <span className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          DISPATCH PROTOCOL // 0-SEC LATENCY
+          LIVE REVENUE CONVERSION WORKFLOW // SPEED-TO-LEAD
         </span>
-        <span>SYS.LOG #8942-A</span>
+        <span>VERIFIED PROCESS</span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-        {/* Step 1: Missed Call */}
+        {/* Step 1: Missed Opportunity */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-neutral-700 flex items-center justify-center text-neutral-300">
               <PhoneMissed size={18} className="text-red-400" />
             </div>
             <div>
-              <div className="font-mono text-[9px] uppercase tracking-widest text-neutral-400">INPUT EVENT</div>
-              <div className="text-xs font-bold text-white tracking-wider uppercase">MISSED CALL 2:14 PM</div>
+              <div className="font-mono text-[9px] uppercase tracking-widest text-neutral-400">INBOUND OPPORTUNITY</div>
+              <div className="text-xs font-bold text-white tracking-wider uppercase">MISSED CALL AT 2:14 PM</div>
             </div>
           </div>
           <p className="text-[11px] text-neutral-400 leading-relaxed pt-1">
-            Customer inquiry left unanswered. Standard business drops 78% of lead value here.
+            78% of consumers purchase from the company that responds first. Unanswered calls cause lost revenue.
           </p>
         </div>
 
@@ -77,32 +75,32 @@ const StarlinkProofShowcase = () => {
         <div className="flex flex-col space-y-2 p-4 bg-white/[0.04] border border-white/20 rounded-sm relative">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 font-mono text-[9px] text-white tracking-widest uppercase">
-              <Cpu size={14} className="text-white" />
-              <span>AI TRIAGE (&lt; 2S)</span>
+              <Sparkles size={14} className="text-white" />
+              <span>INSTANT AI OUTREACH (&lt; 2 SEC)</span>
             </div>
             <span className="font-mono text-[9px] px-1.5 py-0.5 border border-white/20 bg-white/10 text-white rounded-none">
-              ACTIVE
+              AUTOMATED
             </span>
           </div>
           <div className="bg-black/90 p-2.5 border border-white/15 rounded-sm font-mono text-[11px] text-neutral-200">
-            <span className="text-neutral-400 block text-[9px] mb-0.5 tracking-wider">SMS OUTBOUND // DISPATCHED</span>
-            "Hi, sorry we missed your call. How can Digitol help scale your systems today?"
+            <span className="text-neutral-400 block text-[9px] mb-0.5 tracking-wider">SMS OUTBOUND // SENT</span>
+            "Hi! Sorry we missed your call. How can the Digitol team help you grow today?"
           </div>
         </div>
 
-        {/* Step 3: Retained Appointment */}
+        {/* Step 3: Booked Consultation */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 p-4 bg-white/[0.02] border border-white/10 rounded-sm">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-sm bg-neutral-900 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
               <CheckCircle2 size={18} />
             </div>
             <div>
-              <div className="font-mono text-[9px] uppercase tracking-widest text-emerald-400">OUTPUT CONFIRMED</div>
-              <div className="text-xs font-bold text-white tracking-wider uppercase">CALENDAR BOOKED</div>
+              <div className="font-mono text-[9px] uppercase tracking-widest text-emerald-400">OUTCOME DELIVERED</div>
+              <div className="text-xs font-bold text-white tracking-wider uppercase">APPOINTMENT BOOKED</div>
             </div>
           </div>
           <div className="inline-flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-[10px] px-2.5 py-1 tracking-wider uppercase">
-            <span>$4,200 PIPELINE RETAINED</span>
+            <span>$4,200 DEAL RETAINED</span>
           </div>
         </div>
       </div>
@@ -111,7 +109,7 @@ const StarlinkProofShowcase = () => {
 };
 
 /* ==========================================================================
-   MAIN STARLINK DIGITOL APPLICATION COMPONENT
+   MAIN DIGITOL APPLICATION COMPONENT (WEB-FX STYLE LINGO + STARLINK UI)
    ========================================================================== */
 export default function App() {
   // Modal State
@@ -138,7 +136,7 @@ export default function App() {
   const [calcValue, setCalcValue] = useState(3500);
   const [calcMissedPct, setCalcMissedPct] = useState(35);
 
-  // Active Architecture Pillar
+  // Active Solution Pillar
   const [activePillar, setActivePillar] = useState(0);
 
   // Selected calendar time slot on confirmation
@@ -208,91 +206,91 @@ export default function App() {
     }
   };
 
-  // 5 Core Architecture Pillars (Starlink Specifications)
-  const ARCHITECTURE_PILLARS = [
+  // 5 Core Growth Solutions (WebFX-inspired, ROI-driven, original copy)
+  const GROWTH_SOLUTIONS = [
     {
       id: '01',
-      tag: 'FOUNDATION // GATEWAY',
-      title: 'WEBSITE DESIGN & CONVERSION ENGINES',
-      desc: 'Sub-second Core Web Vitals architecture engineered on behavioral conversion psychology. Replaces legacy slow websites with high-converting multi-step lead capture infrastructure.',
+      tag: 'FEATURED ENTRY OFFER',
+      title: 'CUSTOM WEB DESIGN & CONVERSION FUNNELS',
+      desc: 'Sub-second, conversion-rate-optimized (CRO) websites and landing pages engineered to convert visitors into qualified appointments, inbound calls, and paying clients.',
       metrics: [
-        { label: 'LOAD SPEED', val: '< 0.8s' },
-        { label: 'CONVERSION BENCHMARK', val: '14.8%' },
-        { label: 'DELIVERY WINDOW', val: '7 DAYS' }
+        { label: 'PAGE LOAD SPEED', val: '< 0.8s' },
+        { label: 'AVG CONVERSION LIFT', val: '+240%' },
+        { label: 'LAUNCH TIMELINE', val: '7 DAYS' }
       ],
-      specs: [
-        'Mobile-first layout with tactile conversion docks',
-        'Direct 2-way CRM synchronization via instant webhook',
-        'Zero render-blocking scripts; 98+ PageSpeed index',
-        'Embedded structured JSON-LD local schema code'
+      deliverables: [
+        'Mobile-first responsive UX with streamlined one-tap contact docks',
+        'Direct 2-way CRM synchronization via automated real-time webhooks',
+        'Zero render-blocking code with 95+ Google PageSpeed score guaranteed',
+        'Structured local schema SEO markup for maximum search visibility'
       ]
     },
     {
       id: '02',
       tag: 'ZERO AD SPEND',
-      title: 'DATABASE REACTIVATION (AI SMS)',
-      desc: 'Algorithmic 2-way conversational AI pipelines that re-engage inactive and cold CRM contacts via natural SMS sequences, booking paid consultations automatically.',
+      title: 'AI DATABASE REACTIVATION & LEAD NURTURE',
+      desc: 'Reclaim lost revenue trapped in your past lead database. Our conversational 2-way AI SMS sequences engage dormant CRM contacts and book qualified consultations on autopilot.',
       metrics: [
-        { label: 'CONTACT RATE', val: '42.6%' },
-        { label: 'TYPICAL ROI', val: '12x - 28x' },
-        { label: 'CARRIER COMPLIANCE', val: 'A2P 10DLC' }
+        { label: 'RESPONSE RATE', val: '42.6%' },
+        { label: 'TYPICAL CAMPAIGN ROI', val: '14x - 30x' },
+        { label: 'DELIVERY COMPLIANCE', val: 'A2P 10DLC' }
       ],
-      specs: [
-        'Natural conversational objection handling models',
-        'Live calendar schedule integration (Google/Outlook)',
-        'Human rep alert triggers on high-intent buyer replies',
-        'Strict TCPA and automated carrier opt-out parsing'
+      deliverables: [
+        'Natural conversational objection handling tailored to your service offerings',
+        'Direct calendar booking integration with automated SMS/email reminders',
+        'Instant human notifications when a high-intent buyer is ready to purchase',
+        'Strict TCPA compliance with automated opt-out management'
       ]
     },
     {
       id: '03',
-      tag: 'ELITE HUMAN STAFFING',
-      title: 'DEDICATED VIRTUAL ASSISTANT PLACEMENT',
-      desc: 'Top 1% rigorously vetted, English-fluent executive Virtual Assistants trained on dispatch, scheduling, and CRM workflows to eliminate unanswered calls completely.',
+      tag: 'DEDICATED HUMAN TALENT',
+      title: 'DEDICATED VIRTUAL ASSISTANT STAFFING',
+      desc: 'Eliminate missed phone calls and administrative bottlenecks. We match you with top 1% vetted, English-fluent executive Virtual Assistants trained on your exact industry workflows.',
       metrics: [
         { label: 'OVERHEAD SAVINGS', val: '70%+' },
         { label: 'CALL ANSWER RATE', val: '99.8%' },
-        { label: 'INTEGRATION', val: 'CRM/PHONE' }
+        { label: 'ONBOARDING SPEED', val: '5 DAYS' }
       ],
-      specs: [
-        '4-stage vetting: IQ, EQ, English fluency, and CRM tests',
-        'Trained on ServiceTitan, Jobber, GoHighLevel, Clio, HubSpot',
-        'Full phone coverage during peak & after-hours windows',
-        'Dedicated account manager and weekly quality audits'
+      deliverables: [
+        'Rigorous 4-stage talent vetting: IQ, EQ, English fluency, and CRM testing',
+        'Pre-trained in ServiceTitan, Jobber, GoHighLevel, Clio, and HubSpot',
+        'Full phone, dispatch, and scheduling coverage during peak and after-hours',
+        'Dedicated client success manager with weekly quality assurance audits'
       ]
     },
     {
       id: '04',
-      tag: 'PREDICTABLE ACQUISITION',
-      title: 'HIGH-INTENT PAID TRAFFIC ENGINES',
-      desc: 'Precision Google Search and Meta advertising designed to target ready-to-buy consumers with exact-match search bidding and server-side Conversion API tracking.',
+      tag: 'TARGETED ACQUISITION',
+      title: 'HIGH-INTENT PAID SEARCH & SOCIAL ADS',
+      desc: 'High-ROI Google Search and Meta advertising campaigns targeting active, high-intent buyers. We manage the entire pipeline from keyword sculpting to closed-deal revenue tracking.',
       metrics: [
         { label: 'AVERAGE ROAS', val: '3.8x' },
-        { label: 'TRACKING ATTRIBUTION', val: 'CAPI / OFFLINE' },
-        { label: 'TARGETING', val: 'HIGH INTENT' }
+        { label: 'TRACKING METHOD', val: 'SERVER-SIDE CAPI' },
+        { label: 'LEAD QUALITY', val: 'PRE-QUALIFIED' }
       ],
-      specs: [
-        'Continuous negative keyword scrubbing & bid optimization',
-        'High-converting dedicated landing page funnels',
-        'Server-side CAPI telemetry feeding Google/Meta bidding AI',
-        'Live client analytics portal tracking real contract revenue'
+      deliverables: [
+        'Continuous negative keyword sculpting and bidding algorithm management',
+        'Dedicated high-converting landing page funnels tailored to each ad group',
+        'Server-side Conversion API tracking feeding Google and Meta smart bidding',
+        'Transparent 24/7 client analytics dashboard tracking real customer revenue'
       ]
     },
     {
       id: '05',
-      tag: 'TURNKEY INFRASTRUCTURE',
-      title: 'BUSINESS IN A BOX (ENTERPRISE SETUP)',
-      desc: 'Complete digital operational operating system: custom high-converting website, end-to-end CRM pipelines, automated SMS/email lead nurture, and dedicated staffing.',
+      tag: 'COMPLETE TURNKEY SOLUTION',
+      title: 'BUSINESS IN A BOX (ALL-IN-ONE GROWTH STACK)',
+      desc: 'The complete enterprise growth engine: custom high-converting website, complete automated CRM pipelines, lead nurture funnels, and a dedicated full-time Virtual Assistant.',
       metrics: [
         { label: 'DEPLOYMENT TIME', val: '14 DAYS' },
-        { label: 'UPTIME GUARANTEE', val: '99.98%' },
-        { label: 'SYSTEM STACK', val: 'TURNKEY' }
+        { label: 'SYSTEM UPTIME', val: '99.98%' },
+        { label: 'SUPPORT LEVEL', val: 'DEDICATED' }
       ],
-      specs: [
-        'Custom enterprise website + complete CRM setup',
-        'Automated appointment reminder & review generation workflows',
-        'Dedicated Virtual Assistant matched & integrated',
-        'Direct engineering priority channel (Slack/WhatsApp)'
+      deliverables: [
+        'Custom enterprise website + complete CRM pipeline architecture',
+        'Automated review generation and appointment follow-up sequences',
+        'Dedicated Virtual Assistant seamlessly integrated into daily dispatch',
+        'Direct priority communication channel (Slack / WhatsApp) with senior growth strategists'
       ]
     }
   ];
@@ -301,11 +299,11 @@ export default function App() {
     <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
       
       {/* ======================================================================
-          1. STARLINK FIXED TOP NAVIGATION
+          1. TOP NAVIGATION
           ====================================================================== */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 transition-all">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/10 transition-all">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Minimalist Logo */}
+          {/* Logo */}
           <a href="#" className="flex items-center gap-3 group">
             <div className="w-5 h-5 bg-white flex items-center justify-center font-mono text-black font-extrabold text-xs tracking-tighter">
               D
@@ -316,30 +314,30 @@ export default function App() {
               </span>
               <span className="text-neutral-600 font-mono text-xs">//</span>
               <span className="font-mono text-[10px] tracking-widest text-neutral-400 uppercase hidden sm:inline">
-                AUTONOMOUS SYS
+                REVENUE GROWTH PLATFORM
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-8 font-mono text-[11px] tracking-[0.2em] text-neutral-400 uppercase">
-            <a href="#architecture" className="hover:text-white transition-colors">ARCHITECTURE</a>
-            <a href="#systems" className="hover:text-white transition-colors">SYSTEMS</a>
-            <a href="#telemetry" className="hover:text-white transition-colors">TELEMETRY</a>
-            <a href="#roi" className="hover:text-white transition-colors">ROI ENGINE</a>
+            <a href="#solutions" className="hover:text-white transition-colors">SOLUTIONS</a>
+            <a href="#roi-simulator" className="hover:text-white transition-colors">ROI SIMULATOR</a>
+            <a href="#case-studies" className="hover:text-white transition-colors">RESULTS</a>
+            <a href="tel:+18004923444" className="hover:text-white transition-colors">(800) 492-DIGI</a>
           </nav>
 
           {/* Action Button */}
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex items-center gap-2 font-mono text-[10px] tracking-widest text-neutral-400 uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>ONLINE</span>
+              <span>ACCEPTING PARTNERS</span>
             </div>
             <button
               onClick={() => openAuditModal()}
               className="bg-white text-black hover:bg-neutral-200 text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-none border border-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95"
             >
-              INITIALIZE AUDIT
+              GET A FREE PROPOSAL
             </button>
           </div>
         </div>
@@ -356,26 +354,26 @@ export default function App() {
         <div className="radar-scan" />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
-          {/* Telemetry Badge */}
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2.5 px-3 py-1 bg-white/[0.04] border border-white/15 rounded-none font-mono text-[10px] tracking-[0.25em] text-neutral-300 uppercase mb-8 backdrop-blur-md"
+            className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-white/[0.04] border border-white/15 rounded-none font-mono text-[10px] tracking-[0.25em] text-neutral-300 uppercase mb-8 backdrop-blur-md"
           >
-            <Radio size={12} className="text-white animate-pulse" />
-            <span>ENTERPRISE REVENUE INFRASTRUCTURE // SLA: 99.98%</span>
+            <TrendingUp size={13} className="text-white" />
+            <span>TECH-ENABLED GROWTH &amp; MARKETING SOLUTIONS</span>
           </motion.div>
 
-          {/* Stark Main Heading */}
+          {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.8 }}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight uppercase leading-[1.05] text-white mb-8 drop-shadow-2xl"
           >
-            AUTONOMOUS AI &amp; <br />
-            <span className="text-neutral-400">DEDICATED STAFF</span>
+            THE GROWTH ENGINE THAT <br />
+            <span className="text-neutral-400">DRIVES REAL REVENUE</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -385,7 +383,7 @@ export default function App() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-neutral-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 font-normal leading-relaxed tracking-wide drop-shadow-md"
           >
-            Eliminate pipeline leakage and missed calls. We deploy 24/7 AI conversational triage, custom CRO web architecture, and top 1% vetted Virtual Assistants to scale client acquisition.
+            Stop losing qualified pipeline to slow responses and unanswered calls. We combine custom CRO web architecture, 24/7 AI lead reactivation, and dedicated vetted Virtual Assistants to accelerate your business revenue.
           </motion.p>
 
           {/* Action CTAs */}
@@ -399,47 +397,47 @@ export default function App() {
               onClick={() => openAuditModal()}
               className="w-full sm:w-auto bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 border border-white transition-all shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95 flex items-center justify-center gap-2"
             >
-              <span>INITIALIZE AUDIT</span>
+              <span>CLAIM REVENUE PROPOSAL</span>
               <ArrowUpRight size={14} />
             </button>
             <a
-              href="#architecture"
+              href="#solutions"
               className="w-full sm:w-auto bg-black/60 hover:bg-white/10 text-neutral-300 hover:text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 border border-white/20 backdrop-blur-lg transition-all text-center"
             >
-              EXPLORE ARCHITECTURE
+              EXPLORE SOLUTIONS
             </a>
           </motion.div>
 
-          {/* Visual Proof Component */}
-          <StarlinkProofShowcase />
+          {/* Revenue Demonstration Workflow */}
+          <RevenueProofShowcase />
 
-          {/* Quick Metrics Bar */}
+          {/* Proof Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-b border-white/10 py-6 font-mono bg-black/60 backdrop-blur-md">
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">$14.2M+</div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">RECOVERED CAPITAL</div>
+              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">CLIENT REVENUE DRIVEN</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">48,500+</div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">BOOKED CONSULTS</div>
+              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">APPOINTMENTS SET</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">99.4%</div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">INSTANT CONNECT</div>
+              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">RESPONSE RATE</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">&lt; 2 SEC</div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">AI TRIAGE SPEED</div>
+              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">AVG RESPONSE SPEED</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ======================================================================
-          3. ARCHITECTURE & 5 CORE PILLARS (MIN-H-SCREEN)
+          3. GROWTH SOLUTIONS MATRIX (MIN-H-SCREEN)
           ====================================================================== */}
       <section 
-        id="architecture" 
+        id="solutions" 
         className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center"
         style={{ backgroundImage: `url(${architectureBg})` }}
       >
@@ -449,21 +447,21 @@ export default function App() {
           {/* Section Header */}
           <div className="text-left mb-16">
             <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
-              SYSTEM CAPABILITIES // SPECIFICATIONS
+              COMPREHENSIVE GROWTH SUITE
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight uppercase text-white">
-              DIGITOL ARCHITECTURE MATRIX
+              PERFORMANCE SOLUTIONS MATRIX
             </h2>
             <p className="text-neutral-300 text-sm sm:text-base max-w-2xl mt-3">
-              Modular revenue engineering designed to interface seamlessly with your existing CRM, phone systems, and acquisition channels.
+              Full-service growth marketing and AI automation designed to seamlessly integrate with your existing CRM, phones, and sales pipelines.
             </p>
           </div>
 
-          {/* Pillar Selector Tabs */}
+          {/* Solution Selector Tabs */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 mb-8 font-mono text-[10px] tracking-[0.2em] uppercase">
-            {ARCHITECTURE_PILLARS.map((p, idx) => (
+            {GROWTH_SOLUTIONS.map((s, idx) => (
               <button
-                key={p.id}
+                key={s.id}
                 onClick={() => setActivePillar(idx)}
                 className={`p-3.5 text-left border transition-all ${
                   activePillar === idx
@@ -471,13 +469,13 @@ export default function App() {
                     : 'bg-neutral-950/80 text-neutral-400 border-white/15 hover:border-white/40 hover:text-white backdrop-blur-md'
                 }`}
               >
-                <div className="text-[9px] opacity-60 mb-0.5">{p.id} // {p.tag}</div>
-                <div className="truncate font-semibold text-xs">{p.title.split('(')[0]}</div>
+                <div className="text-[9px] opacity-60 mb-0.5">{s.id} // {s.tag}</div>
+                <div className="truncate font-semibold text-xs">{s.title.split('(')[0]}</div>
               </button>
             ))}
           </div>
 
-          {/* Active Pillar Workstation Display */}
+          {/* Active Solution Workstation Display */}
           <motion.div
             key={activePillar}
             initial={{ opacity: 0, y: 15 }}
@@ -489,47 +487,47 @@ export default function App() {
               {/* Left Column: Details */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-block font-mono text-[10px] tracking-[0.25em] px-2.5 py-1 bg-white/10 text-white border border-white/20 uppercase">
-                  {ARCHITECTURE_PILLARS[activePillar].tag}
+                  {GROWTH_SOLUTIONS[activePillar].tag}
                 </div>
                 <h3 className="text-2xl sm:text-4xl font-bold uppercase tracking-tight text-white">
-                  {ARCHITECTURE_PILLARS[activePillar].title}
+                  {GROWTH_SOLUTIONS[activePillar].title}
                 </h3>
                 <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                  {ARCHITECTURE_PILLARS[activePillar].desc}
+                  {GROWTH_SOLUTIONS[activePillar].desc}
                 </p>
 
                 <div className="space-y-2.5 pt-2">
                   <div className="font-mono text-[10px] uppercase tracking-widest text-neutral-400 mb-2">
-                    TECHNICAL DELIVERABLES &amp; INTEGRATIONS:
+                    WHAT IS INCLUDED IN THIS SOLUTION:
                   </div>
-                  {ARCHITECTURE_PILLARS[activePillar].specs.map((spec, i) => (
+                  {GROWTH_SOLUTIONS[activePillar].deliverables.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-neutral-300">
                       <span className="font-mono text-white text-xs mt-0.5">•</span>
-                      <span>{spec}</span>
+                      <span>{item}</span>
                     </div>
                   ))}
                 </div>
 
                 <div className="pt-6">
                   <button
-                    onClick={() => openAuditModal(ARCHITECTURE_PILLARS[activePillar].title)}
+                    onClick={() => openAuditModal(GROWTH_SOLUTIONS[activePillar].title)}
                     className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all flex items-center gap-2"
                   >
-                    <span>INITIALIZE THIS ARCHITECTURE</span>
+                    <span>REQUEST A CUSTOM PROPOSAL</span>
                     <ArrowUpRight size={14} />
                   </button>
                 </div>
               </div>
 
-              {/* Right Column: Telemetry Specs */}
+              {/* Right Column: Performance Specs */}
               <div className="lg:col-span-5 bg-black/90 border border-white/15 p-6 space-y-6 font-mono rounded-none backdrop-blur-md">
                 <div className="text-[10px] text-neutral-400 tracking-[0.25em] uppercase border-b border-white/10 pb-3 flex justify-between items-center">
-                  <span>TELEMETRY METRICS</span>
+                  <span>KEY PERFORMANCE BENCHMARKS</span>
                   <Activity size={12} className="text-emerald-400" />
                 </div>
 
                 <div className="space-y-4">
-                  {ARCHITECTURE_PILLARS[activePillar].metrics.map((m, idx) => (
+                  {GROWTH_SOLUTIONS[activePillar].metrics.map((m, idx) => (
                     <div key={idx} className="p-3 bg-white/[0.03] border border-white/10 flex justify-between items-center">
                       <span className="text-[10px] text-neutral-400 tracking-wider uppercase">{m.label}</span>
                       <span className="text-base font-bold text-white tracking-tight">{m.val}</span>
@@ -538,7 +536,7 @@ export default function App() {
                 </div>
 
                 <div className="text-[10px] text-neutral-500 leading-relaxed pt-2 border-t border-white/10">
-                  // Live sync support verified for GoHighLevel, HubSpot, Salesforce, ServiceTitan, Jobber, and Clio.
+                  // Seamless integration verified with GoHighLevel, HubSpot, Salesforce, ServiceTitan, Jobber, and Clio.
                 </div>
               </div>
             </div>
@@ -547,10 +545,10 @@ export default function App() {
       </section>
 
       {/* ======================================================================
-          4. REVENUE SIMULATOR (ROI TELEMETRY ENGINE) (MIN-H-SCREEN)
+          4. ROI & REVENUE RECOVERY CALCULATOR (MIN-H-SCREEN)
           ====================================================================== */}
       <section 
-        id="roi" 
+        id="roi-simulator" 
         className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center starlink-grid-fine"
         style={{ backgroundImage: `url(${roiBg})` }}
       >
@@ -559,13 +557,13 @@ export default function App() {
         <div className="max-w-5xl mx-auto w-full relative z-10">
           <div className="text-center mb-16">
             <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
-              FINANCIAL SIMULATION PROTOCOL
+              REVENUE ACCELERATION CALCULATOR
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight uppercase text-white">
-              PIPELINE REVENUE RECOVERY ENGINE
+              ESTIMATE YOUR RECOVERABLE REVENUE
             </h2>
             <p className="text-neutral-300 text-sm sm:text-base max-w-xl mx-auto mt-3">
-              Model your business metrics to calculate recoverable capital currently lost to slow response times and unworked CRM leads.
+              See how much revenue your business can generate by eliminating missed calls and reactivating dormant customer leads.
             </p>
           </div>
 
@@ -575,7 +573,7 @@ export default function App() {
               {/* Slider 1 */}
               <div className="space-y-2">
                 <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
-                  <span>MONTHLY INBOUND LEADS:</span>
+                  <span>MONTHLY INBOUND LEADS / INQUIRIES:</span>
                   <span className="font-bold text-white">{calcLeads.toLocaleString()} LEADS/MO</span>
                 </div>
                 <input
@@ -592,7 +590,7 @@ export default function App() {
               {/* Slider 2 */}
               <div className="space-y-2">
                 <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
-                  <span>AVG CLIENT LIFETIME VALUE:</span>
+                  <span>AVERAGE CLIENT LIFETIME VALUE:</span>
                   <span className="font-bold text-white">${calcValue.toLocaleString()}</span>
                 </div>
                 <input
@@ -609,7 +607,7 @@ export default function App() {
               {/* Slider 3 */}
               <div className="space-y-2">
                 <div className="flex justify-between text-xs tracking-wider uppercase text-neutral-300">
-                  <span>ESTIMATED UNANSWERED/LEAKED RATE:</span>
+                  <span>ESTIMATED UNANSWERED / MISSED RATE:</span>
                   <span className="font-bold text-white">{calcMissedPct}%</span>
                 </div>
                 <input
@@ -624,14 +622,14 @@ export default function App() {
               </div>
 
               <div className="text-[11px] text-neutral-400 font-sans">
-                * Based on Harvard Business Review response benchmark data: 78% of customers buy from the vendor that responds first.
+                * Based on industry conversion benchmarks: 78% of customers buy from the vendor that responds first.
               </div>
             </div>
 
             {/* Right Output Console */}
             <div className="lg:col-span-5 bg-black/90 p-8 border border-white/20 text-center space-y-6 backdrop-blur-md">
               <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
-                ESTIMATED RECOVERABLE CAPITAL
+                ESTIMATED RECOVERABLE REVENUE
               </div>
 
               <div>
@@ -644,14 +642,14 @@ export default function App() {
               </div>
 
               <div className="p-3 bg-white/[0.03] border border-white/10 font-mono text-xs text-emerald-400 tracking-wider uppercase">
-                ANNUAL GAIN: +${annualRecoveredCapital.toLocaleString()}
+                ANNUAL REVENUE LIFT: +${annualRecoveredCapital.toLocaleString()}
               </div>
 
               <button
                 onClick={() => openAuditModal()}
                 className="w-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] py-4 border border-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95"
               >
-                INITIALIZE AUDIT FOR THIS PIPELINE
+                UNLOCK THIS REVENUE BLUEPRINT
               </button>
             </div>
           </div>
@@ -659,10 +657,10 @@ export default function App() {
       </section>
 
       {/* ======================================================================
-          5. ENTERPRISE TELEMETRY & CASE LOGS (MIN-H-SCREEN)
+          5. VERIFIED CLIENT RESULTS & CASE STUDIES (MIN-H-SCREEN)
           ====================================================================== */}
       <section 
-        id="telemetry" 
+        id="case-studies" 
         className="min-h-screen py-28 px-6 bg-cover bg-center bg-no-repeat relative border-t border-white/10 flex flex-col justify-center"
         style={{ backgroundImage: `url(${telemetryBg})` }}
       >
@@ -671,10 +669,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="text-left mb-16">
             <div className="font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase mb-2">
-              VERIFIED ENTERPRISE LOGS
+              PROVEN TRACK RECORD // VERIFIED CLIENT IMPACT
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight uppercase text-white">
-              PERFORMANCE AUDIT DOSSIER
+              REAL CLIENT SUCCESS STORIES
             </h2>
           </div>
 
@@ -686,7 +684,7 @@ export default function App() {
                 <span className="text-emerald-400">+$184K REVENUE</span>
               </div>
               <p className="font-sans text-xs text-neutral-300 leading-relaxed">
-                "Within 72 hours of launching the 2-way AI database reactivation sequence, we booked 38 retained consultations from 1,400 cold Clio inquiries with zero ad spend."
+                "Within 72 hours of launching the 2-way AI database reactivation sequence, we booked 38 retained consultations from 1,400 cold Clio inquiries with zero extra ad spend."
               </p>
               <div className="pt-2 text-[10px] text-neutral-500 uppercase tracking-widest">
                 — MARCUS STERLING, MANAGING PARTNER
@@ -700,7 +698,7 @@ export default function App() {
                 <span className="text-emerald-400">0 MISSED CALLS</span>
               </div>
               <p className="font-sans text-xs text-neutral-300 leading-relaxed">
-                "Our dedicated Virtual Assistant answers every emergency call in under two rings, schedules the estimator in ServiceTitan, and dispatches SMS updates. Saved $4,000/mo in overhead."
+                "Our dedicated Virtual Assistant answers every incoming customer call in under two rings, schedules the estimator in ServiceTitan, and dispatches SMS updates. Saved $4,000/mo in overhead."
               </p>
               <div className="pt-2 text-[10px] text-neutral-500 uppercase tracking-widest">
                 — ELENA RODRIGUEZ, OPERATIONS DIRECTOR
@@ -714,7 +712,7 @@ export default function App() {
                 <span className="text-emerald-400">+340% CONSULTS</span>
               </div>
               <p className="font-sans text-xs text-neutral-300 leading-relaxed">
-                "Turnkey Business in a Box deployment gave us a sub-second website, automated SMS appointment nurture, and a full-time patient intake coordinator. Show-up rate jumped to 92%."
+                "Digitol's Business in a Box deployment gave us a sub-second website, automated SMS appointment nurture, and a full-time patient intake coordinator. Our show-up rate jumped to 92%."
               </p>
               <div className="pt-2 text-[10px] text-neutral-500 uppercase tracking-widest">
                 — DR. DANIEL KIM, MEDICAL DIRECTOR
@@ -727,14 +725,14 @@ export default function App() {
               onClick={() => openAuditModal()}
               className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 border border-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)]"
             >
-              INITIALIZE STRATEGY AUDIT →
+              REQUEST YOUR FREE REVENUE AUDIT →
             </button>
           </div>
         </div>
       </section>
 
       {/* ======================================================================
-          6. FULL-SCREEN BLURRED OVERLAY MODAL (STARLINK TERMINAL)
+          6. FULL-SCREEN BLURRED OVERLAY MODAL (GROWTH AUDIT TERMINAL)
           ====================================================================== */}
       <AnimatePresence>
         {modalOpen && (
@@ -755,8 +753,8 @@ export default function App() {
               {/* Top Modal Header */}
               <div className="flex justify-between items-center pb-4 mb-6 border-b border-white/10">
                 <div className="flex items-center gap-2.5 font-mono text-[10px] tracking-[0.25em] text-neutral-400 uppercase">
-                  <Terminal size={14} className="text-white" />
-                  <span>[DIGITOL-SYS // REVENUE AUDIT INITIALIZATION]</span>
+                  <BarChart3 size={14} className="text-white" />
+                  <span>[DIGITOL GROWTH PLATFORM // FREE REVENUE AUDIT]</span>
                 </div>
                 <button
                   onClick={() => setModalOpen(false)}
@@ -793,20 +791,20 @@ export default function App() {
                     >
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-1">
-                          01 // SELECT INDUSTRY SECTOR
+                          01 // SELECT YOUR INDUSTRY
                         </h3>
                         <p className="text-neutral-400 text-xs font-mono tracking-wide">
-                          Select the operational classification of your enterprise.
+                          Select your primary industry so we can customize your growth roadmap.
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 font-mono text-xs">
                         {[
                           'HOME SERVICES & CONTRACTING',
-                          'LEGAL & LAW PRACTICE',
+                          'LEGAL & LAW PRACTICES',
                           'HEALTHCARE & MEDICAL SPA',
                           'REAL ESTATE & COMMERCIAL',
-                          'B2B & ENTERPRISE SERVICES'
+                          'B2B & PROFESSIONAL SERVICES'
                         ].map((ind) => (
                           <button
                             key={ind}
@@ -821,7 +819,7 @@ export default function App() {
                     </motion.div>
                   )}
 
-                  {/* Step 2: System Architecture */}
+                  {/* Step 2: Solution Selection */}
                   {currentStep === 2 && (
                     <motion.div
                       key="step2"
@@ -831,20 +829,20 @@ export default function App() {
                     >
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-1">
-                          02 // SELECT PRIMARY ARCHITECTURE
+                          02 // WHAT IS YOUR PRIMARY GROWTH GOAL?
                         </h3>
                         <p className="text-neutral-400 text-xs font-mono tracking-wide">
-                          Select the target system configuration required.
+                          Select the solution that will have the biggest immediate impact on your revenue.
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 gap-2.5 font-mono text-xs">
                         {[
-                          { title: '💻 HIGH-CONVERTING WEBSITE & FUNNELS', desc: 'Custom CRO web architecture engineered for sub-second loading & booking' },
-                          { title: '⚡ DATABASE REACTIVATION (AI SMS)', desc: 'Reclaim dormant CRM pipeline revenue with automated 2-way AI SMS' },
-                          { title: '👥 DEDICATED VIRTUAL ASSISTANT STAFFING', desc: 'Top 1% vetted executive VA for live phone dispatch & calendar scheduling' },
-                          { title: '🎯 HIGH-INTENT PAID ACQUISITION (ADS)', desc: 'High-ROAS search & social campaigns targeting active buyers' },
-                          { title: '🚀 TURNKEY BUSINESS IN A BOX (ALL STACK)', desc: 'Complete turn-key website, CRM, automated nurture, and staff placement' }
+                          { title: '💻 HIGH-CONVERTING WEBSITE & FUNNELS', desc: 'Custom CRO website and landing pages engineered to maximize leads and appointments' },
+                          { title: '⚡ DATABASE REACTIVATION (AI SMS)', desc: 'Reactivate cold CRM contacts and convert dormant leads into booked consultations' },
+                          { title: '👥 DEDICATED VIRTUAL ASSISTANT STAFFING', desc: 'Top 1% vetted executive VA for phone coverage, dispatch, scheduling, and admin' },
+                          { title: '🎯 HIGH-INTENT PAID ADVERTISING (GOOGLE & META)', desc: 'High-ROAS paid search and social campaigns targeting active in-market buyers' },
+                          { title: '🚀 TURNKEY BUSINESS IN A BOX (FULL STACK)', desc: 'Complete growth infrastructure: custom website, CRM, automated nurture, and staff placement' }
                         ].map((svc) => (
                           <button
                             key={svc.title}
@@ -859,7 +857,7 @@ export default function App() {
                     </motion.div>
                   )}
 
-                  {/* Step 3: Pipeline Volume Capacity */}
+                  {/* Step 3: Lead Volume */}
                   {currentStep === 3 && (
                     <motion.div
                       key="step3"
@@ -869,10 +867,10 @@ export default function App() {
                     >
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-1">
-                          03 // MONTHLY PIPELINE CAPACITY
+                          03 // MONTHLY LEAD VOLUME
                         </h3>
                         <p className="text-neutral-400 text-xs font-mono tracking-wide">
-                          Select current monthly inbound lead/inquiry volume.
+                          What is your current monthly inbound lead and phone call volume?
                         </p>
                       </div>
 
@@ -896,7 +894,7 @@ export default function App() {
                     </motion.div>
                   )}
 
-                  {/* Step 4: Enterprise Identity Contact */}
+                  {/* Step 4: Contact Details */}
                   {currentStep === 4 && (
                     <motion.form
                       key="step4"
@@ -907,10 +905,10 @@ export default function App() {
                     >
                       <div>
                         <h3 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-white mb-1">
-                          04 // ENTERPRISE IDENTITY
+                          04 // WHERE SHOULD WE SEND YOUR PROPOSAL?
                         </h3>
                         <p className="text-neutral-400 text-xs font-mono tracking-wide">
-                          Enter credentials for automated blueprint dispatch.
+                          Enter your contact information to receive your custom revenue audit &amp; roadmap.
                         </p>
                       </div>
 
@@ -928,11 +926,11 @@ export default function App() {
                         </div>
 
                         <div>
-                          <label className="block text-[10px] text-neutral-400 uppercase tracking-widest mb-1.5">ENTERPRISE / BUSINESS NAME *</label>
+                          <label className="block text-[10px] text-neutral-400 uppercase tracking-widest mb-1.5">COMPANY / BUSINESS NAME *</label>
                           <input
                             type="text"
                             required
-                            placeholder="e.g. Vance Capital LLC"
+                            placeholder="e.g. Vance Roofing & Construction"
                             className="w-full bg-neutral-950 border border-white/20 p-3 text-white text-xs font-mono focus:border-white focus:outline-none transition-all rounded-none"
                             value={formData.company}
                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -965,7 +963,7 @@ export default function App() {
                         </div>
 
                         <div>
-                          <label className="block text-[10px] text-neutral-400 uppercase tracking-widest mb-1.5">BUSINESS ADDRESS / HQ LOCATION (OPTIONAL)</label>
+                          <label className="block text-[10px] text-neutral-400 uppercase tracking-widest mb-1.5">BUSINESS LOCATION / CITY (OPTIONAL)</label>
                           <div className="relative">
                             <input
                               type="text"
@@ -985,14 +983,14 @@ export default function App() {
                           disabled={isSubmitting}
                           className="w-full bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] py-4 border border-white transition-all shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95 flex items-center justify-center gap-2"
                         >
-                          <span>{isSubmitting ? 'DISPATCHING TELEMETRY...' : 'CONFIRM & INITIALIZE REVENUE AUDIT →'}</span>
+                          <span>{isSubmitting ? 'GENERATING YOUR PROPOSAL...' : 'CLAIM YOUR FREE REVENUE AUDIT →'}</span>
                         </button>
                       </div>
                     </motion.form>
                   )}
                 </>
               ) : (
-                /* Post-Submission Starlink Confirmation State */
+                /* Post-Submission Confirmation State */
                 <motion.div
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -1004,21 +1002,21 @@ export default function App() {
 
                   <div>
                     <div className="font-mono text-[10px] tracking-[0.25em] text-emerald-400 uppercase mb-1">
-                      AUDIT INITIALIZATION CONFIRMED
+                      PROPOSAL REQUEST RECEIVED
                     </div>
                     <h3 className="text-2xl font-bold uppercase tracking-tight text-white">
-                      REVENUE BLUEPRINT QUEUED FOR {formData.company || 'YOUR ENTERPRISE'}
+                      REVENUE BLUEPRINT IS BEING PREPARED FOR {formData.company || 'YOUR BUSINESS'}
                     </h3>
                   </div>
 
                   <p className="text-neutral-400 text-xs max-w-md mx-auto leading-relaxed">
-                    Dispatched in real time to <span className="text-white font-mono">{formData.email}</span>. A senior growth partner has received this dossier for analysis.
+                    A confirmation email has been dispatched to <span className="text-white font-mono">{formData.email}</span>. A senior growth strategist has been assigned to your account.
                   </p>
 
-                  {/* Interactive Time Slot Locking Desk */}
+                  {/* Interactive Strategy Session Booking Desk */}
                   <div className="bg-neutral-950 border border-white/20 p-5 text-left space-y-4">
                     <div className="flex justify-between items-center font-mono text-[10px] uppercase tracking-widest text-neutral-400 border-b border-white/10 pb-2">
-                      <span>LOCK IN 30-MIN STRATEGY SESSION</span>
+                      <span>LOCK IN A 30-MINUTE 1-ON-1 STRATEGY CALL</span>
                       <span className="text-emerald-400">AVAILABLE</span>
                     </div>
 
@@ -1048,7 +1046,7 @@ export default function App() {
 
                     {slotConfirmed && (
                       <div className="p-2.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-[10px] tracking-wider uppercase text-center">
-                        ✓ CONFIRMED FOR {selectedSlot}. CALENDAR DISPATCHED.
+                        ✓ CONFIRMED FOR {selectedSlot}. CALENDAR INVITATION SENT.
                       </div>
                     )}
                   </div>
@@ -1059,7 +1057,7 @@ export default function App() {
                       className="inline-flex items-center justify-center gap-2 bg-neutral-900 border border-white/20 hover:border-white px-5 py-3 text-neutral-300 hover:text-white transition-colors"
                     >
                       <PhoneCall size={14} />
-                      <span>DIRECT DESK: (800) 492-DIGI</span>
+                      <span>DIRECT LINE: (800) 492-DIGI</span>
                     </a>
                     <button
                       onClick={() => {
@@ -1069,7 +1067,7 @@ export default function App() {
                       }}
                       className="bg-white text-black font-bold px-5 py-3 border border-white hover:bg-neutral-200 transition-colors"
                     >
-                      RETURN TO DASHBOARD
+                      BACK TO HOMEPAGE
                     </button>
                   </div>
                 </motion.div>
@@ -1080,30 +1078,30 @@ export default function App() {
       </AnimatePresence>
 
       {/* ======================================================================
-          7. MINIMALIST STARLINK FOOTER
+          7. FOOTER
           ====================================================================== */}
       <footer className="border-t border-white/10 bg-black py-16 px-6 font-mono text-xs text-neutral-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <div>
             <div className="flex items-center gap-2 text-white font-bold tracking-[0.2em] uppercase mb-2">
               <div className="w-3.5 h-3.5 bg-white text-black text-[9px] flex items-center justify-center font-extrabold">D</div>
-              <span>DIGITOL // AUTONOMOUS SYSTEMS</span>
+              <span>DIGITOL // REVENUE GROWTH PLATFORM</span>
             </div>
-            <p className="text-neutral-500 text-[11px] max-w-md">
-              High-Impact AI Automations &amp; Dedicated Virtual Assistant Placement. Austin, TX • Global Infrastructure.
+            <p className="text-neutral-500 text-[11px] max-w-md font-sans">
+              Tech-enabled growth solutions, AI automations, and dedicated executive Virtual Assistant staffing. Austin, TX • Serving growth-focused businesses nationwide.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-8 text-[10px] tracking-[0.2em] uppercase text-neutral-400">
             <span>SLA: 99.98%</span>
-            <span>DATA ENCRYPTION: 256-BIT</span>
-            <span>RECIPIENT: VELA956ABEL@GMAIL.COM</span>
+            <span>TRANSPARENT REPORTING</span>
+            <span>DIRECT: VELA956ABEL@GMAIL.COM</span>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/5 flex justify-between items-center text-[10px] text-neutral-600">
-          <div>© 2026 DIGITOL AI LLC. ALL RIGHTS RESERVED.</div>
-          <div>STARLINK MINIMALIST SPECIFICATION</div>
+          <div>© 2026 DIGITOL AI AGENCY LLC. ALL RIGHTS RESERVED.</div>
+          <div>THE REVENUE ACCELERATION ENGINE FOR GROWING ENTERPRISES</div>
         </div>
       </footer>
     </div>
