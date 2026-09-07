@@ -109,7 +109,7 @@ const TypewriterText = ({
   return (
     <span className={`inline-block min-h-[1.15em] transition-all duration-500 ${isFinished ? 'text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.35)]' : 'text-neutral-400'}`}>
       <span>{currentText}</span>
-      <span className={`typewriter-cursor ${isFinished ? 'opacity-80' : ''}`} aria-hidden="true" />
+      {!isFinished && <span className="typewriter-cursor" aria-hidden="true" />}
     </span>
   );
 };
