@@ -143,39 +143,37 @@ function initLiveLeadStreamPulse() {
 }
 
 /* ==========================================================================
-   4. INTERACTIVE LIVE AI & VA SANDBOX SIMULATOR (WITH LIVE TYPING DOTS)
+   4. INTERACTIVE LIVE REVENUE ENGINE SIMULATOR (WITH LIVE TYPING DOTS)
    ========================================================================== */
 
 const AI_SCENARIOS = {
   voice: {
-    status: 'Live Inbound Call Handled by Dedicated VA',
-    actionText: '✓ Booked $4,500 Estimate • Logged in CRM by Dedicated VA',
+    status: 'Programmatic SEO & Sub-Second Edge Landing Page',
+    actionText: '✓ $14,500 Replacement Scope Synced Directly to AccuLynx',
     messages: [
-      { sender: 'user', text: 'Caller: "Hi, I have a leak in my roof from last night\'s storm. Can someone come out for an estimate today?"' },
-      { sender: 'ai', text: 'Dedicated VA (Maria): "Hi, thank you for calling Solis Roofing! This is Maria. I can definitely help with that. We have an emergency estimator in your area between 2:00 PM and 4:00 PM today. Does that window work for you?"' },
-      { sender: 'user', text: 'Caller: "Yes, 2:30 PM is perfect. My address is 742 Evergreen Terrace."' },
-      { sender: 'ai', text: 'Dedicated VA (Maria): "All set! You\'re locked in for 2:30 PM today with our lead inspector. I\'ve just dispatched the job in our CRM and sent an SMS confirmation to your mobile."' }
+      { sender: 'user', text: 'Google Search: "emergency commercial flat roof replacement austin tx"' },
+      { sender: 'ai', text: 'Digitol Edge Engine (<0.8s): Served hyper-local landing page with instant storm damage appraisal calculator & aerial roof scope screening.' },
+      { sender: 'user', text: 'Property Owner submitted: "Need full TPO tear-off on 18,000 sq ft warehouse. Hail damage from last week."' },
+      { sender: 'ai', text: 'Digitol Dispatch Webhook: "Estimate claim auto-logged in AccuLynx, priority lead alert pushed to Marcus Sterling, commercial estimator dispatched."' }
     ]
   },
   sms: {
-    status: 'Automated 2-Way AI SMS • Lead age: 14 Months',
-    actionText: '✓ Reactivated $12,000 Opportunity from Cold CRM',
+    status: 'Automated 2-Way CRM Database Reactivation (90-Day Recall)',
+    actionText: '✓ $8,400 Cosmetic Treatment Package Booked in Zenoti',
     messages: [
-      { sender: 'ai', text: 'Digitol AI: "Hey Michael! Quick question — were you still looking to upgrade your legal practice management software, or did you already get that sorted?"' },
-      { sender: 'user', text: 'Lead: "Hey, we put it on pause last year because of pricing. Why do you ask?"' },
-      { sender: 'ai', text: 'Digitol AI: "Totally understand. We actually launched a dedicated small firm tier that cuts setup by 60%. I can send a 3-minute video breakdown or grab 10 mins this Thursday?"' },
-      { sender: 'user', text: 'Lead: "Let\'s do Thursday at 11 AM."' },
-      { sender: 'ai', text: 'Digitol AI: "Booked! Just sent a calendar invite to your email. Our team will speak with you Thursday at 11 AM!"' }
+      { sender: 'ai', text: 'Digitol CRM Engine: "Hi Amanda! Quick reminder from Aura MedSpa — your 90-day neurotoxin renewal window is coming up next week. Dr. Lauren reserved 2 VIP slots for Thursday or Friday. Would you like to lock one in?"' },
+      { sender: 'user', text: 'Patient: "Yes! Can we do Friday at 2:30 PM? Also want to add RF microneedling."' },
+      { sender: 'ai', text: 'Digitol CRM Engine: "Done! Friday at 2:30 PM is confirmed. $150 deposit credited, treatment protocol synced into Zenoti EHR."' }
     ]
   },
   ads: {
-    status: 'Speed to Lead: < 2 Seconds (Instant Qualification)',
-    actionText: '✓ Patient Scheduled & Dispatched to Dedicated VA',
+    status: 'Bar-Compliant Legal PPC & 24/7 Intake Qualification',
+    actionText: '✓ Catastrophic MVA Retained Case Synced to Clio & Filevine',
     messages: [
-      { sender: 'user', text: 'Prospect submitted web form: "Need comprehensive dental implants consultation."' },
-      { sender: 'ai', text: 'Digitol AI (SMS <2s): "Hi Jennifer, thanks for reaching out to Zenith Dental! Dr. Kim has 2 consultation slots open tomorrow at 10 AM or 3 PM. Which one fits your schedule?"' },
-      { sender: 'user', text: 'Prospect: "3 PM tomorrow works great for me!"' },
-      { sender: 'ai', text: 'Dedicated VA Desk: "Confirmed! Our patient intake coordinator Maria has added you to tomorrow\'s schedule at 3:00 PM. Here\'s the clinic location: [Link]"' }
+      { sender: 'user', text: 'High-Intent Google Search: "commercial trucking collision attorney near me"' },
+      { sender: 'ai', text: 'Digitol Speed-to-Intake (<2s): "Thank you for contacting Sterling Injury Law. To connect you immediately with our senior intake attorney, was anyone injured in the collision?"' },
+      { sender: 'user', text: 'Injured Party: "Yes, 18-wheeler rear-ended my vehicle on I-35, suffered spinal fractures."' },
+      { sender: 'ai', text: 'Digitol Bar-Compliant Intake: "Retainer agreement dispatched via secure DocuSign, case brief auto-populated into Clio Manage and assigned to Lead Trial Counsel."' }
     ]
   }
 };
@@ -241,7 +239,7 @@ function initAiSandboxSimulator() {
           bubble.innerHTML = `
             <div class="ai-bubble-tag">
               <span class="pulse-dot" style="width:5px; height:5px;"></span>
-              <span>Digitol Growth Team</span>
+              <span>Digitol Revenue Engine</span>
             </div>
             <div>${msg.text}</div>
           `;
@@ -360,15 +358,16 @@ function initMobileHamburgerDrawer() {
 }
 
 /* ==========================================================================
-   6. LIVE REAL-TIME SOCIAL PROOF EVENT STREAM (TICKER)
+   6. LIVE REAL-TIME SOCIAL PROOF EVENT STREAM (TICKER & TOAST)
    ========================================================================== */
 
 const RECENT_AUTOMATIONS = [
-  { icon: '👥', text: 'Dedicated Virtual Assistant answered call & booked $4,200 job', company: 'Solis Home Services • 12s ago' },
-  { icon: '💬', text: 'Cold CRM lead reactivated ($8,500 contract) via AI SMS', company: 'Apex Legal Group • 2m ago' },
-  { icon: '🎯', text: 'Google Ads inbound qualified & scheduled with VA desk', company: 'Zenith MedSpa • 4m ago' },
-  { icon: '⚡', text: '24/7 AI chat answered after-hours emergency inquiry', company: 'ProFlow Plumbing • 7m ago' },
-  { icon: '🚀', text: 'Business in a Box website & CRM launched live', company: 'Horizon Realty • 11m ago' }
+  { icon: '🏠', text: '$14,500 Full Roof Replacement captured via Google LSAs & synced to AccuLynx', company: 'Solis Roofing & Restoration • 18s ago' },
+  { icon: '⚖️', text: '$32,000 MVA Catastrophic Injury Retainer signed via Legal SEO Funnel', company: 'Sterling Trial Law • 2m ago' },
+  { icon: '💆', text: '$4,200 Neurotoxin & Morpheus8 Package booked via Zero-Pixel PHI Intake', company: 'Aura Aesthetics MedSpa • 5m ago' },
+  { icon: '❄️', text: '$9,800 Inverter Heat Pump Replacement dispatched via ServiceTitan CAPI', company: 'Apex Air & Plumbing • 8m ago' },
+  { icon: '⚙️', text: '$65,000 Precision CNC Aerospace RFQ submitted via CAD Portal', company: 'TX Aero Dynamics • 12m ago' },
+  { icon: '📦', text: 'Shopify Plus 5.2x ROAS Meta CAPI campaign scaled past $140k/mo', company: 'Luxe DTC Botanicals • 16m ago' }
 ];
 
 function initLiveEventTicker() {
