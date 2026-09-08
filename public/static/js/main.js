@@ -358,17 +358,82 @@ function initMobileHamburgerDrawer() {
 }
 
 /* ==========================================================================
-   6. LIVE REAL-TIME SOCIAL PROOF EVENT STREAM (TICKER & TOAST)
+   6. CONTEXTUAL & INDUSTRY-ISOLATED SOCIAL PROOF STREAM (TICKER & TOAST)
    ========================================================================== */
 
-const RECENT_AUTOMATIONS = [
+const INDUSTRY_AUTOMATIONS = {
+  'roofing-contractors': [
+    { icon: '🏠', text: '$14,500 Full Shingle Tear-Off & Replacement captured via Google LSAs', company: 'Solis Roofing & Restoration • 18s ago' },
+    { icon: '⚡', text: 'Storm Surge Paid Ad Engine deployed across 12 hail-hit ZIP codes', company: 'Apex Storm Restorations • 2m ago' },
+    { icon: '🏗️', text: '$52,000 Commercial TPO Flat Roof scope logged & synced to AccuLynx', company: 'Titan Commercial Roofing • 5m ago' },
+    { icon: '📷', text: 'CompanyCam photo report generated & auto-dispatched to insurance adjuster', company: 'Vanguard Roof Systems • 9m ago' }
+  ],
+  'personal-injury-law': [
+    { icon: '⚖️', text: '$32,000 MVA Catastrophic Injury Retainer signed via High-Authority Legal SEO', company: 'Sterling Trial Law • 2m ago' },
+    { icon: '🚛', text: 'Commercial 18-Wheeler Trucking Collision case screened & synced to Clio', company: 'Vance & Partners Litigation • 5m ago' },
+    { icon: '📜', text: 'Bar-compliant intake funnel filtered property damage vs bodily injury retainer', company: 'Beacon Injury Counsel • 8m ago' },
+    { icon: '🏛️', text: 'Courthouse-geofenced PPC campaign converted 3 high-value retainers in 48h', company: 'Capital Justice Law Group • 14m ago' }
+  ],
+  'medspas-cosmetics': [
+    { icon: '💆', text: '$4,200 Neurotoxin & Morpheus8 Package booked via Zero-Pixel PHI Intake', company: 'Aura Aesthetics MedSpa • 3m ago' },
+    { icon: '💉', text: '90-Day Patient Recall flow reactivated $16,800 in treatment deposits', company: 'Luxe Cosmetic Clinic • 6m ago' },
+    { icon: '✨', text: 'Full-Face Dermal Filler consultation scheduled & synced to Zenoti EHR', company: 'Elysian Aesthetic Lounge • 11m ago' },
+    { icon: '🛡️', text: 'HIPAA-compliant server-side CAPI tracking verified with zero client pixel leaks', company: 'Radiance Skin Institute • 17m ago' }
+  ],
+  'hvac-plumbing': [
+    { icon: '❄️', text: '$9,800 Inverter Heat Pump Replacement dispatched via ServiceTitan CAPI', company: 'Apex Air & Plumbing • 4m ago' },
+    { icon: '🔧', text: 'Emergency Sewer Line Hydro-Jetting inquiry captured via Missed-Call Text-Back', company: 'ProFlow Emergency Trades • 7m ago' },
+    { icon: '📋', text: 'Seasonal Maintenance Club membership renewal sequence signed 140 homeowners', company: 'BlueWave Climate Systems • 12m ago' },
+    { icon: '📞', text: 'Sub-5-second automated callback converted $6,400 furnace replacement', company: 'Metro Heating & Cooling • 19m ago' }
+  ],
+  'b2b-manufacturing': [
+    { icon: '⚙️', text: '$65,000 Precision CNC Aerospace RFQ submitted via CAD Portal', company: 'TX Aero Dynamics • 6m ago' },
+    { icon: '🏭', text: 'AS9100 / ITAR Precision Machining contract signed ($180k EAU) via ABM', company: 'Vanguard Machining • 12m ago' },
+    { icon: '📐', text: 'STEP/IGES 3D blueprint uploaded & routed to HubSpot Enterprise', company: 'Precision Components Mfg • 18m ago' },
+    { icon: '💼', text: 'LinkedIn ABM campaign engaged Tier-1 Defense Procurement directors', company: 'Titan Industrial Systems • 25m ago' }
+  ],
+  'ecommerce-brands': [
+    { icon: '📦', text: 'Shopify Plus 5.2x ROAS Meta CAPI campaign scaled past $140k/mo', company: 'Luxe DTC Botanicals • 5m ago' },
+    { icon: '💌', text: 'Klaviyo Post-Purchase Upsell Flow generated $24,500 incremental revenue', company: 'Velvet Silk Co • 10m ago' },
+    { icon: '⚡', text: 'Headless checkout optimization increased mobile conversion rate by +42%', company: 'PureGlow Organics • 16m ago' },
+    { icon: '📊', text: 'First-Party CAPI 9.4/10 Event Match Quality unlocked 38% lower CAC', company: 'Apex Apparel Brand • 22m ago' }
+  ],
+  'commercial-real-estate': [
+    { icon: '🏢', text: 'Class-A Office Space Triple Net (NNN) lease inquiry ($120k RSF) captured', company: 'Metropolitan CRE Group • 7m ago' },
+    { icon: '🔍', text: 'Industrial Logistics Warehouse Matterport 3D tour booked by tenant rep broker', company: 'Apex Logistics Realty • 14m ago' },
+    { icon: '📝', text: 'Letter of Intent (LOI) signed on 45,000 sq ft suburban distribution center', company: 'Pinnacle Commercial • 21m ago' },
+    { icon: '📈', text: 'LoopNet arbitrage campaign pre-leased 92% of new mixed-use development', company: 'Vanguard Realty Partners • 30m ago' }
+  ],
+  'dental-practices': [
+    { icon: '🦷', text: 'All-on-4 Full-Arch Implant Consultation ($24,000 case) scheduled in Dentrix', company: 'Brownsville Cosmetic Dentistry • 4m ago' },
+    { icon: '✨', text: 'Porcelain Veneers Smile Makeover package financing approved via Sunbit', company: 'Beacon Hill Dental Arts • 9m ago' },
+    { icon: '😁', text: 'Clear Aligner (Invisalign) hyper-local search campaign booked 18 consultations', company: 'Apex Cosmetic Orthodontics • 15m ago' },
+    { icon: '📅', text: 'Automated hygiene recall flow achieved 93% verified show-up rate', company: 'Summit Dental Group • 23m ago' }
+  ]
+};
+
+const GENERAL_AUTOMATIONS = [
   { icon: '🏠', text: '$14,500 Full Roof Replacement captured via Google LSAs & synced to AccuLynx', company: 'Solis Roofing & Restoration • 18s ago' },
   { icon: '⚖️', text: '$32,000 MVA Catastrophic Injury Retainer signed via Legal SEO Funnel', company: 'Sterling Trial Law • 2m ago' },
   { icon: '💆', text: '$4,200 Neurotoxin & Morpheus8 Package booked via Zero-Pixel PHI Intake', company: 'Aura Aesthetics MedSpa • 5m ago' },
   { icon: '❄️', text: '$9,800 Inverter Heat Pump Replacement dispatched via ServiceTitan CAPI', company: 'Apex Air & Plumbing • 8m ago' },
   { icon: '⚙️', text: '$65,000 Precision CNC Aerospace RFQ submitted via CAD Portal', company: 'TX Aero Dynamics • 12m ago' },
-  { icon: '📦', text: 'Shopify Plus 5.2x ROAS Meta CAPI campaign scaled past $140k/mo', company: 'Luxe DTC Botanicals • 16m ago' }
+  { icon: '📦', text: 'Shopify Plus 5.2x ROAS Meta CAPI campaign scaled past $140k/mo', company: 'Luxe DTC Botanicals • 16m ago' },
+  { icon: '🏢', text: 'Class-A Office Space Triple Net (NNN) lease inquiry ($120k RSF) captured', company: 'Metropolitan CRE Group • 21m ago' },
+  { icon: '🦷', text: 'All-on-4 Full-Arch Implant Consultation ($24,000 case) scheduled in Dentrix', company: 'Brownsville Cosmetic Dentistry • 27m ago' }
 ];
+
+function getContextualAutomations() {
+  if (typeof window === 'undefined') return GENERAL_AUTOMATIONS;
+  const path = window.location.pathname.toLowerCase();
+  
+  for (const [slug, items] of Object.entries(INDUSTRY_AUTOMATIONS)) {
+    if (path.includes(slug)) {
+      return items;
+    }
+  }
+  return GENERAL_AUTOMATIONS;
+}
 
 function initLiveEventTicker() {
   let tickerEl = document.querySelector('.live-event-ticker');
@@ -378,10 +443,13 @@ function initLiveEventTicker() {
     document.body.appendChild(tickerEl);
   }
 
+  const automations = getContextualAutomations();
+  if (!automations || !automations.length) return;
+
   let index = 0;
 
   function updateTicker() {
-    const item = RECENT_AUTOMATIONS[index];
+    const item = automations[index];
     tickerEl.innerHTML = `
       <div class="ticker-icon">${item.icon}</div>
       <div class="ticker-text">
@@ -398,13 +466,13 @@ function initLiveEventTicker() {
       });
     }
 
-    index = (index + 1) % RECENT_AUTOMATIONS.length;
+    index = (index + 1) % automations.length;
   }
 
   // Show after 1.5s delay
   setTimeout(() => {
     updateTicker();
-    setInterval(updateTicker, 7000);
+    setInterval(updateTicker, 6500);
   }, 1500);
 }
 
