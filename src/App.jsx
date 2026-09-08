@@ -52,6 +52,9 @@ import ClientLogoMarquee from './components/ClientLogoMarquee';
 import BeforeAfterComparison from './components/BeforeAfterComparison';
 import StarfieldCanvas from './components/StarfieldCanvas';
 import TypewriterText from './components/TypewriterText';
+import PartnerCertifications from './components/PartnerCertifications';
+import RoadmapTimeline from './components/RoadmapTimeline';
+import ComparisonMatrix from './components/ComparisonMatrix';
 
 
 
@@ -606,9 +609,11 @@ export default function App() {
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-8 font-mono text-[11px] tracking-[0.2em] text-neutral-400 uppercase">
+          <nav className="hidden lg:flex items-center gap-6 font-mono text-[11px] tracking-[0.2em] text-neutral-400 uppercase">
             <a href="#services" className="hover:text-white transition-colors">SERVICES</a>
+            <a href="#how-it-works" className="hover:text-white transition-colors">HOW IT WORKS</a>
             <a href="#technology" className="hover:text-white transition-colors">TECHNOLOGY</a>
+            <a href="#comparison" className="hover:text-white transition-colors">WHY US</a>
             <a href="#industries" className="hover:text-white transition-colors">INDUSTRIES</a>
             <a href="#revenue-calculator" className="hover:text-white transition-colors">ROI CALCULATOR</a>
             <a href="#results" className="hover:text-white transition-colors">RESULTS</a>
@@ -752,6 +757,9 @@ export default function App() {
       {/* Infinite Client Logo Marquee (Social Proof) */}
       <ClientLogoMarquee />
 
+      {/* Official Partner & Technical Certification Ribbon */}
+      <PartnerCertifications />
+
       {/* ======================================================================
           3. FULL-SERVICE MARKETING SUITE (MIN-H-SCREEN)
           ====================================================================== */}
@@ -887,6 +895,9 @@ export default function App() {
       {/* Interactive Before vs. After Performance Audit Slider */}
       <BeforeAfterComparison />
 
+      {/* Digitol vs. Traditional Agencies & Freelancers Comparison Matrix */}
+      <ComparisonMatrix onOpenModal={openAuditModal} />
+
       {/* ======================================================================
           4. PROPRIETARY TECHNOLOGY PLATFORM (Digitol Intelligence OS)
           ====================================================================== */}
@@ -926,6 +937,9 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* 90-Day Revenue Acceleration Roadmap / How It Works */}
+      <RoadmapTimeline onOpenModal={openAuditModal} />
 
       {/* ======================================================================
           5. INDUSTRY-SPECIFIC PLAYBOOKS
