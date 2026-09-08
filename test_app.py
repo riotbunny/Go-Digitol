@@ -138,14 +138,14 @@ class TestDigitolApp(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         html = response.get_data(as_text=True)
         self.assertIn('CUSTOMIZED MARKETING SYSTEMS FOR YOUR INDUSTRY', html)
-        self.assertIn('Roofing Marketing &amp; Revenue Acceleration', html)
-        self.assertIn('Legal Marketing &amp; Retained Case Generation', html)
-        self.assertIn('MedSpa &amp; Aesthetic Practice Revenue Engine', html)
-        self.assertIn('HVAC, Plumbing &amp; Electrical Marketing System', html)
-        self.assertIn('B2B &amp; Industrial Manufacturing Growth Engine', html)
-        self.assertIn('E-Commerce Scaling &amp; Omnichannel Revenue Engine', html)
-        self.assertIn('Commercial Real Estate &amp; Property Marketing', html)
-        self.assertIn('Dental Practice &amp; Orthodontics Patient Growth', html)
+        self.assertIn('Roofing Revenue Engine', html)
+        self.assertIn('Legal Retained Case Engine', html)
+        self.assertIn('MedSpa &amp; Aesthetic Revenue Engine', html)
+        self.assertIn('HVAC &amp; Plumbing Dispatch Engine', html)
+        self.assertIn('B2B &amp; Industrial Manufacturing Revenue Engine', html)
+        self.assertIn('E-Commerce Revenue Engine', html)
+        self.assertIn('Commercial Real Estate Revenue Engine', html)
+        self.assertIn('Dental &amp; Implant Patient Engine', html)
 
     def test_all_pseo_industry_playbook_pages(self):
         """Verify each of the 8 programmatic industry playbook pages loads with rich schema."""
