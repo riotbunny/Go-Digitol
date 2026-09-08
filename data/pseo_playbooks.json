@@ -18,10 +18,22 @@
         "avgMonthlyLeads": "45 - 120+"
       },
       "crmIntegrations": [
-        { "name": "ServiceTitan", "role": "2-Way Dispatch & Revenue Sync" },
-        { "name": "AccuLynx", "role": "Direct Job Pipeline Tracking" },
-        { "name": "Jobber", "role": "Automated Quote & Lead Ingestion" },
-        { "name": "Google LSAs", "role": "Verified Local Services Ads Integration" }
+        {
+          "name": "ServiceTitan",
+          "role": "2-Way Dispatch & Revenue Sync"
+        },
+        {
+          "name": "AccuLynx",
+          "role": "Direct Job Pipeline Tracking"
+        },
+        {
+          "name": "Jobber",
+          "role": "Automated Quote & Lead Ingestion"
+        },
+        {
+          "name": "Google LSAs",
+          "role": "Verified Local Services Ads Integration"
+        }
       ],
       "painPoints": [
         {
@@ -69,7 +81,8 @@
           "q": "What is the average cost per qualified roofing lead?",
           "a": "Depending on market competition and storm activity, qualified residential replacement leads typically range between $55 and $85 per lead, with commercial roofing leads averaging $120 to $180."
         }
-      ]
+      ],
+      "image": "/static/images/industries/roofing.jpg"
     },
     {
       "slug": "personal-injury-law",
@@ -89,10 +102,22 @@
         "avgMonthlyLeads": "30 - 80+ Retained Cases"
       },
       "crmIntegrations": [
-        { "name": "Clio Grow / Manage", "role": "Real-Time Consultation & Intake Sync" },
-        { "name": "Filevine", "role": "Automated Retained Case Attribution" },
-        { "name": "LawRuler", "role": "Instant E-Sign Intake Routing" },
-        { "name": "Lead Docket", "role": "24/7 After-Hours Case Routing" }
+        {
+          "name": "Clio Grow / Manage",
+          "role": "Real-Time Consultation & Intake Sync"
+        },
+        {
+          "name": "Filevine",
+          "role": "Automated Retained Case Attribution"
+        },
+        {
+          "name": "LawRuler",
+          "role": "Instant E-Sign Intake Routing"
+        },
+        {
+          "name": "Lead Docket",
+          "role": "24/7 After-Hours Case Routing"
+        }
       ],
       "painPoints": [
         {
@@ -140,7 +165,8 @@
           "q": "How do you compete with mega-firms spending hundreds of thousands monthly?",
           "a": "We outperform brute-force ad spend by dominating hyper-local organic search, capturing long-tail high-intent keywords, and achieving a 3x higher conversion rate on landing pages."
         }
-      ]
+      ],
+      "image": "/static/images/industries/legal.jpg"
     },
     {
       "slug": "medspas-cosmetics",
@@ -160,10 +186,22 @@
         "avgMonthlyLeads": "60 - 180+ Bookings"
       },
       "crmIntegrations": [
-        { "name": "Boulevard", "role": "Seamless Real-Time Booking & Deposit Sync" },
-        { "name": "Zenoti", "role": "Multi-Location Patient Scheduling" },
-        { "name": "PatientNow", "role": "HIPAA-Compliant Lead Nurture" },
-        { "name": "Jane App", "role": "Direct Clinic Calendar Sync" }
+        {
+          "name": "Boulevard",
+          "role": "Seamless Real-Time Booking & Deposit Sync"
+        },
+        {
+          "name": "Zenoti",
+          "role": "Multi-Location Patient Scheduling"
+        },
+        {
+          "name": "PatientNow",
+          "role": "HIPAA-Compliant Lead Nurture"
+        },
+        {
+          "name": "Jane App",
+          "role": "Direct Clinic Calendar Sync"
+        }
       ],
       "painPoints": [
         {
@@ -211,7 +249,8 @@
           "q": "How do you attract high-ticket package buyers rather than cheap one-off discount hunters?",
           "a": "We position your clinic around provider credentials, luxury aesthetic experience, and customized multi-modality treatment plans rather than race-to-the-bottom discounts."
         }
-      ]
+      ],
+      "image": "/static/images/industries/medspa.jpg"
     },
     {
       "slug": "hvac-plumbing",
@@ -231,10 +270,22 @@
         "avgMonthlyLeads": "80 - 250+ Inbound Calls"
       },
       "crmIntegrations": [
-        { "name": "ServiceTitan", "role": "Real-Time Capacity & Dispatch Sync" },
-        { "name": "Housecall Pro", "role": "Instant Online Booking & Pricebook Sync" },
-        { "name": "Jobber", "role": "Automated Quote & Job Flow" },
-        { "name": "CallRail", "role": "Dynamic Number Insertion & Whisper Messages" }
+        {
+          "name": "ServiceTitan",
+          "role": "Real-Time Capacity & Dispatch Sync"
+        },
+        {
+          "name": "Housecall Pro",
+          "role": "Instant Online Booking & Pricebook Sync"
+        },
+        {
+          "name": "Jobber",
+          "role": "Automated Quote & Job Flow"
+        },
+        {
+          "name": "CallRail",
+          "role": "Dynamic Number Insertion & Whisper Messages"
+        }
       ],
       "painPoints": [
         {
@@ -282,7 +333,8 @@
           "q": "How do you track which technicians closed the leads you generated?",
           "a": "Through 2-way ServiceTitan and CRM webhooks, we link marketing source attribution all the way to completed job invoices."
         }
-      ]
+      ],
+      "image": "/static/images/industries/hvac.jpg"
     },
     {
       "slug": "b2b-manufacturing",
@@ -302,10 +354,22 @@
         "avgMonthlyLeads": "15 - 45+ Enterprise RFQs"
       },
       "crmIntegrations": [
-        { "name": "HubSpot Enterprise", "role": "Full Lifecycle Pipeline Tracking" },
-        { "name": "Salesforce Sales Cloud", "role": "Lead Scoring & Closed-Won Revenue Attribution" },
-        { "name": "Zoho CRM", "role": "Automated RFQ Routing" },
-        { "name": "Pipedrive", "role": "Deal Velocity Tracking" }
+        {
+          "name": "HubSpot Enterprise",
+          "role": "Full Lifecycle Pipeline Tracking"
+        },
+        {
+          "name": "Salesforce Sales Cloud",
+          "role": "Lead Scoring & Closed-Won Revenue Attribution"
+        },
+        {
+          "name": "Zoho CRM",
+          "role": "Automated RFQ Routing"
+        },
+        {
+          "name": "Pipedrive",
+          "role": "Deal Velocity Tracking"
+        }
       ],
       "painPoints": [
         {
@@ -353,7 +417,8 @@
           "q": "Do you write technical B2B and engineering content?",
           "a": "Yes. Our senior content strategists create accurate technical whitepapers, material comparison guides, and spec sheets tailored to mechanical and industrial engineers."
         }
-      ]
+      ],
+      "image": "/static/images/industries/manufacturing.jpg"
     },
     {
       "slug": "ecommerce-brands",
@@ -373,10 +438,22 @@
         "avgMonthlyLeads": "$150k - $1M+ Monthly GMV"
       },
       "crmIntegrations": [
-        { "name": "Shopify Plus", "role": "Headless Architecture & Real-Time Checkout API" },
-        { "name": "Klaviyo", "role": "Automated Retention & SMS Omnichannel Workflows" },
-        { "name": "Triple Whale / Northbeam", "role": "First-Party Multi-Touch Attribution" },
-        { "name": "Rebuy / Gorgias", "role": "AI Upsell & Customer Support Automation" }
+        {
+          "name": "Shopify Plus",
+          "role": "Headless Architecture & Real-Time Checkout API"
+        },
+        {
+          "name": "Klaviyo",
+          "role": "Automated Retention & SMS Omnichannel Workflows"
+        },
+        {
+          "name": "Triple Whale / Northbeam",
+          "role": "First-Party Multi-Touch Attribution"
+        },
+        {
+          "name": "Rebuy / Gorgias",
+          "role": "AI Upsell & Customer Support Automation"
+        }
       ],
       "painPoints": [
         {
@@ -404,7 +481,7 @@
       "caseStudy": {
         "client": "KOR Active Performance",
         "metric": "+340% ONLINE SALES",
-        "quote": "Digitol transformed our e-commerce unit economics—scaling our monthly GMV from $85k to over $380k while lifting blended ROAS to 4.8x.",
+        "quote": "Digitol transformed our e-commerce unit economics\u2014scaling our monthly GMV from $85k to over $380k while lifting blended ROAS to 4.8x.",
         "author": "Chloe Martinez, Co-Founder"
       },
       "faq": [
@@ -424,7 +501,8 @@
           "q": "What email and SMS retention strategies do you implement?",
           "a": "We design and automate advanced Klaviyo flows: multi-branch abandoned checkout sequences, post-purchase cross-sells, VIP loyalty rewards, and predictive replenishment reminders."
         }
-      ]
+      ],
+      "image": "/static/images/industries/ecommerce.jpg"
     },
     {
       "slug": "commercial-real-estate",
@@ -444,10 +522,22 @@
         "avgMonthlyLeads": "20 - 60+ Inquiries"
       },
       "crmIntegrations": [
-        { "name": "Yardi Systems", "role": "Leasing & Unit Availability Sync" },
-        { "name": "AppFolio", "role": "Tenant Application & Inquiry Flow" },
-        { "name": "HubSpot Real Estate", "role": "Broker & Investor Pipeline Tracking" },
-        { "name": "CoStar / LoopNet", "role": "Omnichannel Listing Amplification" }
+        {
+          "name": "Yardi Systems",
+          "role": "Leasing & Unit Availability Sync"
+        },
+        {
+          "name": "AppFolio",
+          "role": "Tenant Application & Inquiry Flow"
+        },
+        {
+          "name": "HubSpot Real Estate",
+          "role": "Broker & Investor Pipeline Tracking"
+        },
+        {
+          "name": "CoStar / LoopNet",
+          "role": "Omnichannel Listing Amplification"
+        }
       ],
       "painPoints": [
         {
@@ -495,7 +585,8 @@
           "q": "Do you integrate with real estate leasing software like Yardi or AppFolio?",
           "a": "Yes. We push all tenant inquiries and tour bookings directly into your leasing CRM for immediate agent follow-up."
         }
-      ]
+      ],
+      "image": "/static/images/industries/realestate.jpg"
     },
     {
       "slug": "dental-practices",
@@ -515,10 +606,22 @@
         "avgMonthlyLeads": "50 - 150+ Patient Inquiries"
       },
       "crmIntegrations": [
-        { "name": "Dentrix / Ascend", "role": "Real-Time Patient Booking & Chart Sync" },
-        { "name": "Eaglesoft", "role": "Practice Management Data Sync" },
-        { "name": "Curve Dental", "role": "Cloud Practice Calendar Integration" },
-        { "name": "NexHealth", "role": "Automated Patient SMS & Online Booking" }
+        {
+          "name": "Dentrix / Ascend",
+          "role": "Real-Time Patient Booking & Chart Sync"
+        },
+        {
+          "name": "Eaglesoft",
+          "role": "Practice Management Data Sync"
+        },
+        {
+          "name": "Curve Dental",
+          "role": "Cloud Practice Calendar Integration"
+        },
+        {
+          "name": "NexHealth",
+          "role": "Automated Patient SMS & Online Booking"
+        }
       ],
       "painPoints": [
         {
@@ -566,7 +669,8 @@
           "q": "How do you help us get more 5-star Google reviews from happy patients?",
           "a": "We deploy automated post-visit SMS sequences that prompt satisfied patients to leave a 5-star Google review with a single tap on their smartphone."
         }
-      ]
+      ],
+      "image": "/static/images/industries/dental.jpg"
     }
   ]
 }
