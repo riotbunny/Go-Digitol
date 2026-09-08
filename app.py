@@ -46,7 +46,7 @@ def get_pseo_playbooks():
 # ==============================================================================
 # EMAIL & NOTIFICATION CONFIGURATION
 # ==============================================================================
-NOTIFICATION_EMAIL = os.environ.get('NOTIFICATION_EMAIL', os.environ.get('RECIPIENT_EMAIL', 'vela956Abel@gmail.com'))
+NOTIFICATION_EMAIL = os.environ.get('NOTIFICATION_EMAIL', os.environ.get('RECIPIENT_EMAIL', 'contact@godigitol.com'))
 SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'leads@godigitol.com')
 
 RESEND_API_KEY = os.environ.get('RESEND_API_KEY')

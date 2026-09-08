@@ -1690,7 +1690,7 @@ export default function App() {
           <div className="flex flex-wrap gap-8 text-[10px] tracking-[0.2em] uppercase text-neutral-400">
             <span>ROI ATTRIBUTION: 100%</span>
             <span>TRANSPARENT REPORTING</span>
-            <span>DIRECT: VELA956ABEL@GMAIL.COM</span>
+            <span>DIRECT: CONTACT@GODIGITOL.COM</span>
           </div>
         </div>
 
