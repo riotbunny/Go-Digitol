@@ -374,10 +374,22 @@ def custom_static(filename):
     """Explicit fallback to guarantee static assets load in serverless environments."""
     return send_from_directory(STATIC_DIR, filename)
 
+@app.route('/assets/<path:filename>')
+def dist_assets(filename):
+    """Serve compiled Vite assets if present."""
+    assets_dir = os.path.join(BASE_DIR, 'dist', 'assets')
+    if os.path.exists(os.path.join(assets_dir, filename)):
+        return send_from_directory(assets_dir, filename)
+    return send_from_directory(STATIC_DIR, filename)
+
 @app.route('/')
 def home():
     """High-Converting Home Landing Page."""
-    return render_template('index.html', page_title="Digitol | AI-Powered Growth & Automation Agency")
+    dist_index = os.path.join(BASE_DIR, 'dist', 'index.html')
+    if os.path.exists(dist_index):
+        with open(dist_index, 'r', encoding='utf-8') as f:
+            return f.read()
+    return render_template('index.html', page_title="Digitol | Full-Service Digital Marketing Agency")
 
 @app.route('/services')
 def services():

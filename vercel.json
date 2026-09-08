@@ -1,11 +1,6 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "functions": {
-    "api/index.py": {
-      "includeFiles": "templates/**,static/**,data/**"
-    }
-  },
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/api/(.*)",
@@ -13,7 +8,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/api/index.py"
+      "destination": "/index.html"
     }
   ]
 }

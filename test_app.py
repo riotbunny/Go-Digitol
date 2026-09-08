@@ -14,16 +14,12 @@ class TestDigitolApp(unittest.TestCase):
         self.client = app.test_client()
         
     def test_home_page(self):
-        """Verify homepage renders with 5-second rule hero and key CRO sections."""
+        """Verify homepage renders the modern Digitol revenue acceleration platform."""
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         html = response.get_data(as_text=True)
-        self.assertIn('AI Automations & Virtual Assistant Agency', html)
-        self.assertIn('Turn Dormant Leads & Traffic into', html)
-        self.assertIn('Book Your Free AI & VA Audit', html)
-        self.assertIn('High-Converting Website Design & Funnels', html)
-        self.assertIn('Database Reactivation', html)
-        self.assertIn('AI Automations & Virtual Assistants', html)
+        self.assertIn('DIGITOL // Tech-Enabled Digital Marketing', html)
+        self.assertIn('id="root"', html)
 
     def test_services_page(self):
         """Verify services page renders all pillars with business outcomes."""
