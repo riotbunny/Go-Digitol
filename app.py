@@ -29,6 +29,19 @@ else:
     LEADS_DIR = os.path.join(BASE_DIR, 'data')
 
 LEADS_FILE = os.path.join(LEADS_DIR, 'leads.json')
+PSEO_DATA_FILE = os.path.join(BASE_DIR, 'data', 'pseo_playbooks.json')
+
+def get_pseo_playbooks():
+    """Load the Programmatic SEO playbooks repository."""
+    if not os.path.exists(PSEO_DATA_FILE):
+        return []
+    try:
+        with open(PSEO_DATA_FILE, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return data.get('industries', [])
+    except Exception as e:
+        print(f"Error loading PSEO playbooks: {e}")
+        return []
 
 # ==============================================================================
 # EMAIL & NOTIFICATION CONFIGURATION
@@ -396,6 +409,53 @@ def faq():
 def about():
     """About Digitol Agency, Mission & Values."""
     return render_template('about.html', page_title="About Us | Digitol Agency")
+
+@app.route('/industries')
+def industries_directory():
+    """Industry Solutions Directory Hub."""
+    playbooks = get_pseo_playbooks()
+    return render_template('industries_index.html', page_title="Industry Marketing Playbooks & Revenue Solutions | Digitol Agency", playbooks=playbooks)
+
+@app.route('/industries/<slug>')
+def industry_playbook(slug):
+    """Dynamic Programmatic SEO Industry Landing Page."""
+    playbooks = get_pseo_playbooks()
+    matching = next((p for p in playbooks if p.get('slug') == slug), None)
+    if not matching:
+        return render_template('404.html', page_title="Industry Playbook Not Found | Digitol"), 404
+    other_playbooks = [p for p in playbooks if p.get('slug') != slug]
+    return render_template('industry_playbook.html', page_title=f"{matching.get('metaTitle', matching.get('title'))}", playbook=matching, other_playbooks=other_playbooks)
+
+@app.route('/sitemap.xml')
+def sitemap_xml():
+    """Dynamic XML Sitemap for Google Search Console."""
+    playbooks = get_pseo_playbooks()
+    urls = [
+        'https://godigitol.com/',
+        'https://godigitol.com/services',
+        'https://godigitol.com/how-it-works',
+        'https://godigitol.com/case-studies',
+        'https://godigitol.com/results',
+        'https://godigitol.com/roi-calculator',
+        'https://godigitol.com/faq',
+        'https://godigitol.com/about',
+        'https://godigitol.com/contact',
+        'https://godigitol.com/industries',
+    ]
+    for p in playbooks:
+        urls.append(f"https://godigitol.com/industries/{p['slug']}")
+    
+    xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    for u in urls:
+        xml_content += f'  <url>\n    <loc>{u}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>0.9</priority>\n  </url>\n'
+    xml_content += '</urlset>'
+    return app.response_class(xml_content, mimetype='application/xml')
+
+@app.route('/robots.txt')
+def robots_txt():
+    """Compliant robots.txt with sitemap reference."""
+    content = "User-agent: *\nAllow: /\nSitemap: https://godigitol.com/sitemap.xml\n"
+    return app.response_class(content, mimetype='text/plain')
 
 @app.route('/contact')
 def contact():

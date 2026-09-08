@@ -136,6 +136,65 @@ class TestDigitolApp(unittest.TestCase):
         self.assertEqual(data['status'], 'success')
         self.assertIn('/thank-you', data['redirect_url'])
 
+    def test_industries_directory_page(self):
+        """Verify the PSEO industries directory page renders and lists all 8 playbooks."""
+        response = self.client.get('/industries')
+        self.assertEqual(response.status_code, 200)
+        html = response.get_data(as_text=True)
+        self.assertIn('CUSTOMIZED MARKETING SYSTEMS FOR YOUR INDUSTRY', html)
+        self.assertIn('Roofing Marketing &amp; Revenue Acceleration', html)
+        self.assertIn('Legal Marketing &amp; Retained Case Generation', html)
+        self.assertIn('MedSpa &amp; Aesthetic Practice Revenue Engine', html)
+        self.assertIn('HVAC, Plumbing &amp; Electrical Marketing System', html)
+        self.assertIn('B2B &amp; Industrial Manufacturing Growth Engine', html)
+        self.assertIn('E-Commerce Scaling &amp; Omnichannel Revenue Engine', html)
+        self.assertIn('Commercial Real Estate &amp; Property Marketing', html)
+        self.assertIn('Dental Practice &amp; Orthodontics Patient Growth', html)
+
+    def test_all_pseo_industry_playbook_pages(self):
+        """Verify each of the 8 programmatic industry playbook pages loads with rich schema."""
+        slugs = [
+            'roofing-contractors',
+            'personal-injury-law',
+            'medspas-cosmetics',
+            'hvac-plumbing',
+            'b2b-manufacturing',
+            'ecommerce-brands',
+            'commercial-real-estate',
+            'dental-practices'
+        ]
+        for slug in slugs:
+            response = self.client.get(f'/industries/{slug}')
+            self.assertEqual(response.status_code, 200, f"Failed for industry slug: {slug}")
+            html = response.get_data(as_text=True)
+            self.assertIn('@type": "ProfessionalService"', html)
+            self.assertIn('@type": "FAQPage"', html)
+            self.assertIn('@type": "BreadcrumbList"', html)
+            self.assertIn('CRM INTEGRATIONS', html)
+
+    def test_invalid_industry_playbook_404(self):
+        """Verify invalid industry slug returns 404."""
+        response = self.client.get('/industries/non-existent-industry-slug')
+        self.assertEqual(response.status_code, 404)
+
+    def test_sitemap_xml(self):
+        """Verify dynamic XML sitemap is compliant and lists all 8 industry playbooks."""
+        response = self.client.get('/sitemap.xml')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.mimetype, 'application/xml')
+        xml = response.get_data(as_text=True)
+        self.assertIn('<?xml version="1.0" encoding="UTF-8"?>', xml)
+        self.assertIn('https://godigitol.com/industries/roofing-contractors', xml)
+        self.assertIn('https://godigitol.com/industries/personal-injury-law', xml)
+        self.assertIn('https://godigitol.com/industries/medspas-cosmetics', xml)
+
+    def test_robots_txt(self):
+        """Verify robots.txt references sitemap.xml."""
+        response = self.client.get('/robots.txt')
+        self.assertEqual(response.status_code, 200)
+        text = response.get_data(as_text=True)
+        self.assertIn('Sitemap: https://godigitol.com/sitemap.xml', text)
+
     def test_404_handling(self):
         """Verify custom 404 handler."""
         response = self.client.get('/some-nonexistent-path')

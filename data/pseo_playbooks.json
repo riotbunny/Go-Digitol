@@ -1,0 +1,572 @@
+{
+  "industries": [
+    {
+      "slug": "roofing-contractors",
+      "title": "Roofing Marketing & Revenue Acceleration",
+      "shortTitle": "Roofing Contractors",
+      "categoryTag": "HOME SERVICES // COMMERCIAL & RESIDENTIAL",
+      "badge": "SERVICETITAN & ACCULYNX INTEGRATED",
+      "heroHeadline": "DOMINATE LOCAL ROOFING SEARCH & CONVERT EMERGENCY LEADS",
+      "heroSubheadline": "Stop wasting ad spend on low-intent clicks. We build high-converting sub-second storm & replacement funnels, rank #1 in the Google Local 3-Pack, and connect directly to your CRM.",
+      "metaTitle": "Roofing Marketing Agency | SEO, PPC & Web Design for Roofers | Digitol",
+      "metaDescription": "Scale your roofing company with revenue-driven SEO, high-ROAS Google Ads, and custom sub-second conversion funnels. 100% CRM attribution with ServiceTitan & AccuLynx.",
+      "benchmarks": {
+        "avgDealValue": 9500,
+        "targetCPA": 68,
+        "avgROAS": "5.4x",
+        "leadToCloseRate": "28%",
+        "avgMonthlyLeads": "45 - 120+"
+      },
+      "crmIntegrations": [
+        { "name": "ServiceTitan", "role": "2-Way Dispatch & Revenue Sync" },
+        { "name": "AccuLynx", "role": "Direct Job Pipeline Tracking" },
+        { "name": "Jobber", "role": "Automated Quote & Lead Ingestion" },
+        { "name": "Google LSAs", "role": "Verified Local Services Ads Integration" }
+      ],
+      "painPoints": [
+        {
+          "problem": "Unqualified Out-of-Territory Leads",
+          "explanation": "Standard Google Ads agencies use broad match keywords that burn thousands on tire-kickers and out-of-service-area homeowners.",
+          "digitolFix": "Geo-fenced exact-match radius targeting with dynamic ZIP code qualification forms."
+        },
+        {
+          "problem": "Slow Storm-Response Funnels",
+          "explanation": "When hail or storm events hit, traditional agency landing pages take 4+ seconds to load, losing 60% of emergency roof replacement leads.",
+          "digitolFix": "Sub-second Next.js edge landing pages with instant 1-tap emergency claim scheduling."
+        },
+        {
+          "problem": "Zero CRM Closed-Deal Attribution",
+          "explanation": "Roofers get reports showing 'impressions' and 'clicks' without knowing which keywords generated actual $15,000 roof replacements.",
+          "digitolFix": "Server-side CAPI and AccuLynx/ServiceTitan webhook integrations attributing every dollar closed."
+        }
+      ],
+      "strategicDeliverables": [
+        "Google Local 3-Pack & Map Rank Domination for commercial and residential roofing terms",
+        "Sub-second storm damage & roof replacement landing pages with multi-step claim calculators",
+        "Negative keyword sculpting to eliminate repair searches when targeting full replacements",
+        "Automated 5-star Google Review generation sequence triggered on job completion"
+      ],
+      "caseStudy": {
+        "client": "Solis Roofing & Restoration",
+        "metric": "+280% ORGANIC LEADS",
+        "quote": "Digitol generated over $3.2M in verified roof replacement revenue across 4 regional territories in our first 10 months.",
+        "author": "Marcus Sterling, Operations Director"
+      },
+      "faq": [
+        {
+          "q": "How do you handle emergency storm damage vs steady residential replacement leads?",
+          "a": "We maintain dual campaign architectures: an always-on baseline campaign for organic SEO and high-intent replacement searches, plus a pre-configured 'Storm Response' paid engine that activates within 60 minutes of verified severe weather events."
+        },
+        {
+          "q": "Do you integrate with our roofing CRM like AccuLynx or ServiceTitan?",
+          "a": "Yes. We deploy custom 2-way webhooks that automatically push every phone lead, form submission, and roof inspection request directly into your CRM with full attribution."
+        },
+        {
+          "q": "How quickly can our roofing company expect to see leads?",
+          "a": "Google Local Services Ads (LSAs) and targeted PPC funnels begin driving inbound calls within 7 days of launch. SEO rankings typically establish dominant local pack positions within 60 to 90 days."
+        },
+        {
+          "q": "What is the average cost per qualified roofing lead?",
+          "a": "Depending on market competition and storm activity, qualified residential replacement leads typically range between $55 and $85 per lead, with commercial roofing leads averaging $120 to $180."
+        }
+      ]
+    },
+    {
+      "slug": "personal-injury-law",
+      "title": "Legal Marketing & Retained Case Generation",
+      "shortTitle": "Personal Injury Law",
+      "categoryTag": "LEGAL & LITIGATION PRACTICES",
+      "badge": "CLIO & FILEVINE COMPLIANT",
+      "heroHeadline": "SIGN MORE HIGH-VALUE RETAINED CASES WITH PREDICTABLE ROI",
+      "heroSubheadline": "Cut your cost-per-signed-case in half. We combine high-authority legal SEO, bar-compliant conversion funnels, and courthouse geo-fenced PPC targeting.",
+      "metaTitle": "Personal Injury Law Firm Marketing Agency | SEO & PPC | Digitol",
+      "metaDescription": "Dominate legal search rankings and lower your cost per signed case. High-authority SEO, bar-compliant PPC, and Clio/Filevine CRM attribution for law firms.",
+      "benchmarks": {
+        "avgDealValue": 18500,
+        "targetCPA": 320,
+        "avgROAS": "6.8x",
+        "leadToCloseRate": "19%",
+        "avgMonthlyLeads": "30 - 80+ Retained Cases"
+      },
+      "crmIntegrations": [
+        { "name": "Clio Grow / Manage", "role": "Real-Time Consultation & Intake Sync" },
+        { "name": "Filevine", "role": "Automated Retained Case Attribution" },
+        { "name": "LawRuler", "role": "Instant E-Sign Intake Routing" },
+        { "name": "Lead Docket", "role": "24/7 After-Hours Case Routing" }
+      ],
+      "painPoints": [
+        {
+          "problem": "Exorbitant Cost-Per-Click in Legal Ads",
+          "explanation": "PI keywords cost $150 to $500 per click. Non-specialized agencies burn tens of thousands on clicks that bounce or represent non-viable claims.",
+          "digitolFix": "Strict negative keyword pruning, long-tail commercial intent sculpting, and AI pre-qualification intake forms."
+        },
+        {
+          "problem": "Low Consultation-to-Retainer Conversion",
+          "explanation": "Inbound callers wait hours for a callback, during which they contact competing law firms and sign elsewhere.",
+          "digitolFix": "Instant automated SMS intake and direct 24/7 calendar consultation booking embedded on your site."
+        },
+        {
+          "problem": "Cookie-Cutter Legal Content Penalties",
+          "explanation": "Syndicated law firm blogs from traditional legal agencies are flagged by Google algorithms as non-original content.",
+          "digitolFix": "Original, attorney-reviewed legal authority content and local digital PR that builds permanent Google Trust."
+        }
+      ],
+      "strategicDeliverables": [
+        "High-intent keyword dominance for auto accidents, commercial trucking, and catastrophic injury",
+        "Ethical, state bar-compliant conversion landing pages with sub-second mobile load speeds",
+        "24/7 instant chat and SMS intake integration syncing directly with Clio or Filevine",
+        "High-authority editorial backlinks and legal directory link-building campaigns"
+      ],
+      "caseStudy": {
+        "client": "Apex Legal Partners",
+        "metric": "+310% SIGNED CASES",
+        "quote": "Our cost per signed litigation case dropped 42% while our total case pipeline value surpassed $8.4M in under 12 months.",
+        "author": "Elena Vance, Managing Partner"
+      },
+      "faq": [
+        {
+          "q": "Are your marketing campaigns and copy compliant with State Bar advertising rules?",
+          "a": "Yes, 100%. All ad copy, landing pages, and content are strictly structured to adhere to American Bar Association (ABA) standards and your specific state bar advertising rules, including required disclaimers."
+        },
+        {
+          "q": "How do you filter out frivolous inquiries before they reach our attorneys?",
+          "a": "Our interactive intake funnels ask qualifying questions (e.g. date of incident, injury severity, police report status, existing attorney representation) before routing leads to your intake team."
+        },
+        {
+          "q": "Do we own our Google Ads account and campaign data?",
+          "a": "Yes. You maintain full administrative ownership of your Google Ads, Meta Business Manager, and analytics accounts. We never hold your accounts hostage."
+        },
+        {
+          "q": "How do you compete with mega-firms spending hundreds of thousands monthly?",
+          "a": "We outperform brute-force ad spend by dominating hyper-local organic search, capturing long-tail high-intent keywords, and achieving a 3x higher conversion rate on landing pages."
+        }
+      ]
+    },
+    {
+      "slug": "medspas-cosmetics",
+      "title": "MedSpa & Aesthetic Practice Revenue Engine",
+      "shortTitle": "MedSpas & Cosmetics",
+      "categoryTag": "HEALTHCARE & AESTHETIC CLINICS",
+      "badge": "HIPAA-COMPLIANT INFRASTRUCTURE",
+      "heroHeadline": "FILL PROCEDURE SCHEDULES WITH HIGH-LTV AESTHETIC PATIENTS",
+      "heroSubheadline": "Attract recurring Botox, filler, body contouring, and laser patients. We build HIPAA-compliant booking funnels, dominate local search, and maximize patient retention.",
+      "metaTitle": "MedSpa Marketing Agency | Aesthetic Practice SEO & Paid Ads | Digitol",
+      "metaDescription": "Fill your MedSpa appointment book with high-ticket aesthetic patients. HIPAA-compliant SEO, Instagram/Meta ads, Google Ads, and sub-second booking funnels.",
+      "benchmarks": {
+        "avgDealValue": 3400,
+        "targetCPA": 42,
+        "avgROAS": "4.9x",
+        "leadToCloseRate": "44%",
+        "avgMonthlyLeads": "60 - 180+ Bookings"
+      },
+      "crmIntegrations": [
+        { "name": "Boulevard", "role": "Seamless Real-Time Booking & Deposit Sync" },
+        { "name": "Zenoti", "role": "Multi-Location Patient Scheduling" },
+        { "name": "PatientNow", "role": "HIPAA-Compliant Lead Nurture" },
+        { "name": "Jane App", "role": "Direct Clinic Calendar Sync" }
+      ],
+      "painPoints": [
+        {
+          "problem": "High Appointment No-Show Rates",
+          "explanation": "Patients book appointments online but fail to show up, leaving expensive clinic rooms and injector schedules empty.",
+          "digitolFix": "Automated SMS deposit collection and dynamic 3-touch reminder sequences that achieve a 94% show-up rate."
+        },
+        {
+          "problem": "Ad Account Bans from Meta Policy Violations",
+          "explanation": "Generalist agencies trigger Meta bans with unapproved before/after imagery or non-compliant healthcare claims.",
+          "digitolFix": "Meta-certified ad creative engineered specifically for aesthetic healthcare compliance."
+        },
+        {
+          "problem": "Discount-Seeker Lead Traps",
+          "explanation": "Groupon-style ads attract low-value one-time deal seekers who never return for high-margin packages.",
+          "digitolFix": "High-ticket package positioning and membership funnels targeting high-net-worth local demographics."
+        }
+      ],
+      "strategicDeliverables": [
+        "Procedure-specific SEO landing pages for Botox, dermal fillers, RF microneedling, and lasers",
+        "HIPAA-compliant conversion tracking without third-party pixel data leakage",
+        "Interactive visual treatment cost calculators and before-and-after showcase galleries",
+        "Automated VIP membership and quarterly Botox reminder reactivation workflows"
+      ],
+      "caseStudy": {
+        "client": "Zenith Aesthetic Institute",
+        "metric": "+185% NEW PATIENT BOOKINGS",
+        "quote": "Digitol helped us scale from one location to three by establishing predictable patient acquisition and a 94% show-up rate.",
+        "author": "Dr. Daniel Kim, Medical Director"
+      },
+      "faq": [
+        {
+          "q": "Is your tracking and form system 100% HIPAA compliant?",
+          "a": "Yes. We use HIPAA-compliant server-side tracking pipelines, encrypted forms, and BAA-backed hosting to guarantee zero patient data exposure."
+        },
+        {
+          "q": "How do you keep our MedSpa appointment calendar consistently full during slow seasons?",
+          "a": "We deploy automated quarterly patient reactivation funnels (e.g. 90-day neurotoxin refill reminders) and seasonal package campaigns that smooth out demand swings."
+        },
+        {
+          "q": "Can you integrate directly with our scheduling software (Zenoti, Boulevard, Vagaro)?",
+          "a": "Yes. We embed direct friction-free booking flows that allow patients to select their provider, date, time, and pay consultation deposits."
+        },
+        {
+          "q": "How do you attract high-ticket package buyers rather than cheap one-off discount hunters?",
+          "a": "We position your clinic around provider credentials, luxury aesthetic experience, and customized multi-modality treatment plans rather than race-to-the-bottom discounts."
+        }
+      ]
+    },
+    {
+      "slug": "hvac-plumbing",
+      "title": "HVAC, Plumbing & Electrical Marketing System",
+      "shortTitle": "HVAC & Plumbing",
+      "categoryTag": "HOME SERVICES & FIELD TRADES",
+      "badge": "SERVICETITAN & JOBBER SYNC",
+      "heroHeadline": "FILL YOUR DISPATCH BOARD WITH HIGH-MARGIN REPLACEMENTS & JOBS",
+      "heroSubheadline": "Dominate Google Local Services Ads, outrank competitors for high-ticket system replacements, and connect every lead directly to your ServiceTitan or Housecall Pro dispatch board.",
+      "metaTitle": "HVAC & Plumbing Marketing Agency | SEO, PPC & ServiceTitan Sync | Digitol",
+      "metaDescription": "Fill your trade dispatch board with high-margin HVAC replacements and plumbing jobs. Google LSAs, SEO, PPC, and 2-way ServiceTitan/Jobber CRM sync.",
+      "benchmarks": {
+        "avgDealValue": 5800,
+        "targetCPA": 48,
+        "avgROAS": "5.8x",
+        "leadToCloseRate": "38%",
+        "avgMonthlyLeads": "80 - 250+ Inbound Calls"
+      },
+      "crmIntegrations": [
+        { "name": "ServiceTitan", "role": "Real-Time Capacity & Dispatch Sync" },
+        { "name": "Housecall Pro", "role": "Instant Online Booking & Pricebook Sync" },
+        { "name": "Jobber", "role": "Automated Quote & Job Flow" },
+        { "name": "CallRail", "role": "Dynamic Number Insertion & Whisper Messages" }
+      ],
+      "painPoints": [
+        {
+          "problem": "Paying for Low-Margin Drain Cleaning Instead of Replacements",
+          "explanation": "Generic PPC campaigns burn budget on $99 drain cleaning calls when your business needs $12,000 heat pump and AC unit replacements.",
+          "digitolFix": "High-ticket replacement keyword sculpting with automated replacement cost estimate calculators."
+        },
+        {
+          "problem": "Wasted Ad Spend When Techs are Booked Solid",
+          "explanation": "Agencies keep spending budget during peak heat waves when dispatch boards are at 100% capacity.",
+          "digitolFix": "Smart capacity-based ad budgeting that dials back ad spend when capacity is full and surges when techs need jobs."
+        },
+        {
+          "problem": "Unanswered Calls and Missed Revenue",
+          "explanation": "Homeowners call the next plumber on Google if your phone rings more than 3 times without pickup.",
+          "digitolFix": "Instant automated missed-call text-back workflows that save 80% of lost emergency callers."
+        }
+      ],
+      "strategicDeliverables": [
+        "Google Local Services Ads (LSA) badge optimization and budget management",
+        "High-margin system replacement landing pages with instant monthly payment financing calculators",
+        "Dynamic call tracking with CSR whisper alerts and call recording scoring",
+        "Automated maintenance membership club enrollment sequences"
+      ],
+      "caseStudy": {
+        "client": "Vanguard Heating & Air",
+        "metric": "+240% INBOUND CALLS",
+        "quote": "Our HVAC replacement revenue increased by $1.8M in our first year with Digitol while our customer acquisition cost dropped 35%.",
+        "author": "Brett Harrison, General Manager"
+      },
+      "faq": [
+        {
+          "q": "How do you prioritize HVAC system replacements over low-margin service repairs?",
+          "a": "We target high-intent replacement queries (e.g. 'AC unit replacement cost', 'heat pump installation financing') and build landing pages featuring interactive monthly payment financing options."
+        },
+        {
+          "q": "Can you adjust ad spend based on our technician availability?",
+          "a": "Yes. Our agile campaign management dynamically throttles or increases ad budgets based on your live dispatch board capacity."
+        },
+        {
+          "q": "Do you help us maintain Google Guaranteed LSA status?",
+          "a": "Yes. We manage your LSA dashboard, dispute invalid or out-of-service-area call charges, and optimize review velocity to keep your business in the top 3 Google badge spots."
+        },
+        {
+          "q": "How do you track which technicians closed the leads you generated?",
+          "a": "Through 2-way ServiceTitan and CRM webhooks, we link marketing source attribution all the way to completed job invoices."
+        }
+      ]
+    },
+    {
+      "slug": "b2b-manufacturing",
+      "title": "B2B & Industrial Manufacturing Growth Engine",
+      "shortTitle": "B2B & Manufacturing",
+      "categoryTag": "ENTERPRISE B2B & INDUSTRIAL",
+      "badge": "HUBSPOT & SALESFORCE SYNC",
+      "heroHeadline": "GENERATE QUALIFIED ENTERPRISE RFQS & CONTRACT PIPELINE",
+      "heroSubheadline": "Reach procurement executives and OEM buyers. We deploy account-based search marketing, technical spec sheet funnels, and enterprise CRM revenue attribution.",
+      "metaTitle": "B2B & Industrial Manufacturing Marketing Agency | SEO & ABM | Digitol",
+      "metaDescription": "Generate high-ticket B2B RFQs and industrial contracts. Technical SEO, LinkedIn ABM, Google Search, and HubSpot/Salesforce CRM pipeline attribution.",
+      "benchmarks": {
+        "avgDealValue": 48000,
+        "targetCPA": 650,
+        "avgROAS": "7.5x",
+        "leadToCloseRate": "14%",
+        "avgMonthlyLeads": "15 - 45+ Enterprise RFQs"
+      },
+      "crmIntegrations": [
+        { "name": "HubSpot Enterprise", "role": "Full Lifecycle Pipeline Tracking" },
+        { "name": "Salesforce Sales Cloud", "role": "Lead Scoring & Closed-Won Revenue Attribution" },
+        { "name": "Zoho CRM", "role": "Automated RFQ Routing" },
+        { "name": "Pipedrive", "role": "Deal Velocity Tracking" }
+      ],
+      "painPoints": [
+        {
+          "problem": "Generic Consumer Traffic Polluting Industrial Keywords",
+          "explanation": "Keywords like 'metal stamping' or 'CNC machining' attract DIYers and consumer hobbyists instead of enterprise purchasing managers.",
+          "digitolFix": "Strict B2B commercial intent qualification filters, minimum order quantity (MOQ) gating, and ABM targeting."
+        },
+        {
+          "problem": "Long 6-to-12 Month Sales Cycles with Zero Lead Nurture",
+          "explanation": "Procurement engineers download CAD files or request quotes, then go cold without automated technical follow-up.",
+          "digitolFix": "Automated technical drip sequences that nurture engineering leads with case studies and material spec guides."
+        },
+        {
+          "problem": "Outdated 2010-Era Industrial Websites",
+          "explanation": "Slow, non-responsive sites with buried contact forms cause corporate buyers to choose modern competitors.",
+          "digitolFix": "Sub-second industrial web architecture with 1-click RFQ upload and 3D CAD viewer support."
+        }
+      ],
+      "strategicDeliverables": [
+        "Technical SEO optimization targeting OEM, custom fabrication, and procurement search intent",
+        "Account-Based Marketing (ABM) paid search targeting Fortune 1000 manufacturing procurement teams",
+        "Frictionless RFQ portal with multi-file CAD blueprint upload and automated sales routing",
+        "Closed-loop CRM integration with HubSpot/Salesforce tracking pipeline value through final contract execution"
+      ],
+      "caseStudy": {
+        "client": "Precision Aerospace Components",
+        "metric": "+420% QUALIFIED RFQS",
+        "quote": "Digitol helped us secure $4.8M in net-new defense and aerospace manufacturing contracts in our first 18 months.",
+        "author": "Arthur Vance, Chief Commercial Officer"
+      },
+      "faq": [
+        {
+          "q": "How do you filter out low-volume consumer requests from enterprise RFQs?",
+          "a": "Our RFQ forms include structured fields for project volume, estimated annual usage (EAU), material specifications, and CAD file uploads, automatically filtering out non-commercial inquiries."
+        },
+        {
+          "q": "Can you target specific company accounts or industries (e.g. Aerospace, Medical Device OEMs)?",
+          "a": "Yes. We combine hyper-targeted Google Search keyword intent with LinkedIn ABM and IP-level account intelligence to ensure your solutions reach key procurement decision-makers."
+        },
+        {
+          "q": "How do you handle long B2B sales cycles in your ROI reporting?",
+          "a": "We integrate with your CRM to track both immediate lead metrics (Cost Per RFQ, Pipeline Created) and downstream revenue (Closed-Won Deal Value, Sales Velocity)."
+        },
+        {
+          "q": "Do you write technical B2B and engineering content?",
+          "a": "Yes. Our senior content strategists create accurate technical whitepapers, material comparison guides, and spec sheets tailored to mechanical and industrial engineers."
+        }
+      ]
+    },
+    {
+      "slug": "ecommerce-brands",
+      "title": "E-Commerce Scaling & Omnichannel Revenue Engine",
+      "shortTitle": "E-Commerce & DTC",
+      "categoryTag": "RETAIL & HIGH-GROWTH ECOMMERCE",
+      "badge": "SHOPIFY PLUS & KLAVIYO PARTNER",
+      "heroHeadline": "SCALE DTC REVENUE WITH SUB-SECOND SHOPIFY CRO & HIGH-ROAS ADS",
+      "heroSubheadline": "Outperform rising ad costs. We engineer sub-second headless Shopify storefronts, deploy server-side Meta CAPI, and maximize customer lifetime value (LTV).",
+      "metaTitle": "E-Commerce Marketing Agency | Shopify Plus SEO, Meta & Google Ads | Digitol",
+      "metaDescription": "Scale your e-commerce brand with sub-second Shopify CRO, high-ROAS Meta & Google Shopping ads, and automated Klaviyo retention workflows.",
+      "benchmarks": {
+        "avgDealValue": 145,
+        "targetCPA": 28,
+        "avgROAS": "4.6x",
+        "leadToCloseRate": "3.8% (Site Conv)",
+        "avgMonthlyLeads": "$150k - $1M+ Monthly GMV"
+      },
+      "crmIntegrations": [
+        { "name": "Shopify Plus", "role": "Headless Architecture & Real-Time Checkout API" },
+        { "name": "Klaviyo", "role": "Automated Retention & SMS Omnichannel Workflows" },
+        { "name": "Triple Whale / Northbeam", "role": "First-Party Multi-Touch Attribution" },
+        { "name": "Rebuy / Gorgias", "role": "AI Upsell & Customer Support Automation" }
+      ],
+      "painPoints": [
+        {
+          "problem": "Rising Meta & TikTok Customer Acquisition Costs (CAC)",
+          "explanation": "Third-party iOS tracking loss causes ad costs to skyrocket when brands rely solely on standard in-browser tracking pixels.",
+          "digitolFix": "Server-side Conversion API (CAPI) with first-party cookie enrichment delivering 35%+ ROAS improvement."
+        },
+        {
+          "problem": "Slow Mobile Storefront Load Times Destroying Conversion",
+          "explanation": "Bloated Shopify apps and heavy scripts slow mobile page load to 4+ seconds, costing millions in abandoned carts.",
+          "digitolFix": "Sub-second conversion-engineered web architecture with 95+ Core Web Vitals PageSpeed scores."
+        },
+        {
+          "problem": "Low Repeat Purchase Rates and Zero Customer LTV",
+          "explanation": "Brands burn profit acquiring one-off customers without automated post-purchase upsell and replenishment flows.",
+          "digitolFix": "Omnichannel Klaviyo SMS and email workflows driving 30%+ of total store revenue on autopilot."
+        }
+      ],
+      "strategicDeliverables": [
+        "Google Performance Max & Shopping feed optimization targeting high-intent product searches",
+        "Meta & TikTok creative strategy engineered for impulse buying and maximum click-through rates",
+        "Sub-second Shopify Plus CRO redesign with frictionless 1-page checkout",
+        "Comprehensive Klaviyo lifecycle email & SMS automation (Welcome, Abandoned Cart, Post-Purchase, Win-back)"
+      ],
+      "caseStudy": {
+        "client": "KOR Active Performance",
+        "metric": "+340% ONLINE SALES",
+        "quote": "Digitol transformed our e-commerce unit economics—scaling our monthly GMV from $85k to over $380k while lifting blended ROAS to 4.8x.",
+        "author": "Chloe Martinez, Co-Founder"
+      },
+      "faq": [
+        {
+          "q": "How do you combat iOS tracking privacy restrictions on Meta and Google Ads?",
+          "a": "We deploy robust Server-Side Conversion API (CAPI) and first-party event tracking directly from your Shopify backend to guarantee 99%+ event match quality."
+        },
+        {
+          "q": "Can you redesign our Shopify store to improve our conversion rate?",
+          "a": "Yes. We build custom, sub-second conversion-engineered Shopify storefronts that remove cart friction, optimize mobile UX, and include dynamic 1-click upsells."
+        },
+        {
+          "q": "Do you manage our Google Shopping and Performance Max feeds?",
+          "a": "Yes. We optimize your Google Merchant Center product titles, custom labels, and negative keywords to ensure your budget goes to high-margin bestsellers."
+        },
+        {
+          "q": "What email and SMS retention strategies do you implement?",
+          "a": "We design and automate advanced Klaviyo flows: multi-branch abandoned checkout sequences, post-purchase cross-sells, VIP loyalty rewards, and predictive replenishment reminders."
+        }
+      ]
+    },
+    {
+      "slug": "commercial-real-estate",
+      "title": "Commercial Real Estate & Property Marketing",
+      "shortTitle": "Commercial Real Estate",
+      "categoryTag": "REAL ESTATE & ASSET MANAGEMENT",
+      "badge": "YARDI & APPFOLIO INTEGRATED",
+      "heroHeadline": "LEASE COMMERCIAL PROPERTIES & ATTRACT QUALIFIED TENANTS",
+      "heroSubheadline": "Connect directly with corporate tenants, investors, and commercial brokers. We deploy geo-fenced property PPC, high-intent local SEO, and interactive property tour funnels.",
+      "metaTitle": "Commercial Real Estate Marketing Agency | SEO, PPC & Web Design | Digitol",
+      "metaDescription": "Lease commercial developments, industrial parks, and multi-family assets faster. Geo-fenced CRE PPC, SEO, and interactive virtual tour landing pages.",
+      "benchmarks": {
+        "avgDealValue": 25000,
+        "targetCPA": 380,
+        "avgROAS": "6.2x",
+        "leadToCloseRate": "16%",
+        "avgMonthlyLeads": "20 - 60+ Inquiries"
+      },
+      "crmIntegrations": [
+        { "name": "Yardi Systems", "role": "Leasing & Unit Availability Sync" },
+        { "name": "AppFolio", "role": "Tenant Application & Inquiry Flow" },
+        { "name": "HubSpot Real Estate", "role": "Broker & Investor Pipeline Tracking" },
+        { "name": "CoStar / LoopNet", "role": "Omnichannel Listing Amplification" }
+      ],
+      "painPoints": [
+        {
+          "problem": "Relying Exclusively on Expensive Listing Directories",
+          "explanation": "Brokers spend thousands on LoopNet and CoStar where listings get lost alongside thousands of competitor properties.",
+          "digitolFix": "Direct branded digital campaigns capturing tenants searching directly for space in your submarket."
+        },
+        {
+          "problem": "Static PDF Flyers That Fail on Mobile",
+          "explanation": "Prospects browsing on mobile devices get frustrated downloading 20MB PDFs with blurry floorplans.",
+          "digitolFix": "Interactive sub-second property microsites with live 3D virtual tours and 1-tap broker scheduling."
+        },
+        {
+          "problem": "Unqualified Residential Inquiries",
+          "explanation": "Commercial search campaigns accidentally attract residential apartment hunters, wasting leasing agent time.",
+          "digitolFix": "Strict commercial intent negative keyword sculpting and minimum square footage screening forms."
+        }
+      ],
+      "strategicDeliverables": [
+        "Hyper-targeted geo-fenced search ads targeting corporate relocations and expanding businesses",
+        "High-performance property microsites with interactive floorplans, spec sheets, and virtual tours",
+        "Automated broker tour scheduling and instant leasing brochure download tracking",
+        "Local SEO dominating geographic submarket commercial leasing searches"
+      ],
+      "caseStudy": {
+        "client": "Vanguard Commercial Properties",
+        "metric": "100% LEASED IN 90 DAYS",
+        "quote": "Digitol's targeted leasing campaign fully leased our 120,000 sq ft industrial logistics park 4 months ahead of schedule.",
+        "author": "Jonathan Hayes, Asset Manager"
+      },
+      "faq": [
+        {
+          "q": "How do you target corporate executives looking for office or industrial space?",
+          "a": "We target high-intent search terms (e.g. 'industrial warehouse space for lease Austin', 'Class A medical office lease') paired with geo-fencing and LinkedIn company size filters."
+        },
+        {
+          "q": "Can you build individual property landing pages for specific developments?",
+          "a": "Yes. We build standalone, high-converting property microsites featuring 3D virtual tours, downloadable leasing flyers, interactive site plans, and instant tour booking."
+        },
+        {
+          "q": "How do you screen out unqualified residential leads?",
+          "a": "Our intake funnels require users to select their business type, desired square footage, lease term, and target move-in date before submitting."
+        },
+        {
+          "q": "Do you integrate with real estate leasing software like Yardi or AppFolio?",
+          "a": "Yes. We push all tenant inquiries and tour bookings directly into your leasing CRM for immediate agent follow-up."
+        }
+      ]
+    },
+    {
+      "slug": "dental-practices",
+      "title": "Dental Practice & Orthodontics Patient Growth",
+      "shortTitle": "Dental & Orthodontics",
+      "categoryTag": "HEALTHCARE & DENTAL PRACTICES",
+      "badge": "HIPAA & DENTRIX COMPLIANT",
+      "heroHeadline": "ATTRACT HIGH-VALUE INVISALIGN, IMPLANT & COSMETIC PATIENTS",
+      "heroSubheadline": "Stop competing for low-margin cleanings. We build HIPAA-compliant funnels for dental implants, veneers, and clear aligners while dominating local Google Maps.",
+      "metaTitle": "Dental Marketing Agency | Implant & Cosmetic Practice SEO & PPC | Digitol",
+      "metaDescription": "Attract high-ticket dental implant, veneer, and Invisalign patients. HIPAA-compliant SEO, Google Ads, and sub-second online appointment booking.",
+      "benchmarks": {
+        "avgDealValue": 4200,
+        "targetCPA": 52,
+        "avgROAS": "5.2x",
+        "leadToCloseRate": "42%",
+        "avgMonthlyLeads": "50 - 150+ Patient Inquiries"
+      },
+      "crmIntegrations": [
+        { "name": "Dentrix / Ascend", "role": "Real-Time Patient Booking & Chart Sync" },
+        { "name": "Eaglesoft", "role": "Practice Management Data Sync" },
+        { "name": "Curve Dental", "role": "Cloud Practice Calendar Integration" },
+        { "name": "NexHealth", "role": "Automated Patient SMS & Online Booking" }
+      ],
+      "painPoints": [
+        {
+          "problem": "Filling Chairs with Low-Margin Insurance Cleanings Only",
+          "explanation": "Standard dental marketing attracts $80 hygiene visits when the practice needs $4,000+ full-arch implants and cosmetic cases.",
+          "digitolFix": "High-value procedure keyword targeting with interactive cosmetic smile assessment funnels."
+        },
+        {
+          "problem": "Losing Local Google Maps Rankings to Nearby Competitors",
+          "explanation": "Nearby dental practices outrank you in the Google 3-Pack due to superior review velocity and local citations.",
+          "digitolFix": "Automated 5-star review acquisition workflows and local dental citation dominance."
+        },
+        {
+          "problem": "High Consultation No-Show Rates",
+          "explanation": "Patients schedule consultations but fail to appear without automated reminder workflows.",
+          "digitolFix": "Automated 3-touch SMS appointment confirmation with instant add-to-calendar integration."
+        }
+      ],
+      "strategicDeliverables": [
+        "Procedure-specific SEO dominance for dental implants, All-on-4, veneers, and Invisalign",
+        "Interactive virtual smile assessment funnels pre-qualifying cosmetic dental candidates",
+        "HIPAA-compliant online booking integration syncing with Dentrix, Eaglesoft, or NexHealth",
+        "Automated 5-star patient review generation sequences triggered immediately post-appointment"
+      ],
+      "caseStudy": {
+        "client": "Apex Dental & Implant Center",
+        "metric": "+210% COSMETIC CASES",
+        "quote": "Digitol generated over $1.4M in verified dental implant and Invisalign case revenue for our practice in our first 12 months.",
+        "author": "Dr. Sarah Jenkins, Lead Prosthodontist"
+      },
+      "faq": [
+        {
+          "q": "How do you attract high-ticket dental implant and cosmetic cases rather than just basic cleanings?",
+          "a": "We build dedicated campaign architectures and sub-second landing pages tailored exclusively to implant, veneer, and orthodontic search terms with interactive financing payment calculators."
+        },
+        {
+          "q": "Is your system compliant with HIPAA healthcare regulations?",
+          "a": "Yes. All data routing, appointment booking, and form capture use encrypted HIPAA-compliant infrastructure."
+        },
+        {
+          "q": "Can you integrate with our dental practice software like Dentrix or NexHealth?",
+          "a": "Yes. We connect directly with leading practice management systems to enable instant online appointment scheduling and calendar sync."
+        },
+        {
+          "q": "How do you help us get more 5-star Google reviews from happy patients?",
+          "a": "We deploy automated post-visit SMS sequences that prompt satisfied patients to leave a 5-star Google review with a single tap on their smartphone."
+        }
+      ]
+    }
+  ]
+}

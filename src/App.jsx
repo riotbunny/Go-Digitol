@@ -381,6 +381,7 @@ export default function App() {
       ],
       features: [
         'Comprehensive technical architecture & Core Web Vitals optimization',
+        'Programmatic SEO (PSEO) & multi-location keyword matrix scaling',
         'AI Search Optimization (GEO) ensuring presence in generative summaries',
         'High-authority backlink acquisition & digital PR campaigns',
         'Local SEO & Google Business Profile dominance across all service areas'
@@ -471,6 +472,12 @@ export default function App() {
       tag: 'FIRST-PARTY DATA',
       desc: 'Multi-touch attribution engine connecting every closed revenue deal back to the exact campaign, ad creative, and search query.',
       stat: '100% Attribution'
+    },
+    {
+      name: 'Programmatic SEO OS',
+      tag: 'SCALED SEARCH',
+      desc: 'Automated data-driven landing page compiler capturing hundreds of high-intent commercial keyword permutations.',
+      stat: '100+ Live Hubs'
     },
     {
       name: 'Call Tracker OS',
@@ -1687,9 +1694,55 @@ export default function App() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/5 flex justify-between items-center text-[10px] text-neutral-600">
+        {/* Industry Solutions & PSEO Index */}
+        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10">
+          <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-neutral-400 mb-4 flex items-center justify-between">
+            <span>SPECIALIZED INDUSTRY REVENUE PLAYBOOKS &amp; PSEO HUBS</span>
+            <a href="/industries" className="text-emerald-400 hover:underline">VIEW ALL 8 PLAYBOOKS →</a>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-[11px] font-mono">
+            <a href="/industries/roofing-contractors" className="p-2.5 bg-neutral-950 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors">
+              <span className="text-emerald-400 font-bold block text-[9px]">// HOME SERVICES</span>
+              <span>Roofing SEO &amp; PPC</span>
+            </a>
+            <a href="/industries/personal-injury-law" className="p-2.5 bg-neutral-950 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors">
+              <span className="text-emerald-400 font-bold block text-[9px]">// LEGAL PRACTICES</span>
+              <span>Personal Injury Law Firm Ads</span>
+            </a>
+            <a href="/industries/medspas-cosmetics" className="p-2.5 bg-neutral-950 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors">
+              <span className="text-emerald-400 font-bold block text-[9px]">// HEALTHCARE &amp; MEDSPAS</span>
+              <span>Aesthetic Practice CRO</span>
+            </a>
+            <a href="/industries/hvac-plumbing" className="p-2.5 bg-neutral-950 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors">
+              <span className="text-emerald-400 font-bold block text-[9px]">// FIELD TRADES</span>
+              <span>HVAC &amp; Plumbing ServiceTitan</span>
+            </a>
+            <a href="/industries/b2b-manufacturing" className="p-2.5 bg-neutral-950 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors">
+              <span className="text-emerald-400 font-bold block text-[9px]">// INDUSTRIAL &amp; B2B</span>
+              <span>Manufacturing ABM &amp; RFQs</span>
+            </a>
+            <a href="/industries/ecommerce-brands" className="p-2.5 bg-neutral-950 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors">
+              <span className="text-emerald-400 font-bold block text-[9px]">// E-COMMERCE</span>
+              <span>Shopify Plus &amp; Meta CAPI</span>
+            </a>
+            <a href="/industries/commercial-real-estate" className="p-2.5 bg-neutral-950 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors">
+              <span className="text-emerald-400 font-bold block text-[9px]">// REAL ESTATE</span>
+              <span>Commercial Property Leasing</span>
+            </a>
+            <a href="/industries/dental-practices" className="p-2.5 bg-neutral-950 border border-white/10 hover:border-white/30 text-neutral-300 hover:text-white transition-colors">
+              <span className="text-emerald-400 font-bold block text-[9px]">// DENTAL PRACTICES</span>
+              <span>Implant &amp; Cosmetic SEO</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-neutral-600">
           <div>© 2026 DIGITOL AGENCY LLC. ALL RIGHTS RESERVED.</div>
-          <div>FULL-SERVICE DIGITAL MARKETING &amp; REVENUE ACCELERATION</div>
+          <div className="flex items-center gap-6">
+            <a href="/sitemap.xml" className="hover:text-neutral-400 transition-colors">XML SITEMAP</a>
+            <a href="/robots.txt" className="hover:text-neutral-400 transition-colors">ROBOTS.TXT</a>
+            <span>FULL-SERVICE DIGITAL MARKETING &amp; REVENUE ACCELERATION</span>
+          </div>
         </div>
       </footer>
     </div>
