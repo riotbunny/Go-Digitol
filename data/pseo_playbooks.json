@@ -82,7 +82,14 @@
           "q": "What is the typical cost per qualified roofing inspection in competitive markets?",
           "a": "Qualified residential inspection requests typically range between $48 and $75 per lead, with commercial replacement inquiries averaging $110 to $160."
         }
-      ]
+      ],
+      "psychology": {
+        "buyerFear": "Missing the next storm surge while cheaper competitors answer first.",
+        "desiredOutcome": "A full inspection calendar filled with replacement-ready homeowners and commercial property managers.",
+        "trustTrigger": "Territory-aware storm, LSA, AccuLynx, ServiceTitan, and CompanyCam workflows prove this is built for roofing operations.",
+        "riskReversal": "Start with a market gap audit before committing to campaigns, creative, or CRM changes.",
+        "decisionNudge": "See which keywords, ZIP codes, and job types are leaking replacement revenue this month."
+      }
     },
     {
       "slug": "personal-injury-law",
@@ -166,7 +173,14 @@
           "q": "Do we own our Google Ads account and analytics data?",
           "a": "Yes, 100%. You maintain full administrative ownership of your Google Ads, Meta Business Manager, and analytics accounts at all times."
         }
-      ]
+      ],
+      "psychology": {
+        "buyerFear": "Paying premium click costs for non-viable claims while serious injury prospects retain a faster firm.",
+        "desiredOutcome": "More signed retainers from qualified MVA, trucking, and catastrophic injury matters.",
+        "trustTrigger": "Bar-compliant intake language, Clio/Filevine sync, and severe-injury screening lower perceived compliance and quality risk.",
+        "riskReversal": "Review the case-quality audit before any ad spend is shifted.",
+        "decisionNudge": "Identify which intake questions, keywords, and response-time gaps are costing signed cases."
+      }
     },
     {
       "slug": "medspas-cosmetics",
@@ -250,7 +264,14 @@
           "q": "How do you automate 90-day neurotoxin recall reminders for recurring Botox/Dysport patients?",
           "a": "We set up automated SMS and email reactivation sequences triggered 75 to 90 days after a patient's neurotoxin appointment, ensuring consistent refill booking."
         }
-      ]
+      ],
+      "psychology": {
+        "buyerFear": "Discount seekers filling the calendar while high-LTV aesthetic patients book elsewhere.",
+        "desiredOutcome": "Provider schedules filled with qualified consults, deposits, and recurring treatment plans.",
+        "trustTrigger": "HIPAA-aware tracking, policy-safe creative, and Zenoti/Boulevard booking sync signal clinical professionalism.",
+        "riskReversal": "Validate procedure demand and no-show leakage before changing ad platforms or offers.",
+        "decisionNudge": "Find the procedures and patient segments most likely to increase bookings in the next 90 days."
+      }
     },
     {
       "slug": "hvac-plumbing",
@@ -334,7 +355,14 @@
           "q": "How do you track which technicians closed the leads you generated?",
           "a": "Through 2-way ServiceTitan and Housecall Pro webhooks, we link marketing source attribution directly to completed job invoices and technician revenue."
         }
-      ]
+      ],
+      "psychology": {
+        "buyerFear": "Burning budget on low-margin calls when dispatch capacity and replacement demand are misaligned.",
+        "desiredOutcome": "A dispatch board balanced around urgent calls, high-ticket replacements, and technician availability.",
+        "trustTrigger": "ServiceTitan, Housecall Pro, Jobber, and CallRail integration language shows operational fluency.",
+        "riskReversal": "Start with a call-quality and capacity audit before increasing spend.",
+        "decisionNudge": "See which calls, neighborhoods, and replacement terms should be prioritized or throttled."
+      }
     },
     {
       "slug": "b2b-manufacturing",
@@ -418,7 +446,14 @@
           "q": "Do you produce accurate technical content for engineers and procurement managers?",
           "a": "Yes. Our senior content strategists create accurate technical whitepapers, material comparison guides, and spec sheets tailored to mechanical and industrial engineers."
         }
-      ]
+      ],
+      "psychology": {
+        "buyerFear": "Getting low-quality quote requests while serious OEM buyers choose a competitor with clearer proof.",
+        "desiredOutcome": "Qualified RFQs from procurement, engineering, and operations leaders with real production volume.",
+        "trustTrigger": "MOQ gating, CAD upload flows, HubSpot/Salesforce attribution, and technical content reduce vendor-selection risk.",
+        "riskReversal": "Audit the RFQ journey and account targeting before rebuilding your site or campaigns.",
+        "decisionNudge": "Map the buyer accounts, spec pages, and RFQ friction points blocking enterprise pipeline."
+      }
     },
     {
       "slug": "ecommerce-brands",
@@ -482,7 +517,7 @@
       "caseStudy": {
         "client": "KOR Active Performance",
         "metric": "+340% ONLINE SALES",
-        "quote": "Digitol transformed our e-commerce unit economics\u2014scaling our monthly GMV from $85k to over $380k while lifting our blended MER to 4.8x.",
+        "quote": "Digitol transformed our e-commerce unit economics—scaling our monthly GMV from $85k to over $380k while lifting our blended MER to 4.8x.",
         "author": "Chloe Martinez, Co-Founder"
       },
       "faq": [
@@ -502,7 +537,14 @@
           "q": "What email and SMS retention strategies do you implement?",
           "a": "We design and automate advanced Klaviyo flows: multi-branch abandoned checkout sequences, post-purchase cross-sells, VIP loyalty rewards, and predictive replenishment reminders."
         }
-      ]
+      ],
+      "psychology": {
+        "buyerFear": "Scaling spend into tracking loss, slow mobile pages, and one-time buyers with shrinking margin.",
+        "desiredOutcome": "Higher-converting traffic, cleaner attribution, and repeat purchases that improve MER.",
+        "trustTrigger": "Shopify Plus, Klaviyo, Meta CAPI, and first-party attribution details speak to operator-level concerns.",
+        "riskReversal": "Run a store-speed, tracking, and lifecycle audit before changing media budgets.",
+        "decisionNudge": "Pinpoint which product pages, flows, and channels are suppressing profitable growth."
+      }
     },
     {
       "slug": "commercial-real-estate",
@@ -586,7 +628,14 @@
           "q": "Do you integrate with real estate leasing software like Yardi or AppFolio?",
           "a": "Yes. We push all tenant inquiries and tour bookings directly into your leasing CRM for immediate agent follow-up."
         }
-      ]
+      ],
+      "psychology": {
+        "buyerFear": "Vacancy dragging on while listings disappear inside crowded broker directories.",
+        "desiredOutcome": "More qualified tenant, broker, and investor inquiries for specific assets and submarkets.",
+        "trustTrigger": "Property microsites, Yardi/AppFolio sync, tour scheduling, and square-footage screening show leasing expertise.",
+        "riskReversal": "Audit the asset funnel before investing in new media or listing packages.",
+        "decisionNudge": "Reveal which submarket searches, tour paths, and qualification steps can shorten lease-up time."
+      }
     },
     {
       "slug": "dental-practices",
@@ -670,7 +719,14 @@
           "q": "How do you help us get more 5-star Google reviews from happy patients?",
           "a": "We deploy automated post-visit SMS sequences that prompt satisfied patients to leave a 5-star Google review with a single tap on their smartphone."
         }
-      ]
+      ],
+      "psychology": {
+        "buyerFear": "Filling chairs with low-margin hygiene visits while implant and cosmetic competitors win premium cases.",
+        "desiredOutcome": "More qualified implant, Invisalign, veneer, and cosmetic consults with fewer no-shows.",
+        "trustTrigger": "HIPAA-aware booking, Dentrix/NexHealth integration, financing calculators, and review velocity reduce practice risk.",
+        "riskReversal": "Start with a patient-value and local visibility audit before changing offers or spend.",
+        "decisionNudge": "Find which procedures, reviews, and booking steps can lift case acceptance fastest."
+      }
     }
   ]
 }

@@ -42,6 +42,14 @@
     ]
   }
   </script>
+<style>
+  :root{--b2b-ink:#07111f;--b2b-panel:#101d32;--b2b-line:rgba(148,163,184,.22);--b2b-text:#f8fafc;--b2b-muted:#aab6c7;--b2b-soft:#d8e0ea;--b2b-trust:#2dd4bf;--b2b-action:#f4b860;--b2b-action-hover:#ffd796;--b2b-action-text:#1d1204;}
+  body{background:var(--b2b-ink)!important;color:var(--b2b-text)!important;}
+  .industry-psychology-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.4fr);gap:1.5rem;align-items:stretch;}
+  .industry-psychology-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;}
+  .btn.btn-cta,.industry-psychology-cta{background:linear-gradient(135deg,var(--b2b-action),var(--b2b-action-hover))!important;color:var(--b2b-action-text)!important;border-color:rgba(255,209,138,.82)!important;box-shadow:0 14px 36px rgba(244,184,96,.2)!important;}
+  @media(max-width:860px){.industry-psychology-grid,.industry-psychology-cards{grid-template-columns:1fr!important;}}
+</style>
 </head>
 <body>
 
@@ -358,6 +366,29 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ==========================================================================
+     BUYER PSYCHOLOGY DECISION FRAME
+     ========================================================================== -->
+<section style="background:#07111f;color:#f8fafc;padding:4rem 1.5rem;border-bottom:1px solid rgba(148,163,184,0.22);">
+  <div class="container" style="max-width:1100px;">
+    <div class="industry-psychology-grid">
+      <div style="background:linear-gradient(180deg,rgba(16,29,50,.98),rgba(10,21,38,.98));border:1px solid rgba(244,184,96,.34);padding:2rem;box-shadow:0 24px 54px rgba(0,0,0,.28);">
+        <div style="font-family:monospace;font-size:.68rem;color:#f4b860;text-transform:uppercase;letter-spacing:.2em;margin-bottom:.75rem;">DECISION PSYCHOLOGY // E-COMMERCE &AMP; DTC</div>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.35rem);font-weight:900;line-height:1.08;text-transform:uppercase;color:#fff;margin:0 0 1rem;">Built for the moment your buyer chooses who to trust.</h2>
+        <p style="color:#aab6c7;line-height:1.65;font-size:.95rem;margin:0 0 1.5rem;">The strongest E-Commerce &amp; DTC pages do more than list services. They reduce anxiety, prove category fluency, and make the next step feel specific, safe, and worth taking now.</p>
+        <a href="/contact?industry=ecommerce-brands" class="industry-psychology-cta" style="display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:.14em;padding:.9rem 1.25rem;font-family:monospace;font-size:.75rem;border:1px solid rgba(255,209,138,.82);">Get the E-Commerce &amp; DTC Audit &rarr;</a>
+      </div>
+      <div class="industry-psychology-cards">
+        <div style="background:#101d32;border:1px solid rgba(148,163,184,.22);padding:1.25rem;"><div style="font-family:monospace;color:#f4b860;font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;margin-bottom:.45rem;">Buyer Fear</div><p style="color:#d8e0ea;line-height:1.55;margin:0;font-size:.9rem;">Scaling spend into tracking loss, slow mobile pages, and one-time buyers with shrinking margin.</p></div>
+        <div style="background:#101d32;border:1px solid rgba(148,163,184,.22);padding:1.25rem;"><div style="font-family:monospace;color:#2dd4bf;font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;margin-bottom:.45rem;">Desired Outcome</div><p style="color:#d8e0ea;line-height:1.55;margin:0;font-size:.9rem;">Higher-converting traffic, cleaner attribution, and repeat purchases that improve MER.</p></div>
+        <div style="background:#101d32;border:1px solid rgba(148,163,184,.22);padding:1.25rem;"><div style="font-family:monospace;color:#2dd4bf;font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;margin-bottom:.45rem;">Trust Trigger</div><p style="color:#d8e0ea;line-height:1.55;margin:0;font-size:.9rem;">Shopify Plus, Klaviyo, Meta CAPI, and first-party attribution details speak to operator-level concerns.</p></div>
+        <div style="background:#101d32;border:1px solid rgba(148,163,184,.22);padding:1.25rem;"><div style="font-family:monospace;color:#f4b860;font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;margin-bottom:.45rem;">Lower-Risk Next Step</div><p style="color:#d8e0ea;line-height:1.55;margin:0;font-size:.9rem;">Run a store-speed, tracking, and lifecycle audit before changing media budgets.</p></div>
+        <div style="grid-column:1/-1;background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.34);padding:1rem 1.25rem;font-family:monospace;color:#d8e0ea;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;line-height:1.55;"><span style="color:#2dd4bf;font-weight:800;">Recommended action:</span> Pinpoint which product pages, flows, and channels are suppressing profitable growth.</div>
+      </div>
+    </div>
   </div>
 </section>
 
