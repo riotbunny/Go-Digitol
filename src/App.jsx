@@ -100,11 +100,11 @@ const SERVICE_CONFIGS = {
       '$15,000 - $30,000 (Full Enterprise Multi-Page & CRO Engine)',
       '$30,000+ (Custom Web App / Complex Enterprise Platform)'
     ],
-    step4Title: '04 // WHERE SHOULD WE SEND YOUR WEBSITE ARCHITECTURE & CRO BLUEPRINT?',
-    step4Subtitle: 'Enter your contact details and current website URL (if redesign) for a complimentary CRO audit.',
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR WEBSITE ARCHITECTURE & CRO AUDIT?',
+    step4Subtitle: 'Enter your contact details and current website URL so we can prepare the highest-priority conversion fixes.',
     urlLabel: 'CURRENT WEBSITE URL (OPTIONAL IF BUILDING NEW)',
     urlPlaceholder: 'https://yourcompany.com (or leave blank if new build)',
-    buttonText: 'REQUEST MY CUSTOM WEBSITE & CRO BLUEPRINT →'
+    buttonText: 'SEND MY WEBSITE & CRO AUDIT →'
   },
   ppc: {
     category: 'ppc',
@@ -125,11 +125,11 @@ const SERVICE_CONFIGS = {
       '$15,000 - $50,000 / MONTH (Media Spend)',
       '$50,000+ / MONTH (Enterprise Scaling)'
     ],
-    step4Title: '04 // WHERE SHOULD WE SEND YOUR PAID MEDIA & ROAS PROJECTION?',
-    step4Subtitle: 'We will build a custom competitor keyword & paid channel ROAS forecast.',
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR PAID MEDIA & ROAS AUDIT?',
+    step4Subtitle: 'We will map wasted spend, competitor pressure, and the clearest path to lower acquisition costs.',
     urlLabel: 'LANDING PAGE / WEBSITE URL *',
     urlPlaceholder: 'https://yourcompany.com',
-    buttonText: 'REQUEST MY CUSTOM ROAS PROJECTION →'
+    buttonText: 'SEND MY ROAS AUDIT →'
   },
   seo: {
     category: 'seo',
@@ -150,11 +150,11 @@ const SERVICE_CONFIGS = {
       '$7,500 - $15,000 / MONTH (National Competitive)',
       '$15,000+ / MONTH (Enterprise / Multi-Location)'
     ],
-    step4Title: '04 // WHERE SHOULD WE SEND YOUR COMPREHENSIVE SEO & AI SEARCH AUDIT?',
-    step4Subtitle: 'We will run a complete keyword gap, competitor analysis, and AI search visibility audit.',
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR SEO & AI SEARCH AUDIT?',
+    step4Subtitle: 'We will run a keyword gap, competitor, local ranking, and AI search visibility review.',
     urlLabel: 'WEBSITE URL (FOR SEO & COMPETITOR AUDIT) *',
     urlPlaceholder: 'https://yourcompany.com',
-    buttonText: 'REQUEST MY COMPLIMENTARY SEO AUDIT →'
+    buttonText: 'SEND MY SEO AUDIT →'
   },
   content: {
     category: 'content',
@@ -175,11 +175,11 @@ const SERVICE_CONFIGS = {
       '$7,500 - $15,000 / MONTH (Full Multimedia & Video Production)',
       '$15,000+ / MONTH (Enterprise Content Machine)'
     ],
-    step4Title: '04 // WHERE SHOULD WE SEND YOUR CONTENT & PR STRATEGY ROADMAP?',
-    step4Subtitle: 'We will outline high-intent topics, competitor content gaps, and an authority roadmap.',
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR CONTENT & PR AUDIT?',
+    step4Subtitle: 'We will outline high-intent topics, authority gaps, and the content assets most likely to drive pipeline.',
     urlLabel: 'CURRENT WEBSITE / CONTENT URL',
     urlPlaceholder: 'https://yourcompany.com',
-    buttonText: 'REQUEST MY CONTENT STRATEGY ROADMAP →'
+    buttonText: 'SEND MY CONTENT AUDIT →'
   },
   automation: {
     category: 'automation',
@@ -200,11 +200,11 @@ const SERVICE_CONFIGS = {
       '1,000 - 5,000 LEADS / MONTH',
       '5,000+ LEADS / MONTH (ENTERPRISE SCALE)'
     ],
-    step4Title: '04 // WHERE SHOULD WE SEND YOUR REVENUE ATTRIBUTION BLUEPRINT?',
-    step4Subtitle: 'We will map your closed-loop tracking, CRM data sync, and automation architecture.',
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR REVENUE ATTRIBUTION AUDIT?',
+    step4Subtitle: 'We will map tracking gaps, CRM handoff issues, and automation opportunities across the buyer journey.',
     urlLabel: 'PRIMARY WEBSITE / CRM DOMAIN',
     urlPlaceholder: 'https://yourcompany.com',
-    buttonText: 'REQUEST REVENUE ATTRIBUTION BLUEPRINT →'
+    buttonText: 'SEND MY ATTRIBUTION AUDIT →'
   },
   growth: {
     category: 'growth',
@@ -226,11 +226,11 @@ const SERVICE_CONFIGS = {
       '$10,000 - $25,000 / MONTH (Domination Tier)',
       '$25,000+ / MONTH (Enterprise Custom)'
     ],
-    step4Title: '04 // WHERE SHOULD WE SEND YOUR CUSTOM REVENUE PROPOSAL?',
-    step4Subtitle: 'Enter your contact info and website URL for an automated SEO, CRO & revenue audit.',
+    step4Title: '04 // WHERE SHOULD WE SEND YOUR FREE 90-DAY GROWTH AUDIT?',
+    step4Subtitle: 'Enter your contact info and website URL for a focused SEO, CRO, paid media, and revenue tracking review.',
     urlLabel: 'WEBSITE URL (FOR FREE AUDIT)',
     urlPlaceholder: 'https://yourcompany.com',
-    buttonText: 'REQUEST MY CUSTOM MARKETING PROPOSAL →'
+    buttonText: 'SEND MY FREE GROWTH AUDIT →'
   }
 };
 
@@ -591,6 +591,31 @@ export default function App() {
     }
   ];
 
+  const CONVERSION_INSIGHTS = [
+    'The hero was beautiful, but too broad. Buyers need a specific outcome, a visible offer, and proof in the first 5 seconds.',
+    'The CTA said "proposal," which can feel sales-heavy. Reframing it as a free growth audit lowers resistance and makes the next step concrete.',
+    'The page had strong capabilities, but the deliverables were buried. Pulling the audit outputs higher creates a reason to convert now.',
+    'Proof existed, but it needed more buyer context. Benchmarks, callouts, and case-study cards now speak directly to pipeline, speed, and risk.'
+  ];
+
+  const AUDIT_DELIVERABLES = [
+    {
+      icon: Search,
+      title: 'Demand Capture Map',
+      desc: 'High-intent keywords, competitor gaps, and the fastest channels to generate qualified opportunities.'
+    },
+    {
+      icon: MousePointerClick,
+      title: 'Conversion Leak Report',
+      desc: 'A page-by-page review of where traffic drops, what to fix first, and which CTA path should be simplified.'
+    },
+    {
+      icon: BarChart3,
+      title: '90-Day Revenue Forecast',
+      desc: 'Projected pipeline, spend efficiency, and realistic lead targets based on your market and average deal size.'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
       
@@ -644,7 +669,7 @@ export default function App() {
               onClick={() => openAuditModal()}
               className="bg-white text-black hover:bg-neutral-200 text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-none border border-white transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95"
             >
-              GET A FREE PROPOSAL
+              FREE GROWTH AUDIT
             </button>
           </div>
         </div>
@@ -656,16 +681,16 @@ export default function App() {
       <section className="min-h-screen relative flex flex-col justify-center items-center px-6 pt-24 pb-16 overflow-hidden bg-black">
         {/* Full-Bleed Large Background Photo */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-45"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-55"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/75 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#07111f]/55 via-[#07111f]/72 to-[#07111f] pointer-events-none" />
         <div className="absolute inset-0 digitol-grid pointer-events-none opacity-30" />
         
         {/* Ambient Deep-Space Particle Field */}
         <StarfieldCanvas particleCount={65} />
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
+        <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center rounded-[2px] bg-[#07111f]/18 px-0 sm:px-6 py-6 sm:py-8 backdrop-blur-[1px]">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -674,7 +699,7 @@ export default function App() {
             className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-white/[0.04] border border-white/15 rounded-none font-mono text-[10px] tracking-[0.25em] text-neutral-300 uppercase mb-8 backdrop-blur-md"
           >
             <TrendingUp size={13} className="text-white" />
-            <span>FULL-SERVICE DIGITAL MARKETING THAT DRIVES REVENUE</span>
+            <span>FREE 90-DAY GROWTH AUDIT FOR QUALIFIED BUSINESSES</span>
           </motion.div>
 
           {/* Main Heading */}
@@ -684,15 +709,15 @@ export default function App() {
             transition={{ delay: 0.1, duration: 0.8 }}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight uppercase leading-[1.08] text-white mb-8 drop-shadow-2xl flex flex-col items-center justify-center text-center"
           >
-            <span className="block">THE DIGITAL AGENCY THAT</span>
+            <span className="block">TURN MORE TRAFFIC INTO</span>
             <span className="block mt-1 sm:mt-2">
               <TypewriterText
                 phrases={[
-                  'SCALES QUALIFIED PIPELINE',
-                  'OUTRANKS YOUR COMPETITION',
-                  'TURNS TRAFFIC INTO BUYERS',
-                  'MAXIMIZES MARKETING ROI',
-                  'DRIVES MEASURABLE REVENUE.'
+                  'BOOKED SALES CALLS',
+                  'QUALIFIED PIPELINE',
+                  'SIGNED DEALS',
+                  'MEASURABLE REVENUE',
+                  'ATTRIBUTED ROI.'
                 ]}
                 stopAtEnd={true}
               />
@@ -706,8 +731,26 @@ export default function App() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-neutral-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 font-normal leading-relaxed tracking-wide drop-shadow-md"
           >
-            Scale your enterprise with a tech-enabled digital marketing partner. We unite technical SEO, high-ROAS paid media, conversion-engineered web architecture, and closed-loop revenue attribution to generate qualified pipeline and maximize closed deals.
+            Digitol finds the highest-leverage growth bottlenecks in your SEO, paid media, website, and follow-up systems, then builds the conversion engine to turn those leaks into booked appointments and attributable revenue.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.7 }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-2 w-full max-w-3xl mb-8 font-mono text-[10px] tracking-widest uppercase text-left"
+          >
+            {[
+              'Free audit delivered in 24 hours',
+              'No long-term contract required',
+              'Revenue tracking plan included'
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2 bg-black/65 border border-white/15 px-3 py-2 backdrop-blur-md">
+                <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
+                <span className="text-neutral-300">{item}</span>
+              </div>
+            ))}
+          </motion.div>
 
           {/* Action CTAs */}
           <motion.div
@@ -720,7 +763,7 @@ export default function App() {
               onClick={() => openAuditModal()}
               className="w-full sm:w-auto bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-8 py-3.5 border border-white transition-all shadow-[0_0_25px_rgba(255,255,255,0.2)] active:scale-95 flex items-center justify-center gap-2"
             >
-              <span>CLAIM REVENUE PROPOSAL</span>
+              <span>GET MY FREE GROWTH AUDIT</span>
               <ArrowUpRight size={14} />
             </button>
             <a
@@ -731,13 +774,17 @@ export default function App() {
             </a>
           </motion.div>
 
+          <div className="mb-10 font-mono text-[10px] tracking-[0.2em] uppercase text-neutral-400">
+            Built for teams spending $5k+/mo on marketing or generating 50+ inbound leads/month.
+          </div>
+
           {/* Proof Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl border-t border-b border-white/10 py-6 font-mono bg-black/60 backdrop-blur-md">
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 <KineticCounter value={14.2} prefix="$" suffix="M+" decimals={1} />
               </div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">VERIFIED CLIENT REVENUE</div>
+              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">ATTRIBUTED CLIENT REVENUE</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
@@ -755,7 +802,7 @@ export default function App() {
               <div className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 <KineticCounter value={99.4} suffix="%" decimals={1} />
               </div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">CLIENT RETENTION RATE</div>
+              <div className="text-[10px] text-neutral-400 uppercase tracking-widest mt-1">TRACKING UPTIME</div>
             </div>
           </div>
         </div>
@@ -766,6 +813,58 @@ export default function App() {
 
       {/* Official Partner & Technical Certification Ribbon */}
       <PartnerCertifications />
+
+      {/* Conversion-Focused Audit Offer */}
+      <section className="px-6 py-16 bg-neutral-950 border-y border-white/10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="lg:col-span-4">
+            <div className="font-mono text-[10px] tracking-[0.25em] text-emerald-400 uppercase mb-3">
+              FREE AUDIT // HIGH-INTENT OFFER
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight uppercase text-white mb-4">
+              Know exactly what to fix before you spend another dollar.
+            </h2>
+            <p className="text-neutral-300 text-sm leading-relaxed mb-6">
+              We review your market, funnel, traffic sources, and follow-up path, then send a prioritized 90-day plan built around revenue impact instead of vanity metrics.
+            </p>
+            <button
+              onClick={() => openAuditModal({ notes: 'Requested free 90-day growth audit from homepage offer block.' })}
+              className="bg-white text-black hover:bg-neutral-200 text-xs font-bold uppercase tracking-[0.2em] px-6 py-3 border border-white transition-all inline-flex items-center gap-2"
+            >
+              <span>Claim Free Audit</span>
+              <ArrowUpRight size={14} />
+            </button>
+          </div>
+
+          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {AUDIT_DELIVERABLES.map((item) => {
+              const Icon = item.icon;
+              return (
+                <SpotlightCard key={item.title} className="p-6 border-white/15 h-full">
+                  <div className="w-10 h-10 border border-white/20 bg-white/[0.04] flex items-center justify-center mb-5">
+                    <Icon size={18} className="text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold uppercase tracking-tight text-white mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-neutral-300 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </SpotlightCard>
+              );
+            })}
+          </div>
+
+          <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-4 gap-3 pt-4">
+            {CONVERSION_INSIGHTS.map((insight, idx) => (
+              <div key={insight} className="bg-black/70 border border-white/10 p-4 font-mono text-[10px] leading-relaxed text-neutral-300 uppercase tracking-wider">
+                <span className="block text-emerald-400 mb-2">0{idx + 1} // CONVERSION NOTE</span>
+                {insight}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ======================================================================
           3. FULL-SERVICE MARKETING SUITE (MIN-H-SCREEN)

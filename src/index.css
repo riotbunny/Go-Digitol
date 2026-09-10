@@ -4,11 +4,24 @@
   :root {
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+    --b2b-ink: #07111f;
+    --b2b-ink-2: #0b1628;
+    --b2b-panel: #101d32;
+    --b2b-panel-soft: #14243a;
+    --b2b-line: rgba(148, 163, 184, 0.22);
+    --b2b-text: #f8fafc;
+    --b2b-muted: #aab6c7;
+    --b2b-soft: #d8e0ea;
+    --b2b-trust: #2dd4bf;
+    --b2b-trust-soft: rgba(45, 212, 191, 0.13);
+    --b2b-action: #f4b860;
+    --b2b-action-hover: #ffd18a;
+    --b2b-action-text: #1d1204;
   }
 
   body {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--b2b-ink);
+    color: var(--b2b-text);
     font-family: var(--font-sans);
     margin: 0;
     padding: 0;
@@ -21,29 +34,29 @@
     height: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #000000;
+    background: var(--b2b-ink);
   }
   ::-webkit-scrollbar-thumb {
-    background: #262626;
+    background: #26364d;
     border-radius: 2px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #404040;
+    background: #3b506d;
   }
 }
 
 /* Digitol Matrix Grid & Dark Background */
 .digitol-grid {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(125, 211, 252, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(45, 212, 191, 0.045) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
 .digitol-grid-fine {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(125, 211, 252, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(45, 212, 191, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -103,11 +116,125 @@
   display: inline-block;
   width: 4px;
   height: 0.85em;
-  background-color: #ffffff;
+  background-color: var(--b2b-action);
   margin-left: 6px;
   vertical-align: -0.04em;
   animation: cursorBlink 0.9s infinite ease-in-out;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 14px rgba(244, 184, 96, 0.85);
+}
+
+/* ==========================================================================
+   B2B TRUST THEME
+   Keeps the premium dark interface, but moves it from severe black/white into
+   midnight navy, slate, teal, and amber: a calmer palette for B2B buyers.
+   ========================================================================== */
+body {
+  background:
+    radial-gradient(circle at 22% 8%, rgba(45, 212, 191, 0.13), transparent 28rem),
+    radial-gradient(circle at 82% 14%, rgba(244, 184, 96, 0.12), transparent 24rem),
+    linear-gradient(180deg, var(--b2b-ink), #091629 48%, #07111f);
+}
+
+.bg-black,
+.bg-neutral-950,
+.bg-neutral-900 {
+  background-color: var(--b2b-ink) !important;
+}
+
+.bg-neutral-950,
+.bg-neutral-900 {
+  background-color: var(--b2b-panel) !important;
+}
+
+.text-white {
+  color: var(--b2b-text) !important;
+}
+
+.text-neutral-300,
+.text-neutral-400 {
+  color: var(--b2b-muted) !important;
+}
+
+.text-neutral-500,
+.text-neutral-600 {
+  color: #7f8ea3 !important;
+}
+
+.border-white\/5,
+.border-white\/10,
+.border-white\/15,
+.border-white\/20,
+.border-white\/30,
+.border-white\/40 {
+  border-color: var(--b2b-line) !important;
+}
+
+.bg-white\/\[0\.02\],
+.bg-white\/\[0\.03\],
+.bg-white\/\[0\.04\],
+.bg-white\/10,
+.hover\:bg-white\/10:hover {
+  background-color: rgba(20, 36, 58, 0.74) !important;
+}
+
+.bg-white.text-black,
+button.bg-white,
+a.bg-white {
+  background: linear-gradient(135deg, var(--b2b-action), #ffd796) !important;
+  border-color: rgba(255, 209, 138, 0.82) !important;
+  color: var(--b2b-action-text) !important;
+  box-shadow: 0 14px 36px rgba(244, 184, 96, 0.2) !important;
+}
+
+.bg-white.text-black:hover,
+button.bg-white:hover,
+a.bg-white:hover {
+  background: linear-gradient(135deg, var(--b2b-action-hover), #ffe2ad) !important;
+  color: var(--b2b-action-text) !important;
+}
+
+.text-emerald-400,
+.text-emerald-300 {
+  color: var(--b2b-trust) !important;
+}
+
+.bg-emerald-400,
+.bg-emerald-500\/10 {
+  background-color: var(--b2b-trust-soft) !important;
+}
+
+.border-emerald-400,
+.border-emerald-500\/30 {
+  border-color: rgba(45, 212, 191, 0.42) !important;
+}
+
+header {
+  background: rgba(7, 17, 31, 0.9) !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+section {
+  background-color: transparent;
+}
+
+.shadow-\[0_0_20px_rgba\(255\,255\,255\,0\.15\)\],
+.shadow-\[0_0_25px_rgba\(255\,255\,255\,0\.2\)\] {
+  box-shadow: 0 14px 36px rgba(244, 184, 96, 0.2) !important;
+}
+
+input,
+textarea,
+select {
+  background-color: #0a1526 !important;
+  border-color: var(--b2b-line) !important;
+  color: var(--b2b-text) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(45, 212, 191, 0.7) !important;
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.12) !important;
 }
 
 /* ==========================================================================
@@ -136,7 +263,7 @@
    CUSTOM RANGE INPUTS & INTERACTIVE COMPARISON SLIDERS
    ========================================================================== */
 input[type="range"] {
-  accent-color: #ffffff;
+  accent-color: var(--b2b-action);
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -144,11 +271,11 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 18px;
   height: 18px;
-  background: #ffffff;
-  border: 2px solid #000000;
+  background: var(--b2b-action);
+  border: 2px solid var(--b2b-action-text);
   border-radius: 2px;
   cursor: pointer;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 12px rgba(244, 184, 96, 0.55);
   transition: transform 0.15s ease;
 }
 
@@ -159,11 +286,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
 input[type="range"]::-moz-range-thumb {
   width: 18px;
   height: 18px;
-  background: #ffffff;
-  border: 2px solid #000000;
+  background: var(--b2b-action);
+  border: 2px solid var(--b2b-action-text);
   border-radius: 2px;
   cursor: pointer;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 12px rgba(244, 184, 96, 0.55);
   transition: transform 0.15s ease;
 }
 
